@@ -2,9 +2,38 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { TaskWithRelations, InsertTask, TaskConnection, InsertTaskConnection } from "@shared/schema";
 
+// Helper function to build nested task hierarchy
+function buildTaskHierarchy(tasks: TaskWithRelations[]): TaskWithRelations[] {
+  // Create a map for quick lookup
+  const taskMap = new Map<string, TaskWithRelations>();
+  tasks.forEach(task => {
+    taskMap.set(task.id, { ...task, subtasks: [] });
+  });
+
+  // Build the hierarchy
+  const rootTasks: TaskWithRelations[] = [];
+  
+  tasks.forEach(task => {
+    const taskWithHierarchy = taskMap.get(task.id)!;
+    
+    if (task.parentTaskId) {
+      const parent = taskMap.get(task.parentTaskId);
+      if (parent) {
+        if (!parent.subtasks) parent.subtasks = [];
+        parent.subtasks.push(taskWithHierarchy);
+      }
+    } else {
+      rootTasks.push(taskWithHierarchy);
+    }
+  });
+
+  return rootTasks;
+}
+
 export function useTasks() {
   return useQuery<TaskWithRelations[]>({
     queryKey: ["/api/tasks"],
+    select: (data) => buildTaskHierarchy(data),
   });
 }
 
