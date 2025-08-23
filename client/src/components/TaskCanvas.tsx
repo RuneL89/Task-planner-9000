@@ -73,7 +73,7 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
 
   // Convert connections to edges
   const initialEdges: Edge[] = useMemo(() => {
-    return connections.map((connection) => ({
+    const manualConnections = connections.map((connection) => ({
       id: connection.id,
       source: connection.sourceTaskId,
       target: connection.targetTaskId,
@@ -81,7 +81,22 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
       style: { stroke: "#64748b", strokeWidth: 2 },
       animated: true,
     }));
-  }, [connections]);
+
+    // Add automatic parent-child edges
+    const parentChildEdges = tasks
+      .filter(task => task.parentTaskId)
+      .map((task) => ({
+        id: `parent-${task.parentTaskId}-${task.id}`,
+        source: task.parentTaskId!,
+        target: task.id,
+        type: "smoothstep",
+        style: { stroke: "#3b82f6", strokeWidth: 3 },
+        animated: false,
+        className: "parent-child-edge",
+      }));
+
+    return [...manualConnections, ...parentChildEdges];
+  }, [connections, tasks]);
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);

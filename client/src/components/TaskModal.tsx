@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/popover";
 import { CalendarIcon, Trash2 } from "lucide-react";
 import { format } from "date-fns";
-import { useCreateTask, useUpdateTask, useDeleteTask, useTasks } from "@/hooks/use-tasks";
+import { useCreateTask, useUpdateTask, useDeleteTask, useTasks, useTaskConnections, useCreateTaskConnection } from "@/hooks/use-tasks";
 import { useToast } from "@/hooks/use-toast";
 import type { TaskWithRelations, InsertTask } from "@shared/schema";
 import { cn } from "@/lib/utils";
@@ -40,15 +40,20 @@ interface TaskModalProps {
 export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskModalProps) {
   const [formData, setFormData] = useState<Partial<InsertTask>>({});
   const [deadline, setDeadline] = useState<Date | undefined>(undefined);
+  const [selectedConnections, setSelectedConnections] = useState<string[]>([]);
   
   const createTask = useCreateTask();
   const updateTask = useUpdateTask();
   const deleteTask = useDeleteTask();
+  const createConnection = useCreateTaskConnection();
   const { data: allTasks = [] } = useTasks();
+  const { data: connections = [] } = useTaskConnections();
   const { toast } = useToast();
 
-  // Get available main tasks for linking
-  const mainTasks = allTasks.filter(t => t.isMainTask && t.id !== task?.id);
+  // Get available tasks for linking (both main tasks and subtasks)
+  const availableParentTasks = allTasks.filter(t => t.id !== task?.id && t.id !== parentTask?.id);
+  const mainTasks = availableParentTasks.filter(t => t.isMainTask);
+  const subtasks = availableParentTasks.filter(t => !t.isMainTask);
 
   const isEditing = !!task;
 
@@ -76,6 +81,7 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
       });
       setDeadline(undefined);
     }
+    setSelectedConnections([]);
   }, [task, parentTask]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -97,19 +103,37 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
     } as InsertTask;
 
     try {
+      let taskId: string;
       if (isEditing && task) {
         await updateTask.mutateAsync({ id: task.id, task: taskData });
+        taskId = task.id;
         toast({
           title: "Success",
           description: "Task updated successfully",
         });
       } else {
-        await createTask.mutateAsync(taskData);
+        const newTask = await createTask.mutateAsync(taskData);
+        taskId = newTask.id;
         toast({
           title: "Success",
           description: "Task created successfully",
         });
       }
+
+      // Create additional connections for subtasks
+      if (selectedConnections.length > 0) {
+        for (const connectionTaskId of selectedConnections) {
+          await createConnection.mutateAsync({
+            sourceTaskId: taskId,
+            targetTaskId: connectionTaskId,
+          });
+        }
+        toast({ 
+          title: "Success", 
+          description: `Created ${selectedConnections.length} additional connection(s)!` 
+        });
+      }
+
       onClose();
     } catch (error) {
       toast({
@@ -284,25 +308,92 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
                 </div>
               </div>
 
-              {!formData.isMainTask && mainTasks.length > 0 && (
+              {!formData.isMainTask && availableParentTasks.length > 0 && (
                 <div className="space-y-2">
-                  <Label htmlFor="parentTask">Link to Main Task (Optional)</Label>
+                  <Label htmlFor="parentTask">Link to Parent Task (Optional)</Label>
                   <Select
                     value={formData.parentTaskId || "none"}
                     onValueChange={(value) => setFormData({ ...formData, parentTaskId: value === "none" ? undefined : value })}
                   >
                     <SelectTrigger data-testid="select-parent-task">
-                      <SelectValue placeholder="Select a main task to link to..." />
+                      <SelectValue placeholder="Select a parent task to link to..." />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="none">No main task</SelectItem>
-                      {mainTasks.map((mainTask) => (
-                        <SelectItem key={mainTask.id} value={mainTask.id}>
-                          {mainTask.title}
-                        </SelectItem>
-                      ))}
+                      <SelectItem value="none">No parent task</SelectItem>
+                      {mainTasks.length > 0 && (
+                        <>
+                          <SelectItem value="main-tasks-header" disabled>
+                            --- Main Tasks ---
+                          </SelectItem>
+                          {mainTasks.map((mainTask) => (
+                            <SelectItem key={mainTask.id} value={mainTask.id}>
+                              {mainTask.title}
+                            </SelectItem>
+                          ))}
+                        </>
+                      )}
+                      {subtasks.length > 0 && (
+                        <>
+                          <SelectItem value="sub-tasks-header" disabled>
+                            --- Sub Tasks ---
+                          </SelectItem>
+                          {subtasks.map((subtask) => (
+                            <SelectItem key={subtask.id} value={subtask.id}>
+                              {subtask.title}
+                            </SelectItem>
+                          ))}
+                        </>
+                      )}
                     </SelectContent>
                   </Select>
+                </div>
+              )}
+
+              {/* Additional Connections for non-main tasks */}
+              {!formData.isMainTask && isEditing && (
+                <div className="space-y-2">
+                  <Label>Additional Connections</Label>
+                  <p className="text-sm text-gray-600">Connect this task to other tasks to show relationships</p>
+                  <div className="max-h-32 overflow-y-auto space-y-1">
+                    {availableParentTasks.map((otherTask) => {
+                      const isConnected = connections.some(
+                        conn => (conn.sourceTaskId === task?.id && conn.targetTaskId === otherTask.id) ||
+                               (conn.targetTaskId === task?.id && conn.sourceTaskId === otherTask.id)
+                      );
+                      
+                      return (
+                        <div key={otherTask.id} className="flex items-center space-x-2">
+                          <Switch
+                            id={`connection-${otherTask.id}`}
+                            checked={isConnected || selectedConnections.includes(otherTask.id)}
+                            onCheckedChange={(checked) => {
+                              if (isConnected) {
+                                // Remove existing connection
+                                const existingConnection = connections.find(
+                                  conn => (conn.sourceTaskId === task?.id && conn.targetTaskId === otherTask.id) ||
+                                         (conn.targetTaskId === task?.id && conn.sourceTaskId === otherTask.id)
+                                );
+                                if (existingConnection) {
+                                  // TODO: Add delete connection functionality
+                                  toast({ title: "Connection removal not implemented yet", variant: "destructive" });
+                                }
+                              } else {
+                                // Toggle new connection
+                                if (checked) {
+                                  setSelectedConnections(prev => [...prev, otherTask.id]);
+                                } else {
+                                  setSelectedConnections(prev => prev.filter(id => id !== otherTask.id));
+                                }
+                              }
+                            }}
+                          />
+                          <Label htmlFor={`connection-${otherTask.id}`} className="text-sm">
+                            {otherTask.title} {otherTask.isMainTask ? "(Main)" : "(Sub)"}
+                          </Label>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>

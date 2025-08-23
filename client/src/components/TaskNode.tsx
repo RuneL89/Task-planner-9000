@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useCallback, useRef } from "react";
 import { Handle, Position, NodeProps } from "@xyflow/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,6 +16,30 @@ export interface TaskNodeData extends Record<string, unknown> {
 const TaskNode = memo(({ data, selected }: NodeProps) => {
   const { task, onEdit } = data as TaskNodeData;
   const { isRunning, formattedTime, startTimer, stopTimer } = useTimer(task.id);
+  const pressTimer = useRef<NodeJS.Timeout | null>(null);
+  const pressStartTime = useRef<number>(0);
+
+  const handlePressStart = useCallback(() => {
+    pressStartTime.current = Date.now();
+    pressTimer.current = setTimeout(() => {
+      onEdit(task);
+    }, 500); // 500ms for long press
+  }, [onEdit, task]);
+
+  const handlePressEnd = useCallback(() => {
+    if (pressTimer.current) {
+      clearTimeout(pressTimer.current);
+      pressTimer.current = null;
+    }
+  }, []);
+
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    handlePressStart();
+  }, [handlePressStart]);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    handlePressStart();
+  }, [handlePressStart]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -118,6 +142,11 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
           selected && "ring-2 ring-blue-300"
         )}
         data-testid={`task-node-${task.id}`}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handlePressEnd}
+        onMouseLeave={handlePressEnd}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handlePressEnd}
       >
         <CardContent className="p-4">
           <div className="flex items-start justify-between mb-2">
