@@ -99,12 +99,33 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
   const deadlineInfo = formatDeadline(task.deadline);
 
-  // Calculate completion progress for main tasks
+  // Calculate completion progress for main tasks (including all descendants)
   const getCompletionProgress = () => {
     if (!task.isMainTask || !task.subtasks?.length) return null;
     
-    const completed = task.subtasks.filter(subtask => subtask.status === "completed").length;
-    const total = task.subtasks.length;
+    // Recursive function to count all descendants
+    const countAllSubtasks = (tasks: any[]): { total: number; completed: number } => {
+      let total = 0;
+      let completed = 0;
+      
+      for (const subtask of tasks) {
+        total += 1;
+        if (subtask.status === "completed") {
+          completed += 1;
+        }
+        
+        // Recursively count subtasks of this subtask
+        if (subtask.subtasks?.length > 0) {
+          const subCounts = countAllSubtasks(subtask.subtasks);
+          total += subCounts.total;
+          completed += subCounts.completed;
+        }
+      }
+      
+      return { total, completed };
+    };
+    
+    const { total, completed } = countAllSubtasks(task.subtasks);
     
     return { completed, total, percentage: Math.round((completed / total) * 100) };
   };
@@ -239,7 +260,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
             <div className="flex items-center justify-between">
               <span className="text-xs text-gray-500">
-                {task.subtasks?.length || 0} subtasks
+                {task.isMainTask && progress ? `${progress.total} subtasks` : `${task.subtasks?.length || 0} subtasks`}
               </span>
               <Button
                 variant={isRunning ? "destructive" : "default"}

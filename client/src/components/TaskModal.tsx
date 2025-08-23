@@ -99,7 +99,7 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
     const taskData: InsertTask = {
       ...formData,
       title: formData.title.trim(),
-      deadline: deadline || null,
+      deadline: deadline ? deadline.toISOString() : null,
     } as InsertTask;
 
     try {
