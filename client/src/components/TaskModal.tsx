@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/popover";
 import { CalendarIcon, Trash2 } from "lucide-react";
 import { format } from "date-fns";
-import { useCreateTask, useUpdateTask, useDeleteTask } from "@/hooks/use-tasks";
+import { useCreateTask, useUpdateTask, useDeleteTask, useTasks } from "@/hooks/use-tasks";
 import { useToast } from "@/hooks/use-toast";
 import type { TaskWithRelations, InsertTask } from "@shared/schema";
 import { cn } from "@/lib/utils";
@@ -44,7 +44,11 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
   const createTask = useCreateTask();
   const updateTask = useUpdateTask();
   const deleteTask = useDeleteTask();
+  const { data: allTasks = [] } = useTasks();
   const { toast } = useToast();
+
+  // Get available main tasks for linking
+  const mainTasks = allTasks.filter(t => t.isMainTask && t.id !== task?.id);
 
   const isEditing = !!task;
 
@@ -255,14 +259,38 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
           </div>
 
           {!parentTask && (
-            <div className="flex items-center space-x-2">
-              <Switch
-                id="isMainTask"
-                checked={formData.isMainTask || false}
-                onCheckedChange={(checked) => setFormData({ ...formData, isMainTask: checked })}
-                data-testid="switch-main-task"
-              />
-              <Label htmlFor="isMainTask">Main Task</Label>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <Switch
+                  id="isMainTask"
+                  checked={formData.isMainTask || false}
+                  onCheckedChange={(checked) => setFormData({ ...formData, isMainTask: checked, parentTaskId: checked ? undefined : formData.parentTaskId })}
+                  data-testid="switch-main-task"
+                />
+                <Label htmlFor="isMainTask">Main Task</Label>
+              </div>
+
+              {!formData.isMainTask && mainTasks.length > 0 && (
+                <div className="space-y-2">
+                  <Label htmlFor="parentTask">Link to Main Task (Optional)</Label>
+                  <Select
+                    value={formData.parentTaskId || ""}
+                    onValueChange={(value) => setFormData({ ...formData, parentTaskId: value || undefined })}
+                  >
+                    <SelectTrigger data-testid="select-parent-task">
+                      <SelectValue placeholder="Select a main task to link to..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="">No main task</SelectItem>
+                      {mainTasks.map((mainTask) => (
+                        <SelectItem key={mainTask.id} value={mainTask.id}>
+                          {mainTask.title}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
             </div>
           )}
 

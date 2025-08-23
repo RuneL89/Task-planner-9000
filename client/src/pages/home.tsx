@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import TaskCanvas from "@/components/TaskCanvas";
 import TaskModal from "@/components/TaskModal";
+import CompletionDialog from "@/components/CompletionDialog";
 import MobileControls from "@/components/MobileControls";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useTasks, useUpdateTask } from "@/hooks/use-tasks";
+import { useToast } from "@/hooks/use-toast";
 import type { TaskWithRelations } from "@shared/schema";
 
 export default function Home() {
@@ -11,7 +14,70 @@ export default function Home() {
   const [taskModalOpen, setTaskModalOpen] = useState(false);
   const [selectedTask, setSelectedTask] = useState<TaskWithRelations | null>(null);
   const [parentTask, setParentTask] = useState<TaskWithRelations | undefined>(undefined);
+  const [completionDialogOpen, setCompletionDialogOpen] = useState(false);
+  const [completedMainTask, setCompletedMainTask] = useState<TaskWithRelations | null>(null);
+  
   const isMobile = useIsMobile();
+  const { data: tasks = [] } = useTasks();
+  const updateTask = useUpdateTask();
+  const { toast } = useToast();
+
+  // Check for completed main tasks when subtasks change
+  useEffect(() => {
+    tasks.forEach((task) => {
+      if (
+        task.isMainTask &&
+        task.subtasks &&
+        task.subtasks.length > 0 &&
+        task.status !== "completed"
+      ) {
+        const allSubTasksCompleted = task.subtasks.every(
+          (subtask) => subtask.status === "completed"
+        );
+        
+        if (allSubTasksCompleted && !completionDialogOpen) {
+          setCompletedMainTask(task);
+          setCompletionDialogOpen(true);
+        }
+      }
+    });
+  }, [tasks, completionDialogOpen]);
+
+  const handleCompleteMainTask = async () => {
+    if (completedMainTask) {
+      try {
+        await updateTask.mutateAsync({
+          id: completedMainTask.id,
+          task: { status: "completed" },
+        });
+        toast({
+          title: "Success",
+          description: `Main task "${completedMainTask.title}" has been completed!`,
+        });
+        setCompletionDialogOpen(false);
+        setCompletedMainTask(null);
+      } catch (error) {
+        toast({
+          title: "Error",
+          description: "Failed to complete main task",
+          variant: "destructive",
+        });
+      }
+    }
+  };
+
+  const handleAddMoreSubTasks = () => {
+    setCompletionDialogOpen(false);
+    if (completedMainTask) {
+      handleCreateTask(completedMainTask);
+    }
+    setCompletedMainTask(null);
+  };
+
+  const handleCloseCompletionDialog = () => {
+    setCompletionDialogOpen(false);
+    setCompletedMainTask(null);
+  };
 
   const handleCreateTask = (parent?: TaskWithRelations) => {
     setSelectedTask(null);
@@ -79,6 +145,14 @@ export default function Home() {
         isOpen={taskModalOpen}
         onClose={handleCloseModal}
         parentTask={parentTask}
+      />
+
+      <CompletionDialog
+        mainTask={completedMainTask}
+        isOpen={completionDialogOpen}
+        onClose={handleCloseCompletionDialog}
+        onCompleteMainTask={handleCompleteMainTask}
+        onAddMoreSubTasks={handleAddMoreSubTasks}
       />
     </div>
   );

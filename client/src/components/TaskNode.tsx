@@ -75,6 +75,18 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
   const deadlineInfo = formatDeadline(task.deadline);
 
+  // Calculate completion progress for main tasks
+  const getCompletionProgress = () => {
+    if (!task.isMainTask || !task.subtasks?.length) return null;
+    
+    const completed = task.subtasks.filter(subtask => subtask.status === "completed").length;
+    const total = task.subtasks.length;
+    
+    return { completed, total, percentage: Math.round((completed / total) * 100) };
+  };
+
+  const progress = getCompletionProgress();
+
   return (
     <div className="relative">
       {/* Connection handles */}
@@ -176,6 +188,25 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
                 </div>
               )}
             </div>
+
+            {/* Progress bar for main tasks */}
+            {progress && (
+              <div className="mb-2">
+                <div className="flex items-center justify-between text-xs text-gray-600 mb-1">
+                  <span>Progress</span>
+                  <span data-testid={`progress-text-${task.id}`}>
+                    {progress.completed}/{progress.total} completed
+                  </span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                    style={{ width: `${progress.percentage}%` }}
+                    data-testid={`progress-bar-${task.id}`}
+                  />
+                </div>
+              </div>
+            )}
 
             <div className="flex items-center justify-between">
               <span className="text-xs text-gray-500">
