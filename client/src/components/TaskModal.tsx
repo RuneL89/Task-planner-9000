@@ -260,28 +260,42 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
 
           {!parentTask && (
             <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <Switch
-                  id="isMainTask"
-                  checked={formData.isMainTask || false}
-                  onCheckedChange={(checked) => setFormData({ ...formData, isMainTask: checked, parentTaskId: checked ? undefined : formData.parentTaskId })}
-                  data-testid="switch-main-task"
-                />
-                <Label htmlFor="isMainTask">Main Task</Label>
+              <div className="space-y-2">
+                <Label>Task Type</Label>
+                <div className="flex space-x-2">
+                  <Button
+                    type="button"
+                    variant={formData.isMainTask ? "default" : "outline"}
+                    onClick={() => setFormData({ ...formData, isMainTask: true, parentTaskId: undefined })}
+                    className="flex-1"
+                    data-testid="button-main-task"
+                  >
+                    Main Task
+                  </Button>
+                  <Button
+                    type="button"
+                    variant={!formData.isMainTask ? "default" : "outline"}
+                    onClick={() => setFormData({ ...formData, isMainTask: false })}
+                    className="flex-1"
+                    data-testid="button-sub-task"
+                  >
+                    Sub Task
+                  </Button>
+                </div>
               </div>
 
               {!formData.isMainTask && mainTasks.length > 0 && (
                 <div className="space-y-2">
                   <Label htmlFor="parentTask">Link to Main Task (Optional)</Label>
                   <Select
-                    value={formData.parentTaskId || ""}
-                    onValueChange={(value) => setFormData({ ...formData, parentTaskId: value || undefined })}
+                    value={formData.parentTaskId || "none"}
+                    onValueChange={(value) => setFormData({ ...formData, parentTaskId: value === "none" ? undefined : value })}
                   >
                     <SelectTrigger data-testid="select-parent-task">
                       <SelectValue placeholder="Select a main task to link to..." />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">No main task</SelectItem>
+                      <SelectItem value="none">No main task</SelectItem>
                       {mainTasks.map((mainTask) => (
                         <SelectItem key={mainTask.id} value={mainTask.id}>
                           {mainTask.title}
