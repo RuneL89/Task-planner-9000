@@ -148,19 +148,15 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  // Update nodes when tasks change
+  // Update nodes when tasks change or when filtered nodes change
   useEffect(() => {
-    if (tasks.length !== nodes.length || tasks.some((task, index) => task.id !== nodes[index]?.id)) {
-      setNodes(initialNodes);
-    }
-  }, [tasks, initialNodes, nodes.length]);
+    setNodes(initialNodes);
+  }, [initialNodes]);
 
   // Update edges when connections change
   useEffect(() => {
-    if (connections.length !== edges.length) {
-      setEdges(initialEdges);
-    }
-  }, [connections, initialEdges, edges.length]);
+    setEdges(initialEdges);
+  }, [initialEdges]);
 
   // Handle node position changes (auto-save)
   const onNodeDragStop = useCallback(
