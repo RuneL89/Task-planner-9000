@@ -249,7 +249,7 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
         zoomOnDoubleClick={false}
         minZoom={0.2}
         maxZoom={3}
-        defaultZoom={1}
+        defaultViewport={{ x: 0, y: 0, zoom: 1 }}
         connectOnClick={false}
         deleteKeyCode={["Backspace", "Delete"]}
         multiSelectionKeyCode={["Meta", "Ctrl"]}
