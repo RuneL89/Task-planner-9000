@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +15,8 @@ import {
   Moon,
   X,
   Menu,
+  ChevronDown,
+  ChevronRight,
 } from "lucide-react";
 import { useTasks, useTaskStats } from "@/hooks/use-tasks";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -24,18 +26,68 @@ import { cn } from "@/lib/utils";
 interface SidebarProps {
   onCreateTask: () => void;
   onEditTask: (task: TaskWithRelations) => void;
+  onFocusTask: (task: TaskWithRelations) => void;
   isOpen: boolean;
   onToggle: () => void;
 }
 
-export default function Sidebar({ onCreateTask, onEditTask, isOpen, onToggle }: SidebarProps) {
+export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen, onToggle }: SidebarProps) {
   const { data: tasks = [] } = useTasks();
   const { data: stats } = useTaskStats();
   const isMobile = useIsMobile();
 
-  const recentTasks = tasks
-    .sort((a, b) => new Date(b.updatedAt!).getTime() - new Date(a.updatedAt!).getTime())
-    .slice(0, 10);
+  const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({
+    overdue: false,
+    noDeadline: false,
+    completed: false,
+  });
+
+  // Flatten all tasks (main and subtasks) into a single array
+  const allTasks = useMemo(() => {
+    const flattenTasks = (taskList: TaskWithRelations[]): TaskWithRelations[] => {
+      let flattened: TaskWithRelations[] = [];
+      
+      for (const task of taskList) {
+        flattened.push(task);
+        if (task.subtasks?.length) {
+          flattened = flattened.concat(flattenTasks(task.subtasks));
+        }
+      }
+      
+      return flattened;
+    };
+    
+    return flattenTasks(tasks);
+  }, [tasks]);
+
+  // Categorize tasks by deadline status
+  const categorizedTasks = useMemo(() => {
+    const now = new Date();
+    
+    const overdue = allTasks
+      .filter(task => 
+        task.deadline && 
+        new Date(task.deadline) < now && 
+        task.status !== "completed"
+      )
+      .sort((a, b) => {
+        // Most overdue first (earliest deadline)
+        return new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime();
+      });
+    
+    const noDeadline = allTasks
+      .filter(task => !task.deadline && task.status !== "completed");
+    
+    const completed = allTasks
+      .filter(task => task.status === "completed")
+      .sort((a, b) => {
+        // Most recently completed first
+        if (!a.updatedAt || !b.updatedAt) return 0;
+        return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+      });
+    
+    return { overdue, noDeadline, completed };
+  }, [allTasks]);
 
   const getTaskStatusColor = (task: TaskWithRelations) => {
     if (task.deadline) {
@@ -164,49 +216,172 @@ export default function Sidebar({ onCreateTask, onEditTask, isOpen, onToggle }: 
 
         {/* Task List */}
         <div className="flex-1 overflow-hidden">
-          <div className="p-6 pb-0">
-            <h3 className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-4">
-              Recent Tasks
-            </h3>
-          </div>
-          
           <ScrollArea className="h-full px-6 pb-6">
-            <div className="space-y-3">
-              {recentTasks.length === 0 ? (
+            <div className="space-y-4">
+              {allTasks.length === 0 ? (
                 <div className="text-center py-8 text-gray-500">
                   <p className="text-sm">No tasks yet</p>
                   <p className="text-xs mt-1">Create your first task to get started</p>
                 </div>
               ) : (
-                recentTasks.map((task) => (
-                  <div
-                    key={task.id}
-                    className="flex items-center space-x-3 p-3 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
-                    onClick={() => onEditTask(task)}
-                    data-testid={`task-item-${task.id}`}
-                  >
-                    <div className={cn("w-3 h-3 rounded-full", getTaskStatusColor(task))} />
-                    <div className="flex-1 min-w-0">
-                      <div className="font-medium text-slate-800 truncate" data-testid={`task-title-${task.id}`}>
-                        {task.title}
-                      </div>
-                      <div className="text-sm text-slate-500 flex items-center space-x-2">
-                        <span>{task.subtasks?.length || 0} subtasks</span>
-                        {task.deadline && (
-                          <>
-                            <span>•</span>
-                            <span>
-                              {new Date(task.deadline).toLocaleDateString()}
-                            </span>
-                          </>
+                <>
+                  {/* Overdue Tasks */}
+                  <div>
+                    <button
+                      className="flex items-center space-x-2 w-full text-left p-2 hover:bg-slate-50 rounded-lg transition-colors"
+                      onClick={() => setCollapsedSections(prev => ({ ...prev, overdue: !prev.overdue }))}
+                      data-testid="button-toggle-overdue"
+                    >
+                      {collapsedSections.overdue ? (
+                        <ChevronRight className="w-4 h-4 text-slate-500" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 text-slate-500" />
+                      )}
+                      <h3 className="text-sm font-semibold text-red-600 uppercase tracking-wide">
+                        Overdue
+                      </h3>
+                    </button>
+                    {!collapsedSections.overdue && (
+                      <div className="ml-6 space-y-2 mt-2">
+                        {categorizedTasks.overdue.map((task) => (
+                          <div
+                            key={task.id}
+                            className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
+                            onClick={() => {
+                              onFocusTask(task);
+                              onEditTask(task);
+                            }}
+                            data-testid={`task-item-${task.id}`}
+                          >
+                            <div className={cn("w-3 h-3 rounded-full", getTaskStatusColor(task))} />
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-slate-800 truncate" data-testid={`task-title-${task.id}`}>
+                                {task.title}
+                              </div>
+                              <div className="text-sm text-slate-500 flex items-center space-x-2">
+                                <span>{task.subtasks?.length || 0} subtasks</span>
+                                {task.deadline && (
+                                  <>
+                                    <span>•</span>
+                                    <span>
+                                      {new Date(task.deadline).toLocaleDateString()}
+                                    </span>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                            <div className="flex items-center space-x-1">
+                              {getTaskIcon(task)}
+                            </div>
+                          </div>
+                        ))}
+                        {categorizedTasks.overdue.length === 0 && (
+                          <p className="text-xs text-slate-400 italic pl-2">No overdue tasks</p>
                         )}
                       </div>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      {getTaskIcon(task)}
-                    </div>
+                    )}
                   </div>
-                ))
+
+                  {/* No Deadline Tasks */}
+                  <div>
+                    <button
+                      className="flex items-center space-x-2 w-full text-left p-2 hover:bg-slate-50 rounded-lg transition-colors"
+                      onClick={() => setCollapsedSections(prev => ({ ...prev, noDeadline: !prev.noDeadline }))}
+                      data-testid="button-toggle-no-deadline"
+                    >
+                      {collapsedSections.noDeadline ? (
+                        <ChevronRight className="w-4 h-4 text-slate-500" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 text-slate-500" />
+                      )}
+                      <h3 className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
+                        No Deadline
+                      </h3>
+                    </button>
+                    {!collapsedSections.noDeadline && (
+                      <div className="ml-6 space-y-2 mt-2">
+                        {categorizedTasks.noDeadline.map((task) => (
+                          <div
+                            key={task.id}
+                            className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
+                            onClick={() => {
+                              onFocusTask(task);
+                              onEditTask(task);
+                            }}
+                            data-testid={`task-item-${task.id}`}
+                          >
+                            <div className={cn("w-3 h-3 rounded-full", getTaskStatusColor(task))} />
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-slate-800 truncate" data-testid={`task-title-${task.id}`}>
+                                {task.title}
+                              </div>
+                              <div className="text-sm text-slate-500">
+                                {task.subtasks?.length || 0} subtasks
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                        {categorizedTasks.noDeadline.length === 0 && (
+                          <p className="text-xs text-slate-400 italic pl-2">No tasks without deadlines</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Completed Tasks */}
+                  <div>
+                    <button
+                      className="flex items-center space-x-2 w-full text-left p-2 hover:bg-slate-50 rounded-lg transition-colors"
+                      onClick={() => setCollapsedSections(prev => ({ ...prev, completed: !prev.completed }))}
+                      data-testid="button-toggle-completed"
+                    >
+                      {collapsedSections.completed ? (
+                        <ChevronRight className="w-4 h-4 text-slate-500" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 text-slate-500" />
+                      )}
+                      <h3 className="text-sm font-semibold text-green-600 uppercase tracking-wide">
+                        Completed
+                      </h3>
+                    </button>
+                    {!collapsedSections.completed && (
+                      <div className="ml-6 space-y-2 mt-2">
+                        {categorizedTasks.completed.map((task) => (
+                          <div
+                            key={task.id}
+                            className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
+                            onClick={() => {
+                              onFocusTask(task);
+                              onEditTask(task);
+                            }}
+                            data-testid={`task-item-${task.id}`}
+                          >
+                            <div className={cn("w-3 h-3 rounded-full", getTaskStatusColor(task))} />
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-slate-800 truncate" data-testid={`task-title-${task.id}`}>
+                                {task.title}
+                              </div>
+                              <div className="text-sm text-slate-500 flex items-center space-x-2">
+                                <span>{task.subtasks?.length || 0} subtasks</span>
+                                {task.deadline && (
+                                  <>
+                                    <span>•</span>
+                                    <span>
+                                      {new Date(task.deadline).toLocaleDateString()}
+                                    </span>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                        {categorizedTasks.completed.length === 0 && (
+                          <p className="text-xs text-slate-400 italic pl-2">No completed tasks</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </>
               )}
             </div>
           </ScrollArea>

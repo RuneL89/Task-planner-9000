@@ -97,6 +97,13 @@ export default function Home() {
     }
   };
 
+  const handleFocusTask = (task: TaskWithRelations) => {
+    // This will be used to focus the task on the canvas
+    // For now, we'll implement this as a placeholder
+    // The actual implementation would need to communicate with the TaskCanvas
+    console.log("Focusing task:", task.title);
+  };
+
   const handleCloseModal = () => {
     setTaskModalOpen(false);
     setSelectedTask(null);
@@ -108,6 +115,7 @@ export default function Home() {
       <Sidebar
         onCreateTask={() => handleCreateTask()}
         onEditTask={handleEditTask}
+        onFocusTask={handleFocusTask}
         isOpen={sidebarOpen}
         onToggle={() => setSidebarOpen(!sidebarOpen)}
       />
