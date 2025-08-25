@@ -70,13 +70,11 @@ export const taskConnectionsRelations = relations(taskConnections, ({ one }) => 
   }),
 }));
 
-// Schemas
+// Schemas  
 export const insertTaskSchema = createInsertSchema(tasks).omit({
   id: true,
   createdAt: true,
   updatedAt: true,
-}).extend({
-  deadline: z.string().datetime().nullable().optional(),
 });
 
 export const insertTimeEntrySchema = createInsertSchema(timeEntries).omit({

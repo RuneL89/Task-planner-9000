@@ -33,6 +33,13 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
     }
   }, []);
 
+  const handleClick = useCallback((e: React.MouseEvent) => {
+    // Only trigger click if it wasn't a long press
+    if (pressTimer.current && (Date.now() - pressStartTime.current < 450)) {
+      onEdit(task);
+    }
+  }, [onEdit, task]);
+
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     handlePressStart();
   }, [handlePressStart]);
@@ -168,6 +175,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
         onMouseLeave={handlePressEnd}
         onTouchStart={handleTouchStart}
         onTouchEnd={handlePressEnd}
+        onClick={handleClick}
       >
         <CardContent className="p-4">
           <div className="flex items-start justify-between mb-2">
