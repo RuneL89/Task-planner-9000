@@ -45,14 +45,26 @@ export class DatabaseStorage implements IStorage {
       },
       orderBy: [desc(tasks.createdAt)],
     });
-    return rootTasks;
+    return rootTasks || [];
   }
 
   async getTask(id: string): Promise<TaskWithRelations | undefined> {
     const task = await db.query.tasks.findFirst({
       where: eq(tasks.id, id),
       with: {
-        subtasks: true,
+        subtasks: {
+          with: {
+            subtasks: {
+              with: {
+                subtasks: {
+                  with: {
+                    subtasks: true, // Support up to 4 levels of nesting
+                  }
+                }
+              }
+            }
+          }
+        },
         parentTask: true,
         sourceConnections: true,
         targetConnections: true,
