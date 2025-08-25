@@ -119,9 +119,9 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
     }
   };
 
-  // Get all descendants (full hierarchy) for display (first 5, ordered by deadline ascending)
-  const sortedSubtasks = useMemo(() => {
-    if (!task.isMainTask || !task.subtasks) return [];
+  // Get all descendants (full hierarchy) for display (first 5 non-completed, ordered by deadline ascending)
+  const { sortedSubtasks, subtaskCounts } = useMemo(() => {
+    if (!task.isMainTask || !task.subtasks) return { sortedSubtasks: [], subtaskCounts: { total: 0, nonCompleted: 0 } };
     
     // Recursively collect all descendants
     const collectAllDescendants = (tasks: any[]): any[] => {
@@ -140,8 +140,13 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
     };
     
     const allDescendants = collectAllDescendants(task.subtasks);
+    const total = allDescendants.length;
     
-    return allDescendants
+    // Filter out completed tasks
+    const nonCompletedDescendants = allDescendants.filter(subtask => subtask.status !== "completed");
+    const nonCompleted = nonCompletedDescendants.length;
+    
+    const sortedNonCompleted = nonCompletedDescendants
       .sort((a, b) => {
         // Sort by deadline ascending (tasks with deadlines first, null deadlines last)
         if (!a.deadline && !b.deadline) return 0;
@@ -150,6 +155,11 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
         return new Date(a.deadline).getTime() - new Date(b.deadline).getTime();
       })
       .slice(0, 5);
+    
+    return {
+      sortedSubtasks: sortedNonCompleted,
+      subtaskCounts: { total, nonCompleted }
+    };
   }, [task.isMainTask, task.subtasks]);
 
   // Calculate completion progress for main tasks (including all descendants)
@@ -324,7 +334,9 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
             <div className="flex items-center justify-between">
               <span className="text-xs text-gray-500">
-                {task.isMainTask && progress ? `${progress.total} subtasks` : `${task.subtasks?.length || 0} subtasks`}
+                {task.isMainTask && subtaskCounts.total > 0 
+                  ? `${subtaskCounts.nonCompleted} of ${subtaskCounts.total} subtasks` 
+                  : `${task.subtasks?.length || 0} subtasks`}
               </span>
               <div className="flex items-center space-x-1">
                 {/* Collapse button for main tasks with subtasks */}
@@ -356,24 +368,33 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
             </div>
 
             {/* Subtask overview for main tasks */}
-            {task.isMainTask && sortedSubtasks.length > 0 && (
+            {task.isMainTask && subtaskCounts.total > 0 && (
               <div className="mt-2 space-y-1">
-                {sortedSubtasks.map((subtask) => (
-                  <div key={subtask.id} className="flex items-center space-x-2 text-xs">
-                    <div className={cn("w-2 h-2 rounded-full flex-shrink-0", getSubtaskStatusColor(subtask.status))} />
-                    <span className="text-gray-700 truncate flex-1">
-                      {subtask.title}
-                      {subtask.deadline && (
-                        <span className="text-gray-500 ml-1">
-                          {formatDeadlineCompact(subtask.deadline)}
+                {sortedSubtasks.length > 0 && (
+                  <>
+                    {sortedSubtasks.map((subtask) => (
+                      <div key={subtask.id} className="flex items-center space-x-2 text-xs">
+                        <div className={cn("w-2 h-2 rounded-full flex-shrink-0", getSubtaskStatusColor(subtask.status))} />
+                        <span className="text-gray-700 truncate flex-1">
+                          {subtask.title}
+                          {subtask.deadline && (
+                            <span className="text-gray-500 ml-1">
+                              {formatDeadlineCompact(subtask.deadline)}
+                            </span>
+                          )}
                         </span>
-                      )}
-                    </span>
-                  </div>
-                ))}
-                {progress && progress.total > 5 && (
-                  <div className="text-xs text-gray-400 italic">
-                    +{progress.total - 5} more subtasks...
+                      </div>
+                    ))}
+                    {subtaskCounts.nonCompleted > 5 && (
+                      <div className="text-xs text-gray-400 italic">
+                        +{subtaskCounts.nonCompleted - 5} more subtasks...
+                      </div>
+                    )}
+                  </>
+                )}
+                {sortedSubtasks.length === 0 && subtaskCounts.total > 0 && (
+                  <div className="text-xs text-gray-500 italic">
+                    All subtasks completed
                   </div>
                 )}
               </div>
