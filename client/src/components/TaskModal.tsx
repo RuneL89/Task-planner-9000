@@ -99,7 +99,7 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
     const taskData: InsertTask = {
       ...formData,
       title: formData.title.trim(),
-      deadline: deadline ? deadline.toISOString() : undefined,
+      deadline: deadline ? deadline.toISOString().split('T')[0] : undefined,
     } as InsertTask;
 
     try {
