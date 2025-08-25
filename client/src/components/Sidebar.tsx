@@ -66,12 +66,13 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
 
   // Categorize tasks by deadline status
   const categorizedTasks = useMemo(() => {
-    const now = new Date();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set to start of day for date-only comparison
     
     const overdue = allTasks
       .filter(task => 
         task.deadline && 
-        new Date(task.deadline) < now && 
+        new Date(task.deadline) < today && 
         task.status !== "completed"
       )
       .sort((a, b) => {
@@ -82,7 +83,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
     const upcoming = allTasks
       .filter(task => 
         task.deadline && 
-        new Date(task.deadline) >= now && 
+        new Date(task.deadline) >= today && 
         task.status !== "completed"
       )
       .sort((a, b) => {
@@ -106,9 +107,10 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
 
   const getTaskStatusColor = (task: TaskWithRelations) => {
     if (task.deadline) {
-      const now = new Date();
+      const today = new Date();
+      today.setHours(0, 0, 0, 0); // Compare dates only, not timestamps
       const deadline = new Date(task.deadline);
-      if (deadline < now && task.status !== "completed") {
+      if (deadline < today && task.status !== "completed") {
         return "bg-red-500";
       }
     }

@@ -31,9 +31,18 @@ export default function Home() {
         task.subtasks.length > 0 &&
         task.status !== "completed"
       ) {
-        const allSubTasksCompleted = task.subtasks.every(
-          (subtask) => subtask.status === "completed"
-        );
+        // Recursively check all descendants in the full hierarchy
+        const checkAllDescendantsCompleted = (tasks: TaskWithRelations[]): boolean => {
+          return tasks.every(subtask => {
+            if (subtask.status !== "completed") return false;
+            if (subtask.subtasks?.length > 0) {
+              return checkAllDescendantsCompleted(subtask.subtasks);
+            }
+            return true;
+          });
+        };
+        
+        const allSubTasksCompleted = checkAllDescendantsCompleted(task.subtasks);
         
         if (allSubTasksCompleted && !completionDialogOpen) {
           setCompletedMainTask(task);
