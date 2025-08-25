@@ -64,7 +64,6 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
         description: task.description || "",
         status: task.status,
         priority: task.priority,
-        estimatedHours: task.estimatedHours || undefined,
         isMainTask: task.isMainTask,
         parentTaskId: task.parentTaskId || undefined,
       });
@@ -75,7 +74,6 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
         description: "",
         status: "pending",
         priority: "medium",
-        estimatedHours: undefined,
         isMainTask: !parentTask,
         parentTaskId: parentTask?.id,
       });
@@ -266,23 +264,6 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
               </Popover>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="estimatedHours">Estimated Hours</Label>
-              <Input
-                id="estimatedHours"
-                type="number"
-                value={formData.estimatedHours || ""}
-                onChange={(e) => 
-                  setFormData({ 
-                    ...formData, 
-                    estimatedHours: e.target.value ? parseInt(e.target.value) : undefined 
-                  })
-                }
-                placeholder="0"
-                min="0"
-                data-testid="input-estimated-hours"
-              />
-            </div>
           </div>
 
           {!parentTask && (

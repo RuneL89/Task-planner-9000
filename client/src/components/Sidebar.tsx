@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import { useTasks, useTaskStats } from "@/hooks/use-tasks";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useTimer } from "@/hooks/use-timer";
 import type { TaskWithRelations } from "@shared/schema";
 import { cn } from "@/lib/utils";
 
@@ -75,14 +74,6 @@ export default function Sidebar({ onCreateTask, onEditTask, isOpen, onToggle }: 
     return null;
   };
 
-  const formatTimeSpent = (minutes: number) => {
-    const hours = Math.floor(minutes / 60);
-    const mins = minutes % 60;
-    if (hours > 0) {
-      return `${hours}h ${mins}m`;
-    }
-    return `${mins}m`;
-  };
 
   return (
     <>
@@ -213,9 +204,6 @@ export default function Sidebar({ onCreateTask, onEditTask, isOpen, onToggle }: 
                     </div>
                     <div className="flex items-center space-x-1">
                       {getTaskIcon(task)}
-                      <div className="text-xs text-slate-500">
-                        {formatTimeSpent(task.timeSpent || 0)}
-                      </div>
                     </div>
                   </div>
                 ))

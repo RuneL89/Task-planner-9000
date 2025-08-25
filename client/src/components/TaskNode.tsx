@@ -3,9 +3,8 @@ import { Handle, Position, NodeProps } from "@xyflow/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Play, Square, ChevronUp, ChevronDown } from "lucide-react";
+import { Calendar, ChevronUp, ChevronDown } from "lucide-react";
 import type { TaskWithRelations } from "@shared/schema";
-import { useTimer } from "@/hooks/use-timer";
 import { cn } from "@/lib/utils";
 
 export interface TaskNodeData extends Record<string, unknown> {
@@ -16,7 +15,6 @@ export interface TaskNodeData extends Record<string, unknown> {
 
 const TaskNode = memo(({ data, selected }: NodeProps) => {
   const { task, onEdit, onToggleCollapse } = data as TaskNodeData;
-  const { isRunning, formattedTime, startTimer, stopTimer } = useTimer(task.id);
   const pressTimer = useRef<NodeJS.Timeout | null>(null);
   const pressStartTime = useRef<number>(0);
 
@@ -244,20 +242,12 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
               )}
             </div>
 
-            <div className="flex items-center justify-between text-xs text-gray-500">
-              <div className="flex items-center space-x-1">
-                <Clock className="w-3 h-3" />
-                <span data-testid={`text-time-spent-${task.id}`}>
-                  {isRunning ? formattedTime : formatTimeSpent(task.timeSpent || 0)}
-                </span>
+            {deadlineInfo && (
+              <div className={cn("flex items-center space-x-1 text-xs text-gray-500", deadlineInfo.color)}>
+                <Calendar className="w-3 h-3" />
+                <span data-testid={`text-deadline-${task.id}`}>{deadlineInfo.text}</span>
               </div>
-              {deadlineInfo && (
-                <div className={cn("flex items-center space-x-1", deadlineInfo.color)}>
-                  <Calendar className="w-3 h-3" />
-                  <span data-testid={`text-deadline-${task.id}`}>{deadlineInfo.text}</span>
-                </div>
-              )}
-            </div>
+            )}
 
             {/* Progress bar for main tasks */}
             {progress && (
@@ -308,18 +298,6 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
                     )}
                   </Button>
                 )}
-                <Button
-                  variant={isRunning ? "destructive" : "default"}
-                  size="sm"
-                  className="h-6 w-6 p-0 rounded-full"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    isRunning ? stopTimer() : startTimer();
-                  }}
-                  data-testid={`button-timer-${task.id}`}
-                >
-                  {isRunning ? <Square className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-                </Button>
               </div>
             </div>
           </div>

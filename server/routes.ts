@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertTaskSchema, insertTimeEntrySchema, insertTaskConnectionSchema } from "@shared/schema";
+import { insertTaskSchema, insertTaskConnectionSchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -62,53 +62,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Time entry routes
-  app.get("/api/tasks/:taskId/time-entries", async (req, res) => {
-    try {
-      const timeEntries = await storage.getTimeEntries(req.params.taskId);
-      res.json(timeEntries);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch time entries" });
-    }
-  });
-
-  app.post("/api/tasks/:taskId/time-entries", async (req, res) => {
-    try {
-      const timeEntryData = insertTimeEntrySchema.parse({
-        ...req.body,
-        taskId: req.params.taskId,
-      });
-      const timeEntry = await storage.createTimeEntry(timeEntryData);
-      res.status(201).json(timeEntry);
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        return res.status(400).json({ message: "Invalid time entry data", errors: error.errors });
-      }
-      res.status(500).json({ message: "Failed to create time entry" });
-    }
-  });
-
-  app.put("/api/time-entries/:id", async (req, res) => {
-    try {
-      const timeEntryData = insertTimeEntrySchema.partial().parse(req.body);
-      const timeEntry = await storage.updateTimeEntry(req.params.id, timeEntryData);
-      res.json(timeEntry);
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        return res.status(400).json({ message: "Invalid time entry data", errors: error.errors });
-      }
-      res.status(500).json({ message: "Failed to update time entry" });
-    }
-  });
-
-  app.get("/api/tasks/:taskId/active-timer", async (req, res) => {
-    try {
-      const activeEntry = await storage.getActiveTimeEntry(req.params.taskId);
-      res.json(activeEntry || null);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch active timer" });
-    }
-  });
 
   // Task connection routes
   app.get("/api/task-connections", async (_req, res) => {
