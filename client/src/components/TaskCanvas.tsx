@@ -245,8 +245,11 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
         panOnDrag={!isMobile}
         panOnScroll={!isMobile}
         zoomOnScroll={!isMobile}
-        zoomOnPinch={isMobile}
+        zoomOnPinch={true}
         zoomOnDoubleClick={false}
+        minZoom={0.2}
+        maxZoom={3}
+        defaultZoom={1}
         connectOnClick={false}
         deleteKeyCode={["Backspace", "Delete"]}
         multiSelectionKeyCode={["Meta", "Ctrl"]}
