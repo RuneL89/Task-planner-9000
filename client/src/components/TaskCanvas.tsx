@@ -151,7 +151,7 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
   // Update nodes when tasks change or when filtered nodes change
   useEffect(() => {
     setNodes(initialNodes);
-  }, [initialNodes, setNodes]);
+  }, [initialNodes]);
 
   // Update edges when connections change
   useEffect(() => {
