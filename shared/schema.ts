@@ -1,5 +1,5 @@
 import { sql, relations } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp, integer, boolean, real } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, timestamp, date, integer, boolean, real } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -9,7 +9,7 @@ export const tasks = pgTable("tasks", {
   description: text("description"),
   status: text("status").notNull().default("pending"), // pending, in_progress, completed, on_hold
   priority: text("priority").notNull().default("medium"), // low, medium, high
-  deadline: timestamp("deadline"),
+  deadline: date("deadline"),
   estimatedHours: integer("estimated_hours"),
   timeSpent: integer("time_spent").default(0), // in minutes
   isMainTask: boolean("is_main_task").default(false),
@@ -76,7 +76,7 @@ export const insertTaskSchema = createInsertSchema(tasks).omit({
   createdAt: true,
   updatedAt: true,
 }).extend({
-  deadline: z.union([z.string().datetime(), z.null()]).optional(),
+  deadline: z.union([z.string().date(), z.null()]).optional(),
 });
 
 export const insertTimeEntrySchema = createInsertSchema(timeEntries).omit({
