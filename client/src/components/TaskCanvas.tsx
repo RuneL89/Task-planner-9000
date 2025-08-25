@@ -148,10 +148,14 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  // Update nodes when tasks change or when filtered nodes change
+  // Update nodes only when tasks data actually changes (not on every memoization)
+  const tasksRef = useRef(tasks);
   useEffect(() => {
-    setNodes(initialNodes);
-  }, [initialNodes]);
+    if (tasksRef.current !== tasks) {
+      tasksRef.current = tasks;
+      setNodes(initialNodes);
+    }
+  }, [tasks, initialNodes]);
 
   // Update edges when connections change
   useEffect(() => {
