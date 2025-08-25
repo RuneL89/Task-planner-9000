@@ -119,11 +119,29 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
     }
   };
 
-  // Get sorted subtasks for display (first 5, ordered by deadline ascending)
+  // Get all descendants (full hierarchy) for display (first 5, ordered by deadline ascending)
   const sortedSubtasks = useMemo(() => {
     if (!task.isMainTask || !task.subtasks) return [];
     
-    return [...task.subtasks]
+    // Recursively collect all descendants
+    const collectAllDescendants = (tasks: any[]): any[] => {
+      let allDescendants: any[] = [];
+      
+      for (const subtask of tasks) {
+        allDescendants.push(subtask);
+        
+        // Recursively add subtasks of this subtask
+        if (subtask.subtasks?.length > 0) {
+          allDescendants = allDescendants.concat(collectAllDescendants(subtask.subtasks));
+        }
+      }
+      
+      return allDescendants;
+    };
+    
+    const allDescendants = collectAllDescendants(task.subtasks);
+    
+    return allDescendants
       .sort((a, b) => {
         // Sort by deadline ascending (tasks with deadlines first, null deadlines last)
         if (!a.deadline && !b.deadline) return 0;
@@ -353,9 +371,9 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
                     </span>
                   </div>
                 ))}
-                {task.subtasks && task.subtasks.length > 5 && (
+                {progress && progress.total > 5 && (
                   <div className="text-xs text-gray-400 italic">
-                    +{task.subtasks.length - 5} more subtasks...
+                    +{progress.total - 5} more subtasks...
                   </div>
                 )}
               </div>
