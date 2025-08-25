@@ -2,7 +2,27 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { TaskWithRelations, InsertTask, TaskConnection, InsertTaskConnection } from "@shared/schema";
 
-// Since server now returns properly nested tasks, we don't need to rebuild hierarchy
+// Flatten nested tasks for components that need all tasks as separate entities (like TaskCanvas)
+function flattenTasksForCanvas(tasks: TaskWithRelations[]): TaskWithRelations[] {
+  const flattenedTasksMap = new Map<string, TaskWithRelations>();
+  
+  const flattenTasks = (taskList: TaskWithRelations[]): void => {
+    for (const task of taskList) {
+      if (!flattenedTasksMap.has(task.id)) {
+        flattenedTasksMap.set(task.id, { ...task, subtasks: task.subtasks || [] });
+      }
+      
+      if (task.subtasks?.length) {
+        flattenTasks(task.subtasks);
+      }
+    }
+  };
+  
+  flattenTasks(tasks);
+  return Array.from(flattenedTasksMap.values());
+}
+
+// Keep nested structure intact for components that can handle hierarchy
 function ensureTasksHaveSubtasks(tasks: TaskWithRelations[]): TaskWithRelations[] {
   return tasks.map(task => ({
     ...task,
@@ -10,7 +30,16 @@ function ensureTasksHaveSubtasks(tasks: TaskWithRelations[]): TaskWithRelations[
   }));
 }
 
+// For components that need flat array of all tasks (TaskCanvas)
 export function useTasks() {
+  return useQuery<TaskWithRelations[]>({
+    queryKey: ["/api/tasks"],
+    select: (data) => flattenTasksForCanvas(data),
+  });
+}
+
+// For components that can work with nested structure (Sidebar)  
+export function useTasksNested() {
   return useQuery<TaskWithRelations[]>({
     queryKey: ["/api/tasks"],
     select: (data) => ensureTasksHaveSubtasks(data),

@@ -18,7 +18,7 @@ import {
   ChevronDown,
   ChevronRight,
 } from "lucide-react";
-import { useTasks, useTaskStats } from "@/hooks/use-tasks";
+import { useTasksNested, useTaskStats } from "@/hooks/use-tasks";
 import { useIsMobile } from "@/hooks/use-mobile";
 import type { TaskWithRelations } from "@shared/schema";
 import { cn } from "@/lib/utils";
@@ -32,7 +32,7 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen, onToggle }: SidebarProps) {
-  const { data: tasks = [] } = useTasks();
+  const { data: tasks = [] } = useTasksNested();
   const { data: stats } = useTaskStats();
   const isMobile = useIsMobile();
 
