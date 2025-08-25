@@ -183,7 +183,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
                 <ChartGantt className="text-white text-lg" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-slate-800">TaskWeb</h1>
+                <h1 className="text-xl font-bold text-slate-800">Task Planner</h1>
                 <p className="text-sm text-slate-500">Visual Task Management</p>
               </div>
             </div>
@@ -459,20 +459,6 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
           </ScrollArea>
         </div>
 
-        {/* Footer Controls */}
-        <div className="p-6 border-t border-slate-200">
-          <div className="flex items-center justify-between">
-            <Button variant="ghost" size="sm" data-testid="button-settings">
-              <Settings className="w-4 h-4" />
-            </Button>
-            <Button variant="ghost" size="sm" data-testid="button-export">
-              <Download className="w-4 h-4" />
-            </Button>
-            <Button variant="ghost" size="sm" data-testid="button-dark-mode">
-              <Moon className="w-4 h-4" />
-            </Button>
-          </div>
-        </div>
       </div>
     </>
   );
