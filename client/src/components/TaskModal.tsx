@@ -134,7 +134,10 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
         });
       }
 
-      onClose();
+      // Add a small delay to allow cache invalidation to complete
+      setTimeout(() => {
+        onClose();
+      }, 100);
     } catch (error) {
       toast({
         title: "Error",
