@@ -59,13 +59,24 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
 
   // Helper function to check if a task should be hidden (is collapsed subtask)
   const isTaskHidden = useCallback((task: TaskWithRelations): boolean => {
-    // Find the main task for this task
-    const mainTask = tasks.find(t => t.isMainTask && t.isCollapsed && (
-      (t as TaskWithRelations).subtasks?.some(st => st.id === task.id) ||
-      (t as TaskWithRelations).subtasks?.some(st => (st as TaskWithRelations).subtasks?.some((sst: TaskWithRelations) => sst.id === task.id))
-    ));
+    // Main tasks are NEVER hidden (they should always be visible)
+    if (task.isMainTask) return false;
     
-    return !!mainTask;
+    // For non-main tasks, walk up the parent chain to check if any ancestor is a collapsed main task
+    let currentTask = task;
+    while (currentTask.parentTaskId) {
+      const parent = tasks.find(t => t.id === currentTask.parentTaskId);
+      if (!parent) break;
+      
+      // If we find a collapsed main task as an ancestor, hide this task
+      if (parent.isMainTask && parent.isCollapsed) {
+        return true;
+      }
+      
+      currentTask = parent;
+    }
+    
+    return false;
   }, [tasks]);
 
   // Convert tasks to nodes
