@@ -173,14 +173,27 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
 
   // Create hierarchical tree structure for parent task selection
   const buildTaskTree = useCallback(() => {
-    const taskMap = new Map(availableParentTasks.map(t => [t.id, { ...t, children: [] as any[] }]));
+    const taskMap = new Map(availableParentTasks.map(t => [t.id, { 
+      id: t.id, 
+      title: t.title, 
+      children: [] as any[] 
+    }]));
     const rootTasks: any[] = [];
 
+    // First pass: identify root tasks (main tasks or orphaned tasks)
+    availableParentTasks.forEach(task => {
+      const taskNode = taskMap.get(task.id)!;
+      if (!task.parentTaskId || !taskMap.has(task.parentTaskId)) {
+        rootTasks.push(taskNode);
+      }
+    });
+
+    // Second pass: build parent-child relationships
     availableParentTasks.forEach(task => {
       if (task.parentTaskId && taskMap.has(task.parentTaskId)) {
-        taskMap.get(task.parentTaskId)!.children.push(taskMap.get(task.id));
-      } else {
-        rootTasks.push(taskMap.get(task.id));
+        const parent = taskMap.get(task.parentTaskId)!;
+        const child = taskMap.get(task.id)!;
+        parent.children.push(child);
       }
     });
 
