@@ -76,7 +76,7 @@ export const insertTaskSchema = createInsertSchema(tasks).omit({
   createdAt: true,
   updatedAt: true,
 }).extend({
-  deadline: z.string().datetime().nullable().optional(),
+  deadline: z.union([z.string().datetime(), z.null()]).optional(),
 });
 
 export const insertTimeEntrySchema = createInsertSchema(timeEntries).omit({

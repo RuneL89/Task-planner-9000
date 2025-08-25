@@ -134,26 +134,41 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
   return (
     <div className="relative">
-      {/* Connection handles */}
+      {/* Multiple connection handles for flexible visualization */}
+      {/* Top handle */}
       <Handle
         type="target"
+        id="top"
         position={Position.Top}
-        className="w-3 h-3 bg-blue-500 border-2 border-white"
+        className="w-4 h-4 bg-gray-400 hover:bg-gray-600 border-2 border-white transition-colors"
+        style={{ left: '50%', transform: 'translateX(-50%)' }}
       />
+      
+      {/* Bottom handle */}
       <Handle
         type="source"
+        id="bottom"
         position={Position.Bottom}
-        className="w-3 h-3 bg-blue-500 border-2 border-white"
+        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        style={{ left: '50%', transform: 'translateX(-50%)' }}
       />
+      
+      {/* Left handle */}
       <Handle
         type="source"
+        id="left"
         position={Position.Left}
-        className="w-3 h-3 bg-blue-500 border-2 border-white"
+        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        style={{ top: '50%', transform: 'translateY(-50%)' }}
       />
+      
+      {/* Right handle */}
       <Handle
         type="source"
+        id="right"
         position={Position.Right}
-        className="w-3 h-3 bg-blue-500 border-2 border-white"
+        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        style={{ top: '50%', transform: 'translateY(-50%)' }}
       />
 
       <Card
@@ -163,6 +178,10 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
           selected && "ring-2 ring-blue-300"
         )}
         data-testid={`task-node-${task.id}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          onEdit(task);
+        }}
         onMouseDown={handleMouseDown}
         onMouseUp={handlePressEnd}
         onMouseLeave={handlePressEnd}
