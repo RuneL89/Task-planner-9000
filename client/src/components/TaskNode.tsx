@@ -3,7 +3,7 @@ import { Handle, Position, NodeProps } from "@xyflow/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Play, Square } from "lucide-react";
+import { Calendar, Clock, Play, Square, ChevronUp, ChevronDown } from "lucide-react";
 import type { TaskWithRelations } from "@shared/schema";
 import { useTimer } from "@/hooks/use-timer";
 import { cn } from "@/lib/utils";
@@ -11,10 +11,11 @@ import { cn } from "@/lib/utils";
 export interface TaskNodeData extends Record<string, unknown> {
   task: TaskWithRelations;
   onEdit: (task: TaskWithRelations) => void;
+  onToggleCollapse?: (taskId: string, isCollapsed: boolean) => void;
 }
 
 const TaskNode = memo(({ data, selected }: NodeProps) => {
-  const { task, onEdit } = data as TaskNodeData;
+  const { task, onEdit, onToggleCollapse } = data as TaskNodeData;
   const { isRunning, formattedTime, startTimer, stopTimer } = useTimer(task.id);
   const pressTimer = useRef<NodeJS.Timeout | null>(null);
   const pressStartTime = useRef<number>(0);
@@ -78,7 +79,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
     return `${mins}m`;
   };
 
-  const formatDeadline = (deadline: Date | null) => {
+  const formatDeadline = (deadline: string | null) => {
     if (!deadline) return null;
     
     const now = new Date();
@@ -281,18 +282,45 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
               <span className="text-xs text-gray-500">
                 {task.isMainTask && progress ? `${progress.total} subtasks` : `${task.subtasks?.length || 0} subtasks`}
               </span>
-              <Button
-                variant={isRunning ? "destructive" : "default"}
-                size="sm"
-                className="h-6 w-6 p-0 rounded-full"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  isRunning ? stopTimer() : startTimer();
-                }}
-                data-testid={`button-timer-${task.id}`}
-              >
-                {isRunning ? <Square className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-              </Button>
+              <div className="flex items-center space-x-1">
+                {/* Collapse button for main tasks with subtasks */}
+                {task.isMainTask && (progress?.total || 0) > 0 && onToggleCollapse && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-6 px-2 text-xs"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleCollapse(task.id, !task.isCollapsed);
+                    }}
+                    data-testid={`button-collapse-${task.id}`}
+                  >
+                    {task.isCollapsed ? (
+                      <>
+                        <ChevronDown className="w-3 h-3 mr-1" />
+                        Show
+                      </>
+                    ) : (
+                      <>
+                        <ChevronUp className="w-3 h-3 mr-1" />
+                        Hide
+                      </>
+                    )}
+                  </Button>
+                )}
+                <Button
+                  variant={isRunning ? "destructive" : "default"}
+                  size="sm"
+                  className="h-6 w-6 p-0 rounded-full"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    isRunning ? stopTimer() : startTimer();
+                  }}
+                  data-testid={`button-timer-${task.id}`}
+                >
+                  {isRunning ? <Square className="w-3 h-3" /> : <Play className="w-3 h-3" />}
+                </Button>
+              </div>
             </div>
           </div>
         </CardContent>

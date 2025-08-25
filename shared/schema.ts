@@ -13,6 +13,7 @@ export const tasks = pgTable("tasks", {
   estimatedHours: integer("estimated_hours"),
   timeSpent: integer("time_spent").default(0), // in minutes
   isMainTask: boolean("is_main_task").default(false),
+  isCollapsed: boolean("is_collapsed").default(false),
   parentTaskId: varchar("parent_task_id"),
   positionX: real("position_x").default(0),
   positionY: real("position_y").default(0),

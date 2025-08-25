@@ -109,6 +109,23 @@ export function useCreateTaskConnection() {
   });
 }
 
+export function useToggleTaskCollapse() {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: async ({ id, isCollapsed }: { id: string; isCollapsed: boolean }) => {
+      const response = await apiRequest("PUT", `/api/tasks/${id}`, { isCollapsed });
+      return response.json();
+    },
+    onSuccess: (_, { id }) => {
+      // Invalidate the main tasks list
+      queryClient.invalidateQueries({ queryKey: ["/api/tasks"] });
+      // Invalidate the specific task query
+      queryClient.invalidateQueries({ queryKey: ["/api/tasks", id] });
+    },
+  });
+}
+
 export function useTaskStats() {
   return useQuery<{ totalTasks: number; completedTasks: number; totalTimeSpent: number }>({
     queryKey: ["/api/stats"],

@@ -17,7 +17,7 @@ import "@xyflow/react/dist/style.css";
 import { Button } from "@/components/ui/button";
 import { Plus, ZoomIn, ZoomOut, Maximize2 } from "lucide-react";
 import TaskNode, { TaskNodeData } from "./TaskNode";
-import { useTasks, useTaskConnections, useCreateTaskConnection, useUpdateTask } from "@/hooks/use-tasks";
+import { useTasks, useTaskConnections, useCreateTaskConnection, useUpdateTask, useToggleTaskCollapse } from "@/hooks/use-tasks";
 import { useIsMobile } from "@/hooks/use-mobile";
 import type { TaskWithRelations, InsertTaskConnection } from "@shared/schema";
 
@@ -35,12 +35,45 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
   const { data: connections = [] } = useTaskConnections();
   const createConnection = useCreateTaskConnection();
   const updateTask = useUpdateTask();
+  const toggleCollapse = useToggleTaskCollapse();
   const isMobile = useIsMobile();
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
 
+  // Helper function to get all collapsed subtasks of a main task
+  const getCollapsedSubtasks = useCallback((mainTask: TaskWithRelations): TaskWithRelations[] => {
+    if (!mainTask.isCollapsed || !mainTask.subtasks?.length) return [];
+    
+    const collapsed: TaskWithRelations[] = [];
+    const collectSubtasks = (subtasks: TaskWithRelations[]) => {
+      subtasks.forEach(subtask => {
+        collapsed.push(subtask);
+        if (subtask.subtasks?.length) {
+          collectSubtasks(subtask.subtasks);
+        }
+      });
+    };
+    
+    collectSubtasks(mainTask.subtasks);
+    return collapsed;
+  }, []);
+
+  // Helper function to check if a task should be hidden (is collapsed subtask)
+  const isTaskHidden = useCallback((task: TaskWithRelations): boolean => {
+    // Find the main task for this task
+    const mainTask = tasks.find(t => t.isMainTask && t.isCollapsed && (
+      (t as TaskWithRelations).subtasks?.some(st => st.id === task.id) ||
+      (t as TaskWithRelations).subtasks?.some(st => (st as TaskWithRelations).subtasks?.some((sst: TaskWithRelations) => sst.id === task.id))
+    ));
+    
+    return !!mainTask;
+  }, [tasks]);
+
   // Convert tasks to nodes
   const initialNodes: Node<TaskNodeData>[] = useMemo(() => {
-    return tasks.map((task, index) => {
+    // Filter out collapsed subtasks
+    const visibleTasks = tasks.filter(task => !isTaskHidden(task));
+    
+    return visibleTasks.map((task, index) => {
       // Position main tasks in the center, subtasks around them
       let x = task.positionX || 0;
       let y = task.positionY || 0;
@@ -66,10 +99,13 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
         data: {
           task,
           onEdit: onEditTask,
+          onToggleCollapse: (taskId: string, isCollapsed: boolean) => {
+            toggleCollapse.mutate({ id: taskId, isCollapsed });
+          },
         },
       };
     });
-  }, [tasks, onEditTask]);
+  }, [tasks, onEditTask, isTaskHidden, toggleCollapse]);
 
   // Convert connections to edges
   const initialEdges: Edge[] = useMemo(() => {
@@ -120,6 +156,7 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
     (_event: any, node: Node) => {
       const task = tasks.find((t) => t.id === node.id);
       if (task) {
+        // Update the dragged task position
         updateTask.mutate({
           id: task.id,
           task: {
@@ -127,9 +164,27 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
             positionY: node.position.y,
           },
         });
+
+        // If this is a main task with collapsed subtasks, move them too
+        if (task.isMainTask && task.isCollapsed) {
+          const collapsedSubtasks = getCollapsedSubtasks(task);
+          collapsedSubtasks.forEach((subtask, index) => {
+            // Position collapsed subtasks behind the main task (slightly offset)
+            const offsetX = node.position.x - 5 - (index * 2);
+            const offsetY = node.position.y + 5 + (index * 2);
+            
+            updateTask.mutate({
+              id: subtask.id,
+              task: {
+                positionX: offsetX,
+                positionY: offsetY,
+              },
+            });
+          });
+        }
       }
     },
-    [tasks, updateTask]
+    [tasks, updateTask, getCollapsedSubtasks]
   );
 
   // Handle new connections
