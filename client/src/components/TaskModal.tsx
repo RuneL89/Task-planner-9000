@@ -171,8 +171,23 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
   const mainTasks = availableParentTasks.filter(t => t.isMainTask);
   const subtasks = availableParentTasks.filter(t => !t.isMainTask);
 
+  // DEBUG: Log all tasks data
+  console.log("📋 DEBUG - allTasks:", allTasks.map(t => ({
+    id: t.id.slice(-6),
+    title: t.title,
+    parentTaskId: t.parentTaskId?.slice(-6) || null,
+    isMainTask: t.isMainTask
+  })));
+
   // Create hierarchical tree structure for parent task selection
   const buildTaskTree = useCallback(() => {
+    // DEBUG: Log the data we're working with
+    console.log("🔍 DEBUG - availableParentTasks:", availableParentTasks.map(t => ({
+      id: t.id.slice(-6),
+      title: t.title,
+      parentTaskId: t.parentTaskId?.slice(-6) || null
+    })));
+
     const taskMap = new Map(availableParentTasks.map(t => [t.id, { 
       id: t.id, 
       title: t.title, 
@@ -196,6 +211,18 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
         parent.children.push(child);
       }
     });
+
+    // DEBUG: Log the built tree
+    console.log("🌳 DEBUG - Built tree:", JSON.stringify(rootTasks.map(root => ({
+      title: root.title,
+      children: root.children.map(child => ({
+        title: child.title,
+        children: child.children.map(grandchild => ({
+          title: grandchild.title,
+          children: grandchild.children
+        }))
+      }))
+    })), null, 2));
 
     return rootTasks;
   }, [availableParentTasks]);
