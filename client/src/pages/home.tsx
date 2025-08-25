@@ -16,41 +16,68 @@ export default function Home() {
   const [parentTask, setParentTask] = useState<TaskWithRelations | undefined>(undefined);
   const [completionDialogOpen, setCompletionDialogOpen] = useState(false);
   const [completedMainTask, setCompletedMainTask] = useState<TaskWithRelations | null>(null);
+  const [dismissedCompletionTasks, setDismissedCompletionTasks] = useState<Set<string>>(new Set());
   
   const isMobile = useIsMobile();
   const { data: tasks = [] } = useTasks();
   const updateTask = useUpdateTask();
   const { toast } = useToast();
 
-  // Check for completed main tasks when subtasks change
+  // Check for completed main tasks and auto-update main task status
   useEffect(() => {
     tasks.forEach((task) => {
       if (
         task.isMainTask &&
         task.subtasks &&
-        task.subtasks.length > 0 &&
-        task.status !== "completed"
+        task.subtasks.length > 0
       ) {
         // Recursively check all descendants in the full hierarchy
         const checkAllDescendantsCompleted = (tasks: TaskWithRelations[]): boolean => {
           return tasks.every(subtask => {
             if (subtask.status !== "completed") return false;
-            if (subtask.subtasks?.length > 0) {
+            if (subtask.subtasks && subtask.subtasks.length > 0) {
               return checkAllDescendantsCompleted(subtask.subtasks);
             }
             return true;
           });
         };
         
-        const allSubTasksCompleted = checkAllDescendantsCompleted(task.subtasks);
+        // Check if any descendants are not completed
+        const hasIncompleteDescendants = (tasks: TaskWithRelations[]): boolean => {
+          return tasks.some(subtask => {
+            if (subtask.status !== "completed") return true;
+            if (subtask.subtasks && subtask.subtasks.length > 0) {
+              return hasIncompleteDescendants(subtask.subtasks);
+            }
+            return false;
+          });
+        };
         
-        if (allSubTasksCompleted && !completionDialogOpen) {
+        const allSubTasksCompleted = checkAllDescendantsCompleted(task.subtasks);
+        const hasIncompleteSubtasks = hasIncompleteDescendants(task.subtasks);
+        
+        // Auto-complete main task prompt when all subtasks are done
+        if (allSubTasksCompleted && task.status !== "completed" && !completionDialogOpen && !dismissedCompletionTasks.has(task.id)) {
           setCompletedMainTask(task);
           setCompletionDialogOpen(true);
         }
+        
+        // Auto-set main task to "in_progress" when subtasks become incomplete
+        if (hasIncompleteSubtasks && task.status === "completed") {
+          updateTask.mutate({
+            id: task.id,
+            task: { status: "in_progress" },
+          });
+          // Clear from dismissed list when subtasks become incomplete again
+          setDismissedCompletionTasks(prev => {
+            const newSet = new Set(prev);
+            newSet.delete(task.id);
+            return newSet;
+          });
+        }
       }
     });
-  }, [tasks, completionDialogOpen]);
+  }, [tasks]); // Removed completionDialogOpen from dependencies to prevent loop!
 
   const handleCompleteMainTask = async () => {
     if (completedMainTask) {
@@ -62,6 +89,12 @@ export default function Home() {
         toast({
           title: "Success",
           description: `Main task "${completedMainTask.title}" has been completed!`,
+        });
+        // Clear from dismissed list when actually completed
+        setDismissedCompletionTasks(prev => {
+          const newSet = new Set(prev);
+          newSet.delete(completedMainTask.id);
+          return newSet;
         });
         setCompletionDialogOpen(false);
         setCompletedMainTask(null);
@@ -76,14 +109,20 @@ export default function Home() {
   };
 
   const handleAddMoreSubTasks = () => {
-    setCompletionDialogOpen(false);
     if (completedMainTask) {
+      // Mark this task as dismissed to prevent dialog from reopening
+      setDismissedCompletionTasks(prev => new Set([...prev, completedMainTask.id]));
       handleCreateTask(completedMainTask);
     }
+    setCompletionDialogOpen(false);
     setCompletedMainTask(null);
   };
 
   const handleCloseCompletionDialog = () => {
+    if (completedMainTask) {
+      // Mark this task as dismissed to prevent dialog from reopening
+      setDismissedCompletionTasks(prev => new Set([...prev, completedMainTask.id]));
+    }
     setCompletionDialogOpen(false);
     setCompletedMainTask(null);
   };
