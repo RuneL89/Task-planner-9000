@@ -38,6 +38,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
 
   const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({
     overdue: false,
+    upcoming: false,
     noDeadline: false,
     completed: false,
   });
@@ -75,6 +76,17 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
         return new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime();
       });
     
+    const upcoming = allTasks
+      .filter(task => 
+        task.deadline && 
+        new Date(task.deadline) >= now && 
+        task.status !== "completed"
+      )
+      .sort((a, b) => {
+        // Soonest deadline first
+        return new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime();
+      });
+    
     const noDeadline = allTasks
       .filter(task => !task.deadline && task.status !== "completed");
     
@@ -86,7 +98,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
         return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
       });
     
-    return { overdue, noDeadline, completed };
+    return { overdue, upcoming, noDeadline, completed };
   }, [allTasks]);
 
   const getTaskStatusColor = (task: TaskWithRelations) => {
@@ -277,6 +289,63 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
                         ))}
                         {categorizedTasks.overdue.length === 0 && (
                           <p className="text-xs text-slate-400 italic pl-2">No overdue tasks</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Upcoming Deadlines */}
+                  <div>
+                    <button
+                      className="flex items-center space-x-2 w-full text-left p-2 hover:bg-slate-50 rounded-lg transition-colors"
+                      onClick={() => setCollapsedSections(prev => ({ ...prev, upcoming: !prev.upcoming }))}
+                      data-testid="button-toggle-upcoming"
+                    >
+                      {collapsedSections.upcoming ? (
+                        <ChevronRight className="w-4 h-4 text-slate-500" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 text-slate-500" />
+                      )}
+                      <h3 className="text-sm font-semibold text-blue-600 uppercase tracking-wide">
+                        Upcoming Deadlines
+                      </h3>
+                    </button>
+                    {!collapsedSections.upcoming && (
+                      <div className="ml-6 space-y-2 mt-2">
+                        {categorizedTasks.upcoming.map((task) => (
+                          <div
+                            key={task.id}
+                            className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
+                            onClick={() => {
+                              onFocusTask(task);
+                              onEditTask(task);
+                            }}
+                            data-testid={`task-item-${task.id}`}
+                          >
+                            <div className={cn("w-3 h-3 rounded-full", getTaskStatusColor(task))} />
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-slate-800 truncate" data-testid={`task-title-${task.id}`}>
+                                {task.title}
+                              </div>
+                              <div className="text-sm text-slate-500 flex items-center space-x-2">
+                                <span>{task.subtasks?.length || 0} subtasks</span>
+                                {task.deadline && (
+                                  <>
+                                    <span>•</span>
+                                    <span>
+                                      {new Date(task.deadline).toLocaleDateString()}
+                                    </span>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                            <div className="flex items-center space-x-1">
+                              {getTaskIcon(task)}
+                            </div>
+                          </div>
+                        ))}
+                        {categorizedTasks.upcoming.length === 0 && (
+                          <p className="text-xs text-slate-400 italic pl-2">No upcoming deadlines</p>
                         )}
                       </div>
                     )}
