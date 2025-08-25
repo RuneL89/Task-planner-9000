@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Dialog,
   DialogContent,
@@ -30,6 +30,122 @@ import { useToast } from "@/hooks/use-toast";
 import type { TaskWithRelations, InsertTask } from "@shared/schema";
 import { cn } from "@/lib/utils";
 
+// Hierarchical task tree selector component
+interface TaskTreeNode {
+  id: string;
+  title: string;
+  children: TaskTreeNode[];
+}
+
+interface TaskTreeSelectorProps {
+  tasks: TaskTreeNode[];
+  selectedTaskId?: string;
+  onTaskSelect: (taskId?: string) => void;
+  availableParentTasks: TaskWithRelations[];
+}
+
+const TaskTreeSelector: React.FC<TaskTreeSelectorProps> = ({ tasks, selectedTaskId, onTaskSelect, availableParentTasks }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const renderTreeNode = (node: TaskTreeNode, depth = 0, isLast = true, parentLines: boolean[] = []) => {
+    const isSelected = selectedTaskId === node.id;
+    const hasChildren = node.children.length > 0;
+    
+    const getTreeLines = () => {
+      let lines = '';
+      
+      // Add parent lines
+      for (let i = 0; i < depth; i++) {
+        if (parentLines[i]) {
+          lines += '│   '; // Vertical line for continued branches
+        } else {
+          lines += '    '; // Empty space for ended branches
+        }
+      }
+      
+      // Add current level connector
+      if (depth > 0) {
+        if (isLast) {
+          lines += '└── '; // Last child
+        } else {
+          lines += '├── '; // Not last child
+        }
+      }
+      
+      return lines;
+    };
+
+    return (
+      <div key={node.id}>
+        <div
+          className={`flex items-center cursor-pointer hover:bg-gray-50 p-1 text-sm font-mono ${
+            isSelected ? 'bg-blue-50 text-blue-600' : ''
+          }`}
+          onClick={() => {
+            onTaskSelect(node.id);
+            setIsOpen(false);
+          }}
+        >
+          <span className="text-gray-400 select-none">{getTreeLines()}</span>
+          <span className="truncate">{node.title}</span>
+        </div>
+        
+        {hasChildren && node.children.map((child, index) => {
+          const isChildLast = index === node.children.length - 1;
+          const newParentLines = [...parentLines];
+          if (depth >= 0) {
+            newParentLines[depth] = !isLast;
+          }
+          
+          return renderTreeNode(child, depth + 1, isChildLast, newParentLines);
+        })}
+      </div>
+    );
+  };
+
+  const selectedTask = selectedTaskId ? 
+    availableParentTasks.find(t => t.id === selectedTaskId) : null;
+
+  return (
+    <div className="relative">
+      <div
+        className="flex items-center justify-between border rounded-md px-3 py-2 cursor-pointer bg-white hover:bg-gray-50"
+        onClick={() => setIsOpen(!isOpen)}
+        data-testid="select-parent-task"
+      >
+        <span className="text-sm text-gray-900">
+          {selectedTask ? selectedTask.title : "Select a parent task to link to..."}
+        </span>
+        <span className="text-gray-400">▼</span>
+      </div>
+      
+      {isOpen && (
+        <>
+          <div 
+            className="fixed inset-0 z-10"
+            onClick={() => setIsOpen(false)}
+          />
+          <div className="absolute top-full mt-1 w-full bg-white border rounded-md shadow-lg z-20 max-h-80 overflow-y-auto">
+            <div
+              className="flex items-center cursor-pointer hover:bg-gray-50 p-2 text-sm border-b"
+              onClick={() => {
+                onTaskSelect(undefined);
+                setIsOpen(false);
+              }}
+            >
+              <span className="text-gray-600">No parent task</span>
+            </div>
+            
+            {tasks.map((rootTask, index) => 
+              renderTreeNode(rootTask, 0, index === tasks.length - 1)
+            )}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 interface TaskModalProps {
   task: TaskWithRelations | null;
   isOpen: boolean;
@@ -54,6 +170,22 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
   const availableParentTasks = allTasks.filter(t => t.id !== task?.id && t.id !== parentTask?.id);
   const mainTasks = availableParentTasks.filter(t => t.isMainTask);
   const subtasks = availableParentTasks.filter(t => !t.isMainTask);
+
+  // Create hierarchical tree structure for parent task selection
+  const buildTaskTree = useCallback(() => {
+    const taskMap = new Map(availableParentTasks.map(t => [t.id, { ...t, children: [] as any[] }]));
+    const rootTasks: any[] = [];
+
+    availableParentTasks.forEach(task => {
+      if (task.parentTaskId && taskMap.has(task.parentTaskId)) {
+        taskMap.get(task.parentTaskId)!.children.push(taskMap.get(task.id));
+      } else {
+        rootTasks.push(taskMap.get(task.id));
+      }
+    });
+
+    return rootTasks;
+  }, [availableParentTasks]);
 
   const isEditing = !!task;
 
@@ -297,41 +429,12 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
               {!formData.isMainTask && availableParentTasks.length > 0 && (
                 <div className="space-y-2">
                   <Label htmlFor="parentTask">Link to Parent Task (Optional)</Label>
-                  <Select
-                    value={formData.parentTaskId || "none"}
-                    onValueChange={(value) => setFormData({ ...formData, parentTaskId: value === "none" ? undefined : value })}
-                  >
-                    <SelectTrigger data-testid="select-parent-task">
-                      <SelectValue placeholder="Select a parent task to link to..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="none">No parent task</SelectItem>
-                      {mainTasks.length > 0 && (
-                        <>
-                          <SelectItem value="main-tasks-header" disabled>
-                            --- Main Tasks ---
-                          </SelectItem>
-                          {mainTasks.map((mainTask) => (
-                            <SelectItem key={mainTask.id} value={mainTask.id}>
-                              {mainTask.title}
-                            </SelectItem>
-                          ))}
-                        </>
-                      )}
-                      {subtasks.length > 0 && (
-                        <>
-                          <SelectItem value="sub-tasks-header" disabled>
-                            --- Sub Tasks ---
-                          </SelectItem>
-                          {subtasks.map((subtask) => (
-                            <SelectItem key={subtask.id} value={subtask.id}>
-                              {subtask.title}
-                            </SelectItem>
-                          ))}
-                        </>
-                      )}
-                    </SelectContent>
-                  </Select>
+                  <TaskTreeSelector
+                    tasks={buildTaskTree()}
+                    selectedTaskId={formData.parentTaskId}
+                    onTaskSelect={(taskId) => setFormData({ ...formData, parentTaskId: taskId })}
+                    availableParentTasks={availableParentTasks}
+                  />
                 </div>
               )}
 
