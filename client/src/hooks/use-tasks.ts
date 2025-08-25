@@ -62,9 +62,15 @@ export function useUpdateTask() {
       const response = await apiRequest("PUT", `/api/tasks/${id}`, task);
       return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (_, { id }) => {
+      // Invalidate the main tasks list
       queryClient.invalidateQueries({ queryKey: ["/api/tasks"] });
+      // Invalidate the specific task query
+      queryClient.invalidateQueries({ queryKey: ["/api/tasks", id] });
+      // Invalidate stats
       queryClient.invalidateQueries({ queryKey: ["/api/stats"] });
+      // Also invalidate any active timer queries for this task
+      queryClient.invalidateQueries({ queryKey: ["/api/tasks", id, "active-timer"] });
     },
   });
 }
