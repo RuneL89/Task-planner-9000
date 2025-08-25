@@ -1,4 +1,4 @@
-import { memo, useCallback, useRef } from "react";
+import { memo, useCallback, useRef, useMemo } from "react";
 import { Handle, Position, NodeProps } from "@xyflow/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -97,6 +97,42 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
   };
 
   const deadlineInfo = formatDeadline(task.deadline);
+
+  const formatDeadlineCompact = (deadline: string | null) => {
+    if (!deadline) return "";
+    const date = new Date(deadline);
+    const day = date.getDate().toString().padStart(2, '0');
+    const year = date.getFullYear().toString().slice(-2);
+    return `(${day}/${year})`;
+  };
+
+  const getSubtaskStatusColor = (status: string) => {
+    switch (status) {
+      case "completed":
+        return "bg-green-500";
+      case "in_progress":
+        return "bg-blue-500";
+      case "on_hold":
+        return "bg-yellow-500";
+      default:
+        return "bg-gray-400";
+    }
+  };
+
+  // Get sorted subtasks for display (first 5, ordered by deadline ascending)
+  const sortedSubtasks = useMemo(() => {
+    if (!task.isMainTask || !task.subtasks) return [];
+    
+    return [...task.subtasks]
+      .sort((a, b) => {
+        // Sort by deadline ascending (tasks with deadlines first, null deadlines last)
+        if (!a.deadline && !b.deadline) return 0;
+        if (!a.deadline) return 1;
+        if (!b.deadline) return -1;
+        return new Date(a.deadline).getTime() - new Date(b.deadline).getTime();
+      })
+      .slice(0, 5);
+  }, [task.isMainTask, task.subtasks]);
 
   // Calculate completion progress for main tasks (including all descendants)
   const getCompletionProgress = () => {
@@ -300,6 +336,30 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
                 )}
               </div>
             </div>
+
+            {/* Subtask overview for main tasks */}
+            {task.isMainTask && sortedSubtasks.length > 0 && (
+              <div className="mt-2 space-y-1">
+                {sortedSubtasks.map((subtask) => (
+                  <div key={subtask.id} className="flex items-center space-x-2 text-xs">
+                    <div className={cn("w-2 h-2 rounded-full flex-shrink-0", getSubtaskStatusColor(subtask.status))} />
+                    <span className="text-gray-700 truncate flex-1">
+                      {subtask.title}
+                      {subtask.deadline && (
+                        <span className="text-gray-500 ml-1">
+                          {formatDeadlineCompact(subtask.deadline)}
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                ))}
+                {task.subtasks && task.subtasks.length > 5 && (
+                  <div className="text-xs text-gray-400 italic">
+                    +{task.subtasks.length - 5} more subtasks...
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
