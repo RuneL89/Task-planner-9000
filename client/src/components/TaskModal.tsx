@@ -208,7 +208,10 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
       if (task.parentTaskId && taskMap.has(task.parentTaskId)) {
         const parent = taskMap.get(task.parentTaskId)!;
         const child = taskMap.get(task.id)!;
+        console.log(`🔗 Adding child "${child.title}" to parent "${parent.title}"`);
         parent.children.push(child);
+      } else if (task.parentTaskId) {
+        console.log(`❌ Missing parent for task "${task.title}" (parent ID: ${task.parentTaskId?.slice(-6)})`);
       }
     });
 
