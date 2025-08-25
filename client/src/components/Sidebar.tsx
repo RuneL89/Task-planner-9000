@@ -43,22 +43,25 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
     completed: false,
   });
 
-  // Flatten all tasks (main and subtasks) into a single array
+  // Flatten all tasks (main and subtasks) into a single array without duplicates
   const allTasks = useMemo(() => {
-    const flattenTasks = (taskList: TaskWithRelations[]): TaskWithRelations[] => {
-      let flattened: TaskWithRelations[] = [];
-      
+    const flattenedTasksMap = new Map<string, TaskWithRelations>();
+    
+    const flattenTasks = (taskList: TaskWithRelations[]): void => {
       for (const task of taskList) {
-        flattened.push(task);
+        // Only add if not already added (prevents duplicates)
+        if (!flattenedTasksMap.has(task.id)) {
+          flattenedTasksMap.set(task.id, task);
+        }
+        
         if (task.subtasks?.length) {
-          flattened = flattened.concat(flattenTasks(task.subtasks));
+          flattenTasks(task.subtasks);
         }
       }
-      
-      return flattened;
     };
     
-    return flattenTasks(tasks);
+    flattenTasks(tasks);
+    return Array.from(flattenedTasksMap.values());
   }, [tasks]);
 
   // Categorize tasks by deadline status

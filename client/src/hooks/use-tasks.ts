@@ -2,33 +2,18 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { TaskWithRelations, InsertTask, TaskConnection, InsertTaskConnection } from "@shared/schema";
 
-// Helper function to build nested task hierarchy
-function buildTaskHierarchy(tasks: TaskWithRelations[]): TaskWithRelations[] {
-  // Create a map for quick lookup
-  const taskMap = new Map<string, TaskWithRelations>();
-  tasks.forEach(task => {
-    taskMap.set(task.id, { ...task, subtasks: [] });
-  });
-
-  // Build the hierarchy
-  tasks.forEach(task => {
-    if (task.parentTaskId) {
-      const parent = taskMap.get(task.parentTaskId);
-      if (parent) {
-        if (!parent.subtasks) parent.subtasks = [];
-        parent.subtasks.push(taskMap.get(task.id)!);
-      }
-    }
-  });
-
-  // Return all tasks with their hierarchy built (not just root tasks)
-  return Array.from(taskMap.values());
+// Since server now returns properly nested tasks, we don't need to rebuild hierarchy
+function ensureTasksHaveSubtasks(tasks: TaskWithRelations[]): TaskWithRelations[] {
+  return tasks.map(task => ({
+    ...task,
+    subtasks: task.subtasks || []
+  }));
 }
 
 export function useTasks() {
   return useQuery<TaskWithRelations[]>({
     queryKey: ["/api/tasks"],
-    select: (data) => buildTaskHierarchy(data),
+    select: (data) => ensureTasksHaveSubtasks(data),
   });
 }
 

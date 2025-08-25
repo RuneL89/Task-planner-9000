@@ -22,16 +22,30 @@ export interface IStorage {
 
 export class DatabaseStorage implements IStorage {
   async getTasks(): Promise<TaskWithRelations[]> {
-    const allTasks = await db.query.tasks.findMany({
+    // Fetch only root tasks (no parent) with their complete nested hierarchy
+    const rootTasks = await db.query.tasks.findMany({
+      where: isNull(tasks.parentTaskId),
       with: {
-        subtasks: true,
+        subtasks: {
+          with: {
+            subtasks: {
+              with: {
+                subtasks: {
+                  with: {
+                    subtasks: true, // Support up to 4 levels of nesting
+                  }
+                }
+              }
+            }
+          }
+        },
         parentTask: true,
         sourceConnections: true,
         targetConnections: true,
       },
       orderBy: [desc(tasks.createdAt)],
     });
-    return allTasks;
+    return rootTasks;
   }
 
   async getTask(id: string): Promise<TaskWithRelations | undefined> {
