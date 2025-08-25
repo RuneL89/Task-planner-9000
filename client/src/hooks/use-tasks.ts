@@ -11,23 +11,18 @@ function buildTaskHierarchy(tasks: TaskWithRelations[]): TaskWithRelations[] {
   });
 
   // Build the hierarchy
-  const rootTasks: TaskWithRelations[] = [];
-  
   tasks.forEach(task => {
-    const taskWithHierarchy = taskMap.get(task.id)!;
-    
     if (task.parentTaskId) {
       const parent = taskMap.get(task.parentTaskId);
       if (parent) {
         if (!parent.subtasks) parent.subtasks = [];
-        parent.subtasks.push(taskWithHierarchy);
+        parent.subtasks.push(taskMap.get(task.id)!);
       }
-    } else {
-      rootTasks.push(taskWithHierarchy);
     }
   });
 
-  return rootTasks;
+  // Return all tasks with their hierarchy built (not just root tasks)
+  return Array.from(taskMap.values());
 }
 
 export function useTasks() {
