@@ -67,7 +67,7 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
         isMainTask: task.isMainTask,
         parentTaskId: task.parentTaskId || undefined,
       });
-      setDeadline(task.deadline ? new Date(task.deadline) : undefined);
+      setDeadline(task.deadline ? new Date(task.deadline + 'T00:00:00') : undefined);
     } else {
       setFormData({
         title: "",
@@ -97,7 +97,9 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
     const taskData: InsertTask = {
       ...formData,
       title: formData.title.trim(),
-      deadline: deadline ? deadline.toISOString().split('T')[0] : undefined,
+      deadline: deadline ? 
+        `${deadline.getFullYear()}-${(deadline.getMonth() + 1).toString().padStart(2, '0')}-${deadline.getDate().toString().padStart(2, '0')}` 
+        : undefined,
     } as InsertTask;
 
     try {

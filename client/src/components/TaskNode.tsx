@@ -81,7 +81,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
     if (!deadline) return null;
     
     const now = new Date();
-    const deadlineDate = new Date(deadline);
+    const deadlineDate = new Date(deadline + 'T00:00:00');
     const diffTime = deadlineDate.getTime() - now.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
@@ -100,7 +100,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
   const formatDeadlineCompact = (deadline: string | null) => {
     if (!deadline) return "";
-    const date = new Date(deadline);
+    const date = new Date(deadline + 'T00:00:00');
     const day = date.getDate().toString().padStart(2, '0');
     const year = date.getFullYear().toString().slice(-2);
     return `(${day}/${year})`;

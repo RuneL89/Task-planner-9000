@@ -72,23 +72,23 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
     const overdue = allTasks
       .filter(task => 
         task.deadline && 
-        new Date(task.deadline) < today && 
+        new Date(task.deadline + 'T00:00:00') < today && 
         task.status !== "completed"
       )
       .sort((a, b) => {
         // Most overdue first (earliest deadline)
-        return new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime();
+        return new Date(a.deadline! + 'T00:00:00').getTime() - new Date(b.deadline! + 'T00:00:00').getTime();
       });
     
     const upcoming = allTasks
       .filter(task => 
         task.deadline && 
-        new Date(task.deadline) >= today && 
+        new Date(task.deadline + 'T00:00:00') >= today && 
         task.status !== "completed"
       )
       .sort((a, b) => {
         // Soonest deadline first
-        return new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime();
+        return new Date(a.deadline! + 'T00:00:00').getTime() - new Date(b.deadline! + 'T00:00:00').getTime();
       });
     
     const noDeadline = allTasks
@@ -109,7 +109,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
     if (task.deadline) {
       const today = new Date();
       today.setHours(0, 0, 0, 0); // Compare dates only, not timestamps
-      const deadline = new Date(task.deadline);
+      const deadline = new Date(task.deadline + 'T00:00:00');
       if (deadline < today && task.status !== "completed") {
         return "bg-red-500";
       }
@@ -130,7 +130,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
   const getTaskIcon = (task: TaskWithRelations) => {
     if (task.deadline) {
       const now = new Date();
-      const deadline = new Date(task.deadline);
+      const deadline = new Date(task.deadline + 'T00:00:00');
       if (deadline < now && task.status !== "completed") {
         return <AlertTriangle className="w-4 h-4 text-red-500" />;
       }
