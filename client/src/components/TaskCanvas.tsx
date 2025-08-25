@@ -148,6 +148,25 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
+  // Update nodes when initialNodes change (but prevent infinite loops)
+  const initialNodesRef = useRef(initialNodes);
+  useEffect(() => {
+    // Only update if the actual array content changed (not just reference)
+    if (JSON.stringify(initialNodesRef.current) !== JSON.stringify(initialNodes)) {
+      initialNodesRef.current = initialNodes;
+      setNodes(initialNodes);
+    }
+  }, [initialNodes, setNodes]);
+
+  // Update edges when initialEdges change  
+  const initialEdgesRef = useRef(initialEdges);
+  useEffect(() => {
+    if (JSON.stringify(initialEdgesRef.current) !== JSON.stringify(initialEdges)) {
+      initialEdgesRef.current = initialEdges;
+      setEdges(initialEdges);
+    }
+  }, [initialEdges, setEdges]);
+
   // Handle node position changes (auto-save)
   const onNodeDragStop = useCallback(
     (_event: any, node: Node) => {
