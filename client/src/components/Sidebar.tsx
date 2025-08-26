@@ -185,8 +185,8 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
                 <ChartGantt className="text-white text-lg" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-slate-800">Task Planner</h1>
-                <p className="text-sm text-slate-500">Visual Task Management</p>
+                <h1 className="text-xl font-bold text-slate-800">Task Planner 9000</h1>
+                <p className="text-sm text-slate-500">Coolest Planner In The World!</p>
               </div>
             </div>
             {isMobile && (
