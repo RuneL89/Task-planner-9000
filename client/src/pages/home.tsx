@@ -184,7 +184,7 @@ export default function Home() {
           </div>
         </div>
 
-        <TaskCanvas onCreateTask={() => handleCreateTask()} onEditTask={handleEditTask} />
+        <TaskCanvas onCreateTask={() => handleCreateTask()} onEditTask={handleEditTask} onCreateSubtask={handleCreateTask} />
       </div>
 
       {isMobile && (

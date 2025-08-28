@@ -28,9 +28,10 @@ const nodeTypes = {
 interface TaskCanvasProps {
   onCreateTask: () => void;
   onEditTask: (task: TaskWithRelations) => void;
+  onCreateSubtask: (parentTask: TaskWithRelations) => void;
 }
 
-const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
+const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCanvasProps) => {
   const { data: tasks = [], isLoading } = useTasks();
   const { data: connections = [] } = useTaskConnections();
   const createConnection = useCreateTaskConnection();
@@ -113,10 +114,11 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask }: TaskCanvasProps) => {
           onToggleCollapse: (taskId: string, isCollapsed: boolean) => {
             toggleCollapse.mutate({ id: taskId, isCollapsed });
           },
+          onCreateSubtask,
         },
       };
     });
-  }, [tasks, onEditTask, isTaskHidden, toggleCollapse]);
+  }, [tasks, onEditTask, isTaskHidden, toggleCollapse, onCreateSubtask]);
 
   // Convert connections to edges
   const initialEdges: Edge[] = useMemo(() => {

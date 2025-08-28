@@ -3,7 +3,7 @@ import { Handle, Position, NodeProps } from "@xyflow/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, ChevronUp, ChevronDown } from "lucide-react";
+import { Calendar, ChevronUp, ChevronDown, Plus } from "lucide-react";
 import type { TaskWithRelations } from "@shared/schema";
 import { cn } from "@/lib/utils";
 
@@ -11,10 +11,11 @@ export interface TaskNodeData extends Record<string, unknown> {
   task: TaskWithRelations;
   onEdit: (task: TaskWithRelations) => void;
   onToggleCollapse?: (taskId: string, isCollapsed: boolean) => void;
+  onCreateSubtask?: (parentTask: TaskWithRelations) => void;
 }
 
 const TaskNode = memo(({ data, selected }: NodeProps) => {
-  const { task, onEdit, onToggleCollapse } = data as TaskNodeData;
+  const { task, onEdit, onToggleCollapse, onCreateSubtask } = data as TaskNodeData;
   const pressTimer = useRef<NodeJS.Timeout | null>(null);
   const pressStartTime = useRef<number>(0);
 
@@ -39,6 +40,13 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     handlePressStart();
   }, [handlePressStart]);
+
+  const handleCreateSubtask = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onCreateSubtask) {
+      onCreateSubtask(task);
+    }
+  }, [onCreateSubtask, task]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -236,7 +244,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
       <Card
         className={cn(
-          "min-w-48 max-w-64 cursor-pointer transition-all duration-200 hover:shadow-lg",
+          "min-w-48 max-w-64 cursor-pointer transition-all duration-200 hover:shadow-lg relative",
           task.isMainTask ? "min-w-64 border-2 border-blue-500" : "border border-gray-200",
           selected && "ring-2 ring-blue-300"
         )}
@@ -251,6 +259,17 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
         onTouchStart={handleTouchStart}
         onTouchEnd={handlePressEnd}
       >
+        {/* Add Subtask Button */}
+        {onCreateSubtask && (
+          <button
+            className="absolute bottom-2 left-2 w-6 h-6 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center transition-colors z-10"
+            onClick={handleCreateSubtask}
+            data-testid={`button-add-subtask-${task.id}`}
+          >
+            <Plus className="w-3 h-3 text-black" />
+          </button>
+        )}
+        
         <CardContent className="p-4">
           <div className="flex items-start justify-between mb-2">
             <div className="flex items-center space-x-2">
