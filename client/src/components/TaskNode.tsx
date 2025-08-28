@@ -262,7 +262,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
         {/* Add Subtask Button */}
         {onCreateSubtask && (
           <button
-            className="absolute bottom-2 left-2 w-6 h-6 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center transition-colors z-10"
+            className="absolute bottom-2 right-2 w-6 h-6 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center transition-colors z-10"
             onClick={handleCreateSubtask}
             data-testid={`button-add-subtask-${task.id}`}
           >

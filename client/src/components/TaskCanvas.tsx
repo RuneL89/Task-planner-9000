@@ -96,11 +96,18 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
           x = 400; // Center
           y = 300;
         } else {
-          // Position subtasks in a circle around main task
-          const angle = (index * 60) * (Math.PI / 180);
-          const radius = 200;
-          x = 400 + radius * Math.cos(angle);
-          y = 300 + radius * Math.sin(angle);
+          // Position subtasks directly below their parent task
+          const parentTask = tasks.find(t => t.id === task.parentTaskId);
+          if (parentTask) {
+            x = parentTask.positionX || 400;
+            y = (parentTask.positionY || 300) + 150; // 150px below parent
+          } else {
+            // Fallback if parent not found
+            const angle = (index * 60) * (Math.PI / 180);
+            const radius = 200;
+            x = 400 + radius * Math.cos(angle);
+            y = 300 + radius * Math.sin(angle);
+          }
         }
       }
 
