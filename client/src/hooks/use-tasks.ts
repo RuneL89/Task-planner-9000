@@ -89,6 +89,13 @@ export function useUpdateTask() {
   });
 }
 
+export function useGetTaskDeletionInfo(id: string) {
+  return useQuery<{ taskCount: number; taskTitles: string[] }>({
+    queryKey: ["/api/tasks", id, "deletion-info"],
+    enabled: !!id,
+  });
+}
+
 export function useDeleteTask() {
   const queryClient = useQueryClient();
   

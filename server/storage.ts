@@ -9,6 +9,7 @@ export interface IStorage {
   createTask(task: InsertTask): Promise<Task>;
   updateTask(id: string, task: Partial<InsertTask>): Promise<Task>;
   deleteTask(id: string): Promise<void>;
+  getTaskDeletionCount(id: string): Promise<{ taskCount: number; taskTitles: string[] }>;
   
   
   // Task connection operations
@@ -97,15 +98,63 @@ export class DatabaseStorage implements IStorage {
   }
 
   async deleteTask(id: string): Promise<void> {
-    // Delete related connections first
-    await db.delete(taskConnections).where(eq(taskConnections.sourceTaskId, id));
-    await db.delete(taskConnections).where(eq(taskConnections.targetTaskId, id));
+    // Recursive function to delete tasks and their subtasks
+    const deleteTaskRecursively = async (taskId: string) => {
+      // First, find all direct children
+      const children = await db.query.tasks.findMany({
+        where: eq(tasks.parentTaskId, taskId),
+        columns: { id: true }
+      });
+      
+      // Recursively delete all children first
+      for (const child of children) {
+        await deleteTaskRecursively(child.id);
+      }
+      
+      // Delete related connections for this task
+      await db.delete(taskConnections).where(eq(taskConnections.sourceTaskId, taskId));
+      await db.delete(taskConnections).where(eq(taskConnections.targetTaskId, taskId));
+      
+      // Finally delete the task itself
+      await db.delete(tasks).where(eq(tasks.id, taskId));
+    };
     
-    // Delete subtasks
-    await db.delete(tasks).where(eq(tasks.parentTaskId, id));
+    await deleteTaskRecursively(id);
+  }
+
+  // Get count of tasks that will be deleted (for user confirmation)
+  async getTaskDeletionCount(id: string): Promise<{ taskCount: number; taskTitles: string[] }> {
+    const tasksToDelete: string[] = [];
     
-    // Delete the task
-    await db.delete(tasks).where(eq(tasks.id, id));
+    const collectTasksRecursively = async (taskId: string) => {
+      // Get the task
+      const task = await db.query.tasks.findFirst({
+        where: eq(tasks.id, taskId),
+        columns: { title: true }
+      });
+      
+      if (task) {
+        tasksToDelete.push(task.title);
+        
+        // Get all direct children
+        const children = await db.query.tasks.findMany({
+          where: eq(tasks.parentTaskId, taskId),
+          columns: { id: true }
+        });
+        
+        // Recursively collect children
+        for (const child of children) {
+          await collectTasksRecursively(child.id);
+        }
+      }
+    };
+    
+    await collectTasksRecursively(id);
+    
+    return {
+      taskCount: tasksToDelete.length,
+      taskTitles: tasksToDelete
+    };
   }
 
 

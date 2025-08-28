@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/popover";
 import { CalendarIcon, Trash2 } from "lucide-react";
 import { format } from "date-fns";
-import { useCreateTask, useUpdateTask, useDeleteTask, useTasks, useTaskConnections, useCreateTaskConnection } from "@/hooks/use-tasks";
+import { useCreateTask, useUpdateTask, useDeleteTask, useTasks, useTaskConnections, useCreateTaskConnection, useGetTaskDeletionInfo } from "@/hooks/use-tasks";
 import { useToast } from "@/hooks/use-toast";
 import type { TaskWithRelations, InsertTask } from "@shared/schema";
 import { cn } from "@/lib/utils";
@@ -295,21 +295,36 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
   const handleDelete = async () => {
     if (!task) return;
 
-    if (confirm("Are you sure you want to delete this task? This action cannot be undone.")) {
-      try {
+    try {
+      // Get deletion info
+      const response = await fetch(`/api/tasks/${task.id}/deletion-info`);
+      const deletionInfo = await response.json();
+      
+      const { taskCount, taskTitles } = deletionInfo;
+      
+      // Create confirmation message
+      let confirmMessage = "";
+      if (taskCount === 1) {
+        confirmMessage = `Are you sure you want to delete "${task.title}"?\n\nThis action cannot be undone.`;
+      } else {
+        const additionalTasks = taskTitles.slice(1); // Remove the main task from the list
+        confirmMessage = `Are you sure you want to delete "${task.title}" and its ${taskCount - 1} subtask(s)?\n\nThis will delete:\n• ${taskTitles.join('\n• ')}\n\nThis action cannot be undone.`;
+      }
+
+      if (confirm(confirmMessage)) {
         await deleteTask.mutateAsync(task.id);
         toast({
           title: "Success",
-          description: "Task deleted successfully",
+          description: taskCount === 1 ? "Task deleted successfully" : `Task and ${taskCount - 1} subtask(s) deleted successfully`,
         });
         onClose();
-      } catch (error) {
-        toast({
-          title: "Error",
-          description: "Failed to delete task",
-          variant: "destructive",
-        });
       }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to delete task",
+        variant: "destructive",
+      });
     }
   };
 

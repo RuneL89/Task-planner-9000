@@ -53,6 +53,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.get("/api/tasks/:id/deletion-info", async (req, res) => {
+    try {
+      const info = await storage.getTaskDeletionCount(req.params.id);
+      res.json(info);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to get deletion info" });
+    }
+  });
+
   app.delete("/api/tasks/:id", async (req, res) => {
     try {
       await storage.deleteTask(req.params.id);

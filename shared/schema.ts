@@ -34,6 +34,7 @@ export const tasksRelations = relations(tasks, ({ many, one }) => ({
     fields: [tasks.parentTaskId],
     references: [tasks.id],
     relationName: "parent_subtasks",
+    onDelete: "cascade",
   }),
   sourceConnections: many(taskConnections, { relationName: "source_connections" }),
   targetConnections: many(taskConnections, { relationName: "target_connections" }),
