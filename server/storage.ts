@@ -23,55 +23,68 @@ export interface IStorage {
 
 export class DatabaseStorage implements IStorage {
   async getTasks(): Promise<TaskWithRelations[]> {
-    // Fetch only root tasks (no parent) with their complete nested hierarchy
+    // Fetch root tasks first
     const rootTasks = await db.query.tasks.findMany({
       where: isNull(tasks.parentTaskId),
       with: {
-        subtasks: {
-          with: {
-            subtasks: {
-              with: {
-                subtasks: {
-                  with: {
-                    subtasks: true, // Support up to 4 levels of nesting
-                  }
-                }
-              }
-            }
-          }
-        },
         parentTask: true,
         sourceConnections: true,
         targetConnections: true,
       },
       orderBy: [desc(tasks.createdAt)],
     });
-    return rootTasks || [];
+
+    // Recursively build complete hierarchy for each root task
+    const tasksWithSubtasks = await Promise.all(
+      rootTasks.map(async (rootTask) => {
+        return await this.buildTaskHierarchy(rootTask);
+      })
+    );
+
+    return tasksWithSubtasks;
+  }
+
+  // Helper method to recursively build task hierarchy
+  private async buildTaskHierarchy(task: TaskWithRelations): Promise<TaskWithRelations> {
+    // Get all direct children of this task
+    const children = await db.query.tasks.findMany({
+      where: eq(tasks.parentTaskId, task.id),
+      with: {
+        parentTask: true,
+        sourceConnections: true,
+        targetConnections: true,
+      },
+      orderBy: [desc(tasks.createdAt)],
+    });
+
+    // Recursively build hierarchy for each child
+    const subtasksWithHierarchy = await Promise.all(
+      children.map(async (child) => {
+        return await this.buildTaskHierarchy(child);
+      })
+    );
+
+    // Return the task with its complete subtask hierarchy
+    return {
+      ...task,
+      subtasks: subtasksWithHierarchy
+    };
   }
 
   async getTask(id: string): Promise<TaskWithRelations | undefined> {
     const task = await db.query.tasks.findFirst({
       where: eq(tasks.id, id),
       with: {
-        subtasks: {
-          with: {
-            subtasks: {
-              with: {
-                subtasks: {
-                  with: {
-                    subtasks: true, // Support up to 4 levels of nesting
-                  }
-                }
-              }
-            }
-          }
-        },
         parentTask: true,
         sourceConnections: true,
         targetConnections: true,
       },
     });
-    return task || undefined;
+    
+    if (!task) return undefined;
+    
+    // Build complete hierarchy for this task
+    return await this.buildTaskHierarchy(task);
   }
 
   async createTask(insertTask: InsertTask): Promise<Task> {
