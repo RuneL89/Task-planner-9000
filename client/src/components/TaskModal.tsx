@@ -333,7 +333,7 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
       <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto" data-testid="task-modal">
         <DialogHeader>
           <DialogTitle data-testid="modal-title">
-            {isEditing ? "Edit Task" : "Create New Task"}
+            {isEditing ? "Edit Task" : parentTask ? `New Sub Task To ${parentTask.title}` : "Create New Task"}
           </DialogTitle>
         </DialogHeader>
 

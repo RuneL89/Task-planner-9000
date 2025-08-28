@@ -275,13 +275,6 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
           />
         )}
         
-        <MiniMap
-          nodeColor="#3b82f6"
-          className="bg-white border border-gray-200 rounded-lg"
-          position="bottom-right"
-          pannable
-          zoomable
-        />
 
         {/* Mobile Controls */}
         {isMobile && (
@@ -313,16 +306,6 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
           </Panel>
         )}
 
-        {/* Floating Action Button */}
-        <Panel position="bottom-right" className="mb-16 mr-4">
-          <Button
-            className="w-14 h-14 rounded-full bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-xl transition-all duration-200"
-            onClick={onCreateTask}
-            data-testid="button-create-task"
-          >
-            <Plus className="w-6 h-6" />
-          </Button>
-        </Panel>
       </ReactFlow>
     </div>
   );
