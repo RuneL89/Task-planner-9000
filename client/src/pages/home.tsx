@@ -177,23 +177,15 @@ export default function Home() {
 
       <div className="flex-1 flex flex-col">
         {/* Top Navigation */}
-        <div className="bg-white border-b border-slate-200 p-4 flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-3">
-              <Button
-                onClick={() => setMainTaskSelectorOpen(true)}
-                className="bg-blue-600 hover:bg-blue-700 text-white"
-                data-testid="button-plan-week"
-              >
-                <CalendarDays className="w-4 h-4 mr-2" />
-                Plan the next 7 days
-              </Button>
-              <div className="flex items-center space-x-2 text-sm text-slate-500">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span data-testid="auto-save-status">Auto-saved</span>
-              </div>
-            </div>
-          </div>
+        <div className="bg-white border-b border-slate-200 p-4">
+          <Button
+            onClick={() => setMainTaskSelectorOpen(true)}
+            className="bg-blue-600 hover:bg-blue-700 text-white"
+            data-testid="button-plan-week"
+          >
+            <CalendarDays className="w-4 h-4 mr-2" />
+            Plan the next 7 days
+          </Button>
         </div>
 
         <TaskCanvas onCreateTask={() => handleCreateTask()} onEditTask={handleEditTask} onCreateSubtask={handleCreateTask} />
