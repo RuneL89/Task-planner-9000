@@ -2,7 +2,21 @@
 
 ## Overview
 
-A modern full-stack task management application built with React and Express, featuring a visual canvas-based interface for organizing tasks and their relationships. The application provides comprehensive task management capabilities including hierarchical task structures, time tracking, and interactive node-based visualization using React Flow.
+A modern full-stack task management application built with React and Express, featuring a visual canvas-based interface for organizing tasks and their relationships. The application provides comprehensive task management capabilities including hierarchical task structures, interactive node-based visualization using React Flow, and mobile-optimized touch interactions. Now includes a dedicated Completed Tasks view with time-based filtering.
+
+## Recent Changes (September 2025)
+
+### Mobile Experience Improvements
+- **Collapsible Sidebar**: Sidebar now collapses on both mobile and desktop with toggle buttons, improving screen space utilization
+- **Enhanced Touch Interactions**: TaskNode buttons and connection handles are larger on mobile (40x40px vs 24x24px) for better touch accuracy
+- **Responsive useIsMobile Hook**: Updated to use React's useSyncExternalStore for synchronous mobile detection, eliminating UI flicker
+
+### Completed Tasks Feature
+- **New Page**: Added `/completed-tasks` route with dedicated list view for finished tasks
+- **Completion Tracking**: Tasks now track `completedAt` timestamp when marked as complete
+- **Time Filters**: Filter completed tasks by 1 week, 2 weeks, 3 weeks, 4 weeks, or view all
+- **Status Badges**: Shows "On Time" or "Completed Late" based on deadline comparison
+- **Navigation**: Accessible from sidebar and top navigation with completion count badge
 
 ## User Preferences
 
@@ -50,7 +64,7 @@ The backend implements a storage abstraction pattern with:
 **Database**: PostgreSQL (configured for Neon serverless deployment)
 
 **Schema Design**:
-- **Tasks**: Core entity with hierarchical relationships, positioning data, and metadata
+- **Tasks**: Core entity with hierarchical relationships, positioning data, completion tracking, and metadata
 - **Time Entries**: Time tracking with start/end times and duration calculation
 - **Task Connections**: Many-to-many relationships for task dependencies
 - **Relations**: Comprehensive foreign key relationships and cascade handling
@@ -59,7 +73,8 @@ The backend implements a storage abstraction pattern with:
 - Self-referencing parent-child relationships for task hierarchy
 - Positional data for canvas layout persistence
 - Flexible status and priority enums
-- Automatic timestamp management
+- Automatic timestamp management (createdAt, updatedAt, completedAt)
+- Completion tracking with completedAt timestamp for analytics and filtering
 
 ### Authentication and Authorization
 
