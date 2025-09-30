@@ -38,6 +38,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
 
   const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({
     overdue: false,
+    today: false,
     upcoming: false,
     noDeadline: false,
     completed: false,
@@ -80,12 +81,26 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
         return new Date(a.deadline! + 'T00:00:00').getTime() - new Date(b.deadline! + 'T00:00:00').getTime();
       });
     
+    const todayTasks = allTasks
+      .filter(task => {
+        if (!task.deadline || task.status === "completed") return false;
+        const taskDeadline = new Date(task.deadline + 'T00:00:00');
+        return taskDeadline.getTime() === today.getTime();
+      })
+      .sort((a, b) => {
+        // Sort by priority (high first)
+        const priorityOrder = { high: 0, medium: 1, low: 2 };
+        const aPriority = priorityOrder[a.priority as keyof typeof priorityOrder] ?? 3;
+        const bPriority = priorityOrder[b.priority as keyof typeof priorityOrder] ?? 3;
+        return aPriority - bPriority;
+      });
+    
     const upcoming = allTasks
-      .filter(task => 
-        task.deadline && 
-        new Date(task.deadline + 'T00:00:00') >= today && 
-        task.status !== "completed"
-      )
+      .filter(task => {
+        if (!task.deadline || task.status === "completed") return false;
+        const taskDeadline = new Date(task.deadline + 'T00:00:00');
+        return taskDeadline > today;
+      })
       .sort((a, b) => {
         // Soonest deadline first
         return new Date(a.deadline! + 'T00:00:00').getTime() - new Date(b.deadline! + 'T00:00:00').getTime();
@@ -102,7 +117,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
         return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
       });
     
-    return { overdue, upcoming, noDeadline, completed };
+    return { overdue, today: todayTasks, upcoming, noDeadline, completed };
   }, [allTasks]);
 
   const getTaskStatusColor = (task: TaskWithRelations) => {
@@ -294,6 +309,63 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
                         ))}
                         {categorizedTasks.overdue.length === 0 && (
                           <p className="text-xs text-slate-400 italic pl-2">No overdue tasks</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Today Tasks */}
+                  <div>
+                    <button
+                      className="flex items-center space-x-2 w-full text-left p-2 hover:bg-slate-50 rounded-lg transition-colors"
+                      onClick={() => setCollapsedSections(prev => ({ ...prev, today: !prev.today }))}
+                      data-testid="button-toggle-today"
+                    >
+                      {collapsedSections.today ? (
+                        <ChevronRight className="w-4 h-4 text-slate-500" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 text-slate-500" />
+                      )}
+                      <h3 className="text-sm font-semibold text-orange-600 uppercase tracking-wide">
+                        Today
+                      </h3>
+                    </button>
+                    {!collapsedSections.today && (
+                      <div className="ml-6 space-y-2 mt-2">
+                        {categorizedTasks.today.map((task) => (
+                          <div
+                            key={task.id}
+                            className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
+                            onClick={() => {
+                              onFocusTask(task);
+                              onEditTask(task);
+                            }}
+                            data-testid={`task-item-${task.id}`}
+                          >
+                            <div className={cn("w-3 h-3 rounded-full", getTaskStatusColor(task))} />
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-slate-800 truncate" data-testid={`task-title-${task.id}`}>
+                                {task.title}
+                              </div>
+                              <div className="text-sm text-slate-500 flex items-center space-x-2">
+                                <span>{task.subtasks?.length || 0} subtasks</span>
+                                {task.deadline && (
+                                  <>
+                                    <span>•</span>
+                                    <span>
+                                      {new Date(task.deadline).toLocaleDateString()}
+                                    </span>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                            <div className="flex items-center space-x-1">
+                              {getTaskIcon(task)}
+                            </div>
+                          </div>
+                        ))}
+                        {categorizedTasks.today.length === 0 && (
+                          <p className="text-xs text-slate-400 italic pl-2">No tasks due today</p>
                         )}
                       </div>
                     )}
