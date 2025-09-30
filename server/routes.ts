@@ -43,6 +43,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.put("/api/tasks/:id", async (req, res) => {
     try {
       const taskData = insertTaskSchema.partial().parse(req.body);
+      
+      // Handle completedAt timestamp based on status changes
+      if (taskData.status !== undefined) {
+        const currentTask = await storage.getTask(req.params.id);
+        if (!currentTask) {
+          return res.status(404).json({ message: "Task not found" });
+        }
+        
+        // Set completedAt to current timestamp when status changes to "completed"
+        if (taskData.status === "completed" && currentTask.status !== "completed") {
+          (taskData as any).completedAt = new Date();
+        }
+        // Set completedAt to null when status changes from "completed" to any other status
+        else if (taskData.status !== "completed" && currentTask.status === "completed") {
+          (taskData as any).completedAt = null;
+        }
+      }
+      
       const task = await storage.updateTask(req.params.id, taskData);
       res.json(task);
     } catch (error) {

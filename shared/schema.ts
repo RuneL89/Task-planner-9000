@@ -17,6 +17,7 @@ export const tasks = pgTable("tasks", {
   positionY: real("position_y").default(0),
   createdAt: timestamp("created_at").default(sql`CURRENT_TIMESTAMP`),
   updatedAt: timestamp("updated_at").default(sql`CURRENT_TIMESTAMP`),
+  completedAt: timestamp("completed_at"),
 });
 
 
@@ -59,6 +60,7 @@ export const insertTaskSchema = createInsertSchema(tasks).omit({
   id: true,
   createdAt: true,
   updatedAt: true,
+  completedAt: true,
 }).extend({
   deadline: z.union([z.string().date(), z.null()]).optional(),
 });
