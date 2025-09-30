@@ -6,14 +6,31 @@ import { format } from "date-fns";
 
 interface SwipeCardProps {
   task: TaskWithRelations;
-  mainTaskTitle: string;
+  allTasks: TaskWithRelations[];
   onSwipeLeft: () => void;
   onSwipeRight: () => void;
 }
 
-export function SwipeCard({ task, mainTaskTitle, onSwipeLeft, onSwipeRight }: SwipeCardProps) {
+export function SwipeCard({ task, allTasks, onSwipeLeft, onSwipeRight }: SwipeCardProps) {
   const [deltaX, setDeltaX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+
+  const buildBreadcrumbPath = (currentTask: TaskWithRelations): string[] => {
+    const path: string[] = [];
+    let currentId: string | null | undefined = currentTask.id;
+    
+    while (currentId) {
+      const taskInPath = allTasks.find(t => t.id === currentId);
+      if (!taskInPath) break;
+      
+      path.unshift(taskInPath.title);
+      currentId = taskInPath.parentTaskId;
+    }
+    
+    return path;
+  };
+
+  const breadcrumbPath = buildBreadcrumbPath(task);
 
   useEffect(() => {
     setDeltaX(0);
@@ -99,9 +116,29 @@ export function SwipeCard({ task, mainTaskTitle, onSwipeLeft, onSwipeRight }: Sw
         }}
         data-testid="swipe-card"
       >
-        {/* Main task label */}
-        <div className="text-sm text-gray-500 mb-2" data-testid="main-task-label">
-          From: {mainTaskTitle}
+        {/* Breadcrumb path */}
+        <div className="text-sm mb-2 flex flex-wrap items-center gap-1" data-testid="breadcrumb-path">
+          {breadcrumbPath.map((segment, index) => {
+            const isCurrentTask = index === breadcrumbPath.length - 1;
+            return (
+              <span key={index} className="flex items-center gap-1">
+                <span 
+                  className={`truncate max-w-[120px] ${
+                    isCurrentTask
+                      ? 'font-bold text-gray-900' 
+                      : 'text-gray-500'
+                  }`}
+                  title={segment}
+                  data-testid={isCurrentTask ? 'breadcrumb-current' : `breadcrumb-parent-${index}`}
+                >
+                  {segment}
+                </span>
+                {index < breadcrumbPath.length - 1 && (
+                  <span className="text-gray-400 flex-shrink-0"> &gt; </span>
+                )}
+              </span>
+            );
+          })}
         </div>
 
         {/* Task title */}

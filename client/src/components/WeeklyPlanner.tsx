@@ -116,7 +116,7 @@ export function WeeklyPlanner({ isOpen, onClose, selectedMainTaskIds }: WeeklyPl
             <div className="w-full">
               <SwipeCard
                 task={currentSubtask}
-                mainTaskTitle={currentSubtask.mainTaskTitle}
+                allTasks={allTasks || []}
                 onSwipeRight={handleSwipeRight}
                 onSwipeLeft={handleSwipeLeft}
               />
