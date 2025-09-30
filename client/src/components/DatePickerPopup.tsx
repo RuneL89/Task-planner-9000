@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { format, addDays, nextMonday, nextTuesday, nextWednesday, nextThursday, nextFriday, isMonday, isTuesday, isWednesday, isThursday, isFriday } from "date-fns";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -9,54 +10,51 @@ interface DatePickerPopupProps {
 }
 
 export function DatePickerPopup({ isOpen, onClose, onSelectDate }: DatePickerPopupProps) {
-  const today = new Date();
+  const weekdays = useMemo(() => {
+    const today = new Date();
 
-  const getNextWeekday = (dayName: string): Date => {
-    const currentDay = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-    
-    switch (dayName) {
-      case "Monday":
-        // If today is Monday, return today, otherwise get next Monday
-        if (isMonday(today)) {
+    const getNextWeekday = (dayName: string): Date => {
+      const currentDay = today.getDay();
+      
+      switch (dayName) {
+        case "Monday":
+          if (isMonday(today)) {
+            return today;
+          }
+          return nextMonday(today);
+        case "Tuesday":
+          if (isTuesday(today)) {
+            return today;
+          }
+          return nextTuesday(today);
+        case "Wednesday":
+          if (isWednesday(today)) {
+            return today;
+          }
+          return nextWednesday(today);
+        case "Thursday":
+          if (isThursday(today)) {
+            return today;
+          }
+          return nextThursday(today);
+        case "Friday":
+          if (isFriday(today)) {
+            return today;
+          }
+          return nextFriday(today);
+        default:
           return today;
-        }
-        return nextMonday(today);
-      case "Tuesday":
-        // If today is Tuesday, return today, otherwise get next Tuesday
-        if (isTuesday(today)) {
-          return today;
-        }
-        return nextTuesday(today);
-      case "Wednesday":
-        // If today is Wednesday, return today, otherwise get next Wednesday
-        if (isWednesday(today)) {
-          return today;
-        }
-        return nextWednesday(today);
-      case "Thursday":
-        // If today is Thursday, return today, otherwise get next Thursday
-        if (isThursday(today)) {
-          return today;
-        }
-        return nextThursday(today);
-      case "Friday":
-        // If today is Friday, return today, otherwise get next Friday
-        if (isFriday(today)) {
-          return today;
-        }
-        return nextFriday(today);
-      default:
-        return today;
-    }
-  };
+      }
+    };
 
-  const weekdays = [
-    { name: "Monday", date: getNextWeekday("Monday") },
-    { name: "Tuesday", date: getNextWeekday("Tuesday") },
-    { name: "Wednesday", date: getNextWeekday("Wednesday") },
-    { name: "Thursday", date: getNextWeekday("Thursday") },
-    { name: "Friday", date: getNextWeekday("Friday") },
-  ];
+    return [
+      { name: "Monday", date: getNextWeekday("Monday") },
+      { name: "Tuesday", date: getNextWeekday("Tuesday") },
+      { name: "Wednesday", date: getNextWeekday("Wednesday") },
+      { name: "Thursday", date: getNextWeekday("Thursday") },
+      { name: "Friday", date: getNextWeekday("Friday") },
+    ];
+  }, [isOpen]);
 
   const handleSelectDate = (date: Date) => {
     onSelectDate(date);

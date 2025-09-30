@@ -2,6 +2,9 @@ import { useState, useMemo } from "react";
 import { useTasks, useUpdateTask } from "@/hooks/use-tasks";
 import type { TaskWithRelations } from "@shared/schema";
 import { Button } from "@/components/ui/button";
+import { SwipeCard } from "@/components/SwipeCard";
+import { DatePickerPopup } from "@/components/DatePickerPopup";
+import { queryClient } from "@/lib/queryClient";
 
 interface WeeklyPlannerProps {
   isOpen: boolean;
@@ -58,17 +61,26 @@ export function WeeklyPlanner({ isOpen, onClose, selectedMainTaskIds }: WeeklyPl
   const totalSubtasks = subtasksToSchedule.length;
   const isCompleted = currentIndex >= totalSubtasks;
 
-  const handleSwipeRight = (taskId: string) => {
-    setShowDatePicker(taskId);
+  const handleSwipeRight = () => {
+    if (currentSubtask) {
+      setShowDatePicker(currentSubtask.id);
+    }
   };
 
-  const handleDateSelected = async (taskId: string, deadline: string) => {
-    await updateTask.mutateAsync({
-      id: taskId,
-      task: { deadline },
-    });
-    setShowDatePicker(null);
+  const handleSwipeLeft = () => {
     setCurrentIndex((prev) => prev + 1);
+  };
+
+  const handleDateSelected = async (date: Date) => {
+    if (currentSubtask) {
+      await updateTask.mutateAsync({
+        id: currentSubtask.id,
+        task: { deadline: date.toISOString().split("T")[0] },
+      });
+      await queryClient.invalidateQueries({ queryKey: ['/api/tasks'] });
+      setShowDatePicker(null);
+      setCurrentIndex((prev) => prev + 1);
+    }
   };
 
   if (!isOpen) return null;
@@ -102,17 +114,17 @@ export function WeeklyPlanner({ isOpen, onClose, selectedMainTaskIds }: WeeklyPl
             </div>
           ) : currentSubtask ? (
             <div className="w-full">
-              <SwipeCardPlaceholder
+              <SwipeCard
                 task={currentSubtask}
+                mainTaskTitle={currentSubtask.mainTaskTitle}
                 onSwipeRight={handleSwipeRight}
+                onSwipeLeft={handleSwipeLeft}
               />
-              {showDatePicker === currentSubtask.id && (
-                <DatePickerPopupPlaceholder
-                  taskId={currentSubtask.id}
-                  onDateSelected={handleDateSelected}
-                  onClose={() => setShowDatePicker(null)}
-                />
-              )}
+              <DatePickerPopup
+                isOpen={showDatePicker === currentSubtask.id}
+                onClose={() => setShowDatePicker(null)}
+                onSelectDate={handleDateSelected}
+              />
             </div>
           ) : (
             <div className="text-gray-500">No subtasks to schedule</div>
@@ -129,71 +141,6 @@ export function WeeklyPlanner({ isOpen, onClose, selectedMainTaskIds }: WeeklyPl
             Done for Now
           </Button>
         </div>
-      </div>
-    </div>
-  );
-}
-
-interface SwipeCardPlaceholderProps {
-  task: SubtaskWithParent;
-  onSwipeRight: (taskId: string) => void;
-}
-
-function SwipeCardPlaceholder({ task, onSwipeRight }: SwipeCardPlaceholderProps) {
-  return (
-    <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center">
-      <div className="mb-4">
-        <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-          Main Task: {task.mainTaskTitle}
-        </div>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-          {task.title}
-        </h3>
-        {task.description && (
-          <p className="text-gray-600 dark:text-gray-400">{task.description}</p>
-        )}
-      </div>
-      <Button onClick={() => onSwipeRight(task.id)} className="mt-4">
-        Schedule Task (Swipe Right Placeholder)
-      </Button>
-      <div className="mt-4 text-xs text-gray-400">
-        SwipeCard component will be implemented here
-      </div>
-    </div>
-  );
-}
-
-interface DatePickerPopupPlaceholderProps {
-  taskId: string;
-  onDateSelected: (taskId: string, deadline: string) => void;
-  onClose: () => void;
-}
-
-function DatePickerPopupPlaceholder({
-  taskId,
-  onDateSelected,
-  onClose,
-}: DatePickerPopupPlaceholderProps) {
-  const handleSelectDate = () => {
-    const today = new Date().toISOString().split("T")[0];
-    onDateSelected(taskId, today);
-  };
-
-  return (
-    <div className="mt-4 border-2 border-dashed border-blue-300 dark:border-blue-600 rounded-lg p-6 bg-blue-50 dark:bg-blue-900/20">
-      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-        Select a Deadline
-      </h4>
-      <div className="flex gap-2">
-        <Button onClick={handleSelectDate} size="sm">
-          Today (Placeholder)
-        </Button>
-        <Button onClick={onClose} variant="outline" size="sm">
-          Cancel
-        </Button>
-      </div>
-      <div className="mt-4 text-xs text-gray-400">
-        DatePickerPopup component will be implemented here
       </div>
     </div>
   );

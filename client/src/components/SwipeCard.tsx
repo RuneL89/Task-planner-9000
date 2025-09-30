@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, PanInfo } from "framer-motion";
 import { Calendar } from "lucide-react";
 import { TaskWithRelations } from "@shared/schema";
@@ -14,6 +14,10 @@ interface SwipeCardProps {
 export function SwipeCard({ task, mainTaskTitle, onSwipeLeft, onSwipeRight }: SwipeCardProps) {
   const [deltaX, setDeltaX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+
+  useEffect(() => {
+    setDeltaX(0);
+  }, [task.id]);
 
   const handleDragStart = () => {
     setIsDragging(true);

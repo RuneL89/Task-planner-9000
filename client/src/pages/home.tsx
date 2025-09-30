@@ -4,6 +4,8 @@ import TaskCanvas from "@/components/TaskCanvas";
 import TaskModal from "@/components/TaskModal";
 import CompletionDialog from "@/components/CompletionDialog";
 import MobileControls from "@/components/MobileControls";
+import MainTaskSelector from "@/components/MainTaskSelector";
+import { WeeklyPlanner } from "@/components/WeeklyPlanner";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTasks, useUpdateTask } from "@/hooks/use-tasks";
 import { useToast } from "@/hooks/use-toast";
@@ -19,7 +21,9 @@ export default function Home() {
   const [completionDialogOpen, setCompletionDialogOpen] = useState(false);
   const [completedMainTask, setCompletedMainTask] = useState<TaskWithRelations | null>(null);
   const [dismissedCompletionTasks, setDismissedCompletionTasks] = useState<Set<string>>(new Set());
+  const [mainTaskSelectorOpen, setMainTaskSelectorOpen] = useState(false);
   const [weeklyPlannerOpen, setWeeklyPlannerOpen] = useState(false);
+  const [selectedMainTaskIds, setSelectedMainTaskIds] = useState<string[]>([]);
   
   const isMobile = useIsMobile();
   const { data: tasks = [] } = useTasks();
@@ -180,7 +184,7 @@ export default function Home() {
                 Project Web View
               </h2>
               <Button
-                onClick={() => setWeeklyPlannerOpen(true)}
+                onClick={() => setMainTaskSelectorOpen(true)}
                 className="bg-blue-600 hover:bg-blue-700 text-white"
                 data-testid="button-plan-week"
               >
@@ -220,6 +224,22 @@ export default function Home() {
         onClose={handleCloseCompletionDialog}
         onCompleteMainTask={handleCompleteMainTask}
         onAddMoreSubTasks={handleAddMoreSubTasks}
+      />
+
+      <MainTaskSelector
+        isOpen={mainTaskSelectorOpen}
+        onClose={() => setMainTaskSelectorOpen(false)}
+        onStartPlanning={(selectedTaskIds) => {
+          setSelectedMainTaskIds(selectedTaskIds);
+          setMainTaskSelectorOpen(false);
+          setWeeklyPlannerOpen(true);
+        }}
+      />
+
+      <WeeklyPlanner
+        isOpen={weeklyPlannerOpen}
+        onClose={() => setWeeklyPlannerOpen(false)}
+        selectedMainTaskIds={selectedMainTaskIds}
       />
     </div>
   );
