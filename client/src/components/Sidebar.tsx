@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +21,7 @@ import {
   ChevronLeft,
   PanelLeftClose,
   PanelLeft,
+  CheckCircle2,
 } from "lucide-react";
 import { useTasksNested, useTaskStats } from "@/hooks/use-tasks";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -258,7 +260,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
         </div>
 
         {/* Task Controls */}
-        <div className="p-6 border-b border-slate-200">
+        <div className="p-6 border-b border-slate-200 space-y-3">
           <Button
             className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
             onClick={onCreateTask}
@@ -266,6 +268,23 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
           >
             <Plus className="w-4 h-4" />
             <span>Create New Task</span>
+          </Button>
+          
+          <Button
+            asChild
+            variant="outline"
+            className="w-full font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
+            data-testid="link-completed-tasks"
+          >
+            <Link href="/completed-tasks" onClick={() => isMobile && onToggle()}>
+              <CheckCircle2 className="w-4 h-4" />
+              <span>View Completed Tasks</span>
+              {stats?.completedTasks ? (
+                <Badge variant="secondary" className="ml-auto">
+                  {stats.completedTasks}
+                </Badge>
+              ) : null}
+            </Link>
           </Button>
         </div>
 

@@ -1,4 +1,5 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { Link } from "wouter";
 import Sidebar from "@/components/Sidebar";
 import TaskCanvas from "@/components/TaskCanvas";
 import TaskModal from "@/components/TaskModal";
@@ -10,7 +11,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useTasks, useUpdateTask } from "@/hooks/use-tasks";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, CheckCircle2 } from "lucide-react";
 import type { TaskWithRelations } from "@shared/schema";
 import { cn } from "@/lib/utils";
 
@@ -200,7 +201,7 @@ export default function Home() {
         )}
       >
         {/* Top Navigation */}
-        <div className="bg-white border-b border-slate-200 p-4">
+        <div className="bg-white border-b border-slate-200 p-4 flex items-center gap-3">
           <Button
             onClick={() => setMainTaskSelectorOpen(true)}
             className="bg-blue-600 hover:bg-blue-700 text-white"
@@ -208,6 +209,18 @@ export default function Home() {
           >
             <CalendarDays className="w-4 h-4 mr-2" />
             Plan the next 7 days
+          </Button>
+          
+          <Button
+            asChild
+            variant="outline"
+            className="flex items-center gap-2"
+            data-testid="link-completed-tasks-top"
+          >
+            <Link href="/completed-tasks">
+              <CheckCircle2 className="w-4 h-4" />
+              <span className="hidden sm:inline">Completed Tasks</span>
+            </Link>
           </Button>
         </div>
 
