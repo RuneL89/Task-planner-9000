@@ -180,9 +180,6 @@ export default function Home() {
         <div className="bg-white border-b border-slate-200 p-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-3">
-              <h2 className="text-lg font-semibold text-slate-800" data-testid="page-title">
-                Project Web View
-              </h2>
               <Button
                 onClick={() => setMainTaskSelectorOpen(true)}
                 className="bg-blue-600 hover:bg-blue-700 text-white"
