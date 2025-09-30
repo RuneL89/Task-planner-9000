@@ -15,10 +15,11 @@ export function SwipeCard({ task, allTasks, onSwipeLeft, onSwipeRight }: SwipeCa
   const [deltaX, setDeltaX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
-  const buildBreadcrumbPath = (currentTask: TaskWithRelations): string[] => {
+  const buildBreadcrumbPath = (currentTask: TaskWithRelations): { path: string[], currentIndex: number } => {
     const path: string[] = [];
     let currentId: string | null | undefined = currentTask.id;
     
+    // Build path going up to parents
     while (currentId) {
       const taskInPath = allTasks.find(t => t.id === currentId);
       if (!taskInPath) break;
@@ -27,10 +28,18 @@ export function SwipeCard({ task, allTasks, onSwipeLeft, onSwipeRight }: SwipeCa
       currentId = taskInPath.parentTaskId;
     }
     
-    return path;
+    const currentIndex = path.length - 1;
+    
+    // Add next subtask if current task has children
+    const firstChild = allTasks.find(t => t.parentTaskId === currentTask.id);
+    if (firstChild) {
+      path.push(firstChild.title);
+    }
+    
+    return { path, currentIndex };
   };
 
-  const breadcrumbPath = buildBreadcrumbPath(task);
+  const { path: breadcrumbPath, currentIndex: currentTaskIndex } = buildBreadcrumbPath(task);
 
   useEffect(() => {
     setDeltaX(0);
@@ -119,7 +128,8 @@ export function SwipeCard({ task, allTasks, onSwipeLeft, onSwipeRight }: SwipeCa
         {/* Breadcrumb path */}
         <div className="text-sm mb-2 flex flex-wrap items-center gap-1" data-testid="breadcrumb-path">
           {breadcrumbPath.map((segment, index) => {
-            const isCurrentTask = index === breadcrumbPath.length - 1;
+            const isCurrentTask = index === currentTaskIndex;
+            const isNextTask = index === currentTaskIndex + 1;
             return (
               <span key={index} className="flex items-center gap-1">
                 <span 
@@ -129,7 +139,7 @@ export function SwipeCard({ task, allTasks, onSwipeLeft, onSwipeRight }: SwipeCa
                       : 'text-gray-500'
                   }`}
                   title={segment}
-                  data-testid={isCurrentTask ? 'breadcrumb-current' : `breadcrumb-parent-${index}`}
+                  data-testid={isCurrentTask ? 'breadcrumb-current' : isNextTask ? 'breadcrumb-next' : `breadcrumb-parent-${index}`}
                 >
                   {segment}
                 </span>
