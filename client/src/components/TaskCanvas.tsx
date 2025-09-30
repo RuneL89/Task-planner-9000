@@ -11,11 +11,8 @@ import {
   Edge,
   Node,
   ReactFlowProvider,
-  Panel,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { Button } from "@/components/ui/button";
-import { Plus, ZoomIn, ZoomOut, Maximize2 } from "lucide-react";
 import TaskNode, { TaskNodeData } from "./TaskNode";
 import { useTasks, useTaskConnections, useCreateTaskConnection, useUpdateTask, useToggleTaskCollapse } from "@/hooks/use-tasks";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -286,9 +283,9 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
         fitView
         attributionPosition="bottom-left"
         proOptions={{ hideAttribution: true }}
-        panOnDrag={!isMobile}
-        panOnScroll={!isMobile}
-        zoomOnScroll={!isMobile}
+        panOnDrag={true}
+        panOnScroll={true}
+        zoomOnScroll={true}
         zoomOnPinch={true}
         zoomOnDoubleClick={false}
         minZoom={0.2}
@@ -308,37 +305,6 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
             showFitView={true}
             showInteractive={false}
           />
-        )}
-        
-
-        {/* Mobile Controls */}
-        {isMobile && (
-          <Panel position="bottom-left" className="flex flex-col space-y-2">
-            <Button
-              variant="outline"
-              size="sm"
-              className="w-12 h-12 rounded-full bg-white shadow-lg"
-              data-testid="button-zoom-in"
-            >
-              <ZoomIn className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="w-12 h-12 rounded-full bg-white shadow-lg"
-              data-testid="button-zoom-out"
-            >
-              <ZoomOut className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="w-12 h-12 rounded-full bg-white shadow-lg"
-              data-testid="button-fit-view"
-            >
-              <Maximize2 className="w-4 h-4" />
-            </Button>
-          </Panel>
         )}
 
       </ReactFlow>

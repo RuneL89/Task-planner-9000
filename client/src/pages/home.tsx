@@ -4,7 +4,6 @@ import Sidebar from "@/components/Sidebar";
 import TaskCanvas from "@/components/TaskCanvas";
 import TaskModal from "@/components/TaskModal";
 import CompletionDialog from "@/components/CompletionDialog";
-import MobileControls from "@/components/MobileControls";
 import MainTaskSelector from "@/components/MainTaskSelector";
 import { WeeklyPlanner } from "@/components/WeeklyPlanner";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -226,15 +225,6 @@ export default function Home() {
 
         <TaskCanvas onCreateTask={() => handleCreateTask()} onEditTask={handleEditTask} onCreateSubtask={handleCreateTask} />
       </div>
-
-      {isMobile && (
-        <MobileControls
-          onZoomIn={() => {}}
-          onZoomOut={() => {}}
-          onFitView={() => {}}
-          onCreateTask={() => handleCreateTask()}
-        />
-      )}
 
       <TaskModal
         task={selectedTask}

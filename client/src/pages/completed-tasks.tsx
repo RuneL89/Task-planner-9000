@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { useTasks } from "@/hooks/use-tasks";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Calendar, Clock } from "lucide-react";
+import { CheckCircle, Calendar, Clock, ArrowLeft } from "lucide-react";
 import { format, parseISO, subDays, isAfter, startOfDay } from "date-fns";
 import type { TaskWithRelations } from "@shared/schema";
 
@@ -91,6 +92,17 @@ export default function CompletedTasks() {
     <div className="min-h-screen bg-slate-50 p-4 md:p-8" data-testid="page-completed-tasks">
       <div className="max-w-4xl mx-auto">
         <div className="mb-6">
+          <Button
+            asChild
+            variant="outline"
+            className="mb-4"
+            data-testid="button-back-to-home"
+          >
+            <Link href="/">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Tasks
+            </Link>
+          </Button>
           <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-2" data-testid="heading-completed-tasks">
             <CheckCircle className="w-8 h-8 text-green-600" />
             Completed Tasks ({completedTasks.length})
