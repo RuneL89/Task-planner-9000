@@ -1,19 +1,58 @@
+import { useState } from "react";
 import { useTasks } from "@/hooks/use-tasks";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { CheckCircle, Calendar, Clock } from "lucide-react";
-import { format, parseISO } from "date-fns";
+import { format, parseISO, subDays, isAfter, startOfDay } from "date-fns";
 import type { TaskWithRelations } from "@shared/schema";
+
+type FilterPeriod = "all" | "1week" | "2weeks" | "3weeks" | "4weeks";
 
 export default function CompletedTasks() {
   const { data: allTasks = [], isLoading } = useTasks();
+  const [selectedFilter, setSelectedFilter] = useState<FilterPeriod>("all");
 
-  const completedTasks = allTasks
+  const allCompletedTasks = allTasks
     .filter((task) => task.status === "completed" && task.completedAt)
     .sort((a, b) => {
       if (!a.completedAt || !b.completedAt) return 0;
       return new Date(b.completedAt).getTime() - new Date(a.completedAt).getTime();
     });
+
+  const getFilteredTasks = () => {
+    if (selectedFilter === "all") {
+      return allCompletedTasks;
+    }
+
+    const now = new Date();
+    let daysToSubtract = 0;
+    
+    switch (selectedFilter) {
+      case "1week":
+        daysToSubtract = 7;
+        break;
+      case "2weeks":
+        daysToSubtract = 14;
+        break;
+      case "3weeks":
+        daysToSubtract = 21;
+        break;
+      case "4weeks":
+        daysToSubtract = 28;
+        break;
+    }
+
+    const cutoffDate = startOfDay(subDays(now, daysToSubtract));
+
+    return allCompletedTasks.filter((task) => {
+      if (!task.completedAt) return false;
+      const completedDate = new Date(task.completedAt);
+      return isAfter(completedDate, cutoffDate);
+    });
+  };
+
+  const completedTasks = getFilteredTasks();
 
   const isCompletedLate = (task: TaskWithRelations): boolean => {
     if (!task.deadline || !task.completedAt) return false;
@@ -54,20 +93,66 @@ export default function CompletedTasks() {
         <div className="mb-6">
           <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-2" data-testid="heading-completed-tasks">
             <CheckCircle className="w-8 h-8 text-green-600" />
-            Completed Tasks
+            Completed Tasks ({completedTasks.length})
           </h1>
-          <p className="text-slate-600 mt-2" data-testid="text-task-count">
-            {completedTasks.length} {completedTasks.length === 1 ? "task" : "tasks"} completed
-          </p>
+        </div>
+
+        <div className="mb-6">
+          <div className="flex flex-wrap gap-2">
+            <Button
+              variant={selectedFilter === "all" ? "default" : "outline"}
+              onClick={() => setSelectedFilter("all")}
+              data-testid="button-filter-all"
+              className="min-h-[40px]"
+            >
+              All
+            </Button>
+            <Button
+              variant={selectedFilter === "1week" ? "default" : "outline"}
+              onClick={() => setSelectedFilter("1week")}
+              data-testid="button-filter-1week"
+              className="min-h-[40px]"
+            >
+              1 Week
+            </Button>
+            <Button
+              variant={selectedFilter === "2weeks" ? "default" : "outline"}
+              onClick={() => setSelectedFilter("2weeks")}
+              data-testid="button-filter-2weeks"
+              className="min-h-[40px]"
+            >
+              2 Weeks
+            </Button>
+            <Button
+              variant={selectedFilter === "3weeks" ? "default" : "outline"}
+              onClick={() => setSelectedFilter("3weeks")}
+              data-testid="button-filter-3weeks"
+              className="min-h-[40px]"
+            >
+              3 Weeks
+            </Button>
+            <Button
+              variant={selectedFilter === "4weeks" ? "default" : "outline"}
+              onClick={() => setSelectedFilter("4weeks")}
+              data-testid="button-filter-4weeks"
+              className="min-h-[40px]"
+            >
+              4 Weeks
+            </Button>
+          </div>
         </div>
 
         {completedTasks.length === 0 ? (
           <Card className="p-12" data-testid="empty-state-no-completed-tasks">
             <div className="text-center">
               <CheckCircle className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">No Completed Tasks</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                {selectedFilter === "all" ? "No Completed Tasks" : "No Tasks Found"}
+              </h3>
               <p className="text-slate-600">
-                Tasks you complete will appear here with their completion details.
+                {selectedFilter === "all"
+                  ? "Tasks you complete will appear here with their completion details."
+                  : `No tasks were completed in the selected time period. Try selecting a different filter.`}
               </p>
             </div>
           </Card>
