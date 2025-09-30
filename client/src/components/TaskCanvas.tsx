@@ -40,24 +40,6 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
   const isMobile = useIsMobile();
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
 
-  // Helper function to get all collapsed subtasks of a main task
-  const getCollapsedSubtasks = useCallback((mainTask: TaskWithRelations): TaskWithRelations[] => {
-    if (!mainTask.isCollapsed || !mainTask.subtasks?.length) return [];
-    
-    const collapsed: TaskWithRelations[] = [];
-    const collectSubtasks = (subtasks: TaskWithRelations[]) => {
-      subtasks.forEach(subtask => {
-        collapsed.push(subtask);
-        if (subtask.subtasks?.length) {
-          collectSubtasks(subtask.subtasks);
-        }
-      });
-    };
-    
-    collectSubtasks(mainTask.subtasks);
-    return collapsed;
-  }, []);
-
   // Helper function to check if a task should be hidden (is collapsed subtask)
   const isTaskHidden = useCallback((task: TaskWithRelations): boolean => {
     // Main tasks are NEVER hidden (they should always be visible)
@@ -189,27 +171,9 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
             positionY: node.position.y,
           },
         });
-
-        // If this is a main task with collapsed subtasks, move them too
-        if (task.isMainTask && task.isCollapsed) {
-          const collapsedSubtasks = getCollapsedSubtasks(task);
-          collapsedSubtasks.forEach((subtask, index) => {
-            // Position collapsed subtasks behind the main task (slightly offset)
-            const offsetX = node.position.x - 5 - (index * 2);
-            const offsetY = node.position.y + 5 + (index * 2);
-            
-            updateTask.mutate({
-              id: subtask.id,
-              task: {
-                positionX: offsetX,
-                positionY: offsetY,
-              },
-            });
-          });
-        }
       }
     },
-    [tasks, updateTask, getCollapsedSubtasks]
+    [tasks, updateTask]
   );
 
   // Handle new connections
