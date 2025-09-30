@@ -7,6 +7,8 @@ import MobileControls from "@/components/MobileControls";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTasks, useUpdateTask } from "@/hooks/use-tasks";
 import { useToast } from "@/hooks/use-toast";
+import { Button } from "@/components/ui/button";
+import { CalendarDays } from "lucide-react";
 import type { TaskWithRelations } from "@shared/schema";
 
 export default function Home() {
@@ -17,6 +19,7 @@ export default function Home() {
   const [completionDialogOpen, setCompletionDialogOpen] = useState(false);
   const [completedMainTask, setCompletedMainTask] = useState<TaskWithRelations | null>(null);
   const [dismissedCompletionTasks, setDismissedCompletionTasks] = useState<Set<string>>(new Set());
+  const [weeklyPlannerOpen, setWeeklyPlannerOpen] = useState(false);
   
   const isMobile = useIsMobile();
   const { data: tasks = [] } = useTasks();
@@ -176,6 +179,14 @@ export default function Home() {
               <h2 className="text-lg font-semibold text-slate-800" data-testid="page-title">
                 Project Web View
               </h2>
+              <Button
+                onClick={() => setWeeklyPlannerOpen(true)}
+                className="bg-blue-600 hover:bg-blue-700 text-white"
+                data-testid="button-plan-week"
+              >
+                <CalendarDays className="w-4 h-4 mr-2" />
+                Plan the next 7 days
+              </Button>
               <div className="flex items-center space-x-2 text-sm text-slate-500">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span data-testid="auto-save-status">Auto-saved</span>
