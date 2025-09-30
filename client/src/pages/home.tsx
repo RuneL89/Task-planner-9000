@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Sidebar from "@/components/Sidebar";
 import TaskCanvas from "@/components/TaskCanvas";
 import TaskModal from "@/components/TaskModal";
@@ -12,8 +12,10 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { CalendarDays } from "lucide-react";
 import type { TaskWithRelations } from "@shared/schema";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
+  const isMobile = useIsMobile();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [taskModalOpen, setTaskModalOpen] = useState(false);
   const [selectedTask, setSelectedTask] = useState<TaskWithRelations | null>(null);
@@ -25,10 +27,26 @@ export default function Home() {
   const [weeklyPlannerOpen, setWeeklyPlannerOpen] = useState(false);
   const [selectedMainTaskIds, setSelectedMainTaskIds] = useState<string[]>([]);
   
-  const isMobile = useIsMobile();
   const { data: tasks = [] } = useTasks();
   const updateTask = useUpdateTask();
   const { toast } = useToast();
+
+  const isFirstRender = useRef(true);
+  const prevIsMobileRef = useRef(isMobile);
+
+  // Sync sidebar state with mobile/desktop viewport changes
+  useLayoutEffect(() => {
+    if (isFirstRender.current) {
+      // On first render, immediately sync with isMobile BEFORE paint
+      setSidebarOpen(!isMobile);
+      isFirstRender.current = false;
+      prevIsMobileRef.current = isMobile;
+    } else if (prevIsMobileRef.current !== isMobile) {
+      // On subsequent renders, only update if isMobile actually changed
+      setSidebarOpen(!isMobile);
+      prevIsMobileRef.current = isMobile;
+    }
+  }, [isMobile]);
 
   // Check for completed main tasks and auto-update main task status
   useEffect(() => {
@@ -175,7 +193,12 @@ export default function Home() {
         onToggle={() => setSidebarOpen(!sidebarOpen)}
       />
 
-      <div className="flex-1 flex flex-col">
+      <div 
+        className={cn(
+          "flex-1 flex flex-col transition-all duration-300",
+          !isMobile && sidebarOpen ? "ml-80" : "ml-0"
+        )}
+      >
         {/* Top Navigation */}
         <div className="bg-white border-b border-slate-200 p-4">
           <Button

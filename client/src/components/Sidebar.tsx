@@ -17,6 +17,9 @@ import {
   Menu,
   ChevronDown,
   ChevronRight,
+  ChevronLeft,
+  PanelLeftClose,
+  PanelLeft,
 } from "lucide-react";
 import { useTasksNested, useTaskStats } from "@/hooks/use-tasks";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -182,13 +185,33 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
         />
       )}
 
+      {/* Desktop Toggle Button - positioned at the edge of sidebar */}
+      {!isMobile && (
+        <Button
+          variant="outline"
+          size="sm"
+          className={cn(
+            "fixed top-4 z-50 bg-white shadow-lg transition-all duration-300",
+            isOpen ? "left-[304px]" : "left-4"
+          )}
+          onClick={onToggle}
+          data-testid="button-desktop-toggle"
+        >
+          {isOpen ? (
+            <ChevronLeft className="w-4 h-4" />
+          ) : (
+            <ChevronRight className="w-4 h-4" />
+          )}
+        </Button>
+      )}
+
       {/* Sidebar */}
       <div
         className={cn(
           "w-80 bg-white shadow-xl border-r border-slate-200 flex flex-col transition-all duration-300 h-full",
           isMobile
             ? `fixed z-40 ${isOpen ? "translate-x-0" : "-translate-x-full"}`
-            : "relative"
+            : `fixed z-40 ${isOpen ? "translate-x-0" : "-translate-x-full"}`
         )}
         data-testid="sidebar"
       >
