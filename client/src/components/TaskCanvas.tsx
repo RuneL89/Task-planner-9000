@@ -23,7 +23,7 @@ import type { TaskWithRelations, InsertTaskConnection } from "@shared/schema";
 
 const nodeTypes = {
   taskNode: TaskNode,
-};
+} as const;
 
 interface TaskCanvasProps {
   onCreateTask: () => void;
@@ -45,14 +45,14 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
     // Main tasks are NEVER hidden (they should always be visible)
     if (task.isMainTask) return false;
     
-    // For non-main tasks, walk up the parent chain to check if any ancestor is a collapsed main task
+    // For non-main tasks, walk up the parent chain to check if any ancestor is collapsed
     let currentTask = task;
     while (currentTask.parentTaskId) {
       const parent = tasks.find(t => t.id === currentTask.parentTaskId);
       if (!parent) break;
       
-      // If we find a collapsed main task as an ancestor, hide this task
-      if (parent.isMainTask && parent.isCollapsed) {
+      // If we find ANY collapsed ancestor (not just main tasks), hide this task
+      if (parent.isCollapsed) {
         return true;
       }
       
@@ -111,30 +111,101 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
 
   // Convert connections to edges
   const initialEdges: Edge[] = useMemo(() => {
-    const manualConnections = connections.map((connection) => ({
-      id: connection.id,
-      source: connection.sourceTaskId,
-      target: connection.targetTaskId,
-      type: "smoothstep",
-      style: { stroke: "#64748b", strokeWidth: 2 },
-      animated: true,
-    }));
-
-    // Add automatic parent-child edges
+    // Get visible task IDs for validation  
+    const visibleTasks = tasks.filter(task => !isTaskHidden(task));
+    const visibleTaskIds = new Set(visibleTasks.map(t => t.id));
+    
+    // Filter manual connections to only include edges between visible nodes
+    const manualConnections = connections
+      .filter((connection) => 
+        visibleTaskIds.has(connection.sourceTaskId) && 
+        visibleTaskIds.has(connection.targetTaskId)
+      )
+      .map((connection) => ({
+        id: connection.id,
+        source: connection.sourceTaskId,
+        target: connection.targetTaskId,
+        sourceHandle: "right-source",
+        targetHandle: "left-target",
+        type: "smoothstep",
+        style: { stroke: "#64748b", strokeWidth: 2 },
+        animated: true,
+      }));
+    
+    // Add automatic parent-child edges with smart handle selection
     const parentChildEdges = tasks
       .filter(task => task.parentTaskId)
-      .map((task) => ({
-        id: `parent-${task.parentTaskId}-${task.id}`,
-        source: task.parentTaskId!,
-        target: task.id,
-        type: "smoothstep",
-        style: { stroke: "#3b82f6", strokeWidth: 3 },
-        animated: false,
-        className: "parent-child-edge",
-      }));
+      .filter(task => {
+        // Only create edges for visible nodes (not hidden by collapse)
+        const parentTask = tasks.find(t => t.id === task.parentTaskId);
+        // Ensure both parent and child are in the visible nodes list
+        return !isTaskHidden(task) && parentTask && !isTaskHidden(parentTask) &&
+               visibleTaskIds.has(task.id) && task.parentTaskId && visibleTaskIds.has(task.parentTaskId);
+      })
+      .map((task) => {
+        // Find the parent task to get its position
+        const parentTask = tasks.find(t => t.id === task.parentTaskId);
+        
+        // Default handles (bottom to top)
+        let sourceHandle = "bottom-source";
+        let targetHandle = "top-target";
+        
+        if (parentTask) {
+          const parentX = parentTask.positionX || 0;
+          const parentY = parentTask.positionY || 0;
+          const childX = task.positionX || 0;
+          const childY = task.positionY || 0;
+          
+          // Calculate differences
+          const deltaX = childX - parentX;
+          const deltaY = childY - parentY;
+          
+          // Threshold for horizontal routing (if horizontal distance is large enough)
+          const horizontalThreshold = 100;
+          
+          // Determine handle based on relative position
+          // Prioritize vertical routing if vertical distance is significant
+          if (Math.abs(deltaY) > Math.abs(deltaX)) {
+            // Vertical routing
+            if (deltaY > 0) {
+              // Child is below parent
+              sourceHandle = "bottom-source";
+              targetHandle = "top-target";
+            } else {
+              // Child is above parent
+              sourceHandle = "top-source";
+              targetHandle = "bottom-target";
+            }
+          } else if (Math.abs(deltaX) > horizontalThreshold) {
+            // Horizontal routing (only if horizontal distance exceeds threshold)
+            if (deltaX > 0) {
+              // Child is to the right
+              sourceHandle = "right-source";
+              targetHandle = "left-target";
+            } else {
+              // Child is to the left
+              sourceHandle = "left-source";
+              targetHandle = "right-target";
+            }
+          }
+          // If distances are roughly equal and below threshold, use default (bottom to top)
+        }
+        
+        return {
+          id: `parent-${task.parentTaskId}-${task.id}`,
+          source: task.parentTaskId!,
+          target: task.id,
+          sourceHandle,
+          targetHandle,
+          type: "smoothstep",
+          style: { stroke: "#3b82f6", strokeWidth: 3 },
+          animated: false,
+          className: "parent-child-edge",
+        };
+      });
 
     return [...manualConnections, ...parentChildEdges];
-  }, [connections, tasks]);
+  }, [connections, tasks, isTaskHidden]);
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);

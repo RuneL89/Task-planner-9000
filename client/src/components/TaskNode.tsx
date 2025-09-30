@@ -205,38 +205,62 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
   return (
     <div className="relative">
-      {/* Multiple connection handles for flexible visualization */}
-      {/* Top handle */}
+      {/* Connection handles with unique IDs for source and target */}
+      <Handle
+        type="source"
+        id="top-source"
+        position={Position.Top}
+        className="w-4 h-4 bg-gray-400 hover:bg-gray-600 border-2 border-white transition-colors"
+        style={{ left: '50%', transform: 'translateX(-50%)' }}
+      />
       <Handle
         type="target"
-        id="top"
+        id="top-target"
         position={Position.Top}
         className="w-4 h-4 bg-gray-400 hover:bg-gray-600 border-2 border-white transition-colors"
         style={{ left: '50%', transform: 'translateX(-50%)' }}
       />
       
-      {/* Bottom handle */}
       <Handle
         type="source"
-        id="bottom"
+        id="bottom-source"
+        position={Position.Bottom}
+        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        style={{ left: '50%', transform: 'translateX(-50%)' }}
+      />
+      <Handle
+        type="target"
+        id="bottom-target"
         position={Position.Bottom}
         className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
         style={{ left: '50%', transform: 'translateX(-50%)' }}
       />
       
-      {/* Left handle */}
       <Handle
         type="source"
-        id="left"
+        id="left-source"
+        position={Position.Left}
+        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        style={{ top: '50%', transform: 'translateY(-50%)' }}
+      />
+      <Handle
+        type="target"
+        id="left-target"
         position={Position.Left}
         className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
         style={{ top: '50%', transform: 'translateY(-50%)' }}
       />
       
-      {/* Right handle */}
       <Handle
         type="source"
-        id="right"
+        id="right-source"
+        position={Position.Right}
+        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        style={{ top: '50%', transform: 'translateY(-50%)' }}
+      />
+      <Handle
+        type="target"
+        id="right-target"
         position={Position.Right}
         className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
         style={{ top: '50%', transform: 'translateY(-50%)' }}
@@ -358,8 +382,8 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
                   : `${task.subtasks?.length || 0} subtasks`}
               </span>
               <div className="flex items-center space-x-1">
-                {/* Collapse button for main tasks with subtasks */}
-                {task.isMainTask && (progress?.total || 0) > 0 && onToggleCollapse && (
+                {/* Collapse button for any task with subtasks */}
+                {(task.subtasks?.length || 0) > 0 && onToggleCollapse && (
                   <Button
                     variant="outline"
                     size="sm"
