@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, ChevronUp, ChevronDown, Plus } from "lucide-react";
 import type { TaskWithRelations } from "@shared/schema";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export interface TaskNodeData extends Record<string, unknown> {
   task: TaskWithRelations;
@@ -16,6 +17,7 @@ export interface TaskNodeData extends Record<string, unknown> {
 
 const TaskNode = memo(({ data, selected }: NodeProps) => {
   const { task, onEdit, onToggleCollapse, onCreateSubtask } = data as TaskNodeData;
+  const isMobile = useIsMobile();
   const pressTimer = useRef<NodeJS.Timeout | null>(null);
   const pressStartTime = useRef<number>(0);
 
@@ -210,14 +212,14 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
         type="source"
         id="top-source"
         position={Position.Top}
-        className="w-4 h-4 bg-gray-400 hover:bg-gray-600 border-2 border-white transition-colors"
+        className={cn("w-4 h-4 bg-gray-400 hover:bg-gray-600 border-2 border-white transition-colors", isMobile && "w-6 h-6")}
         style={{ left: '50%', transform: 'translateX(-50%)' }}
       />
       <Handle
         type="target"
         id="top-target"
         position={Position.Top}
-        className="w-4 h-4 bg-gray-400 hover:bg-gray-600 border-2 border-white transition-colors"
+        className={cn("w-4 h-4 bg-gray-400 hover:bg-gray-600 border-2 border-white transition-colors", isMobile && "w-6 h-6")}
         style={{ left: '50%', transform: 'translateX(-50%)' }}
       />
       
@@ -225,14 +227,14 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
         type="source"
         id="bottom-source"
         position={Position.Bottom}
-        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        className={cn("w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors", isMobile && "w-6 h-6")}
         style={{ left: '50%', transform: 'translateX(-50%)' }}
       />
       <Handle
         type="target"
         id="bottom-target"
         position={Position.Bottom}
-        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        className={cn("w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors", isMobile && "w-6 h-6")}
         style={{ left: '50%', transform: 'translateX(-50%)' }}
       />
       
@@ -240,14 +242,14 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
         type="source"
         id="left-source"
         position={Position.Left}
-        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        className={cn("w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors", isMobile && "w-6 h-6")}
         style={{ top: '50%', transform: 'translateY(-50%)' }}
       />
       <Handle
         type="target"
         id="left-target"
         position={Position.Left}
-        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        className={cn("w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors", isMobile && "w-6 h-6")}
         style={{ top: '50%', transform: 'translateY(-50%)' }}
       />
       
@@ -255,14 +257,14 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
         type="source"
         id="right-source"
         position={Position.Right}
-        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        className={cn("w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors", isMobile && "w-6 h-6")}
         style={{ top: '50%', transform: 'translateY(-50%)' }}
       />
       <Handle
         type="target"
         id="right-target"
         position={Position.Right}
-        className="w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors"
+        className={cn("w-4 h-4 bg-blue-500 hover:bg-blue-600 border-2 border-white transition-colors", isMobile && "w-6 h-6")}
         style={{ top: '50%', transform: 'translateY(-50%)' }}
       />
 
@@ -286,15 +288,15 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
         {/* Add Subtask Button */}
         {onCreateSubtask && (
           <button
-            className="absolute bottom-2 right-2 w-6 h-6 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center transition-colors z-10"
+            className={cn("absolute bottom-2 right-2 w-6 h-6 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center transition-colors z-10", isMobile && "w-10 h-10")}
             onClick={handleCreateSubtask}
             data-testid={`button-add-subtask-${task.id}`}
           >
-            <Plus className="w-3 h-3 text-black" />
+            <Plus className={cn("w-3 h-3 text-black", isMobile && "w-4 h-4")} />
           </button>
         )}
         
-        <CardContent className="p-4">
+        <CardContent className={cn("p-4", isMobile && "p-6")}>
           <div className="flex items-start justify-between mb-2">
             <div className="flex items-center space-x-2">
               <div className={cn("w-3 h-3 rounded-full", getStatusColor(task.status))} />
@@ -307,7 +309,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
             <Button
               variant="ghost"
               size="sm"
-              className="opacity-0 group-hover:opacity-100 h-6 w-6 p-0"
+              className={cn("opacity-0 group-hover:opacity-100 h-6 w-6 p-0", isMobile && "h-8 w-8")}
               onClick={(e) => {
                 e.stopPropagation();
                 onEdit(task);
@@ -381,13 +383,13 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
                   ? `${subtaskCounts.nonCompleted} of ${subtaskCounts.total} subtasks` 
                   : `${task.subtasks?.length || 0} subtasks`}
               </span>
-              <div className="flex items-center space-x-1">
+              <div className={cn("flex items-center space-x-1", isMobile && "space-x-2")}>
                 {/* Collapse button for any task with subtasks */}
                 {(task.subtasks?.length || 0) > 0 && onToggleCollapse && (
                   <Button
                     variant="outline"
                     size="sm"
-                    className="h-6 px-2 text-xs"
+                    className={cn("h-6 px-2 text-xs", isMobile && "h-8")}
                     onClick={(e) => {
                       e.stopPropagation();
                       onToggleCollapse(task.id, !task.isCollapsed);
@@ -396,12 +398,12 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
                   >
                     {task.isCollapsed ? (
                       <>
-                        <ChevronDown className="w-3 h-3 mr-1" />
+                        <ChevronDown className={cn("w-3 h-3 mr-1", isMobile && "w-4 h-4")} />
                         Show
                       </>
                     ) : (
                       <>
-                        <ChevronUp className="w-3 h-3 mr-1" />
+                        <ChevronUp className={cn("w-3 h-3 mr-1", isMobile && "w-4 h-4")} />
                         Hide
                       </>
                     )}
