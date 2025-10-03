@@ -25,7 +25,7 @@ export default function MainTaskSelector({ isOpen, onClose, onStartPlanning }: M
 
   // Filter to show only main tasks with status "in_progress"
   const mainInProgressTasks = allTasks.filter(
-    task => task.isMainTask && task.status === "in_progress"
+    task => task.isMainTask && task.status !== "completed"
   );
 
   const handleCheckboxChange = (taskId: string, checked: boolean) => {
