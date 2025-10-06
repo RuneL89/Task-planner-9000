@@ -4,6 +4,23 @@
 
 A modern full-stack task management application built with React and Express, featuring a visual canvas-based interface for organizing tasks and their relationships. The application provides comprehensive task management capabilities including hierarchical task structures, interactive node-based visualization using React Flow, and mobile-optimized touch interactions. Now includes a dedicated Completed Tasks view with time-based filtering.
 
+## Recent Changes (October 2025)
+
+### Navigate to Task from Deadline Bar
+- **Smart Navigation**: Clicking a task in the sidebar's deadline sections (overdue, today, upcoming) now automatically navigates to that task on the canvas
+- **Intelligent Collapse/Expand**: All other main tasks collapse while the target task's main task expands, reducing visual clutter
+- **Smooth Zoom**: Canvas automatically zooms and pans to center on the clicked task with a 1.5x zoom level for optimal visibility
+- **Multi-level Support**: Properly expands all ancestors in the chain, ensuring deeply nested tasks are visible even when intermediate parents are collapsed
+
+### Enhanced Completed Tasks View
+- **Hierarchical Grouping**: Completed tasks now grouped by their root main task in card-based layout
+- **Main Task Cards**: Each main task displays as a prominent card with all its completed subtasks nested inside
+- **Improved Status Logic**: Fixed completion status to correctly distinguish between:
+  - "Completed Early" (green badge) - completed before the deadline date
+  - "On Time" (default badge) - completed on the same day as the deadline
+  - "Completed Late" (red badge) - completed after the deadline date
+- **Root-level Grouping**: Sub-subtasks correctly grouped under their owning main task (not intermediate parents)
+
 ## Recent Changes (September 2025)
 
 ### Mobile Experience Improvements
@@ -15,7 +32,7 @@ A modern full-stack task management application built with React and Express, fe
 - **New Page**: Added `/completed-tasks` route with dedicated list view for finished tasks
 - **Completion Tracking**: Tasks now track `completedAt` timestamp when marked as complete
 - **Time Filters**: Filter completed tasks by 1 week, 2 weeks, 3 weeks, 4 weeks, or view all
-- **Status Badges**: Shows "On Time" or "Completed Late" based on deadline comparison
+- **Status Badges**: Shows task completion status based on deadline comparison
 - **Navigation**: Accessible from sidebar and top navigation with completion count badge
 
 ## User Preferences
