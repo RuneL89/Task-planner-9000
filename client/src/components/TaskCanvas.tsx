@@ -11,6 +11,7 @@ import {
   Edge,
   Node,
   ReactFlowProvider,
+  useReactFlow,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import TaskNode, { TaskNodeData } from "./TaskNode";
@@ -26,9 +27,10 @@ interface TaskCanvasProps {
   onCreateTask: () => void;
   onEditTask: (task: TaskWithRelations) => void;
   onCreateSubtask: (parentTask: TaskWithRelations) => void;
+  onFocusTaskReady?: (focusFunction: (taskId: string) => void) => void;
 }
 
-const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCanvasProps) => {
+const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusTaskReady }: TaskCanvasProps) => {
   const { data: tasks = [], isLoading } = useTasks();
   const { data: connections = [] } = useTaskConnections();
   const createConnection = useCreateTaskConnection();
@@ -36,6 +38,7 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
   const toggleCollapse = useToggleTaskCollapse();
   const isMobile = useIsMobile();
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
+  const reactFlowInstance = useReactFlow();
 
   // Helper function to check if a task should be hidden (is collapsed subtask)
   const isTaskHidden = useCallback((task: TaskWithRelations): boolean => {
@@ -258,6 +261,68 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask }: TaskCa
     },
     [createConnection, setEdges]
   );
+
+  // Focus task function - zooms to a task and expands its main task hierarchy
+  const focusTask = useCallback(
+    (taskId: string) => {
+      // Find the clicked task
+      const task = tasks.find((t) => t.id === taskId);
+      if (!task) return;
+
+      // Walk up to find all ancestors from target to root main task
+      const ancestorsToExpand: string[] = [];
+      let currentId = taskId;
+      while (currentId) {
+        const currentTask = tasks.find(t => t.id === currentId);
+        if (!currentTask) break;
+        
+        if (currentTask.parentTaskId) {
+          ancestorsToExpand.push(currentTask.parentTaskId);
+          currentId = currentTask.parentTaskId;
+        } else {
+          break;
+        }
+      }
+
+      // Find the root main task (the last ancestor in the chain)
+      const rootMainTaskId = ancestorsToExpand.length > 0 ? ancestorsToExpand[ancestorsToExpand.length - 1] : taskId;
+      const rootMainTask = tasks.find(t => t.id === rootMainTaskId);
+
+      // Collapse all main tasks except the root main task
+      const mainTasks = tasks.filter((t) => t.isMainTask);
+      mainTasks.forEach((mainTask) => {
+        if (mainTask.id !== rootMainTaskId && mainTask.isCollapsed !== true) {
+          toggleCollapse.mutate({ id: mainTask.id, isCollapsed: true });
+        }
+      });
+
+      // Expand ALL ancestors in the chain (not just the root main task)
+      ancestorsToExpand.forEach((ancestorId) => {
+        const ancestor = tasks.find(t => t.id === ancestorId);
+        if (ancestor && ancestor.isCollapsed) {
+          toggleCollapse.mutate({ id: ancestorId, isCollapsed: false });
+        }
+      });
+
+      // Wait a bit for the collapse/expand mutations to complete, then zoom to the task
+      setTimeout(() => {
+        reactFlowInstance.fitView({
+          nodes: [{ id: taskId }],
+          duration: 800,
+          padding: 0.5,
+          maxZoom: 1.5,
+        });
+      }, 300);
+    },
+    [tasks, toggleCollapse, reactFlowInstance]
+  );
+
+  // Provide the focus function to the parent component
+  useEffect(() => {
+    if (onFocusTaskReady) {
+      onFocusTaskReady(focusTask);
+    }
+  }, [onFocusTaskReady, focusTask]);
 
   if (isLoading) {
     return (

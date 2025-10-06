@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import Sidebar from "@/components/Sidebar";
 import TaskCanvas from "@/components/TaskCanvas";
@@ -33,6 +33,7 @@ export default function Home() {
 
   const isFirstRender = useRef(true);
   const prevIsMobileRef = useRef(isMobile);
+  const focusTaskFunctionRef = useRef<((taskId: string) => void) | null>(null);
 
   // Sync sidebar state with mobile/desktop viewport changes
   useLayoutEffect(() => {
@@ -136,7 +137,11 @@ export default function Home() {
   const handleAddMoreSubTasks = () => {
     if (completedMainTask) {
       // Mark this task as dismissed to prevent dialog from reopening
-      setDismissedCompletionTasks(prev => new Set([...prev, completedMainTask.id]));
+      setDismissedCompletionTasks(prev => {
+        const newSet = new Set(prev);
+        newSet.add(completedMainTask.id);
+        return newSet;
+      });
       handleCreateTask(completedMainTask);
     }
     setCompletionDialogOpen(false);
@@ -146,7 +151,11 @@ export default function Home() {
   const handleCloseCompletionDialog = () => {
     if (completedMainTask) {
       // Mark this task as dismissed to prevent dialog from reopening
-      setDismissedCompletionTasks(prev => new Set([...prev, completedMainTask.id]));
+      setDismissedCompletionTasks(prev => {
+        const newSet = new Set(prev);
+        newSet.add(completedMainTask.id);
+        return newSet;
+      });
     }
     setCompletionDialogOpen(false);
     setCompletedMainTask(null);
@@ -171,11 +180,14 @@ export default function Home() {
   };
 
   const handleFocusTask = (task: TaskWithRelations) => {
-    // This will be used to focus the task on the canvas
-    // For now, we'll implement this as a placeholder
-    // The actual implementation would need to communicate with the TaskCanvas
-    console.log("Focusing task:", task.title);
+    if (focusTaskFunctionRef.current) {
+      focusTaskFunctionRef.current(task.id);
+    }
   };
+
+  const handleFocusTaskReady = useCallback((focusFunction: (taskId: string) => void) => {
+    focusTaskFunctionRef.current = focusFunction;
+  }, []);
 
   const handleCloseModal = () => {
     setTaskModalOpen(false);
@@ -223,7 +235,12 @@ export default function Home() {
           </Button>
         </div>
 
-        <TaskCanvas onCreateTask={() => handleCreateTask()} onEditTask={handleEditTask} onCreateSubtask={handleCreateTask} />
+        <TaskCanvas 
+          onCreateTask={() => handleCreateTask()} 
+          onEditTask={handleEditTask} 
+          onCreateSubtask={handleCreateTask}
+          onFocusTaskReady={handleFocusTaskReady}
+        />
       </div>
 
       <TaskModal
