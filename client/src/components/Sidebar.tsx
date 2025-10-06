@@ -323,7 +323,6 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
                             className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
                             onClick={() => {
                               onFocusTask(task);
-                              onEditTask(task);
                             }}
                             data-testid={`task-item-${task.id}`}
                           >
@@ -380,7 +379,6 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
                             className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
                             onClick={() => {
                               onFocusTask(task);
-                              onEditTask(task);
                             }}
                             data-testid={`task-item-${task.id}`}
                           >
@@ -437,7 +435,6 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
                             className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
                             onClick={() => {
                               onFocusTask(task);
-                              onEditTask(task);
                             }}
                             data-testid={`task-item-${task.id}`}
                           >
@@ -494,7 +491,6 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
                             className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
                             onClick={() => {
                               onFocusTask(task);
-                              onEditTask(task);
                             }}
                             data-testid={`task-item-${task.id}`}
                           >
@@ -540,7 +536,6 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
                             className="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
                             onClick={() => {
                               onFocusTask(task);
-                              onEditTask(task);
                             }}
                             data-testid={`task-item-${task.id}`}
                           >
