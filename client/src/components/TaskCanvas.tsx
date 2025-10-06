@@ -309,8 +309,8 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
         reactFlowInstance.fitView({
           nodes: [{ id: taskId }],
           duration: 800,
-          padding: 1.2,
-          maxZoom: 1.0,
+          padding: 0.3,
+          maxZoom: 1.5,
         });
       }, 300);
     },
