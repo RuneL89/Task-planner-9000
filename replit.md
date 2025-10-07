@@ -6,10 +6,12 @@ A modern full-stack task management application built with React and Express, fe
 
 ## Recent Changes (October 2025)
 
-### Navigate to Task from Deadline Bar
-- **Smart Navigation**: Clicking a task in the sidebar's deadline sections (overdue, today, upcoming) now automatically navigates to that task on the canvas
+### Navigate to Task from Deadline Bar (Updated October 2025)
+- **One-Click Navigation**: Clicking a task in the sidebar now expands all parent tasks AND zooms to the target in a single click (no more double-click required)
+- **Improved Timing**: Extended timeout to 600ms ensures expand/collapse mutations complete before zooming
+- **Smart Navigation**: Automatically navigates to any task on the canvas from sidebar deadline sections (overdue, today, upcoming, no deadline)
 - **Intelligent Collapse/Expand**: All other main tasks collapse while the target task's main task expands, reducing visual clutter
-- **Smooth Zoom**: Canvas automatically zooms and pans to center on the clicked task with a 1.5x zoom level for optimal visibility
+- **Optimized Zoom Level**: Canvas zooms to center on clicked task with 1.0x zoom level (reduced from 1.5x) for better overview visibility
 - **Multi-level Support**: Properly expands all ancestors in the chain, ensuring deeply nested tasks are visible even when intermediate parents are collapsed
 
 ### Enhanced Completed Tasks View
