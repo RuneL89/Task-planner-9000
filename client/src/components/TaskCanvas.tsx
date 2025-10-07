@@ -264,7 +264,7 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
 
   // Focus task function - zooms to a task and expands its main task hierarchy
   const focusTask = useCallback(
-    (taskId: string) => {
+    async (taskId: string) => {
       // Find the clicked task
       const task = tasks.find((t) => t.id === taskId);
       if (!task) return;
@@ -288,11 +288,16 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
       const rootMainTaskId = ancestorsToExpand.length > 0 ? ancestorsToExpand[ancestorsToExpand.length - 1] : taskId;
       const rootMainTask = tasks.find(t => t.id === rootMainTaskId);
 
+      // Collect all mutation promises
+      const mutationPromises: Promise<any>[] = [];
+
       // Collapse all main tasks except the root main task
       const mainTasks = tasks.filter((t) => t.isMainTask);
       mainTasks.forEach((mainTask) => {
         if (mainTask.id !== rootMainTaskId && mainTask.isCollapsed !== true) {
-          toggleCollapse.mutate({ id: mainTask.id, isCollapsed: true });
+          mutationPromises.push(
+            toggleCollapse.mutateAsync({ id: mainTask.id, isCollapsed: true })
+          );
         }
       });
 
@@ -300,11 +305,16 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
       ancestorsToExpand.forEach((ancestorId) => {
         const ancestor = tasks.find(t => t.id === ancestorId);
         if (ancestor && ancestor.isCollapsed) {
-          toggleCollapse.mutate({ id: ancestorId, isCollapsed: false });
+          mutationPromises.push(
+            toggleCollapse.mutateAsync({ id: ancestorId, isCollapsed: false })
+          );
         }
       });
 
-      // Wait a bit for the collapse/expand mutations to complete, then zoom to the task
+      // Wait for all mutations to complete
+      await Promise.all(mutationPromises);
+
+      // Give React Flow a moment to update its internal state after the mutations
       setTimeout(() => {
         reactFlowInstance.fitView({
           nodes: [{ id: taskId }],
@@ -312,7 +322,7 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
           padding: 0.3,
           maxZoom: 1.0,
         });
-      }, 600);
+      }, 300);
     },
     [tasks, toggleCollapse, reactFlowInstance]
   );
