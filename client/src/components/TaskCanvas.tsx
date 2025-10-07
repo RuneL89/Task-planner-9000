@@ -310,9 +310,9 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
           nodes: [{ id: taskId }],
           duration: 800,
           padding: 0.3,
-          maxZoom: 1.5,
+          maxZoom: 1.0,
         });
-      }, 300);
+      }, 600);
     },
     [tasks, toggleCollapse, reactFlowInstance]
   );
