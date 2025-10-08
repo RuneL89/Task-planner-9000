@@ -269,6 +269,13 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
       const task = tasks.find((t) => t.id === taskId);
       if (!task) return;
 
+      // Get the stored coordinates from the task data
+      const positionX = task.positionX || 0;
+      const positionY = task.positionY || 0;
+
+      // Immediately zoom to the stored coordinates with smooth animation
+      reactFlowInstance.setCenter(positionX, positionY, { zoom: 1.0, duration: 800 });
+
       // Walk up to find all ancestors from target to root main task
       const ancestorsToExpand: string[] = [];
       let currentId = taskId;
@@ -286,7 +293,6 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
 
       // Find the root main task (the last ancestor in the chain)
       const rootMainTaskId = ancestorsToExpand.length > 0 ? ancestorsToExpand[ancestorsToExpand.length - 1] : taskId;
-      const rootMainTask = tasks.find(t => t.id === rootMainTaskId);
 
       // Collect all mutation promises
       const mutationPromises: Promise<any>[] = [];
@@ -311,18 +317,8 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
         }
       });
 
-      // Wait for all mutations to complete
+      // Wait for all mutations to complete (happens in parallel with zoom animation)
       await Promise.all(mutationPromises);
-
-      // Give React Flow a moment to update its internal state after the mutations
-      setTimeout(() => {
-        reactFlowInstance.fitView({
-          nodes: [{ id: taskId }],
-          duration: 800,
-          padding: 0.3,
-          maxZoom: 1.0,
-        });
-      }, 300);
     },
     [tasks, toggleCollapse, reactFlowInstance]
   );
