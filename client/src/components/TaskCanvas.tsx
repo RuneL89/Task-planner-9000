@@ -317,6 +317,13 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
         }
       });
 
+      // Also expand the clicked task itself if it's collapsed (e.g., clicking a collapsed main task)
+      if (task.isCollapsed) {
+        mutationPromises.push(
+          toggleCollapse.mutateAsync({ id: taskId, isCollapsed: false })
+        );
+      }
+
       // Wait for all mutations to complete (happens in parallel with zoom animation)
       await Promise.all(mutationPromises);
     },
