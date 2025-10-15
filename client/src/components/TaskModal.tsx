@@ -244,7 +244,7 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
       title: formData.title.trim(),
       deadline: deadline ? 
         `${deadline.getFullYear()}-${(deadline.getMonth() + 1).toString().padStart(2, '0')}-${deadline.getDate().toString().padStart(2, '0')}` 
-        : undefined,
+        : null,
     } as InsertTask;
 
     try {
