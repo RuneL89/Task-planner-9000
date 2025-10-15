@@ -107,6 +107,22 @@ export class DatabaseStorage implements IStorage {
       })
       .where(eq(tasks.id, id))
       .returning();
+    
+    // Recursively update all ancestor tasks' updatedAt timestamps
+    let currentParentId = task.parentTaskId;
+    while (currentParentId) {
+      const [parentTask] = await db
+        .update(tasks)
+        .set({
+          updatedAt: sql`CURRENT_TIMESTAMP`,
+        })
+        .where(eq(tasks.id, currentParentId))
+        .returning();
+      
+      // Move to the next parent in the chain
+      currentParentId = parentTask?.parentTaskId || null;
+    }
+    
     return task;
   }
 

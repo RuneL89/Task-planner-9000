@@ -5,6 +5,7 @@ import TaskCanvas from "@/components/TaskCanvas";
 import TaskModal from "@/components/TaskModal";
 import CompletionDialog from "@/components/CompletionDialog";
 import MainTaskSelector from "@/components/MainTaskSelector";
+import MainTasksDropdown from "@/components/MainTasksDropdown";
 import { WeeklyPlanner } from "@/components/WeeklyPlanner";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTasks, useUpdateTask } from "@/hooks/use-tasks";
@@ -213,6 +214,8 @@ export default function Home() {
       >
         {/* Top Navigation */}
         <div className="bg-white border-b border-slate-200 p-4 flex items-center gap-3">
+          <MainTasksDropdown onFocusTask={handleFocusTask} />
+          
           <Button
             onClick={() => setMainTaskSelectorOpen(true)}
             className="bg-blue-600 hover:bg-blue-700 text-white"

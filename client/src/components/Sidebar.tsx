@@ -77,6 +77,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
     
     const overdue = allTasks
       .filter(task => 
+        !task.isMainTask &&
         task.deadline && 
         new Date(task.deadline + 'T00:00:00') < today && 
         task.status !== "completed"
@@ -88,7 +89,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
     
     const todayTasks = allTasks
       .filter(task => {
-        if (!task.deadline || task.status === "completed") return false;
+        if (task.isMainTask || !task.deadline || task.status === "completed") return false;
         const taskDeadline = new Date(task.deadline + 'T00:00:00');
         return taskDeadline.getTime() === today.getTime();
       })
@@ -102,7 +103,7 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
     
     const upcoming = allTasks
       .filter(task => {
-        if (!task.deadline || task.status === "completed") return false;
+        if (task.isMainTask || !task.deadline || task.status === "completed") return false;
         const taskDeadline = new Date(task.deadline + 'T00:00:00');
         return taskDeadline > today;
       })
@@ -112,10 +113,10 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
       });
     
     const noDeadline = allTasks
-      .filter(task => !task.deadline && task.status !== "completed");
+      .filter(task => !task.isMainTask && !task.deadline && task.status !== "completed");
     
     const completed = allTasks
-      .filter(task => task.status === "completed")
+      .filter(task => !task.isMainTask && task.status === "completed")
       .sort((a, b) => {
         // Most recently completed first
         if (!a.updatedAt || !b.updatedAt) return 0;
