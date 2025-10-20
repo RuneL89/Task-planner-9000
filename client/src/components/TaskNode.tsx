@@ -112,8 +112,8 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
     if (!deadline) return "";
     const date = new Date(deadline + 'T00:00:00');
     const day = date.getDate().toString().padStart(2, '0');
-    const year = date.getFullYear().toString().slice(-2);
-    return `(${day}/${year})`;
+    const month = (date.getMonth() + 1).toString().padStart(2, '0')
+    return `(${day}/${month})`;
   };
 
   const getSubtaskStatusColor = (status: string) => {
