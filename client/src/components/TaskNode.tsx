@@ -131,7 +131,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
   // Get all descendants (full hierarchy) for display (first 5 non-completed, ordered by deadline ascending)
   const { sortedSubtasks, subtaskCounts } = useMemo(() => {
-    if (!task.isMainTask || !task.subtasks) return { sortedSubtasks: [], subtaskCounts: { total: 0, nonCompleted: 0 } };
+    if (!task.subtasks) return { sortedSubtasks: [], subtaskCounts: { total: 0, nonCompleted: 0 } };
     
     // Recursively collect all descendants
     const collectAllDescendants = (tasks: any[]): any[] => {
@@ -379,7 +379,7 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
             <div className="flex items-center justify-between">
               <span className="text-xs text-gray-500">
-                {task.isMainTask && subtaskCounts.total > 0 
+                {subtaskCounts.total > 0 
                   ? `${subtaskCounts.nonCompleted} of ${subtaskCounts.total} subtasks` 
                   : `${task.subtasks?.length || 0} subtasks`}
               </span>
