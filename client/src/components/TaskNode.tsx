@@ -377,15 +377,17 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
               </div>
             )}
 
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-gray-500">
-                {subtaskCounts.total > 0 
-                  ? `${subtaskCounts.nonCompleted} of ${subtaskCounts.total} subtasks` 
-                  : `${task.subtasks?.length || 0} subtasks`}
-              </span>
-              <div className={cn("flex items-center space-x-1", isMobile && "space-x-2")}>
-                {/* Collapse button for any task with subtasks */}
-                {(task.subtasks?.length || 0) > 0 && onToggleCollapse && (
+            <div className="space-y-2">
+              <div className="text-center">
+                <span className="text-xs text-gray-500">
+                  {subtaskCounts.total > 0 
+                    ? `${subtaskCounts.nonCompleted} of ${subtaskCounts.total} subtasks` 
+                    : `${task.subtasks?.length || 0} subtasks`}
+                </span>
+              </div>
+              {/* Collapse button for any task with subtasks */}
+              {(task.subtasks?.length || 0) > 0 && onToggleCollapse && (
+                <div className="flex justify-center">
                   <Button
                     variant="outline"
                     size="sm"
@@ -408,8 +410,8 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
                       </>
                     )}
                   </Button>
-                )}
-              </div>
+                </div>
+              )}
             </div>
 
             {/* Subtask overview for main tasks */}
