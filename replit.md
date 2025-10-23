@@ -6,6 +6,20 @@ A modern full-stack task management application built with React and Express, fe
 
 ## Recent Changes (October 2025)
 
+### Auto-Cleanup for Completed Subtasks (October 2025)
+- **Configurable Retention**: Main tasks can enable automatic cleanup with retention periods (1 day, 1 week, 1 month, or OFF)
+- **Smart Deletion**: Only deletes fully completed subtask branches where ALL descendants are completed
+- **Main Task Protection**: Main tasks are never deleted, only their subtasks
+- **Cleanup Indicators**: Completed subtasks show countdown badges ("🗑️ Cleans up in X days") when eligible for deletion
+- **Performance-Safe**: Lazy cleanup runs on page load, processes maximum 20 tasks per batch to prevent performance issues
+- **Settings UI**: Checkbox and dropdown in TaskModal for main tasks to configure cleanup behavior
+- **State Sync**: UI enforces valid states - enabling cleanup defaults to "1 week", disabling sets to "OFF"
+- **Technical Details**:
+  - Backend: `cleanupCompletedTasks()` method with `countDescendants()` to enforce batch limit
+  - Frontend: Cleanup indicator in TaskNode uses `findParentMainTask()` to walk task hierarchy
+  - Schema: Added `autoCleanupEnabled` (boolean) and `autoCleanupPeriod` (text) fields to tasks table
+  - Deletion date calculated as: completedAt + retention period
+
 ### Navigate to Task from Deadline Bar (Updated October 2025)
 - **One-Click Navigation**: Clicking a task in the sidebar now expands all parent tasks AND zooms to the target in a single click (no more double-click required)
 - **Improved Timing**: Extended timeout to 600ms ensures expand/collapse mutations complete before zooming
