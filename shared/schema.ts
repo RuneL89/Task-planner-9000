@@ -18,6 +18,8 @@ export const tasks = pgTable("tasks", {
   createdAt: timestamp("created_at").default(sql`CURRENT_TIMESTAMP`),
   updatedAt: timestamp("updated_at").default(sql`CURRENT_TIMESTAMP`),
   completedAt: timestamp("completed_at"),
+  autoCleanupEnabled: boolean("auto_cleanup_enabled").default(false),
+  autoCleanupPeriod: text("auto_cleanup_period").default("off"), // "off", "1day", "1week", "1month"
 });
 
 
