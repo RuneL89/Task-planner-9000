@@ -235,6 +235,7 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
   }, [task, parentTask]);
 
   // Sync cleanup checkbox and dropdown states
+  // Only run when checkbox changes, not when dropdown changes
   useEffect(() => {
     if (autoCleanupEnabled && autoCleanupPeriod === "off") {
       // When checkbox is enabled and period is "off", set to "1week"
@@ -243,7 +244,7 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
       // When checkbox is disabled, set period to "off"
       setAutoCleanupPeriod("off");
     }
-  }, [autoCleanupEnabled, autoCleanupPeriod]);
+  }, [autoCleanupEnabled]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
