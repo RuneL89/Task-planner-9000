@@ -17,6 +17,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
@@ -157,6 +158,8 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
   const [formData, setFormData] = useState<Partial<InsertTask>>({});
   const [deadline, setDeadline] = useState<Date | undefined>(undefined);
   const [selectedConnections, setSelectedConnections] = useState<string[]>([]);
+  const [autoCleanupEnabled, setAutoCleanupEnabled] = useState<boolean>(false);
+  const [autoCleanupPeriod, setAutoCleanupPeriod] = useState<string>("off");
   
   const createTask = useCreateTask();
   const updateTask = useUpdateTask();
@@ -213,6 +216,8 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
         parentTaskId: task.parentTaskId || undefined,
       });
       setDeadline(task.deadline ? new Date(task.deadline + 'T00:00:00') : undefined);
+      setAutoCleanupEnabled(task.autoCleanupEnabled ?? false);
+      setAutoCleanupPeriod(task.autoCleanupPeriod ?? "off");
     } else {
       setFormData({
         title: "",
@@ -223,9 +228,22 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
         parentTaskId: parentTask?.id,
       });
       setDeadline(undefined);
+      setAutoCleanupEnabled(false);
+      setAutoCleanupPeriod("off");
     }
     setSelectedConnections([]);
   }, [task, parentTask]);
+
+  // Sync cleanup checkbox and dropdown states
+  useEffect(() => {
+    if (autoCleanupEnabled && autoCleanupPeriod === "off") {
+      // When checkbox is enabled and period is "off", set to "1week"
+      setAutoCleanupPeriod("1week");
+    } else if (!autoCleanupEnabled && autoCleanupPeriod !== "off") {
+      // When checkbox is disabled, set period to "off"
+      setAutoCleanupPeriod("off");
+    }
+  }, [autoCleanupEnabled, autoCleanupPeriod]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -245,6 +263,8 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
       deadline: deadline ? 
         `${deadline.getFullYear()}-${(deadline.getMonth() + 1).toString().padStart(2, '0')}-${deadline.getDate().toString().padStart(2, '0')}` 
         : null,
+      autoCleanupEnabled,
+      autoCleanupPeriod,
     } as InsertTask;
 
     try {
@@ -463,6 +483,43 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
                     onTaskSelect={(taskId) => setFormData({ ...formData, parentTaskId: taskId })}
                     availableParentTasks={availableParentTasks}
                   />
+                </div>
+              )}
+
+              {/* Auto-cleanup settings for main tasks */}
+              {formData.isMainTask && (
+                <div className="space-y-3 border-t pt-4">
+                  <Label className="text-base font-semibold">Auto-cleanup Completed Subtasks</Label>
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id="autoCleanup"
+                      checked={autoCleanupEnabled}
+                      onCheckedChange={(checked) => setAutoCleanupEnabled(checked as boolean)}
+                      data-testid="checkbox-auto-cleanup"
+                    />
+                    <Label htmlFor="autoCleanup" className="text-sm font-normal cursor-pointer">
+                      Enable automatic cleanup
+                    </Label>
+                  </div>
+                  {autoCleanupEnabled && (
+                    <div className="space-y-2 ml-6">
+                      <Label htmlFor="cleanupPeriod">Retention Period</Label>
+                      <Select
+                        value={autoCleanupPeriod}
+                        onValueChange={setAutoCleanupPeriod}
+                      >
+                        <SelectTrigger data-testid="select-cleanup-period">
+                          <SelectValue placeholder="Select retention period" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="off">OFF</SelectItem>
+                          <SelectItem value="1day">1 day</SelectItem>
+                          <SelectItem value="1week">1 week</SelectItem>
+                          <SelectItem value="1month">1 month</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  )}
                 </div>
               )}
 

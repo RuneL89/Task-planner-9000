@@ -99,6 +99,7 @@ const TaskCanvasContent = ({ onCreateTask, onEditTask, onCreateSubtask, onFocusT
         position: { x, y },
         data: {
           task,
+          allTasks: tasks,
           onEdit: onEditTask,
           onToggleCollapse: (taskId: string, isCollapsed: boolean) => {
             toggleCollapse.mutate({ id: taskId, isCollapsed });

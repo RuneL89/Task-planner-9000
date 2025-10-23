@@ -10,6 +10,7 @@ export interface IStorage {
   updateTask(id: string, task: Partial<InsertTask>): Promise<Task>;
   deleteTask(id: string): Promise<void>;
   getTaskDeletionCount(id: string): Promise<{ taskCount: number; taskTitles: string[] }>;
+  cleanupCompletedTasks(): Promise<number>;
   
   
   // Task connection operations
@@ -69,6 +70,55 @@ export class DatabaseStorage implements IStorage {
       ...task,
       subtasks: subtasksWithHierarchy
     };
+  }
+
+  // Helper method to check if a task and all its descendants are completed
+  private async isFullyCompletedBranch(taskId: string): Promise<boolean> {
+    // Get the task
+    const task = await db.query.tasks.findFirst({
+      where: eq(tasks.id, taskId),
+      columns: { status: true }
+    });
+
+    // If task doesn't exist or is not completed, return false
+    if (!task || task.status !== 'completed') {
+      return false;
+    }
+
+    // Get all direct children
+    const children = await db.query.tasks.findMany({
+      where: eq(tasks.parentTaskId, taskId),
+      columns: { id: true }
+    });
+
+    // If there are children, check if all are completed recursively
+    for (const child of children) {
+      const isChildBranchCompleted = await this.isFullyCompletedBranch(child.id);
+      if (!isChildBranchCompleted) {
+        return false;
+      }
+    }
+
+    // All children (if any) are completed
+    return true;
+  }
+
+  // Helper method to count all descendants of a task
+  private async countDescendants(taskId: string): Promise<number> {
+    // Get all direct children
+    const children = await db.query.tasks.findMany({
+      where: eq(tasks.parentTaskId, taskId),
+      columns: { id: true }
+    });
+
+    // Count is number of children plus all their descendants
+    let count = children.length;
+    
+    for (const child of children) {
+      count += await this.countDescendants(child.id);
+    }
+
+    return count;
   }
 
   async getTask(id: string): Promise<TaskWithRelations | undefined> {
@@ -184,6 +234,90 @@ export class DatabaseStorage implements IStorage {
       taskCount: tasksToDelete.length,
       taskTitles: tasksToDelete
     };
+  }
+
+  async cleanupCompletedTasks(): Promise<number> {
+    // Find all main tasks with auto cleanup enabled
+    const mainTasksWithCleanup = await db.query.tasks.findMany({
+      where: sql`${tasks.isMainTask} = true AND ${tasks.autoCleanupEnabled} = true AND ${tasks.autoCleanupPeriod} != 'off'`,
+      columns: { id: true, autoCleanupPeriod: true }
+    });
+
+    const eligibleTaskIds: string[] = [];
+
+    // Helper function to collect eligible tasks recursively
+    const collectEligibleTasks = async (taskId: string, cleanupPeriod: string) => {
+      // Get all direct children of this task
+      const children = await db.query.tasks.findMany({
+        where: eq(tasks.parentTaskId, taskId),
+        columns: { id: true, isMainTask: true, status: true, completedAt: true }
+      });
+
+      for (const child of children) {
+        // Check if this child is eligible
+        if (
+          !child.isMainTask &&
+          child.status === 'completed' &&
+          child.completedAt
+        ) {
+          // Check if fully completed branch
+          const isFullyCompleted = await this.isFullyCompletedBranch(child.id);
+          
+          if (isFullyCompleted) {
+            // Check if older than cleanup period
+            const now = new Date();
+            const completedAt = new Date(child.completedAt);
+            let daysOld = 0;
+
+            switch (cleanupPeriod) {
+              case '1day':
+                daysOld = 1;
+                break;
+              case '1week':
+                daysOld = 7;
+                break;
+              case '1month':
+                daysOld = 30;
+                break;
+            }
+
+            const cutoffDate = new Date(now);
+            cutoffDate.setDate(cutoffDate.getDate() - daysOld);
+
+            if (completedAt <= cutoffDate) {
+              eligibleTaskIds.push(child.id);
+            }
+          }
+        }
+
+        // Recursively check children even if parent is not eligible
+        await collectEligibleTasks(child.id, cleanupPeriod);
+      }
+    };
+
+    // Collect eligible tasks from each main task
+    for (const mainTask of mainTasksWithCleanup) {
+      await collectEligibleTasks(mainTask.id, mainTask.autoCleanupPeriod!);
+    }
+
+    // Delete eligible tasks, but track total count to stay under 20 task limit
+    let totalDeleted = 0;
+    
+    for (const taskId of eligibleTaskIds) {
+      // Count how many tasks will be deleted (task + all descendants)
+      const descendantCount = await this.countDescendants(taskId);
+      const branchCount = descendantCount + 1; // +1 for the task itself
+      
+      // Stop if deleting this branch would exceed the 20 task limit
+      if (totalDeleted + branchCount > 20) {
+        break;
+      }
+      
+      await this.deleteTask(taskId);
+      totalDeleted += branchCount;
+    }
+
+    return totalDeleted;
   }
 
 

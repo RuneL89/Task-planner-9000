@@ -9,6 +9,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/tasks", async (_req, res) => {
     try {
       const tasks = await storage.getTasks();
+      
+      // Trigger cleanup in background (fire-and-forget)
+      storage.cleanupCompletedTasks().catch(err => {
+        console.error('Auto-cleanup failed:', err);
+      });
+      
       res.json(tasks);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch tasks" });

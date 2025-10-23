@@ -7,16 +7,57 @@ import { Calendar, ChevronUp, ChevronDown, Plus } from "lucide-react";
 import type { TaskWithRelations } from "@shared/schema";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { addDays, differenceInDays } from "date-fns";
 
 export interface TaskNodeData extends Record<string, unknown> {
   task: TaskWithRelations;
+  allTasks: TaskWithRelations[];
   onEdit: (task: TaskWithRelations) => void;
   onToggleCollapse?: (taskId: string, isCollapsed: boolean) => void;
   onCreateSubtask?: (parentTask: TaskWithRelations) => void;
 }
 
+// Helper function to check if task and all descendants are completed
+const isFullyCompletedBranch = (task: TaskWithRelations): boolean => {
+  if (task.status !== "completed" || !task.completedAt) {
+    return false;
+  }
+  
+  if (task.subtasks && task.subtasks.length > 0) {
+    return task.subtasks.every(subtask => isFullyCompletedBranch(subtask));
+  }
+  
+  return true;
+};
+
+// Helper function to find parent main task
+const findParentMainTask = (task: TaskWithRelations, allTasks: TaskWithRelations[]): TaskWithRelations | null => {
+  if (!task.parentTaskId) return null;
+  
+  // Walk up the task tree using parentTaskId and searching the tasks array
+  let currentId: string | null = task.parentTaskId;
+  
+  while (currentId) {
+    // Find the current task in the array
+    const currentTask = allTasks.find(t => t.id === currentId);
+    
+    // If task not found, we can't continue
+    if (!currentTask) return null;
+    
+    // Check if this is a main task
+    if (currentTask.isMainTask) {
+      return currentTask;
+    }
+    
+    // Move up to the parent
+    currentId = currentTask.parentTaskId || null;
+  }
+  
+  return null;
+};
+
 const TaskNode = memo(({ data, selected }: NodeProps) => {
-  const { task, onEdit, onToggleCollapse, onCreateSubtask } = data as TaskNodeData;
+  const { task, allTasks, onEdit, onToggleCollapse, onCreateSubtask } = data as TaskNodeData;
   const isMobile = useIsMobile();
   const pressTimer = useRef<NodeJS.Timeout | null>(null);
   const pressStartTime = useRef<number>(0);
@@ -205,6 +246,60 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
 
   const progress = getCompletionProgress();
 
+  // Calculate cleanup info for eligible subtasks
+  const cleanupInfo = useMemo(() => {
+    // Guard: check if allTasks is available
+    if (!allTasks || allTasks.length === 0) return null;
+    
+    // Only calculate for non-main tasks
+    if (task.isMainTask) return null;
+    
+    // Check if task is completed
+    if (task.status !== "completed" || !task.completedAt) return null;
+    
+    // Check if all descendants are completed
+    if (!isFullyCompletedBranch(task)) return null;
+    
+    // Find parent main task
+    const parentMainTask = findParentMainTask(task, allTasks);
+    if (!parentMainTask) return null;
+    
+    // Check if auto cleanup is enabled
+    if (!parentMainTask.autoCleanupEnabled || parentMainTask.autoCleanupPeriod === "off") {
+      return null;
+    }
+    
+    // Calculate deletion date
+    const completedDate = new Date(task.completedAt);
+    let deletionDate: Date;
+    
+    switch (parentMainTask.autoCleanupPeriod) {
+      case "1day":
+        deletionDate = addDays(completedDate, 1);
+        break;
+      case "1week":
+        deletionDate = addDays(completedDate, 7);
+        break;
+      case "1month":
+        deletionDate = addDays(completedDate, 30);
+        break;
+      default:
+        return null;
+    }
+    
+    // Calculate days remaining
+    const today = new Date();
+    const daysRemaining = differenceInDays(deletionDate, today);
+    
+    // Only show if cleanup is scheduled (positive days or 0)
+    if (daysRemaining < 0) return null;
+    
+    return {
+      daysRemaining,
+      deletionDate
+    };
+  }, [task, allTasks]);
+
   return (
     <div className="relative">
       {/* Connection handles with unique IDs for source and target */}
@@ -355,6 +450,15 @@ const TaskNode = memo(({ data, selected }: NodeProps) => {
               <div className={cn("flex items-center space-x-1 text-xs text-gray-500", deadlineInfo.color)}>
                 <Calendar className="w-3 h-3" />
                 <span data-testid={`text-deadline-${task.id}`}>{deadlineInfo.text}</span>
+              </div>
+            )}
+
+            {/* Cleanup indicator for eligible subtasks */}
+            {cleanupInfo && (
+              <div className="flex items-center space-x-1 text-xs text-gray-500">
+                <span data-testid={`cleanup-indicator-${task.id}`}>
+                  🗑️ {cleanupInfo.daysRemaining === 0 ? "Cleans up today" : `Cleans up in ${cleanupInfo.daysRemaining} days`}
+                </span>
               </div>
             )}
 
