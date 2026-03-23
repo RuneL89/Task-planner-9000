@@ -1,6 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { pool } from "./db";
 
 const app = express();
 app.use(express.json());
@@ -36,7 +37,27 @@ app.use((req, res, next) => {
   next();
 });
 
+async function waitForDatabase(maxAttempts = 10, delayMs = 2000): Promise<void> {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const client = await pool.connect();
+      await client.query("SELECT 1");
+      client.release();
+      log(`Database ready (attempt ${attempt})`);
+      return;
+    } catch (err) {
+      log(`Database not ready yet (attempt ${attempt}/${maxAttempts}), retrying in ${delayMs}ms...`);
+      if (attempt === maxAttempts) {
+        throw new Error("Database failed to become available after maximum retries");
+      }
+      await new Promise(resolve => setTimeout(resolve, delayMs));
+    }
+  }
+}
+
 (async () => {
+  await waitForDatabase();
+
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
