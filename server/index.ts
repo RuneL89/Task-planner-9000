@@ -39,18 +39,21 @@ app.use((req, res, next) => {
 
 async function waitForDatabase(maxAttempts = 10, delayMs = 2000): Promise<void> {
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    let client: Awaited<ReturnType<typeof pool.connect>> | undefined;
     try {
-      const client = await pool.connect();
+      client = await pool.connect();
       await client.query("SELECT 1");
-      client.release();
       log(`Database ready (attempt ${attempt})`);
       return;
     } catch (err) {
-      log(`Database not ready yet (attempt ${attempt}/${maxAttempts}), retrying in ${delayMs}ms...`);
+      const message = err instanceof Error ? err.message : String(err);
+      log(`Database not ready yet (attempt ${attempt}/${maxAttempts}): ${message}`);
       if (attempt === maxAttempts) {
         throw new Error("Database failed to become available after maximum retries");
       }
       await new Promise(resolve => setTimeout(resolve, delayMs));
+    } finally {
+      client?.release();
     }
   }
 }
