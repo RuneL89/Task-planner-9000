@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:10:54.942Z",
+  "exportedAt": "2026-05-25T10:11:06.510Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -38,17 +38,34 @@
       "positionY": 890.6666666666667
     },
     {
+      "title": "Book meetings",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "a92213c8-d381-4faa-8a9c-bbee30dcc663",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "6ab8e335-3ef1-40c7-85aa-d4a4318890c1",
+      "createdAt": "2026-05-25T10:10:57.659Z",
+      "updatedAt": "2026-05-25T10:11:01.480Z",
+      "completedAt": null,
+      "positionX": 478.6666666666667,
+      "positionY": 623.3333333333334
+    },
+    {
       "title": "Decom/Migration",
       "description": "",
       "status": "pending",
       "priority": "medium",
       "isMainTask": true,
       "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
+      "autoCleanupEnabled": true,
+      "autoCleanupPeriod": "1week",
       "id": "a92213c8-d381-4faa-8a9c-bbee30dcc663",
       "createdAt": "2026-05-25T10:10:09.421Z",
-      "updatedAt": "2026-05-25T10:10:09.421Z",
+      "updatedAt": "2026-05-25T10:11:01.483Z",
       "completedAt": null
     },
     {
