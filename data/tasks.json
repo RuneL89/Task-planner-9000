@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:10:16.668Z",
+  "exportedAt": "2026-05-25T10:10:26.626Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -28,10 +28,27 @@
       "autoCleanupPeriod": "off",
       "id": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
       "createdAt": "2026-05-25T10:09:57.777Z",
-      "updatedAt": "2026-05-25T10:10:11.639Z",
+      "updatedAt": "2026-05-25T10:10:21.609Z",
       "completedAt": null,
       "positionX": -14.666666666666785,
       "positionY": 302.66666666666663
+    },
+    {
+      "title": "Talk to OP",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "fc03e8c1-9109-45be-8cc8-e826815baf58",
+      "createdAt": "2026-05-25T10:10:20.427Z",
+      "updatedAt": "2026-05-25T10:10:21.597Z",
+      "completedAt": null,
+      "positionX": -158.66666666666683,
+      "positionY": 622
     }
   ],
   "taskConnections": []
