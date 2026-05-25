@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:37:30.717Z",
+  "exportedAt": "2026-05-25T10:37:42.738Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
-      "title": "Reschedule",
+      "title": "Reschedule?",
       "description": "",
       "status": "pending",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
-      "deadline": null,
+      "deadline": "2026-05-25",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "0de0d160-bb5f-48b3-9b9e-85f616350815",
       "createdAt": "2026-05-25T10:10:28.602Z",
-      "updatedAt": "2026-05-25T10:10:32.159Z",
+      "updatedAt": "2026-05-25T10:37:37.711Z",
       "completedAt": null,
       "positionX": 187.99999999999997,
       "positionY": 636.6666666666667
@@ -80,7 +80,7 @@
       "autoCleanupPeriod": "1week",
       "id": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
       "createdAt": "2026-05-25T10:09:57.777Z",
-      "updatedAt": "2026-05-25T10:37:21.722Z",
+      "updatedAt": "2026-05-25T10:37:37.715Z",
       "completedAt": null,
       "positionX": -14.666666666666785,
       "positionY": 302.66666666666663
