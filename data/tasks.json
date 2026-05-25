@@ -1,39 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:09:49.321Z",
+  "exportedAt": "2026-05-25T10:09:55.775Z",
   "appName": "Task Planner 9000",
-  "tasks": [
-    {
-      "title": "xgfgfddgf",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": true,
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "52b07542-6af4-4ff1-9f94-fc023f736ea7",
-      "createdAt": "2026-05-25T10:05:51.237Z",
-      "updatedAt": "2026-05-25T10:06:04.236Z",
-      "completedAt": null
-    },
-    {
-      "title": "dasda",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "52b07542-6af4-4ff1-9f94-fc023f736ea7",
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "b60a75e6-d8f6-4702-adb8-c800f2bd5e91",
-      "createdAt": "2026-05-25T10:06:02.961Z",
-      "updatedAt": "2026-05-25T10:06:03.766Z",
-      "completedAt": null,
-      "positionX": 91.99999999999994,
-      "positionY": 583.3333333333334
-    }
-  ],
+  "tasks": [],
   "taskConnections": []
 }
