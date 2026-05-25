@@ -24,12 +24,21 @@ export async function fetchRepoJson(
   const info = getRepoInfo();
   if (!info) return null;
 
-  const url = `https://raw.githubusercontent.com/${info.owner}/${info.repo}/${branch}/${path}`;
-  const res = await fetch(url, {
-    headers: pat ? { Authorization: `Bearer ${pat}` } : {},
-  });
+  const res = await fetch(
+    `https://api.github.com/repos/${info.owner}/${info.repo}/contents/${path}?ref=${branch}`,
+    {
+      headers: {
+        Authorization: `Bearer ${pat}`,
+        Accept: 'application/vnd.github+json',
+      },
+    }
+  );
   if (!res.ok) return null;
-  return res.json();
+  const data = await res.json();
+  if (!data.content) return null;
+  const cleaned = data.content.replace(/\n/g, '');
+  const decoded = decodeURIComponent(escape(atob(cleaned)));
+  return JSON.parse(decoded);
 }
 
 export async function getFileSha(
