@@ -1,8 +1,25 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:10:26.626Z",
+  "exportedAt": "2026-05-25T10:10:37.170Z",
   "appName": "Task Planner 9000",
   "tasks": [
+    {
+      "title": "Reschedule",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "0de0d160-bb5f-48b3-9b9e-85f616350815",
+      "createdAt": "2026-05-25T10:10:28.602Z",
+      "updatedAt": "2026-05-25T10:10:32.159Z",
+      "completedAt": null,
+      "positionX": 187.99999999999997,
+      "positionY": 636.6666666666667
+    },
     {
       "title": "Decom/Migration",
       "description": "",
@@ -28,7 +45,7 @@
       "autoCleanupPeriod": "off",
       "id": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
       "createdAt": "2026-05-25T10:09:57.777Z",
-      "updatedAt": "2026-05-25T10:10:21.609Z",
+      "updatedAt": "2026-05-25T10:10:32.163Z",
       "completedAt": null,
       "positionX": -14.666666666666785,
       "positionY": 302.66666666666663
@@ -45,10 +62,10 @@
       "autoCleanupPeriod": "off",
       "id": "fc03e8c1-9109-45be-8cc8-e826815baf58",
       "createdAt": "2026-05-25T10:10:20.427Z",
-      "updatedAt": "2026-05-25T10:10:21.597Z",
+      "updatedAt": "2026-05-25T10:10:30.160Z",
       "completedAt": null,
-      "positionX": -158.66666666666683,
-      "positionY": 622
+      "positionX": -221.33333333333354,
+      "positionY": 618
     }
   ],
   "taskConnections": []
