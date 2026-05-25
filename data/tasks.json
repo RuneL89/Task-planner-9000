@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:11:06.510Z",
+  "exportedAt": "2026-05-25T10:36:46.776Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -32,10 +32,10 @@
       "autoCleanupPeriod": "off",
       "id": "5192c87b-af62-4293-82f6-4a5441c68ef5",
       "createdAt": "2026-05-25T10:10:47.683Z",
-      "updatedAt": "2026-05-25T10:10:49.918Z",
+      "updatedAt": "2026-05-25T10:36:41.765Z",
       "completedAt": null,
-      "positionX": -336.0000000000002,
-      "positionY": 890.6666666666667
+      "positionX": -488.0000000000003,
+      "positionY": 636
     },
     {
       "title": "Book meetings",
@@ -79,7 +79,7 @@
       "autoCleanupPeriod": "1week",
       "id": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
       "createdAt": "2026-05-25T10:09:57.777Z",
-      "updatedAt": "2026-05-25T10:10:49.925Z",
+      "updatedAt": "2026-05-25T10:36:41.769Z",
       "completedAt": null,
       "positionX": -14.666666666666785,
       "positionY": 302.66666666666663
@@ -96,7 +96,7 @@
       "autoCleanupPeriod": "off",
       "id": "fc03e8c1-9109-45be-8cc8-e826815baf58",
       "createdAt": "2026-05-25T10:10:20.427Z",
-      "updatedAt": "2026-05-25T10:10:49.921Z",
+      "updatedAt": "2026-05-25T10:36:41.768Z",
       "completedAt": null,
       "positionX": -221.33333333333354,
       "positionY": 618
