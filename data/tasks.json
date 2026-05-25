@@ -1,25 +1,8 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:06:09.249Z",
+  "exportedAt": "2026-05-25T10:09:49.321Z",
   "appName": "Task Planner 9000",
   "tasks": [
-    {
-      "title": "dsa",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "52b07542-6af4-4ff1-9f94-fc023f736ea7",
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "5119de24-f63b-4cdb-92ca-52b2403a8cf6",
-      "createdAt": "2026-05-25T10:06:00.769Z",
-      "updatedAt": "2026-05-25T10:06:04.233Z",
-      "completedAt": null,
-      "positionX": 653.3333333333335,
-      "positionY": 644.6666666666667
-    },
     {
       "title": "xgfgfddgf",
       "description": "",
