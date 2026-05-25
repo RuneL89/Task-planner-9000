@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:52:35.630Z",
+  "exportedAt": "2026-05-25T10:52:49.305Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -14,8 +14,10 @@
       "autoCleanupPeriod": "off",
       "id": "03ac63ec-de82-4ef2-bc2b-f26636d57781",
       "createdAt": "2026-05-25T10:52:30.599Z",
-      "updatedAt": "2026-05-25T10:52:30.599Z",
-      "completedAt": null
+      "updatedAt": "2026-05-25T10:52:44.284Z",
+      "completedAt": null,
+      "positionX": 787.6186438686454,
+      "positionY": 309.50045695756484
     },
     {
       "title": "Reschedule?",
@@ -79,9 +81,11 @@
       "autoCleanupPeriod": "1week",
       "id": "a92213c8-d381-4faa-8a9c-bbee30dcc663",
       "createdAt": "2026-05-25T10:10:09.421Z",
-      "updatedAt": "2026-05-25T10:37:25.701Z",
+      "updatedAt": "2026-05-25T10:52:41.428Z",
       "completedAt": null,
-      "isCollapsed": false
+      "isCollapsed": false,
+      "positionX": 382.8991774763833,
+      "positionY": 305.7002741745389
     },
     {
       "title": "Data Deletion",
