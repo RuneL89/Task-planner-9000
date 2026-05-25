@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:10:37.170Z",
+  "exportedAt": "2026-05-25T10:10:43.122Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -41,11 +41,11 @@
       "priority": "medium",
       "isMainTask": true,
       "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
+      "autoCleanupEnabled": true,
+      "autoCleanupPeriod": "1week",
       "id": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
       "createdAt": "2026-05-25T10:09:57.777Z",
-      "updatedAt": "2026-05-25T10:10:32.163Z",
+      "updatedAt": "2026-05-25T10:10:38.095Z",
       "completedAt": null,
       "positionX": -14.666666666666785,
       "positionY": 302.66666666666663
