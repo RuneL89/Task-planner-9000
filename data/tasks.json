@@ -1,8 +1,22 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:10:02.814Z",
+  "exportedAt": "2026-05-25T10:10:16.668Z",
   "appName": "Task Planner 9000",
   "tasks": [
+    {
+      "title": "Decom/Migration",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": true,
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "a92213c8-d381-4faa-8a9c-bbee30dcc663",
+      "createdAt": "2026-05-25T10:10:09.421Z",
+      "updatedAt": "2026-05-25T10:10:09.421Z",
+      "completedAt": null
+    },
     {
       "title": "Data Deletion",
       "description": "",
@@ -14,8 +28,10 @@
       "autoCleanupPeriod": "off",
       "id": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
       "createdAt": "2026-05-25T10:09:57.777Z",
-      "updatedAt": "2026-05-25T10:09:57.777Z",
-      "completedAt": null
+      "updatedAt": "2026-05-25T10:10:11.639Z",
+      "completedAt": null,
+      "positionX": -14.666666666666785,
+      "positionY": 302.66666666666663
     }
   ],
   "taskConnections": []
