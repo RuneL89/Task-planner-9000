@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, PanInfo } from "framer-motion";
 import { Calendar } from "lucide-react";
-import { TaskWithRelations } from "@shared/schema";
+import { TaskWithRelations } from "@/lib/db";
 import { format } from "date-fns";
 
 interface SwipeCardProps {

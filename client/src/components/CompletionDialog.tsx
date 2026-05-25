@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Plus } from "lucide-react";
-import type { TaskWithRelations } from "@shared/schema";
+import type { TaskWithRelations } from "@/lib/db";
 
 interface CompletionDialogProps {
   mainTask: TaskWithRelations | null;

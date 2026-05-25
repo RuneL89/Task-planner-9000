@@ -17,7 +17,8 @@ import "@xyflow/react/dist/style.css";
 import TaskNode, { TaskNodeData } from "./TaskNode";
 import { useTasks, useTaskConnections, useCreateTaskConnection, useUpdateTask, useToggleTaskCollapse } from "@/hooks/use-tasks";
 import { useIsMobile } from "@/hooks/use-mobile";
-import type { TaskWithRelations, InsertTaskConnection } from "@shared/schema";
+import type { TaskWithRelations } from "@/lib/db";
+import type { InsertTaskConnection } from "@/hooks/use-tasks";
 
 const nodeTypes = {
   taskNode: TaskNode,

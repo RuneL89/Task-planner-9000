@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Calendar, Clock, ArrowLeft } from "lucide-react";
 import { format, parseISO, subDays, isAfter, startOfDay, isBefore } from "date-fns";
-import type { TaskWithRelations } from "@shared/schema";
+import type { TaskWithRelations } from "@/lib/db";
 
 type FilterPeriod = "all" | "1week" | "2weeks" | "3weeks" | "4weeks";
 type CompletionStatus = "early" | "on_time" | "late" | null;

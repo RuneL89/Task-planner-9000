@@ -26,9 +26,9 @@ import {
 } from "@/components/ui/popover";
 import { CalendarIcon, Trash2 } from "lucide-react";
 import { format } from "date-fns";
-import { useCreateTask, useUpdateTask, useDeleteTask, useTasks, useTaskConnections, useCreateTaskConnection, useGetTaskDeletionInfo } from "@/hooks/use-tasks";
+import { useCreateTask, useUpdateTask, useDeleteTask, useTasks, useTaskConnections, useCreateTaskConnection, getTaskDeletionInfo } from "@/hooks/use-tasks";
 import { useToast } from "@/hooks/use-toast";
-import type { TaskWithRelations, InsertTask } from "@shared/schema";
+import type { TaskWithRelations, InsertTask } from "@/lib/db";
 import { cn } from "@/lib/utils";
 
 // Hierarchical task tree selector component
@@ -317,9 +317,8 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
     if (!task) return;
 
     try {
-      // Get deletion info
-      const response = await fetch(`/api/tasks/${task.id}/deletion-info`);
-      const deletionInfo = await response.json();
+      // Get deletion info client-side
+      const deletionInfo = await getTaskDeletionInfo(task.id);
       
       const { taskCount, taskTitles } = deletionInfo;
       
@@ -480,7 +479,7 @@ export default function TaskModal({ task, isOpen, onClose, parentTask }: TaskMod
                   <Label htmlFor="parentTask">Link to Parent Task (Optional)</Label>
                   <TaskTreeSelector
                     tasks={buildTaskTree()}
-                    selectedTaskId={formData.parentTaskId}
+                    selectedTaskId={formData.parentTaskId || undefined}
                     onTaskSelect={(taskId) => setFormData({ ...formData, parentTaskId: taskId })}
                     availableParentTasks={availableParentTasks}
                   />

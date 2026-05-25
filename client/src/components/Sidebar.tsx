@@ -22,11 +22,15 @@ import {
   PanelLeftClose,
   PanelLeft,
   CheckCircle2,
+  Cloud,
+  CloudOff,
+  RefreshCw,
 } from "lucide-react";
 import { useTasksNested, useTaskStats } from "@/hooks/use-tasks";
 import { useIsMobile } from "@/hooks/use-mobile";
-import type { TaskWithRelations } from "@shared/schema";
+import type { TaskWithRelations } from "@/lib/db";
 import { cn } from "@/lib/utils";
+import { SyncSettingsDialog } from "./SyncSettingsDialog";
 
 interface SidebarProps {
   onCreateTask: () => void;
@@ -34,9 +38,15 @@ interface SidebarProps {
   onFocusTask: (task: TaskWithRelations) => void;
   isOpen: boolean;
   onToggle: () => void;
+  syncStatus?: string;
+  lastSyncAt?: number | null;
+  onSyncNow?: () => void;
+  pat?: string;
+  onSavePat?: (pat: string) => void;
+  onClearPat?: () => void;
 }
 
-export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen, onToggle }: SidebarProps) {
+export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen, onToggle, syncStatus, lastSyncAt, onSyncNow, pat, onSavePat, onClearPat }: SidebarProps) {
   const { data: tasks = [] } = useTasksNested();
   const { data: stats } = useTaskStats();
   const isMobile = useIsMobile();
@@ -289,7 +299,47 @@ export default function Sidebar({ onCreateTask, onEditTask, onFocusTask, isOpen,
           </Button>
         </div>
 
-        {/* Task List */}
+          {/* Sync Status */}
+        <div className="p-4 border-b border-slate-200 space-y-2">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-sm text-slate-600">
+              {syncStatus === "synced" ? (
+                <Cloud className="w-4 h-4 text-green-500" />
+              ) : syncStatus === "error" ? (
+                <CloudOff className="w-4 h-4 text-red-500" />
+              ) : (
+                <Cloud className="w-4 h-4 text-slate-400" />
+              )}
+              <span>
+                {syncStatus === "pulling" && "Pulling..."}
+                {syncStatus === "pushing" && "Pushing..."}
+                {syncStatus === "synced" && "Synced"}
+                {syncStatus === "error" && "Sync error"}
+                {syncStatus === "idle" && (pat ? "Ready" : "Not configured")}
+              </span>
+            </div>
+            {onSyncNow && pat && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={onSyncNow}
+                disabled={syncStatus === "pulling" || syncStatus === "pushing"}
+              >
+                <RefreshCw className={cn("w-4 h-4", (syncStatus === "pulling" || syncStatus === "pushing") && "animate-spin")} />
+              </Button>
+            )}
+          </div>
+          {lastSyncAt && (
+            <p className="text-xs text-slate-400">
+              Last sync: {new Date(lastSyncAt).toLocaleString()}
+            </p>
+          )}
+          {onSavePat && onClearPat && (
+            <SyncSettingsDialog pat={pat || ""} onSavePat={onSavePat} onClearPat={onClearPat} />
+          )}
+        </div>
+
+      {/* Task List */}
         <div className="flex-1 overflow-hidden">
           <ScrollArea className="h-full px-6 pb-6">
             <div className="space-y-4">

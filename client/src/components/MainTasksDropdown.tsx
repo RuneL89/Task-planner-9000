@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChevronDown, Layers } from "lucide-react";
 import { useTasksNested } from "@/hooks/use-tasks";
-import type { TaskWithRelations } from "@shared/schema";
+import type { TaskWithRelations } from "@/lib/db";
 import { cn } from "@/lib/utils";
 
 interface MainTasksDropdownProps {

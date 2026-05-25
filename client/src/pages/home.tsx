@@ -10,9 +10,11 @@ import { WeeklyPlanner } from "@/components/WeeklyPlanner";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTasks, useUpdateTask } from "@/hooks/use-tasks";
 import { useToast } from "@/hooks/use-toast";
+import { useGitHubSync } from "@/hooks/useGitHubSync";
 import { Button } from "@/components/ui/button";
 import { CalendarDays, CheckCircle2 } from "lucide-react";
-import type { TaskWithRelations } from "@shared/schema";
+import type { TaskWithRelations } from "@/lib/db";
+import { cleanupCompletedTasks } from "@/lib/cleanup";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
@@ -31,6 +33,7 @@ export default function Home() {
   const { data: tasks = [] } = useTasks();
   const updateTask = useUpdateTask();
   const { toast } = useToast();
+  const sync = useGitHubSync();
 
   const isFirstRender = useRef(true);
   const prevIsMobileRef = useRef(isMobile);
@@ -105,6 +108,13 @@ export default function Home() {
       }
     });
   }, [tasks]); // Removed completionDialogOpen from dependencies to prevent loop!
+
+  // Run auto-cleanup on page load
+  useEffect(() => {
+    cleanupCompletedTasks().catch(() => {
+      // Silently fail cleanup — not critical to user experience
+    });
+  }, []);
 
   const handleCompleteMainTask = async () => {
     if (completedMainTask) {
@@ -204,6 +214,12 @@ export default function Home() {
         onFocusTask={handleFocusTask}
         isOpen={sidebarOpen}
         onToggle={() => setSidebarOpen(!sidebarOpen)}
+        syncStatus={sync.status}
+        lastSyncAt={sync.lastSyncAt}
+        onSyncNow={sync.syncNow}
+        pat={sync.pat}
+        onSavePat={sync.savePat}
+        onClearPat={sync.clearPat}
       />
 
       <div 

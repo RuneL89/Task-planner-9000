@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useTasks, useUpdateTask } from "@/hooks/use-tasks";
-import type { TaskWithRelations } from "@shared/schema";
+import type { TaskWithRelations } from "@/lib/db";
 import { Button } from "@/components/ui/button";
 import { SwipeCard } from "@/components/SwipeCard";
 import { DatePickerPopup } from "@/components/DatePickerPopup";
