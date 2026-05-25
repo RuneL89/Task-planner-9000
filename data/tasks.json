@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "exportedAt": "2026-05-25T10:09:55.775Z",
+  "exportedAt": "2026-05-25T10:10:02.814Z",
   "appName": "Task Planner 9000",
-  "tasks": [],
+  "tasks": [
+    {
+      "title": "Data Deletion",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": true,
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
+      "createdAt": "2026-05-25T10:09:57.777Z",
+      "updatedAt": "2026-05-25T10:09:57.777Z",
+      "completedAt": null
+    }
+  ],
   "taskConnections": []
 }
