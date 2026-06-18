@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-18T09:26:58.982Z",
+  "exportedAt": "2026-06-18T09:33:30.353Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,10 +116,10 @@
       "autoCleanupPeriod": "off",
       "id": "830d04b7-2539-4381-99ef-548890840f23",
       "createdAt": "2026-06-18T06:57:27.296Z",
-      "updatedAt": "2026-06-18T09:26:52.900Z",
+      "updatedAt": "2026-06-18T09:33:25.324Z",
       "completedAt": null,
-      "positionX": 1580.3184273593006,
-      "positionY": 482.9935719099535
+      "positionX": 1571.8039571889901,
+      "positionY": 417.00642809004677
     },
     {
       "title": "Talk to Xiaojie about today's SR",
@@ -166,7 +166,7 @@
       "autoCleanupPeriod": "1day",
       "id": "daadac36-af74-4c51-b196-6abafefe601b",
       "createdAt": "2026-06-18T06:56:33.653Z",
-      "updatedAt": "2026-06-18T09:26:53.959Z",
+      "updatedAt": "2026-06-18T09:33:25.332Z",
       "completedAt": null,
       "positionX": 1160.980771471506,
       "positionY": 308.51447017031063
