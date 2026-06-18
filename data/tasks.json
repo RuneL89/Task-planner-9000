@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-18T06:57:07.120Z",
+  "exportedAt": "2026-06-18T06:57:16.239Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -35,6 +35,23 @@
       "completedAt": "2026-05-25T12:41:56.346Z",
       "positionX": 187.99999999999997,
       "positionY": 636.6666666666667
+    },
+    {
+      "title": "Talk to Hugo: Release Notes",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "daadac36-af74-4c51-b196-6abafefe601b",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "456cdd4c-1b77-4d56-b658-08e394735c6a",
+      "createdAt": "2026-06-18T06:57:09.288Z",
+      "updatedAt": "2026-06-18T06:57:11.225Z",
+      "completedAt": null,
+      "positionX": 1441.958287091754,
+      "positionY": 644.7685051458541
     },
     {
       "title": "Email people: Data Readiness",
@@ -115,7 +132,7 @@
       "autoCleanupPeriod": "1day",
       "id": "daadac36-af74-4c51-b196-6abafefe601b",
       "createdAt": "2026-06-18T06:56:33.653Z",
-      "updatedAt": "2026-06-18T06:57:02.109Z",
+      "updatedAt": "2026-06-18T06:57:11.227Z",
       "completedAt": null,
       "positionX": 1159.916462700217,
       "positionY": 308.51447017031063
