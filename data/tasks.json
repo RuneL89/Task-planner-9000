@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-18T09:33:30.353Z",
+  "exportedAt": "2026-06-18T13:53:26.848Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -39,7 +39,7 @@
     {
       "title": "Talk to Hugo: Release Notes",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "daadac36-af74-4c51-b196-6abafefe601b",
@@ -48,8 +48,8 @@
       "autoCleanupPeriod": "off",
       "id": "456cdd4c-1b77-4d56-b658-08e394735c6a",
       "createdAt": "2026-06-18T06:57:09.288Z",
-      "updatedAt": "2026-06-18T09:26:53.957Z",
-      "completedAt": null,
+      "updatedAt": "2026-06-18T13:53:21.830Z",
+      "completedAt": "2026-06-18T13:53:21.830Z",
       "positionX": 1545.1962379067695,
       "positionY": 723.5273542212267
     },
@@ -166,7 +166,7 @@
       "autoCleanupPeriod": "1day",
       "id": "daadac36-af74-4c51-b196-6abafefe601b",
       "createdAt": "2026-06-18T06:56:33.653Z",
-      "updatedAt": "2026-06-18T09:33:25.332Z",
+      "updatedAt": "2026-06-18T13:53:21.833Z",
       "completedAt": null,
       "positionX": 1160.980771471506,
       "positionY": 308.51447017031063
