@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-18T06:56:42.464Z",
+  "exportedAt": "2026-06-18T06:56:48.966Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -98,10 +98,10 @@
       "autoCleanupPeriod": "1day",
       "id": "daadac36-af74-4c51-b196-6abafefe601b",
       "createdAt": "2026-06-18T06:56:33.653Z",
-      "updatedAt": "2026-06-18T06:56:37.454Z",
+      "updatedAt": "2026-06-18T06:56:43.946Z",
       "completedAt": null,
-      "positionX": 1352.5563503034932,
-      "positionY": 280.8424421168013
+      "positionX": 1159.916462700217,
+      "positionY": 308.51447017031063
     },
     {
       "title": "Data Deletion",
