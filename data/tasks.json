@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-18T06:56:48.966Z",
+  "exportedAt": "2026-06-18T06:57:07.120Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -35,6 +35,23 @@
       "completedAt": "2026-05-25T12:41:56.346Z",
       "positionX": 187.99999999999997,
       "positionY": 636.6666666666667
+    },
+    {
+      "title": "Email people: Data Readiness",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "daadac36-af74-4c51-b196-6abafefe601b",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "4c30e8cc-782b-47de-a9df-f52744387213",
+      "createdAt": "2026-06-18T06:56:59.743Z",
+      "updatedAt": "2026-06-18T06:57:02.107Z",
+      "completedAt": null,
+      "positionX": 1167.3666240992386,
+      "positionY": 640.5112700606987
     },
     {
       "title": "Update doc",
@@ -98,7 +115,7 @@
       "autoCleanupPeriod": "1day",
       "id": "daadac36-af74-4c51-b196-6abafefe601b",
       "createdAt": "2026-06-18T06:56:33.653Z",
-      "updatedAt": "2026-06-18T06:56:43.946Z",
+      "updatedAt": "2026-06-18T06:57:02.109Z",
       "completedAt": null,
       "positionX": 1159.916462700217,
       "positionY": 308.51447017031063
