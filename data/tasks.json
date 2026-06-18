@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-18T06:57:33.937Z",
+  "exportedAt": "2026-06-18T07:01:15.976Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -122,6 +122,23 @@
       "positionY": 638.3826525181212
     },
     {
+      "title": "Talk to Xiaojie about today's SR",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "daadac36-af74-4c51-b196-6abafefe601b",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "a7bdfed7-adcf-4c2f-a817-75c70a473182",
+      "createdAt": "2026-06-18T07:01:07.943Z",
+      "updatedAt": "2026-06-18T07:01:10.963Z",
+      "completedAt": null,
+      "positionX": 1152.4663013011955,
+      "positionY": 813.7275225879541
+    },
+    {
       "title": "Decom/Migration",
       "description": "",
       "status": "pending",
@@ -149,7 +166,7 @@
       "autoCleanupPeriod": "1day",
       "id": "daadac36-af74-4c51-b196-6abafefe601b",
       "createdAt": "2026-06-18T06:56:33.653Z",
-      "updatedAt": "2026-06-18T06:57:28.925Z",
+      "updatedAt": "2026-06-18T07:01:10.965Z",
       "completedAt": null,
       "positionX": 1160.980771471506,
       "positionY": 308.51447017031063
