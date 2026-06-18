@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-18T07:01:15.976Z",
+  "exportedAt": "2026-06-18T09:26:58.982Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -48,15 +48,15 @@
       "autoCleanupPeriod": "off",
       "id": "456cdd4c-1b77-4d56-b658-08e394735c6a",
       "createdAt": "2026-06-18T06:57:09.288Z",
-      "updatedAt": "2026-06-18T06:57:11.225Z",
+      "updatedAt": "2026-06-18T09:26:53.957Z",
       "completedAt": null,
-      "positionX": 1441.958287091754,
-      "positionY": 644.7685051458541
+      "positionX": 1545.1962379067695,
+      "positionY": 723.5273542212267
     },
     {
       "title": "Email people: Data Readiness",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "daadac36-af74-4c51-b196-6abafefe601b",
@@ -65,8 +65,8 @@
       "autoCleanupPeriod": "off",
       "id": "4c30e8cc-782b-47de-a9df-f52744387213",
       "createdAt": "2026-06-18T06:56:59.743Z",
-      "updatedAt": "2026-06-18T06:57:02.107Z",
-      "completedAt": null,
+      "updatedAt": "2026-06-18T09:26:44.249Z",
+      "completedAt": "2026-06-18T09:26:44.249Z",
       "positionX": 1167.3666240992386,
       "positionY": 640.5112700606987
     },
@@ -116,15 +116,15 @@
       "autoCleanupPeriod": "off",
       "id": "830d04b7-2539-4381-99ef-548890840f23",
       "createdAt": "2026-06-18T06:57:27.296Z",
-      "updatedAt": "2026-06-18T06:57:28.923Z",
+      "updatedAt": "2026-06-18T09:26:52.900Z",
       "completedAt": null,
-      "positionX": 1725.0644202545802,
-      "positionY": 638.3826525181212
+      "positionX": 1580.3184273593006,
+      "positionY": 482.9935719099535
     },
     {
       "title": "Talk to Xiaojie about today's SR",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "daadac36-af74-4c51-b196-6abafefe601b",
@@ -133,8 +133,8 @@
       "autoCleanupPeriod": "off",
       "id": "a7bdfed7-adcf-4c2f-a817-75c70a473182",
       "createdAt": "2026-06-18T07:01:07.943Z",
-      "updatedAt": "2026-06-18T07:01:10.963Z",
-      "completedAt": null,
+      "updatedAt": "2026-06-18T09:26:47.438Z",
+      "completedAt": "2026-06-18T09:26:47.438Z",
       "positionX": 1152.4663013011955,
       "positionY": 813.7275225879541
     },
@@ -166,7 +166,7 @@
       "autoCleanupPeriod": "1day",
       "id": "daadac36-af74-4c51-b196-6abafefe601b",
       "createdAt": "2026-06-18T06:56:33.653Z",
-      "updatedAt": "2026-06-18T07:01:10.965Z",
+      "updatedAt": "2026-06-18T09:26:53.959Z",
       "completedAt": null,
       "positionX": 1160.980771471506,
       "positionY": 308.51447017031063
