@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-18T06:57:23.659Z",
+  "exportedAt": "2026-06-18T06:57:33.937Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -105,6 +105,23 @@
       "positionY": 623.3333333333334
     },
     {
+      "title": "DQ Issue before release",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "daadac36-af74-4c51-b196-6abafefe601b",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "830d04b7-2539-4381-99ef-548890840f23",
+      "createdAt": "2026-06-18T06:57:27.296Z",
+      "updatedAt": "2026-06-18T06:57:28.923Z",
+      "completedAt": null,
+      "positionX": 1725.0644202545802,
+      "positionY": 638.3826525181212
+    },
+    {
       "title": "Decom/Migration",
       "description": "",
       "status": "pending",
@@ -132,7 +149,7 @@
       "autoCleanupPeriod": "1day",
       "id": "daadac36-af74-4c51-b196-6abafefe601b",
       "createdAt": "2026-06-18T06:56:33.653Z",
-      "updatedAt": "2026-06-18T06:57:18.641Z",
+      "updatedAt": "2026-06-18T06:57:28.925Z",
       "completedAt": null,
       "positionX": 1160.980771471506,
       "positionY": 308.51447017031063
