@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-18T13:53:26.848Z",
+  "exportedAt": "2026-06-22T10:23:00.418Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -65,10 +65,10 @@
       "autoCleanupPeriod": "off",
       "id": "4c30e8cc-782b-47de-a9df-f52744387213",
       "createdAt": "2026-06-18T06:56:59.743Z",
-      "updatedAt": "2026-06-18T09:26:44.249Z",
+      "updatedAt": "2026-06-22T10:22:55.393Z",
       "completedAt": "2026-06-18T09:26:44.249Z",
-      "positionX": 1167.3666240992386,
-      "positionY": 640.5112700606987
+      "positionX": 1135.3493042071354,
+      "positionY": 646.4404033740511
     },
     {
       "title": "Update doc",
@@ -133,10 +133,10 @@
       "autoCleanupPeriod": "off",
       "id": "a7bdfed7-adcf-4c2f-a817-75c70a473182",
       "createdAt": "2026-06-18T07:01:07.943Z",
-      "updatedAt": "2026-06-18T09:26:47.438Z",
+      "updatedAt": "2026-06-22T10:22:54.195Z",
       "completedAt": "2026-06-18T09:26:47.438Z",
-      "positionX": 1152.4663013011955,
-      "positionY": 813.7275225879541
+      "positionX": 1214.1292877600606,
+      "positionY": 827.95744254
     },
     {
       "title": "Decom/Migration",
@@ -166,7 +166,7 @@
       "autoCleanupPeriod": "1day",
       "id": "daadac36-af74-4c51-b196-6abafefe601b",
       "createdAt": "2026-06-18T06:56:33.653Z",
-      "updatedAt": "2026-06-18T13:53:21.833Z",
+      "updatedAt": "2026-06-22T10:22:55.395Z",
       "completedAt": null,
       "positionX": 1160.980771471506,
       "positionY": 308.51447017031063
