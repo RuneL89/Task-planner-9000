@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T14:26:13.376Z",
+  "exportedAt": "2026-07-06T14:26:30.440Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -36,6 +36,23 @@
       "completedAt": "2026-05-25T12:41:56.346Z",
       "positionX": 187.99999999999997,
       "positionY": 636.6666666666667
+    },
+    {
+      "title": "PREPARE FUNERAL!",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "b1dcb44d-4056-49c1-9151-a87e830d8846",
+      "deadline": "2026-07-09",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "0e4a7f06-dbc9-4347-a5b0-cab5182d556c",
+      "createdAt": "2026-07-06T14:26:24.109Z",
+      "updatedAt": "2026-07-06T14:26:25.410Z",
+      "completedAt": null,
+      "positionX": 2558.795263745566,
+      "positionY": 544.4050403223235
     },
     {
       "title": "shit down servers lmao",
@@ -135,7 +152,7 @@
       "autoCleanupPeriod": "off",
       "id": "4d932051-5523-4742-b9b3-cb3f9fe32242",
       "createdAt": "2026-07-06T07:24:59.263Z",
-      "updatedAt": "2026-07-06T14:26:08.349Z",
+      "updatedAt": "2026-07-06T14:26:25.414Z",
       "completedAt": "2026-07-06T14:25:54.798Z",
       "positionX": 1799.795263745566,
       "positionY": 545.4050403223235
@@ -271,7 +288,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T14:26:08.350Z",
+      "updatedAt": "2026-07-06T14:26:25.415Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -305,7 +322,7 @@
       "autoCleanupPeriod": "off",
       "id": "b1dcb44d-4056-49c1-9151-a87e830d8846",
       "createdAt": "2026-07-06T11:37:34.706Z",
-      "updatedAt": "2026-07-06T14:26:08.347Z",
+      "updatedAt": "2026-07-06T14:26:25.413Z",
       "completedAt": null,
       "positionX": 2117.795263745566,
       "positionY": 546.4050403223235
