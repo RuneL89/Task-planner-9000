@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:26:12.125Z",
+  "exportedAt": "2026-07-06T07:26:28.525Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -140,6 +140,23 @@
       "positionY": 772.18751321965
     },
     {
+      "title": "Finish Presentation",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "a63d0153-d23b-4690-bf77-30761c064b26",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "99ea920a-3434-4a7e-869f-6475f70ae977",
+      "createdAt": "2026-07-06T07:26:21.318Z",
+      "updatedAt": "2026-07-06T07:26:23.498Z",
+      "completedAt": null,
+      "positionX": 1791.9751784732443,
+      "positionY": 334.2627379696404
+    },
+    {
       "title": "BEFORE VACATION",
       "description": "",
       "status": "pending",
@@ -150,7 +167,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:26:07.107Z",
+      "updatedAt": "2026-07-06T07:26:23.500Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
