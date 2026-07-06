@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:24:54.203Z",
+  "exportedAt": "2026-07-06T07:25:06.708Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -71,6 +71,23 @@
       "positionY": 842.0124866272258
     },
     {
+      "title": "Prepare BI&Datas",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "a63d0153-d23b-4690-bf77-30761c064b26",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "4d932051-5523-4742-b9b3-cb3f9fe32242",
+      "createdAt": "2026-07-06T07:24:59.263Z",
+      "updatedAt": "2026-07-06T07:25:01.692Z",
+      "completedAt": null,
+      "positionX": 1813.8714172357447,
+      "positionY": 676.7824728973264
+    },
+    {
       "title": "Update doc",
       "description": "",
       "status": "pending",
@@ -132,7 +149,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:24:49.190Z",
+      "updatedAt": "2026-07-06T07:25:01.694Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
