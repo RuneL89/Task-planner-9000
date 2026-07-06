@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-06-22T10:23:00.418Z",
+  "exportedAt": "2026-07-06T07:23:53.432Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -35,6 +35,23 @@
       "completedAt": "2026-05-25T12:41:56.346Z",
       "positionX": 187.99999999999997,
       "positionY": 636.6666666666667
+    },
+    {
+      "title": "shit down servers lmao",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "a92213c8-d381-4faa-8a9c-bbee30dcc663",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "157f4430-72cc-454a-81d6-2c199478e13c",
+      "createdAt": "2026-07-06T07:23:46.287Z",
+      "updatedAt": "2026-07-06T07:23:48.409Z",
+      "completedAt": null,
+      "positionX": 456.4079790362063,
+      "positionY": 842.0124866272258
     },
     {
       "title": "Talk to Hugo: Release Notes",
@@ -149,7 +166,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a92213c8-d381-4faa-8a9c-bbee30dcc663",
       "createdAt": "2026-05-25T10:10:09.421Z",
-      "updatedAt": "2026-06-18T06:56:10.298Z",
+      "updatedAt": "2026-07-06T07:23:48.412Z",
       "completedAt": null,
       "isCollapsed": false,
       "positionX": 382.8991774763833,
