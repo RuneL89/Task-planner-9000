@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T14:26:30.440Z",
+  "exportedAt": "2026-07-06T14:26:39.189Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -83,11 +83,11 @@
       "autoCleanupPeriod": "off",
       "id": "23f72fd9-7ddf-411c-b8bb-d5eea905ef38",
       "createdAt": "2026-07-06T07:26:52.894Z",
-      "updatedAt": "2026-07-06T07:46:38.444Z",
+      "updatedAt": "2026-07-06T14:26:34.165Z",
       "completedAt": null,
       "positionX": 1540.1684327044889,
       "positionY": 1138.021866735726,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Finish Py-Flow migration",
