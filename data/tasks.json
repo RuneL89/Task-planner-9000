@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:30:05.456Z",
+  "exportedAt": "2026-07-06T07:30:14.704Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -66,7 +66,7 @@
       "autoCleanupPeriod": "off",
       "id": "23f72fd9-7ddf-411c-b8bb-d5eea905ef38",
       "createdAt": "2026-07-06T07:26:52.894Z",
-      "updatedAt": "2026-07-06T07:27:32.806Z",
+      "updatedAt": "2026-07-06T07:30:06.316Z",
       "completedAt": null,
       "positionX": 1540.1684327044889,
       "positionY": 1138.021866735726
@@ -74,7 +74,7 @@
     {
       "title": "Finish Py-Flow migration",
       "description": "",
-      "status": "pending",
+      "status": "in_progress",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "23f72fd9-7ddf-411c-b8bb-d5eea905ef38",
@@ -83,7 +83,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c40f873-89b7-4d28-9556-e263a8c4ad0c",
       "createdAt": "2026-07-06T07:27:10.626Z",
-      "updatedAt": "2026-07-06T07:27:11.804Z",
+      "updatedAt": "2026-07-06T07:30:06.314Z",
       "completedAt": null,
       "positionX": 1380.6386931491284,
       "positionY": 1372.4787876767994
@@ -168,8 +168,10 @@
       "autoCleanupPeriod": "off",
       "id": "704d531b-01a0-4043-8dc8-2c4e511d2882",
       "createdAt": "2026-07-06T07:30:00.437Z",
-      "updatedAt": "2026-07-06T07:30:00.437Z",
-      "completedAt": null
+      "updatedAt": "2026-07-06T07:30:09.688Z",
+      "completedAt": null,
+      "positionX": 1985.9132932268199,
+      "positionY": 1394.3750264392995
     },
     {
       "title": "Book Thao, Viivi, Tero",
@@ -233,7 +235,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:27:42.420Z",
+      "updatedAt": "2026-07-06T07:30:09.691Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -267,7 +269,7 @@
       "autoCleanupPeriod": "off",
       "id": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
       "createdAt": "2026-07-06T07:26:44.589Z",
-      "updatedAt": "2026-07-06T07:27:42.419Z",
+      "updatedAt": "2026-07-06T07:30:09.690Z",
       "completedAt": null,
       "positionX": 1716.902359858957,
       "positionY": 867.5925535419733
@@ -300,7 +302,7 @@
       "autoCleanupPeriod": "off",
       "id": "ed31961a-aa78-438b-87d5-017c89ad02a0",
       "createdAt": "2026-07-06T07:27:40.551Z",
-      "updatedAt": "2026-07-06T07:27:42.418Z",
+      "updatedAt": "2026-07-06T07:30:09.689Z",
       "completedAt": null,
       "positionX": 1906.1484234491395,
       "positionY": 1145.8419520080474
