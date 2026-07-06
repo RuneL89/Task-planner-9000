@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:26:28.525Z",
+  "exportedAt": "2026-07-06T07:26:52.705Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -167,7 +167,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:26:23.500Z",
+      "updatedAt": "2026-07-06T07:26:47.694Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -188,6 +188,23 @@
       "isCollapsed": false,
       "positionX": 382.8991774763833,
       "positionY": 305.7002741745389
+    },
+    {
+      "title": "Alteryx Migration",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "a63d0153-d23b-4690-bf77-30761c064b26",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
+      "createdAt": "2026-07-06T07:26:44.589Z",
+      "updatedAt": "2026-07-06T07:26:47.693Z",
+      "completedAt": null,
+      "positionX": 1716.902359858957,
+      "positionY": 867.5925535419733
     },
     {
       "title": "Data Deletion",
