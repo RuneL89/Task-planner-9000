@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:35:23.999Z",
+  "exportedAt": "2026-07-06T07:35:38.790Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -202,10 +202,11 @@
       "autoCleanupPeriod": "off",
       "id": "8a0ad905-f03a-4413-af50-485eacd379fd",
       "createdAt": "2026-07-06T07:25:35.006Z",
-      "updatedAt": "2026-07-06T07:35:18.977Z",
+      "updatedAt": "2026-07-06T07:35:33.765Z",
       "completedAt": null,
       "positionX": 988.0704124785841,
-      "positionY": 772.18751321965
+      "positionY": 772.18751321965,
+      "isCollapsed": true
     },
     {
       "title": "Migrate",
