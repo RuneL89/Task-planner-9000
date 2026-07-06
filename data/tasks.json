@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:37:12.103Z",
+  "exportedAt": "2026-07-06T07:43:12.719Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -202,7 +202,7 @@
       "autoCleanupPeriod": "off",
       "id": "8a0ad905-f03a-4413-af50-485eacd379fd",
       "createdAt": "2026-07-06T07:25:35.006Z",
-      "updatedAt": "2026-07-06T07:37:07.078Z",
+      "updatedAt": "2026-07-06T07:43:10.716Z",
       "completedAt": null,
       "positionX": 988.0704124785841,
       "positionY": 772.18751321965,
@@ -253,7 +253,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:37:00.248Z",
+      "updatedAt": "2026-07-06T07:43:10.718Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -287,10 +287,10 @@
       "autoCleanupPeriod": "off",
       "id": "b1e31f6d-cd80-4349-bbc1-c843ffc1bd97",
       "createdAt": "2026-07-06T07:35:04.765Z",
-      "updatedAt": "2026-07-06T07:35:06.490Z",
+      "updatedAt": "2026-07-06T07:43:10.714Z",
       "completedAt": null,
-      "positionX": 989.6344295330484,
-      "positionY": 1033.2327240866166
+      "positionX": 941.6344295330484,
+      "positionY": 1114.2327240866166
     },
     {
       "title": "Alteryx Migration",
