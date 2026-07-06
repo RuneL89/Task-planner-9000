@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:32:10.480Z",
+  "exportedAt": "2026-07-06T07:33:17.403Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -252,7 +252,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:32:05.468Z",
+      "updatedAt": "2026-07-06T07:33:12.390Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -286,10 +286,27 @@
       "autoCleanupPeriod": "off",
       "id": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
       "createdAt": "2026-07-06T07:26:44.589Z",
-      "updatedAt": "2026-07-06T07:32:05.467Z",
+      "updatedAt": "2026-07-06T07:33:12.389Z",
       "completedAt": null,
       "positionX": 1716.902359858957,
       "positionY": 867.5925535419733
+    },
+    {
+      "title": "Defence related Leads and Opportunities and Agreed credits",
+      "description": "BLOCK: DIM_LEAD and DIM_OPPORTUNITY not found in DBx, but in my Snowflake - probably a user-role thing",
+      "status": "on_hold",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "ed31961a-aa78-438b-87d5-017c89ad02a0",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "cd6b2999-45cc-4c61-a68f-590c02c3f87a",
+      "createdAt": "2026-07-06T07:33:09.229Z",
+      "updatedAt": "2026-07-06T07:33:12.386Z",
+      "completedAt": null,
+      "positionX": 2502.038921200045,
+      "positionY": 1435.0394698553719
     },
     {
       "title": "Data Deletion",
@@ -319,7 +336,7 @@
       "autoCleanupPeriod": "off",
       "id": "ed31961a-aa78-438b-87d5-017c89ad02a0",
       "createdAt": "2026-07-06T07:27:40.551Z",
-      "updatedAt": "2026-07-06T07:32:05.466Z",
+      "updatedAt": "2026-07-06T07:33:12.388Z",
       "completedAt": null,
       "positionX": 1906.1484234491395,
       "positionY": 1145.8419520080474
