@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T15:57:07.283Z",
+  "exportedAt": "2026-07-06T16:17:21.401Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -100,7 +100,7 @@
       "autoCleanupPeriod": "off",
       "id": "23f72fd9-7ddf-411c-b8bb-d5eea905ef38",
       "createdAt": "2026-07-06T07:26:52.894Z",
-      "updatedAt": "2026-07-06T14:26:34.165Z",
+      "updatedAt": "2026-07-06T16:17:16.374Z",
       "completedAt": null,
       "positionX": 1540.1684327044889,
       "positionY": 1138.021866735726,
@@ -109,7 +109,7 @@
     {
       "title": "Finish Py-Flow migration",
       "description": "",
-      "status": "in_progress",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "23f72fd9-7ddf-411c-b8bb-d5eea905ef38",
@@ -118,8 +118,8 @@
       "autoCleanupPeriod": "off",
       "id": "2c40f873-89b7-4d28-9556-e263a8c4ad0c",
       "createdAt": "2026-07-06T07:27:10.626Z",
-      "updatedAt": "2026-07-06T07:36:42.457Z",
-      "completedAt": null,
+      "updatedAt": "2026-07-06T16:17:16.371Z",
+      "completedAt": "2026-07-06T16:17:16.371Z",
       "positionX": 1380.6386931491284,
       "positionY": 1372.4787876767994
     },
@@ -305,7 +305,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T15:57:02.262Z",
+      "updatedAt": "2026-07-06T16:17:16.377Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -373,7 +373,7 @@
       "autoCleanupPeriod": "off",
       "id": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
       "createdAt": "2026-07-06T07:26:44.589Z",
-      "updatedAt": "2026-07-06T07:46:34.352Z",
+      "updatedAt": "2026-07-06T16:17:16.375Z",
       "completedAt": null,
       "positionX": 1727.8504792402073,
       "positionY": 815.9799907446508,
