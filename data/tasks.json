@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:46:14.350Z",
+  "exportedAt": "2026-07-06T07:46:44.413Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -66,10 +66,11 @@
       "autoCleanupPeriod": "off",
       "id": "23f72fd9-7ddf-411c-b8bb-d5eea905ef38",
       "createdAt": "2026-07-06T07:26:52.894Z",
-      "updatedAt": "2026-07-06T07:46:09.270Z",
+      "updatedAt": "2026-07-06T07:46:38.444Z",
       "completedAt": null,
       "positionX": 1540.1684327044889,
-      "positionY": 1138.021866735726
+      "positionY": 1138.021866735726,
+      "isCollapsed": true
     },
     {
       "title": "Finish Py-Flow migration",
@@ -100,10 +101,10 @@
       "autoCleanupPeriod": "off",
       "id": "45c4ee0c-a988-4675-9dd5-cc0f2de56a68",
       "createdAt": "2026-07-06T07:45:39.461Z",
-      "updatedAt": "2026-07-06T07:46:09.269Z",
+      "updatedAt": "2026-07-06T07:46:34.349Z",
       "completedAt": null,
-      "positionX": 1469.1684327044889,
-      "positionY": 1636.021866735726
+      "positionX": 1444.1684327044889,
+      "positionY": 1678.021866735726
     },
     {
       "title": "FACT Transaction team members",
@@ -270,7 +271,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:46:09.272Z",
+      "updatedAt": "2026-07-06T07:46:34.353Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -321,7 +322,7 @@
       "autoCleanupPeriod": "off",
       "id": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
       "createdAt": "2026-07-06T07:26:44.589Z",
-      "updatedAt": "2026-07-06T07:46:09.271Z",
+      "updatedAt": "2026-07-06T07:46:34.352Z",
       "completedAt": null,
       "positionX": 1727.8504792402073,
       "positionY": 815.9799907446508,
@@ -402,6 +403,12 @@
       "targetTaskId": "2c40f873-89b7-4d28-9556-e263a8c4ad0c",
       "id": "3e7a4d21-5ecf-44cf-8bae-2b7141f3ae38",
       "createdAt": "2026-07-06T07:46:09.273Z"
+    },
+    {
+      "sourceTaskId": "45c4ee0c-a988-4675-9dd5-cc0f2de56a68",
+      "targetTaskId": "8a17802c-7c2d-45d7-bc72-b2b7d5fe2ae6",
+      "id": "8b5b18d8-8923-4a83-bee8-be50f9cb8f17",
+      "createdAt": "2026-07-06T07:46:31.022Z"
     }
   ]
 }
