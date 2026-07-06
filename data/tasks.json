@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:30:14.704Z",
+  "exportedAt": "2026-07-06T07:32:10.480Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -89,6 +89,23 @@
       "positionY": 1372.4787876767994
     },
     {
+      "title": "FACT Transaction team members",
+      "description": "Two tables cannot be located: (could be permission)\n1: odsfact.fact.Request_meeting_members \n2: HRStaging.sf.DataFeedExtract",
+      "status": "on_hold",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "ed31961a-aa78-438b-87d5-017c89ad02a0",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "4c3547d3-c193-4f5c-be9a-16d387f4bbae",
+      "createdAt": "2026-07-06T07:31:59.550Z",
+      "updatedAt": "2026-07-06T07:32:02.046Z",
+      "completedAt": null,
+      "positionX": 1904.5844063946754,
+      "positionY": 1411.5792140384071
+    },
+    {
       "title": "Prepare BI&Datas",
       "description": "",
       "status": "pending",
@@ -168,10 +185,10 @@
       "autoCleanupPeriod": "off",
       "id": "704d531b-01a0-4043-8dc8-2c4e511d2882",
       "createdAt": "2026-07-06T07:30:00.437Z",
-      "updatedAt": "2026-07-06T07:30:09.688Z",
+      "updatedAt": "2026-07-06T07:32:04.009Z",
       "completedAt": null,
-      "positionX": 1985.9132932268199,
-      "positionY": 1394.3750264392995
+      "positionX": 2203.3116637973603,
+      "positionY": 1433.4754528009073
     },
     {
       "title": "Book Thao, Viivi, Tero",
@@ -235,7 +252,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:30:09.691Z",
+      "updatedAt": "2026-07-06T07:32:05.468Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -269,7 +286,7 @@
       "autoCleanupPeriod": "off",
       "id": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
       "createdAt": "2026-07-06T07:26:44.589Z",
-      "updatedAt": "2026-07-06T07:30:09.690Z",
+      "updatedAt": "2026-07-06T07:32:05.467Z",
       "completedAt": null,
       "positionX": 1716.902359858957,
       "positionY": 867.5925535419733
@@ -302,7 +319,7 @@
       "autoCleanupPeriod": "off",
       "id": "ed31961a-aa78-438b-87d5-017c89ad02a0",
       "createdAt": "2026-07-06T07:27:40.551Z",
-      "updatedAt": "2026-07-06T07:30:09.689Z",
+      "updatedAt": "2026-07-06T07:32:05.466Z",
       "completedAt": null,
       "positionX": 1906.1484234491395,
       "positionY": 1145.8419520080474
