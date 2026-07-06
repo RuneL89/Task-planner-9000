@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:24:01.957Z",
+  "exportedAt": "2026-07-06T07:24:17.756Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -86,6 +86,22 @@
       "completedAt": "2026-05-26T08:25:27.317Z",
       "positionX": 478.6666666666667,
       "positionY": 623.3333333333334
+    },
+    {
+      "title": "BEFORE VACATION",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": true,
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "a63d0153-d23b-4690-bf77-30761c064b26",
+      "createdAt": "2026-07-06T07:24:08.511Z",
+      "updatedAt": "2026-07-06T07:24:12.731Z",
+      "completedAt": null,
+      "positionX": 1327.4621132973414,
+      "positionY": 328.15230698035776
     },
     {
       "title": "Decom/Migration",
