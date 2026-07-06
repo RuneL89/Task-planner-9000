@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:25:41.819Z",
+  "exportedAt": "2026-07-06T07:25:56.382Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -19,22 +19,6 @@
       "completedAt": null,
       "positionX": 1501.0680063428808,
       "positionY": 668.9623876250048
-    },
-    {
-      "title": "Review Data Governance Framework",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": true,
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "03ac63ec-de82-4ef2-bc2b-f26636d57781",
-      "createdAt": "2026-05-25T10:52:30.599Z",
-      "updatedAt": "2026-05-25T10:52:56.469Z",
-      "completedAt": null,
-      "positionX": 787.6186438686454,
-      "positionY": 309.50045695756484
     },
     {
       "title": "Reschedule?",
@@ -220,23 +204,6 @@
       "completedAt": "2026-05-25T10:51:38.652Z",
       "positionX": -165.17333333333357,
       "positionY": 671.28
-    },
-    {
-      "title": "Presentation to BI&Data",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "03ac63ec-de82-4ef2-bc2b-f26636d57781",
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "fc3b890f-3b6c-4fba-9953-a40229fe001e",
-      "createdAt": "2026-06-18T06:55:51.550Z",
-      "updatedAt": "2026-06-18T06:56:10.296Z",
-      "completedAt": null,
-      "positionX": 916.1178718920819,
-      "positionY": 661.111867033281
     }
   ],
   "taskConnections": []
