@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T15:32:25.837Z",
+  "exportedAt": "2026-07-06T15:32:40.044Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -53,6 +53,23 @@
       "completedAt": null,
       "positionX": 2558.795263745566,
       "positionY": 544.4050403223235
+    },
+    {
+      "title": "Talk to Ville about last slide",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "99ea920a-3434-4a7e-869f-6475f70ae977",
+      "deadline": "2026-07-07",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "12638cae-1244-4e01-90c1-75439822965e",
+      "createdAt": "2026-07-06T15:32:33.676Z",
+      "updatedAt": "2026-07-06T15:32:35.028Z",
+      "completedAt": null,
+      "positionX": 2081.9751784732443,
+      "positionY": 327.2627379696404
     },
     {
       "title": "shit down servers lmao",
@@ -272,7 +289,7 @@
       "autoCleanupPeriod": "off",
       "id": "99ea920a-3434-4a7e-869f-6475f70ae977",
       "createdAt": "2026-07-06T07:26:21.318Z",
-      "updatedAt": "2026-07-06T15:32:20.812Z",
+      "updatedAt": "2026-07-06T15:32:35.029Z",
       "completedAt": "2026-07-06T15:32:20.812Z",
       "positionX": 1791.9751784732443,
       "positionY": 334.2627379696404
@@ -288,7 +305,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T15:32:20.815Z",
+      "updatedAt": "2026-07-06T15:32:35.030Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
