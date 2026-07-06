@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:27:37.824Z",
+  "exportedAt": "2026-07-06T07:27:47.446Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -218,7 +218,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:27:32.807Z",
+      "updatedAt": "2026-07-06T07:27:42.420Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -252,7 +252,7 @@
       "autoCleanupPeriod": "off",
       "id": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
       "createdAt": "2026-07-06T07:26:44.589Z",
-      "updatedAt": "2026-07-06T07:27:32.807Z",
+      "updatedAt": "2026-07-06T07:27:42.419Z",
       "completedAt": null,
       "positionX": 1716.902359858957,
       "positionY": 867.5925535419733
@@ -272,6 +272,23 @@
       "completedAt": null,
       "positionX": -14.666666666666785,
       "positionY": 302.66666666666663
+    },
+    {
+      "title": "Lending",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "ed31961a-aa78-438b-87d5-017c89ad02a0",
+      "createdAt": "2026-07-06T07:27:40.551Z",
+      "updatedAt": "2026-07-06T07:27:42.418Z",
+      "completedAt": null,
+      "positionX": 1906.1484234491395,
+      "positionY": 1145.8419520080474
     },
     {
       "title": "Talk to OP",
