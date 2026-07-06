@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-06T07:45:08.350Z",
+  "exportedAt": "2026-07-06T07:45:46.609Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -66,7 +66,7 @@
       "autoCleanupPeriod": "off",
       "id": "23f72fd9-7ddf-411c-b8bb-d5eea905ef38",
       "createdAt": "2026-07-06T07:26:52.894Z",
-      "updatedAt": "2026-07-06T07:36:50.922Z",
+      "updatedAt": "2026-07-06T07:45:41.590Z",
       "completedAt": null,
       "positionX": 1540.1684327044889,
       "positionY": 1138.021866735726
@@ -87,6 +87,23 @@
       "completedAt": null,
       "positionX": 1380.6386931491284,
       "positionY": 1372.4787876767994
+    },
+    {
+      "title": "Create 10-day data validation for all leftover migrations",
+      "description": "",
+      "status": "on_hold",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "23f72fd9-7ddf-411c-b8bb-d5eea905ef38",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "45c4ee0c-a988-4675-9dd5-cc0f2de56a68",
+      "createdAt": "2026-07-06T07:45:39.461Z",
+      "updatedAt": "2026-07-06T07:45:41.588Z",
+      "completedAt": null,
+      "positionX": 1469.1684327044889,
+      "positionY": 1636.021866735726
     },
     {
       "title": "FACT Transaction team members",
@@ -253,7 +270,7 @@
       "autoCleanupPeriod": "off",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-06T07:43:10.718Z",
+      "updatedAt": "2026-07-06T07:45:41.592Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -304,7 +321,7 @@
       "autoCleanupPeriod": "off",
       "id": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
       "createdAt": "2026-07-06T07:26:44.589Z",
-      "updatedAt": "2026-07-06T07:45:03.325Z",
+      "updatedAt": "2026-07-06T07:45:41.591Z",
       "completedAt": null,
       "positionX": 1727.8504792402073,
       "positionY": 815.9799907446508,
