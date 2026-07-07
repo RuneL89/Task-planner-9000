@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T09:24:40.598Z",
+  "exportedAt": "2026-07-07T09:26:20.959Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -460,11 +460,11 @@
       "autoCleanupPeriod": "off",
       "id": "b9b90812-e9c9-4230-8cc0-83ec3d310123",
       "createdAt": "2026-07-06T07:26:44.589Z",
-      "updatedAt": "2026-07-07T08:57:47.855Z",
+      "updatedAt": "2026-07-07T09:26:15.936Z",
       "completedAt": null,
       "positionX": 1727.8504792402073,
       "positionY": 815.9799907446508,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Defence related Leads and Opportunities and Agreed credits",
