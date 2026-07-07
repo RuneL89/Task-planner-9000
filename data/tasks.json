@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T08:56:46.333Z",
+  "exportedAt": "2026-07-07T08:56:57.714Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -372,11 +372,11 @@
       "autoCleanupPeriod": "1week",
       "id": "a92213c8-d381-4faa-8a9c-bbee30dcc663",
       "createdAt": "2026-05-25T10:10:09.421Z",
-      "updatedAt": "2026-07-06T07:37:07.078Z",
+      "updatedAt": "2026-07-07T08:56:50.530Z",
       "completedAt": null,
       "isCollapsed": true,
-      "positionX": 382.8991774763833,
-      "positionY": 305.7002741745389
+      "positionX": -730.7526306201837,
+      "positionY": 176.8587908067125
     },
     {
       "title": "Book new BI&Data FUNERAL",
@@ -492,10 +492,10 @@
       "autoCleanupPeriod": "1week",
       "id": "dd38152e-2ee1-4ff6-b60a-f615a4ce320c",
       "createdAt": "2026-05-25T10:09:57.777Z",
-      "updatedAt": "2026-07-06T07:37:07.078Z",
+      "updatedAt": "2026-07-07T08:56:52.699Z",
       "completedAt": null,
-      "positionX": -14.666666666666785,
-      "positionY": 302.66666666666663,
+      "positionX": -821.0278800501987,
+      "positionY": 675.5329420282246,
       "isCollapsed": true
     },
     {
