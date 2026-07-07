@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T08:56:30.524Z",
+  "exportedAt": "2026-07-07T08:56:46.333Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -254,7 +254,7 @@
       "autoCleanupPeriod": "off",
       "id": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
       "createdAt": "2026-07-07T08:55:39.448Z",
-      "updatedAt": "2026-07-07T08:56:25.510Z",
+      "updatedAt": "2026-07-07T08:56:41.314Z",
       "completedAt": null,
       "positionX": 1013.4621132973414,
       "positionY": 138.15230698035776
@@ -312,6 +312,23 @@
       "positionY": 1363.0946853500134
     },
     {
+      "title": "Release Handover Doc",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "99083bb1-7b80-4dff-97c1-a38af45b5e59",
+      "createdAt": "2026-07-07T08:56:37.857Z",
+      "updatedAt": "2026-07-07T08:56:41.313Z",
+      "completedAt": null,
+      "positionX": 1171.4621132973414,
+      "positionY": -195.84769301964224
+    },
+    {
       "title": "Finish Presentation",
       "description": "",
       "status": "completed",
@@ -339,7 +356,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-07T08:56:25.511Z",
+      "updatedAt": "2026-07-07T08:56:41.315Z",
       "completedAt": null,
       "positionX": 1340.4621132973414,
       "positionY": 376.15230698035776
