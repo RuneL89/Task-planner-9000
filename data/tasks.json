@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T14:22:16.414Z",
+  "exportedAt": "2026-07-07T14:55:57.455Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -255,7 +255,7 @@
       "autoCleanupPeriod": "off",
       "id": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
       "createdAt": "2026-07-07T08:55:39.448Z",
-      "updatedAt": "2026-07-07T14:22:11.380Z",
+      "updatedAt": "2026-07-07T14:55:52.426Z",
       "completedAt": null,
       "positionX": 989.7109709034294,
       "positionY": 138.15230698035776,
@@ -375,7 +375,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-07T14:03:30.573Z",
+      "updatedAt": "2026-07-07T14:55:52.427Z",
       "completedAt": null,
       "positionX": 1340.4621132973414,
       "positionY": 376.15230698035776
@@ -434,7 +434,7 @@
     {
       "title": "SODA Handover Doc",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
@@ -443,8 +443,8 @@
       "autoCleanupPeriod": "off",
       "id": "b61592b5-9725-4dcb-a96f-df67379016c9",
       "createdAt": "2026-07-07T08:56:18.887Z",
-      "updatedAt": "2026-07-07T08:57:31.957Z",
-      "completedAt": null,
+      "updatedAt": "2026-07-07T14:55:52.424Z",
+      "completedAt": "2026-07-07T14:55:52.424Z",
       "positionX": 800.4621132973414,
       "positionY": -103.59769301964224
     },
