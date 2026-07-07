@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T07:33:44.702Z",
+  "exportedAt": "2026-07-07T08:55:46.500Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -243,6 +243,23 @@
       "positionY": 1433.4754528009073
     },
     {
+      "title": "Vaca/Leave handover",
+      "description": "Data Readiness\nData Quality Implementation (new Entities)\nData Quality Discussions\nRelease Management (DG)\nAccept CRs",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "a63d0153-d23b-4690-bf77-30761c064b26",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
+      "createdAt": "2026-07-07T08:55:39.448Z",
+      "updatedAt": "2026-07-07T08:55:41.487Z",
+      "completedAt": null,
+      "positionX": 1013.4621132973414,
+      "positionY": 138.15230698035776
+    },
+    {
       "title": "Talk to Harriet about that one check",
       "description": "",
       "status": "pending",
@@ -322,7 +339,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-07T07:33:39.691Z",
+      "updatedAt": "2026-07-07T08:55:41.488Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
