@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T06:50:08.477Z",
+  "exportedAt": "2026-07-07T07:33:44.702Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -169,7 +169,7 @@
       "autoCleanupPeriod": "off",
       "id": "4d932051-5523-4742-b9b3-cb3f9fe32242",
       "createdAt": "2026-07-06T07:24:59.263Z",
-      "updatedAt": "2026-07-06T15:56:54.410Z",
+      "updatedAt": "2026-07-07T07:33:39.689Z",
       "completedAt": "2026-07-06T14:25:54.798Z",
       "positionX": 1799.795263745566,
       "positionY": 545.4050403223235
@@ -322,7 +322,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-07T06:50:03.461Z",
+      "updatedAt": "2026-07-07T07:33:39.691Z",
       "completedAt": null,
       "positionX": 1327.4621132973414,
       "positionY": 328.15230698035776
@@ -347,7 +347,7 @@
     {
       "title": "Book new BI&Data FUNERAL",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "4d932051-5523-4742-b9b3-cb3f9fe32242",
@@ -356,8 +356,8 @@
       "autoCleanupPeriod": "off",
       "id": "b1dcb44d-4056-49c1-9151-a87e830d8846",
       "createdAt": "2026-07-06T11:37:34.706Z",
-      "updatedAt": "2026-07-06T15:56:54.409Z",
-      "completedAt": null,
+      "updatedAt": "2026-07-07T07:33:39.688Z",
+      "completedAt": "2026-07-07T07:33:39.688Z",
       "positionX": 2117.795263745566,
       "positionY": 546.4050403223235
     },
