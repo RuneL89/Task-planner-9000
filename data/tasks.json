@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T08:56:14.099Z",
+  "exportedAt": "2026-07-07T08:56:23.918Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -394,6 +394,21 @@
       "completedAt": "2026-07-06T15:41:22.385Z",
       "positionX": 682.6344295330484,
       "positionY": 541.2327240866167
+    },
+    {
+      "title": "SODA Handover",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "b61592b5-9725-4dcb-a96f-df67379016c9",
+      "createdAt": "2026-07-07T08:56:18.887Z",
+      "updatedAt": "2026-07-07T08:56:18.887Z",
+      "completedAt": null
     },
     {
       "title": "Finish release!",
