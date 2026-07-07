@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T14:03:35.597Z",
+  "exportedAt": "2026-07-07T14:22:16.414Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -255,11 +255,11 @@
       "autoCleanupPeriod": "off",
       "id": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
       "createdAt": "2026-07-07T08:55:39.448Z",
-      "updatedAt": "2026-07-07T08:57:43.624Z",
+      "updatedAt": "2026-07-07T14:22:11.380Z",
       "completedAt": null,
       "positionX": 989.7109709034294,
       "positionY": 138.15230698035776,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Talk to Harriet about that one check",
