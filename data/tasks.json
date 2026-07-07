@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T10:10:41.882Z",
+  "exportedAt": "2026-07-07T12:39:17.854Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -66,10 +66,10 @@
       "autoCleanupPeriod": "off",
       "id": "12638cae-1244-4e01-90c1-75439822965e",
       "createdAt": "2026-07-06T15:32:33.676Z",
-      "updatedAt": "2026-07-06T15:32:35.028Z",
+      "updatedAt": "2026-07-07T12:39:12.837Z",
       "completedAt": null,
-      "positionX": 2081.9751784732443,
-      "positionY": 327.2627379696404
+      "positionX": 2095.9751784732443,
+      "positionY": 172.2627379696404
     },
     {
       "title": "shit down servers lmao",
@@ -342,7 +342,7 @@
       "autoCleanupPeriod": "off",
       "id": "99ea920a-3434-4a7e-869f-6475f70ae977",
       "createdAt": "2026-07-06T07:26:21.318Z",
-      "updatedAt": "2026-07-07T08:57:56.485Z",
+      "updatedAt": "2026-07-07T12:39:12.838Z",
       "completedAt": "2026-07-06T15:32:20.812Z",
       "positionX": 1794.61419429479,
       "positionY": 307.87257975418254
@@ -358,7 +358,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-07T10:10:36.477Z",
+      "updatedAt": "2026-07-07T12:39:12.840Z",
       "completedAt": null,
       "positionX": 1340.4621132973414,
       "positionY": 376.15230698035776
