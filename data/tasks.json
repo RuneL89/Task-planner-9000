@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-07T08:55:46.500Z",
+  "exportedAt": "2026-07-07T08:56:14.099Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -254,7 +254,7 @@
       "autoCleanupPeriod": "off",
       "id": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
       "createdAt": "2026-07-07T08:55:39.448Z",
-      "updatedAt": "2026-07-07T08:55:41.487Z",
+      "updatedAt": "2026-07-07T08:56:09.084Z",
       "completedAt": null,
       "positionX": 1013.4621132973414,
       "positionY": 138.15230698035776
@@ -282,16 +282,16 @@
       "status": "completed",
       "priority": "medium",
       "isMainTask": false,
-      "parentTaskId": "a63d0153-d23b-4690-bf77-30761c064b26",
+      "parentTaskId": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
       "deadline": "2026-07-06",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "8a0ad905-f03a-4413-af50-485eacd379fd",
       "createdAt": "2026-07-06T07:25:35.006Z",
-      "updatedAt": "2026-07-06T15:41:22.387Z",
+      "updatedAt": "2026-07-07T08:56:09.083Z",
       "completedAt": "2026-07-06T07:57:06.706Z",
-      "positionX": 988.0704124785841,
-      "positionY": 772.18751321965,
+      "positionX": 681.0704124785841,
+      "positionY": 226.18751321965,
       "isCollapsed": false
     },
     {
@@ -339,10 +339,10 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-07T08:55:41.488Z",
+      "updatedAt": "2026-07-07T08:56:09.085Z",
       "completedAt": null,
-      "positionX": 1327.4621132973414,
-      "positionY": 328.15230698035776
+      "positionX": 1340.4621132973414,
+      "positionY": 376.15230698035776
     },
     {
       "title": "Decom/Migration",
@@ -390,10 +390,10 @@
       "autoCleanupPeriod": "off",
       "id": "b1e31f6d-cd80-4349-bbc1-c843ffc1bd97",
       "createdAt": "2026-07-06T07:35:04.765Z",
-      "updatedAt": "2026-07-06T15:41:22.385Z",
+      "updatedAt": "2026-07-07T08:56:09.082Z",
       "completedAt": "2026-07-06T15:41:22.385Z",
-      "positionX": 941.6344295330484,
-      "positionY": 1114.2327240866166
+      "positionX": 682.6344295330484,
+      "positionY": 541.2327240866167
     },
     {
       "title": "Finish release!",
