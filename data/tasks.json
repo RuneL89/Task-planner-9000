@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-08T13:06:46.053Z",
+  "exportedAt": "2026-07-08T13:07:03.485Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -87,6 +87,23 @@
       "completedAt": null,
       "positionX": 456.4079790362063,
       "positionY": 842.0124866272258
+    },
+    {
+      "title": "Talk to Tero - OK?",
+      "description": "",
+      "status": "in_progress",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "8c9195db-b4b6-421c-90c8-09a54668b5b7",
+      "deadline": "2026-07-09",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "23710688-9861-4c18-8a70-77f8b63db8df",
+      "createdAt": "2026-07-08T13:06:54.131Z",
+      "updatedAt": "2026-07-08T13:06:55.803Z",
+      "completedAt": null,
+      "positionX": 2401.6141942947897,
+      "positionY": 295.87257975418254
     },
     {
       "title": "Accounting",
@@ -221,10 +238,10 @@
       "autoCleanupPeriod": "off",
       "id": "57238cb1-1877-4e1e-b887-752ec89f573d",
       "createdAt": "2026-07-08T11:22:14.107Z",
-      "updatedAt": "2026-07-08T11:22:16.268Z",
+      "updatedAt": "2026-07-08T13:06:58.455Z",
       "completedAt": null,
-      "positionX": 2532.6141942947897,
-      "positionY": 411.87257975418254
+      "positionX": 2701.6141942947897,
+      "positionY": 442.87257975418254
     },
     {
       "title": "Book meetings",
@@ -342,7 +359,7 @@
       "autoCleanupPeriod": "off",
       "id": "8c9195db-b4b6-421c-90c8-09a54668b5b7",
       "createdAt": "2026-07-07T12:39:33.180Z",
-      "updatedAt": "2026-07-08T13:06:41.019Z",
+      "updatedAt": "2026-07-08T13:06:58.457Z",
       "completedAt": "2026-07-08T13:06:41.019Z",
       "positionX": 2116.6141942947897,
       "positionY": 412.87257975418254
@@ -376,7 +393,7 @@
       "autoCleanupPeriod": "off",
       "id": "99ea920a-3434-4a7e-869f-6475f70ae977",
       "createdAt": "2026-07-06T07:26:21.318Z",
-      "updatedAt": "2026-07-08T13:06:41.022Z",
+      "updatedAt": "2026-07-08T13:06:58.458Z",
       "completedAt": "2026-07-06T15:32:20.812Z",
       "positionX": 1794.61419429479,
       "positionY": 307.87257975418254
@@ -392,7 +409,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-08T13:06:41.023Z",
+      "updatedAt": "2026-07-08T13:06:58.459Z",
       "completedAt": null,
       "positionX": 1340.4621132973414,
       "positionY": 376.15230698035776
