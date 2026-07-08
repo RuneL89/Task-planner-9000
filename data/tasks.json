@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-08T11:22:21.289Z",
+  "exportedAt": "2026-07-08T13:06:46.053Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -333,7 +333,7 @@
     {
       "title": "Finish AW one-pager and last slide",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "99ea920a-3434-4a7e-869f-6475f70ae977",
@@ -342,8 +342,8 @@
       "autoCleanupPeriod": "off",
       "id": "8c9195db-b4b6-421c-90c8-09a54668b5b7",
       "createdAt": "2026-07-07T12:39:33.180Z",
-      "updatedAt": "2026-07-08T11:22:16.269Z",
-      "completedAt": null,
+      "updatedAt": "2026-07-08T13:06:41.019Z",
+      "completedAt": "2026-07-08T13:06:41.019Z",
       "positionX": 2116.6141942947897,
       "positionY": 412.87257975418254
     },
@@ -376,7 +376,7 @@
       "autoCleanupPeriod": "off",
       "id": "99ea920a-3434-4a7e-869f-6475f70ae977",
       "createdAt": "2026-07-06T07:26:21.318Z",
-      "updatedAt": "2026-07-08T11:22:16.270Z",
+      "updatedAt": "2026-07-08T13:06:41.022Z",
       "completedAt": "2026-07-06T15:32:20.812Z",
       "positionX": 1794.61419429479,
       "positionY": 307.87257975418254
@@ -392,7 +392,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-08T11:22:16.271Z",
+      "updatedAt": "2026-07-08T13:06:41.023Z",
       "completedAt": null,
       "positionX": 1340.4621132973414,
       "positionY": 376.15230698035776
