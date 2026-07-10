@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-10T10:47:32.631Z",
+  "exportedAt": "2026-07-10T10:47:46.296Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -49,10 +49,10 @@
       "autoCleanupPeriod": "off",
       "id": "0e4a7f06-dbc9-4347-a5b0-cab5182d556c",
       "createdAt": "2026-07-06T14:26:24.109Z",
-      "updatedAt": "2026-07-06T15:56:54.407Z",
+      "updatedAt": "2026-07-10T10:47:41.277Z",
       "completedAt": null,
-      "positionX": 2558.795263745566,
-      "positionY": 544.4050403223235
+      "positionX": 2722.795263745566,
+      "positionY": 841.4050403223235
     },
     {
       "title": "Talk to Ville about last slide",
@@ -186,11 +186,11 @@
       "autoCleanupPeriod": "off",
       "id": "4d932051-5523-4742-b9b3-cb3f9fe32242",
       "createdAt": "2026-07-06T07:24:59.263Z",
-      "updatedAt": "2026-07-07T08:57:53.719Z",
+      "updatedAt": "2026-07-10T10:47:41.279Z",
       "completedAt": "2026-07-06T14:25:54.798Z",
       "positionX": 1799.795263745566,
       "positionY": 545.4050403223235,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Update doc",
@@ -409,7 +409,7 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-07-10T10:47:27.600Z",
+      "updatedAt": "2026-07-10T10:47:41.280Z",
       "completedAt": null,
       "positionX": 1340.4621132973414,
       "positionY": 376.15230698035776
@@ -443,10 +443,10 @@
       "autoCleanupPeriod": "off",
       "id": "b1dcb44d-4056-49c1-9151-a87e830d8846",
       "createdAt": "2026-07-06T11:37:34.706Z",
-      "updatedAt": "2026-07-07T07:33:39.688Z",
+      "updatedAt": "2026-07-10T10:47:41.278Z",
       "completedAt": "2026-07-07T07:33:39.688Z",
-      "positionX": 2117.795263745566,
-      "positionY": 546.4050403223235
+      "positionX": 2138.795263745566,
+      "positionY": 789.4050403223235
     },
     {
       "title": "Prepare for meeting",
