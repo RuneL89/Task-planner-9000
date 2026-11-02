@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T13:58:17.538Z",
+  "exportedAt": "2026-11-02T13:58:32.346Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -65,7 +65,7 @@
       "autoCleanupPeriod": "off",
       "id": "3cc7a37c-967e-4ca5-a032-0b54f976b623",
       "createdAt": "2026-11-02T13:58:05.932Z",
-      "updatedAt": "2026-11-02T13:58:12.528Z",
+      "updatedAt": "2026-11-02T13:58:27.331Z",
       "completedAt": null,
       "positionX": 1934.37554930961,
       "positionY": 663.2649902484452
@@ -137,6 +137,23 @@
       "completedAt": null,
       "positionX": 899.1910612452544,
       "positionY": 607.5896166880104
+    },
+    {
+      "title": "EG Owner Approves?",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "3cc7a37c-967e-4ca5-a032-0b54f976b623",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "7ba44915-f4ea-4acf-884f-56796c3573f9",
+      "createdAt": "2026-11-02T13:58:25.213Z",
+      "updatedAt": "2026-11-02T13:58:27.329Z",
+      "completedAt": null,
+      "positionX": 2007.036630057974,
+      "positionY": 994.4458669196906
     },
     {
       "title": "BI&Data",
@@ -265,7 +282,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-02T13:58:12.529Z",
+      "updatedAt": "2026-11-02T13:58:27.332Z",
       "completedAt": null,
       "positionX": 1354.030553722027,
       "positionY": 278.2960408154237
