@@ -1,8 +1,39 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T11:22:47.237Z",
+  "exportedAt": "2026-11-02T11:23:40.767Z",
   "appName": "Task Planner 9000",
   "tasks": [
+    {
+      "title": "Misc",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": true,
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
+      "createdAt": "2026-11-02T11:23:19.777Z",
+      "updatedAt": "2026-11-02T11:23:35.742Z",
+      "completedAt": null
+    },
+    {
+      "title": "Kela",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "9bc077c0-de45-48ef-9b72-2bb7668a8b97",
+      "createdAt": "2026-11-02T11:23:29.208Z",
+      "updatedAt": "2026-11-02T11:23:35.740Z",
+      "completedAt": null,
+      "positionX": 384.90159361072955,
+      "positionY": 669.870543043751
+    },
     {
       "title": "Data Governance",
       "description": "",
@@ -30,8 +61,10 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-02T11:22:36.914Z",
-      "completedAt": null
+      "updatedAt": "2026-11-02T11:23:25.032Z",
+      "completedAt": null,
+      "positionX": -360.58222185949927,
+      "positionY": 296.2253984026824
     }
   ],
   "taskConnections": []
