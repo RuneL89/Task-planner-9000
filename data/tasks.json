@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T13:48:54.420Z",
+  "exportedAt": "2026-11-02T13:49:21.292Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -18,6 +18,23 @@
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715
+    },
+    {
+      "title": "AW",
+      "description": "talk to Tero",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
+      "deadline": "2026-11-05",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "720fd21c-88bf-4566-b59e-ae1c505ea043",
+      "createdAt": "2026-11-02T13:49:13.923Z",
+      "updatedAt": "2026-11-02T13:49:16.278Z",
+      "completedAt": null,
+      "positionX": -168.42594130427105,
+      "positionY": 656.190377270246
     },
     {
       "title": "BI&Data",
@@ -63,7 +80,7 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-02T11:22:42.220Z",
+      "updatedAt": "2026-11-02T13:49:16.281Z",
       "completedAt": null,
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657
