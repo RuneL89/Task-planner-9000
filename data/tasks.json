@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:41:14.418Z",
+  "exportedAt": "2026-11-02T14:49:54.259Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -65,7 +65,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-02T14:41:09.402Z",
+      "updatedAt": "2026-11-02T14:49:49.244Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227
@@ -222,6 +222,23 @@
       "completedAt": "2026-11-02T13:49:57.543Z",
       "positionX": 308.46591126504785,
       "positionY": 647.2229334598454
+    },
+    {
+      "title": "Check old requests",
+      "description": "https://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/05ad78ce-8cbf-4f1f-9c63-58493134c176\n\nhttps://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/290e8423-b4d2-4415-884b-5fa5ef88d5ab\n\nhttps://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/e39bb955-760b-4285-9b57-f0df01ddd795\n\nhttps://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/619e96d2-e61b-4d68-877e-b22dc3669a55\n\n",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "9bcd9f7a-a094-4026-8de1-d32c783f082f",
+      "createdAt": "2026-11-02T14:49:47.938Z",
+      "updatedAt": "2026-11-02T14:49:49.243Z",
+      "completedAt": null,
+      "positionX": -1046.7347280770307,
+      "positionY": 627.4835800605226
     },
     {
       "title": "Data Governance",
