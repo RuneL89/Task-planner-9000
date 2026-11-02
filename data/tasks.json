@@ -1,8 +1,25 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T13:53:36.520Z",
+  "exportedAt": "2026-11-02T13:57:55.100Z",
   "appName": "Task Planner 9000",
   "tasks": [
+    {
+      "title": "Inform EG",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "469338ea-b53d-440b-9017-b83303a81fbf",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "00aaae84-3cce-4c48-9b38-1e1253cd16c4",
+      "createdAt": "2026-11-02T13:57:48.253Z",
+      "updatedAt": "2026-11-02T13:57:50.075Z",
+      "completedAt": null,
+      "positionX": 1644.6748767154836,
+      "positionY": 950.0942981512084
+    },
     {
       "title": "Misc",
       "description": "",
@@ -48,7 +65,7 @@
       "autoCleanupPeriod": "off",
       "id": "469338ea-b53d-440b-9017-b83303a81fbf",
       "createdAt": "2026-11-02T13:53:27.348Z",
-      "updatedAt": "2026-11-02T13:53:31.513Z",
+      "updatedAt": "2026-11-02T13:57:50.076Z",
       "completedAt": null,
       "positionX": 1715.4486566651888,
       "positionY": 647.2229334598451
@@ -231,7 +248,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-02T13:53:31.514Z",
+      "updatedAt": "2026-11-02T13:57:50.078Z",
       "completedAt": null,
       "positionX": 1354.030553722027,
       "positionY": 278.2960408154237
