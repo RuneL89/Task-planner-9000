@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-03T10:32:56.391Z",
+  "exportedAt": "2026-11-02T11:22:05.399Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -295,24 +295,6 @@
       "positionY": 1433.4754528009073
     },
     {
-      "title": "Vaca/Leave handover",
-      "description": "Data Readiness\nData Quality Implementation (new Entities)\nData Quality Discussions\nRelease Management (DG)\nAccept CRs",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "a63d0153-d23b-4690-bf77-30761c064b26",
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
-      "createdAt": "2026-07-07T08:55:39.448Z",
-      "updatedAt": "2026-07-07T14:55:52.426Z",
-      "completedAt": null,
-      "positionX": 989.7109709034294,
-      "positionY": 138.15230698035776,
-      "isCollapsed": false
-    },
-    {
       "title": "Talk to Harriet about that one check",
       "description": "",
       "status": "completed",
@@ -328,24 +310,6 @@
       "completedAt": "2026-07-09T14:16:08.232Z",
       "positionX": 1645.4621132973414,
       "positionY": 87.15230698035776
-    },
-    {
-      "title": "Book Thao, Viivi, Tero",
-      "description": "DR, Release, fill in during vaca/leave",
-      "status": "completed",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
-      "deadline": "2026-07-06",
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "8a0ad905-f03a-4413-af50-485eacd379fd",
-      "createdAt": "2026-07-06T07:25:35.006Z",
-      "updatedAt": "2026-07-07T08:57:40.768Z",
-      "completedAt": "2026-07-06T07:57:06.706Z",
-      "positionX": 587.3853508137087,
-      "positionY": 219.58997366578552,
-      "isCollapsed": false
     },
     {
       "title": "Migrate",
@@ -382,23 +346,6 @@
       "positionY": 412.87257975418254
     },
     {
-      "title": "Release Handover Doc",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "99083bb1-7b80-4dff-97c1-a38af45b5e59",
-      "createdAt": "2026-07-07T08:56:37.857Z",
-      "updatedAt": "2026-07-07T08:56:41.313Z",
-      "completedAt": null,
-      "positionX": 1171.4621132973414,
-      "positionY": -195.84769301964224
-    },
-    {
       "title": "Finish Presentation",
       "description": "",
       "status": "completed",
@@ -426,10 +373,10 @@
       "autoCleanupPeriod": "1week",
       "id": "a63d0153-d23b-4690-bf77-30761c064b26",
       "createdAt": "2026-07-06T07:24:08.511Z",
-      "updatedAt": "2026-08-03T10:32:51.368Z",
+      "updatedAt": "2026-11-02T11:22:00.377Z",
       "completedAt": null,
-      "positionX": 1340.4621132973414,
-      "positionY": 376.15230698035776,
+      "positionX": 1304.603398122824,
+      "positionY": 396.91261576560464,
       "isCollapsed": false
     },
     {
@@ -465,40 +412,6 @@
       "completedAt": "2026-07-07T07:33:39.688Z",
       "positionX": 2138.795263745566,
       "positionY": 789.4050403223235
-    },
-    {
-      "title": "Prepare for meeting",
-      "description": "",
-      "status": "completed",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "8a0ad905-f03a-4413-af50-485eacd379fd",
-      "deadline": "2026-07-06",
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "b1e31f6d-cd80-4349-bbc1-c843ffc1bd97",
-      "createdAt": "2026-07-06T07:35:04.765Z",
-      "updatedAt": "2026-07-07T08:56:09.082Z",
-      "completedAt": "2026-07-06T15:41:22.385Z",
-      "positionX": 682.6344295330484,
-      "positionY": 541.2327240866167
-    },
-    {
-      "title": "SODA Handover Doc",
-      "description": "",
-      "status": "completed",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "7b47ece6-0d84-44db-9001-b5b9e50748dd",
-      "deadline": "2026-07-07",
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "b61592b5-9725-4dcb-a96f-df67379016c9",
-      "createdAt": "2026-07-07T08:56:18.887Z",
-      "updatedAt": "2026-07-07T14:55:52.424Z",
-      "completedAt": "2026-07-07T14:55:52.424Z",
-      "positionX": 800.4621132973414,
-      "positionY": -103.59769301964224
     },
     {
       "title": "Finish release!",
