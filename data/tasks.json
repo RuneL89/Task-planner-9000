@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:54:35.734Z",
+  "exportedAt": "2026-11-02T14:55:05.859Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -100,7 +100,7 @@
       "autoCleanupPeriod": "off",
       "id": "32e500d7-722b-4b81-a522-2fa0b75a52da",
       "createdAt": "2026-11-02T14:54:28.886Z",
-      "updatedAt": "2026-11-02T14:54:30.721Z",
+      "updatedAt": "2026-11-02T14:55:00.845Z",
       "completedAt": null,
       "positionX": -1360,
       "positionY": 341
@@ -138,6 +138,23 @@
       "completedAt": null,
       "positionX": 1645.618527114813,
       "positionY": 663.264990248445
+    },
+    {
+      "title": "Follow up on the last meeting - new agenda",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "32e500d7-722b-4b81-a522-2fa0b75a52da",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "4c748eac-d517-43e0-a08a-5b629b7d97e6",
+      "createdAt": "2026-11-02T14:54:59.750Z",
+      "updatedAt": "2026-11-02T14:55:00.844Z",
+      "completedAt": null,
+      "positionX": -1367,
+      "positionY": 644
     },
     {
       "title": "Data Governance Framework Review",
@@ -235,7 +252,7 @@
       "autoCleanupPeriod": "off",
       "id": "83e7e38f-bedb-4d79-ad39-15652e8aa75b",
       "createdAt": "2026-11-02T14:53:58.445Z",
-      "updatedAt": "2026-11-02T14:54:30.722Z",
+      "updatedAt": "2026-11-02T14:55:00.845Z",
       "completedAt": null,
       "positionX": -1018,
       "positionY": 296
