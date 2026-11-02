@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:53:44.257Z",
+  "exportedAt": "2026-11-02T14:54:08.389Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -206,6 +206,22 @@
       "completedAt": null,
       "positionX": 2007.036630057974,
       "positionY": 994.4458669196906
+    },
+    {
+      "title": "5 YEAR PLANS!!",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": true,
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "83e7e38f-bedb-4d79-ad39-15652e8aa75b",
+      "createdAt": "2026-11-02T14:53:58.445Z",
+      "updatedAt": "2026-11-02T14:54:03.374Z",
+      "completedAt": null,
+      "positionX": -1018,
+      "positionY": 296
     },
     {
       "title": "BI&Data",
