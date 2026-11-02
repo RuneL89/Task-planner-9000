@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:53:28.886Z",
+  "exportedAt": "2026-11-02T14:53:44.257Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -65,10 +65,11 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-02T14:53:23.874Z",
+      "updatedAt": "2026-11-02T14:53:39.244Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
-      "positionY": 294.4835800605227
+      "positionY": 294.4835800605227,
+      "isCollapsed": true
     },
     {
       "title": "Find Agenda",
@@ -247,12 +248,12 @@
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
-      "deadline": null,
+      "deadline": "2026-11-04",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "9bcd9f7a-a094-4026-8de1-d32c783f082f",
       "createdAt": "2026-11-02T14:49:47.938Z",
-      "updatedAt": "2026-11-02T14:53:08.211Z",
+      "updatedAt": "2026-11-02T14:53:30.929Z",
       "completedAt": null,
       "positionX": -1271.7347280770307,
       "positionY": 498.4835800605226
@@ -417,12 +418,12 @@
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
-      "deadline": null,
+      "deadline": "2026-11-05",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "de6aeb18-4448-4461-980b-89a7e7d69a3a",
       "createdAt": "2026-11-02T14:50:11.984Z",
-      "updatedAt": "2026-11-02T14:50:14.204Z",
+      "updatedAt": "2026-11-02T14:53:32.959Z",
       "completedAt": null,
       "positionX": -464.7347280770307,
       "positionY": 831.4835800605226
@@ -468,12 +469,12 @@
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
-      "deadline": null,
+      "deadline": "2026-11-06",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "f0ed94b1-94f2-456c-8e00-d88e4c5805cb",
       "createdAt": "2026-11-02T14:50:25.033Z",
-      "updatedAt": "2026-11-02T14:50:35.166Z",
+      "updatedAt": "2026-11-02T14:53:34.479Z",
       "completedAt": null,
       "positionX": -1165.7347280770307,
       "positionY": 854.4835800605226
