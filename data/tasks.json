@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:55:17.379Z",
+  "exportedAt": "2026-11-02T14:55:24.790Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -252,10 +252,11 @@
       "autoCleanupPeriod": "off",
       "id": "83e7e38f-bedb-4d79-ad39-15652e8aa75b",
       "createdAt": "2026-11-02T14:53:58.445Z",
-      "updatedAt": "2026-11-02T14:55:12.356Z",
+      "updatedAt": "2026-11-02T14:55:19.773Z",
       "completedAt": null,
       "positionX": -1018,
-      "positionY": 296
+      "positionY": 296,
+      "isCollapsed": true
     },
     {
       "title": "BI&Data",
