@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:54:17.113Z",
+  "exportedAt": "2026-11-02T14:54:35.734Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -87,6 +87,23 @@
       "completedAt": null,
       "positionX": 1046.4005235406416,
       "positionY": 821.7578438424099
+    },
+    {
+      "title": "Take over BI&Data",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "83e7e38f-bedb-4d79-ad39-15652e8aa75b",
+      "deadline": "2027-04-01",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "32e500d7-722b-4b81-a522-2fa0b75a52da",
+      "createdAt": "2026-11-02T14:54:28.886Z",
+      "updatedAt": "2026-11-02T14:54:30.721Z",
+      "completedAt": null,
+      "positionX": -1360,
+      "positionY": 341
     },
     {
       "title": "Talk to Charles about Release Notes",
@@ -218,7 +235,7 @@
       "autoCleanupPeriod": "off",
       "id": "83e7e38f-bedb-4d79-ad39-15652e8aa75b",
       "createdAt": "2026-11-02T14:53:58.445Z",
-      "updatedAt": "2026-11-02T14:54:12.084Z",
+      "updatedAt": "2026-11-02T14:54:30.722Z",
       "completedAt": null,
       "positionX": -1018,
       "positionY": 296
