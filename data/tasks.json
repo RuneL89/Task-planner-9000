@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T11:44:26.898Z",
+  "exportedAt": "2026-11-02T11:45:02.151Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -69,6 +69,23 @@
       "positionY": 299.53093981710657
     },
     {
+      "title": "Get status from Carlos",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
+      "deadline": "2026-11-03",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "ce0cc343-4d65-4b8e-8365-7c611efaf8c5",
+      "createdAt": "2026-11-02T11:44:50.981Z",
+      "updatedAt": "2026-11-02T11:44:57.145Z",
+      "completedAt": null,
+      "positionX": -481.36947297366294,
+      "positionY": 630.2372262719161
+    },
+    {
       "title": "Alteryx Migration",
       "description": "",
       "status": "pending",
@@ -79,7 +96,7 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-02T11:23:25.032Z",
+      "updatedAt": "2026-11-02T11:44:57.146Z",
       "completedAt": null,
       "positionX": -360.58222185949927,
       "positionY": 296.2253984026824
