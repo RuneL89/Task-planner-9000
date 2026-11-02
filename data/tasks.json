@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T13:52:03.553Z",
+  "exportedAt": "2026-11-02T13:53:18.068Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -135,6 +135,21 @@
       "completedAt": null,
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657
+    },
+    {
+      "title": "DG Confirmation",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "c38a2218-aeeb-4df2-94e5-d6e9b60aa542",
+      "createdAt": "2026-11-02T13:53:13.052Z",
+      "updatedAt": "2026-11-02T13:53:13.052Z",
+      "completedAt": null
     },
     {
       "title": "Talk to Antti, Tero, Arttu",
