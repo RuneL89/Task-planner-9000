@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:07:04.714Z",
+  "exportedAt": "2026-11-02T14:07:21.802Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -15,10 +15,10 @@
       "autoCleanupPeriod": "off",
       "id": "00aaae84-3cce-4c48-9b38-1e1253cd16c4",
       "createdAt": "2026-11-02T13:57:48.253Z",
-      "updatedAt": "2026-11-02T13:57:50.075Z",
+      "updatedAt": "2026-11-02T14:07:11.401Z",
       "completedAt": null,
-      "positionX": 1644.6748767154836,
-      "positionY": 950.0942981512084
+      "positionX": 1690.9137462826245,
+      "positionY": 1001.9950701143256
     },
     {
       "title": "Misc",
@@ -82,7 +82,7 @@
       "autoCleanupPeriod": "off",
       "id": "469338ea-b53d-440b-9017-b83303a81fbf",
       "createdAt": "2026-11-02T13:53:27.348Z",
-      "updatedAt": "2026-11-02T14:06:20.130Z",
+      "updatedAt": "2026-11-02T14:07:11.406Z",
       "completedAt": null,
       "positionX": 1645.618527114813,
       "positionY": 663.264990248445
@@ -166,10 +166,11 @@
       "autoCleanupPeriod": "off",
       "id": "8cb98a4b-20c0-499a-8eb0-609885c07985",
       "createdAt": "2026-11-02T11:23:45.203Z",
-      "updatedAt": "2026-11-02T14:06:59.702Z",
+      "updatedAt": "2026-11-02T14:07:16.775Z",
       "completedAt": null,
       "positionX": 695.3625749901033,
-      "positionY": 283.95794321140016
+      "positionY": 283.95794321140016,
+      "isCollapsed": true
     },
     {
       "title": "Kela",
@@ -231,10 +232,10 @@
       "autoCleanupPeriod": "off",
       "id": "c38a2218-aeeb-4df2-94e5-d6e9b60aa542",
       "createdAt": "2026-11-02T13:53:13.052Z",
-      "updatedAt": "2026-11-02T13:53:29.831Z",
+      "updatedAt": "2026-11-02T14:07:10.373Z",
       "completedAt": null,
-      "positionX": 1414.4241792791088,
-      "positionY": 680.2506974363744
+      "positionX": 1413.4805288797795,
+      "positionY": 929.3744028593369
     },
     {
       "title": "Talk to Antti, Tero, Arttu",
@@ -297,7 +298,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-02T14:06:20.132Z",
+      "updatedAt": "2026-11-02T14:07:11.407Z",
       "completedAt": null,
       "positionX": 1354.030553722027,
       "positionY": 278.2960408154237
@@ -364,10 +365,11 @@
       "autoCleanupPeriod": "off",
       "id": "f3faff86-72db-4520-943d-8e2fb1d153dd",
       "createdAt": "2026-11-02T11:24:11.859Z",
-      "updatedAt": "2026-11-02T14:06:41.884Z",
+      "updatedAt": "2026-11-02T14:07:14.606Z",
       "completedAt": null,
       "positionX": 1019.0346619600888,
-      "positionY": 286.7888944093884
+      "positionY": 286.7888944093884,
+      "isCollapsed": true
     }
   ],
   "taskConnections": []
