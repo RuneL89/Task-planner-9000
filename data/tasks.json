@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T11:22:26.071Z",
+  "exportedAt": "2026-11-02T11:22:34.300Z",
   "appName": "Task Planner 9000",
-  "tasks": [],
+  "tasks": [
+    {
+      "title": "Data Governance",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": true,
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
+      "createdAt": "2026-11-02T11:22:29.280Z",
+      "updatedAt": "2026-11-02T11:22:29.280Z",
+      "completedAt": null
+    }
+  ],
   "taskConnections": []
 }
