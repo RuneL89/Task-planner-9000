@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T13:49:21.292Z",
+  "exportedAt": "2026-11-02T13:50:02.552Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -14,7 +14,7 @@
       "autoCleanupPeriod": "off",
       "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
       "createdAt": "2026-11-02T11:23:19.777Z",
-      "updatedAt": "2026-11-02T11:53:41.525Z",
+      "updatedAt": "2026-11-02T13:49:57.547Z",
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715
@@ -55,7 +55,7 @@
     {
       "title": "Kela",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
@@ -64,8 +64,8 @@
       "autoCleanupPeriod": "off",
       "id": "9bc077c0-de45-48ef-9b72-2bb7668a8b97",
       "createdAt": "2026-11-02T11:23:29.208Z",
-      "updatedAt": "2026-11-02T11:53:41.521Z",
-      "completedAt": null,
+      "updatedAt": "2026-11-02T13:49:57.543Z",
+      "completedAt": "2026-11-02T13:49:57.543Z",
       "positionX": 308.46591126504785,
       "positionY": 647.2229334598454
     },
