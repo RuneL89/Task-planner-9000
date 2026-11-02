@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:07:21.802Z",
+  "exportedAt": "2026-11-02T14:07:40.299Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -217,22 +217,24 @@
       "autoCleanupPeriod": "off",
       "id": "c01f3777-84fe-4c94-b1ce-07c8ffd4d0c1",
       "createdAt": "2026-11-02T13:59:01.635Z",
-      "updatedAt": "2026-11-02T13:59:01.635Z",
-      "completedAt": null
+      "updatedAt": "2026-11-02T14:07:30.442Z",
+      "completedAt": null,
+      "positionX": 1087.9211411111353,
+      "positionY": 670.8141934430803
     },
     {
       "title": "DG Confirmation",
       "description": "",
-      "status": "pending",
+      "status": "in_progress",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
-      "deadline": null,
+      "deadline": "2026-11-03",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "c38a2218-aeeb-4df2-94e5-d6e9b60aa542",
       "createdAt": "2026-11-02T13:53:13.052Z",
-      "updatedAt": "2026-11-02T14:07:10.373Z",
+      "updatedAt": "2026-11-02T14:07:26.831Z",
       "completedAt": null,
       "positionX": 1413.4805288797795,
       "positionY": 929.3744028593369
@@ -298,10 +300,11 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-02T14:07:11.407Z",
+      "updatedAt": "2026-11-02T14:07:35.278Z",
       "completedAt": null,
-      "positionX": 1354.030553722027,
-      "positionY": 278.2960408154237
+      "positionX": 1362.5234073159916,
+      "positionY": 211.296862463036,
+      "isCollapsed": true
     },
     {
       "title": "Account Hierarchy Soda Check from DEV to PROD",
