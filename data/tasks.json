@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:07:40.299Z",
+  "exportedAt": "2026-11-02T14:07:47.984Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -31,10 +31,11 @@
       "autoCleanupPeriod": "off",
       "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
       "createdAt": "2026-11-02T11:23:19.777Z",
-      "updatedAt": "2026-11-02T13:49:57.547Z",
+      "updatedAt": "2026-11-02T14:07:42.966Z",
       "completedAt": null,
       "positionX": 365.08493522481206,
-      "positionY": 288.67619520804715
+      "positionY": 288.67619520804715,
+      "isCollapsed": true
     },
     {
       "title": "Find Agenda",
@@ -200,10 +201,11 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-02T14:06:49.300Z",
+      "updatedAt": "2026-11-02T14:07:41.526Z",
       "completedAt": null,
       "positionX": -45.75138939144858,
-      "positionY": 299.53093981710657
+      "positionY": 299.53093981710657,
+      "isCollapsed": true
     },
     {
       "title": "Release and doc update",
