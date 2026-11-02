@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T13:57:55.100Z",
+  "exportedAt": "2026-11-02T13:58:17.538Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -54,6 +54,23 @@
       "positionY": 821.7578438424099
     },
     {
+      "title": "Talk to Charles about Release Notes",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "3cc7a37c-967e-4ca5-a032-0b54f976b623",
+      "createdAt": "2026-11-02T13:58:05.932Z",
+      "updatedAt": "2026-11-02T13:58:12.528Z",
+      "completedAt": null,
+      "positionX": 1934.37554930961,
+      "positionY": 663.2649902484452
+    },
+    {
       "title": "Talk to Charles about deploy planning",
       "description": "",
       "status": "pending",
@@ -65,10 +82,10 @@
       "autoCleanupPeriod": "off",
       "id": "469338ea-b53d-440b-9017-b83303a81fbf",
       "createdAt": "2026-11-02T13:53:27.348Z",
-      "updatedAt": "2026-11-02T13:57:50.076Z",
+      "updatedAt": "2026-11-02T13:58:09.492Z",
       "completedAt": null,
-      "positionX": 1715.4486566651888,
-      "positionY": 647.2229334598451
+      "positionX": 1645.618527114813,
+      "positionY": 663.264990248445
     },
     {
       "title": "Data Governance Framework Review",
@@ -248,7 +265,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-02T13:57:50.078Z",
+      "updatedAt": "2026-11-02T13:58:12.529Z",
       "completedAt": null,
       "positionX": 1354.030553722027,
       "positionY": 278.2960408154237
