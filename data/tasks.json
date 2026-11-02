@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T14:55:05.859Z",
+  "exportedAt": "2026-11-02T14:55:17.379Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -100,7 +100,7 @@
       "autoCleanupPeriod": "off",
       "id": "32e500d7-722b-4b81-a522-2fa0b75a52da",
       "createdAt": "2026-11-02T14:54:28.886Z",
-      "updatedAt": "2026-11-02T14:55:00.845Z",
+      "updatedAt": "2026-11-02T14:55:12.355Z",
       "completedAt": null,
       "positionX": -1360,
       "positionY": 341
@@ -151,7 +151,7 @@
       "autoCleanupPeriod": "off",
       "id": "4c748eac-d517-43e0-a08a-5b629b7d97e6",
       "createdAt": "2026-11-02T14:54:59.750Z",
-      "updatedAt": "2026-11-02T14:55:00.844Z",
+      "updatedAt": "2026-11-02T14:55:12.354Z",
       "completedAt": null,
       "positionX": -1367,
       "positionY": 644
@@ -252,7 +252,7 @@
       "autoCleanupPeriod": "off",
       "id": "83e7e38f-bedb-4d79-ad39-15652e8aa75b",
       "createdAt": "2026-11-02T14:53:58.445Z",
-      "updatedAt": "2026-11-02T14:55:00.845Z",
+      "updatedAt": "2026-11-02T14:55:12.356Z",
       "completedAt": null,
       "positionX": -1018,
       "positionY": 296
@@ -324,6 +324,23 @@
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657,
       "isCollapsed": true
+    },
+    {
+      "title": "talk to Arttu",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "4c748eac-d517-43e0-a08a-5b629b7d97e6",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "a8318ef6-b88d-421b-a2bc-fc11fe5418bf",
+      "createdAt": "2026-11-02T14:55:11.382Z",
+      "updatedAt": "2026-11-02T14:55:12.353Z",
+      "completedAt": null,
+      "positionX": -1335,
+      "positionY": 939
     },
     {
       "title": "Go over SODA Discussions",
