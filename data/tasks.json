@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T13:51:02.377Z",
+  "exportedAt": "2026-11-02T13:51:25.113Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -48,7 +48,7 @@
       "autoCleanupPeriod": "off",
       "id": "5370767e-911e-4c86-9e95-1d62a9ceccab",
       "createdAt": "2026-11-02T13:50:54.854Z",
-      "updatedAt": "2026-11-02T13:50:57.362Z",
+      "updatedAt": "2026-11-02T13:51:20.097Z",
       "completedAt": null,
       "positionX": 20.304138561609648,
       "positionY": 622.2189628943875
@@ -131,10 +131,27 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-02T13:50:57.363Z",
+      "updatedAt": "2026-11-02T13:51:20.099Z",
       "completedAt": null,
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657
+    },
+    {
+      "title": "Talk to Antti, Tero, Arttu",
+      "description": "Feedback?",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "5370767e-911e-4c86-9e95-1d62a9ceccab",
+      "deadline": "2026-11-03",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "c4f0425a-4ea6-4007-acc3-c4594e3133cc",
+      "createdAt": "2026-11-02T13:51:18.405Z",
+      "updatedAt": "2026-11-02T13:51:20.095Z",
+      "completedAt": null,
+      "positionX": 55.21920333679756,
+      "positionY": 895.8371652065393
     },
     {
       "title": "Get status from Carlos",
