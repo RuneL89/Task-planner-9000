@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T13:50:16.544Z",
+  "exportedAt": "2026-11-02T13:50:43.655Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -18,6 +18,23 @@
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715
+    },
+    {
+      "title": "Find Agenda",
+      "description": "only DQF?\n",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "75d29a77-bbd8-4488-932f-651dec224938",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "2e00c24c-2840-4d14-bbc3-38ef2c9fea6a",
+      "createdAt": "2026-11-02T13:50:35.644Z",
+      "updatedAt": "2026-11-02T13:50:38.638Z",
+      "completedAt": null,
+      "positionX": 1046.4005235406416,
+      "positionY": 821.7578438424099
     },
     {
       "title": "AW",
@@ -48,7 +65,7 @@
       "autoCleanupPeriod": "off",
       "id": "75d29a77-bbd8-4488-932f-651dec224938",
       "createdAt": "2026-11-02T13:50:10.269Z",
-      "updatedAt": "2026-11-02T13:50:11.532Z",
+      "updatedAt": "2026-11-02T13:50:38.640Z",
       "completedAt": null,
       "positionX": 899.1910612452544,
       "positionY": 607.5896166880104
@@ -64,7 +81,7 @@
       "autoCleanupPeriod": "off",
       "id": "8cb98a4b-20c0-499a-8eb0-609885c07985",
       "createdAt": "2026-11-02T11:23:45.203Z",
-      "updatedAt": "2026-11-02T13:50:11.534Z",
+      "updatedAt": "2026-11-02T13:50:38.641Z",
       "completedAt": null,
       "positionX": 695.3625749901033,
       "positionY": 283.95794321140016
