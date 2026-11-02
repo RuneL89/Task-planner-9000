@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T13:50:43.655Z",
+  "exportedAt": "2026-11-02T13:51:02.377Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -35,6 +35,23 @@
       "completedAt": null,
       "positionX": 1046.4005235406416,
       "positionY": 821.7578438424099
+    },
+    {
+      "title": "Data Governance Framework Review",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "5370767e-911e-4c86-9e95-1d62a9ceccab",
+      "createdAt": "2026-11-02T13:50:54.854Z",
+      "updatedAt": "2026-11-02T13:50:57.362Z",
+      "completedAt": null,
+      "positionX": 20.304138561609648,
+      "positionY": 622.2189628943875
     },
     {
       "title": "AW",
@@ -114,7 +131,7 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-02T13:49:16.281Z",
+      "updatedAt": "2026-11-02T13:50:57.363Z",
       "completedAt": null,
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657
