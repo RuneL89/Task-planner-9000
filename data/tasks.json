@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:07:34.317Z",
+  "exportedAt": "2026-11-03T13:07:50.494Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -473,11 +473,11 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T13:07:29.291Z",
+      "updatedAt": "2026-11-03T13:07:45.474Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Account Hierarchy Soda Check from DEV to PROD",
@@ -542,10 +542,10 @@
       "autoCleanupPeriod": "off",
       "id": "ecf9d19c-ed0a-4b76-98b8-2d1b06e6106c",
       "createdAt": "2026-11-02T13:58:49.148Z",
-      "updatedAt": "2026-11-02T13:58:51.308Z",
+      "updatedAt": "2026-11-03T13:07:45.472Z",
       "completedAt": null,
-      "positionX": 2004.2056788599862,
-      "positionY": 417.91588642280027
+      "positionX": 2029.2056788599862,
+      "positionY": 470.91588642280027
     },
     {
       "title": "#97 - Check for SLS AMST agreed matched Term loan amount",
