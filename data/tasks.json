@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:20:08.860Z",
+  "exportedAt": "2026-11-03T13:20:25.777Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -235,11 +235,11 @@
       "autoCleanupPeriod": "off",
       "id": "8cb98a4b-20c0-499a-8eb0-609885c07985",
       "createdAt": "2026-11-02T11:23:45.203Z",
-      "updatedAt": "2026-11-02T14:07:16.775Z",
+      "updatedAt": "2026-11-03T13:20:20.746Z",
       "completedAt": null,
       "positionX": 695.3625749901033,
       "positionY": 283.95794321140016,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Kela",
@@ -439,7 +439,7 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-03T13:19:46.330Z",
+      "updatedAt": "2026-11-03T13:20:20.745Z",
       "completedAt": null,
       "positionX": -360.58222185949927,
       "positionY": 296.2253984026824,
@@ -558,11 +558,11 @@
       "autoCleanupPeriod": "off",
       "id": "f3faff86-72db-4520-943d-8e2fb1d153dd",
       "createdAt": "2026-11-02T11:24:11.859Z",
-      "updatedAt": "2026-11-03T13:20:03.842Z",
+      "updatedAt": "2026-11-03T13:20:16.298Z",
       "completedAt": null,
       "positionX": 1019.0346619600888,
       "positionY": 286.7888944093884,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Book intro with Theresa",
