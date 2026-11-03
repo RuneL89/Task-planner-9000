@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T08:39:52.448Z",
+  "exportedAt": "2026-11-03T08:40:12.155Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -327,6 +327,23 @@
       "isCollapsed": true
     },
     {
+      "title": "Figure out Entity Group??",
+      "description": "",
+      "status": "in_progress",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
+      "deadline": "2026-11-03",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
+      "createdAt": "2026-11-03T08:40:04.392Z",
+      "updatedAt": "2026-11-03T08:40:07.143Z",
+      "completedAt": null,
+      "positionX": 1901.5234073159916,
+      "positionY": 250.296862463036
+    },
+    {
       "title": "talk to Arttu",
       "description": "",
       "status": "pending",
@@ -456,7 +473,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T08:39:47.427Z",
+      "updatedAt": "2026-11-03T08:40:07.144Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
