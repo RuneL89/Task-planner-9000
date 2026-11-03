@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T08:39:22.395Z",
+  "exportedAt": "2026-11-03T08:39:41.110Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -15,10 +15,10 @@
       "autoCleanupPeriod": "off",
       "id": "00aaae84-3cce-4c48-9b38-1e1253cd16c4",
       "createdAt": "2026-11-02T13:57:48.253Z",
-      "updatedAt": "2026-11-02T14:07:11.401Z",
+      "updatedAt": "2026-11-03T08:39:36.089Z",
       "completedAt": null,
-      "positionX": 1690.9137462826245,
-      "positionY": 1001.9950701143256
+      "positionX": 1635.9137462826245,
+      "positionY": 1068.9950701143257
     },
     {
       "title": "Talk to Toffe about the status - if any",
@@ -134,7 +134,7 @@
       "autoCleanupPeriod": "off",
       "id": "469338ea-b53d-440b-9017-b83303a81fbf",
       "createdAt": "2026-11-02T13:53:27.348Z",
-      "updatedAt": "2026-11-03T07:54:10.045Z",
+      "updatedAt": "2026-11-03T08:39:36.092Z",
       "completedAt": null,
       "positionX": 1645.618527114813,
       "positionY": 663.264990248445
@@ -439,11 +439,11 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-03T08:39:17.375Z",
+      "updatedAt": "2026-11-03T08:39:33.057Z",
       "completedAt": null,
       "positionX": -360.58222185949927,
       "positionY": 296.2253984026824,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "OptionCallProbability RELEASE",
@@ -456,11 +456,11 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T08:33:46.491Z",
+      "updatedAt": "2026-11-03T08:39:36.094Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Account Hierarchy Soda Check from DEV to PROD",
