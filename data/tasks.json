@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:08:30.560Z",
+  "exportedAt": "2026-11-03T13:08:44.035Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -191,6 +191,23 @@
       "positionY": 854.4835800605226
     },
     {
+      "title": "Send email",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
+      "deadline": "2026-11-03",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "695f90af-268b-4caa-accb-1053ef470b0d",
+      "createdAt": "2026-11-03T13:08:36.915Z",
+      "updatedAt": "2026-11-03T13:08:39.019Z",
+      "completedAt": null,
+      "positionX": 2236.523407315992,
+      "positionY": 185.296862463036
+    },
+    {
       "title": "AW",
       "description": "talk to Tero",
       "status": "pending",
@@ -338,7 +355,7 @@
       "autoCleanupPeriod": "off",
       "id": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
       "createdAt": "2026-11-03T08:40:04.392Z",
-      "updatedAt": "2026-11-03T13:08:25.544Z",
+      "updatedAt": "2026-11-03T13:08:39.020Z",
       "completedAt": "2026-11-03T12:11:24.952Z",
       "positionX": 1871.5234073159916,
       "positionY": 173.296862463036
@@ -473,7 +490,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T13:08:25.546Z",
+      "updatedAt": "2026-11-03T13:08:39.022Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
