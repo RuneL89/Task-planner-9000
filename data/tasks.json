@@ -1,25 +1,8 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:10:18.846Z",
+  "exportedAt": "2026-11-03T13:11:40.803Z",
   "appName": "Task Planner 9000",
   "tasks": [
-    {
-      "title": "Inform EG",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "469338ea-b53d-440b-9017-b83303a81fbf",
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "00aaae84-3cce-4c48-9b38-1e1253cd16c4",
-      "createdAt": "2026-11-02T13:57:48.253Z",
-      "updatedAt": "2026-11-03T08:39:36.089Z",
-      "completedAt": null,
-      "positionX": 1635.9137462826245,
-      "positionY": 1068.9950701143257
-    },
     {
       "title": "Talk to Toffe about the status - if any",
       "description": "",
@@ -106,40 +89,6 @@
       "positionY": 341
     },
     {
-      "title": "Talk to Charles about Release Notes",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "3cc7a37c-967e-4ca5-a032-0b54f976b623",
-      "createdAt": "2026-11-02T13:58:05.932Z",
-      "updatedAt": "2026-11-02T13:58:27.331Z",
-      "completedAt": null,
-      "positionX": 1934.37554930961,
-      "positionY": 663.2649902484452
-    },
-    {
-      "title": "Talk to Blue Team about deploy planning",
-      "description": "",
-      "status": "in_progress",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
-      "deadline": "2026-11-03",
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "469338ea-b53d-440b-9017-b83303a81fbf",
-      "createdAt": "2026-11-02T13:53:27.348Z",
-      "updatedAt": "2026-11-03T13:07:58.685Z",
-      "completedAt": null,
-      "positionX": 1576.618527114813,
-      "positionY": 677.264990248445
-    },
-    {
       "title": "Follow up on the last meeting - new agenda",
       "description": "",
       "status": "pending",
@@ -202,10 +151,10 @@
       "autoCleanupPeriod": "off",
       "id": "695f90af-268b-4caa-accb-1053ef470b0d",
       "createdAt": "2026-11-03T13:08:36.915Z",
-      "updatedAt": "2026-11-03T13:10:13.825Z",
+      "updatedAt": "2026-11-03T13:11:35.779Z",
       "completedAt": null,
-      "positionX": 2236.523407315992,
-      "positionY": 185.296862463036
+      "positionX": 1547.5234073159918,
+      "positionY": 859.296862463036
     },
     {
       "title": "AW",
@@ -242,23 +191,6 @@
       "positionY": 607.5896166880104
     },
     {
-      "title": "EG Owner Approves?",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "3cc7a37c-967e-4ca5-a032-0b54f976b623",
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "7ba44915-f4ea-4acf-884f-56796c3573f9",
-      "createdAt": "2026-11-02T13:58:25.213Z",
-      "updatedAt": "2026-11-02T13:58:27.329Z",
-      "completedAt": null,
-      "positionX": 2007.036630057974,
-      "positionY": 994.4458669196906
-    },
-    {
       "title": "Deployment",
       "description": "",
       "status": "pending",
@@ -270,10 +202,10 @@
       "autoCleanupPeriod": "off",
       "id": "7e262777-3e6b-4a43-9114-d92fa5b31040",
       "createdAt": "2026-11-03T13:09:21.706Z",
-      "updatedAt": "2026-11-03T13:10:13.823Z",
+      "updatedAt": "2026-11-03T13:11:35.777Z",
       "completedAt": null,
-      "positionX": 2885.523407315992,
-      "positionY": 222.296862463036
+      "positionX": 2178.523407315992,
+      "positionY": 811.296862463036
     },
     {
       "title": "5 MONTH PLANS!!",
@@ -372,10 +304,10 @@
       "autoCleanupPeriod": "off",
       "id": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
       "createdAt": "2026-11-03T08:40:04.392Z",
-      "updatedAt": "2026-11-03T13:10:13.826Z",
+      "updatedAt": "2026-11-03T13:11:35.780Z",
       "completedAt": "2026-11-03T12:11:24.952Z",
-      "positionX": 1871.5234073159916,
-      "positionY": 173.296862463036
+      "positionX": 1716.5234073159916,
+      "positionY": 433.296862463036
     },
     {
       "title": "talk to Arttu",
@@ -406,10 +338,10 @@
       "autoCleanupPeriod": "off",
       "id": "abfbb0bc-1cab-477b-aa94-655fc69229d7",
       "createdAt": "2026-11-03T13:09:39.043Z",
-      "updatedAt": "2026-11-03T13:09:40.456Z",
+      "updatedAt": "2026-11-03T13:11:35.776Z",
       "completedAt": null,
-      "positionX": 3185.523407315992,
-      "positionY": 223.296862463036
+      "positionX": 2513.523407315992,
+      "positionY": 785.296862463036
     },
     {
       "title": "Go over SODA Discussions",
@@ -429,38 +361,21 @@
       "positionY": 251.12819032957373
     },
     {
-      "title": "Release and doc update",
+      "title": "Update DG Doc and Send final email",
       "description": "",
       "status": "pending",
       "priority": "medium",
       "isMainTask": false,
-      "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
+      "parentTaskId": "abfbb0bc-1cab-477b-aa94-655fc69229d7",
       "deadline": null,
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
-      "id": "c01f3777-84fe-4c94-b1ce-07c8ffd4d0c1",
-      "createdAt": "2026-11-02T13:59:01.635Z",
-      "updatedAt": "2026-11-02T14:07:30.442Z",
+      "id": "be2df528-bb6b-4bbb-a75a-ca6e39bd6de7",
+      "createdAt": "2026-11-03T13:11:01.364Z",
+      "updatedAt": "2026-11-03T13:11:35.774Z",
       "completedAt": null,
-      "positionX": 1087.9211411111353,
-      "positionY": 670.8141934430803
-    },
-    {
-      "title": "DG Confirmation",
-      "description": "",
-      "status": "in_progress",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
-      "deadline": "2026-11-03",
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "c38a2218-aeeb-4df2-94e5-d6e9b60aa542",
-      "createdAt": "2026-11-02T13:53:13.052Z",
-      "updatedAt": "2026-11-03T13:08:10.526Z",
-      "completedAt": null,
-      "positionX": 1283.4805288797795,
-      "positionY": 912.3744028593369
+      "positionX": 2530.523407315992,
+      "positionY": 1152.921862463036
     },
     {
       "title": "Talk to Antti, Tero, Arttu",
@@ -491,10 +406,10 @@
       "autoCleanupPeriod": "off",
       "id": "cb7f38a1-ca2f-4cb4-9bcb-f3000d50b553",
       "createdAt": "2026-11-03T13:10:07.379Z",
-      "updatedAt": "2026-11-03T13:10:09.276Z",
+      "updatedAt": "2026-11-03T13:11:33.510Z",
       "completedAt": null,
-      "positionX": 3138.523407315992,
-      "positionY": 444.296862463036
+      "positionX": 2192.523407315992,
+      "positionY": 1132.546862463036
     },
     {
       "title": "Get status from Carlos",
@@ -541,7 +456,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T13:10:13.827Z",
+      "updatedAt": "2026-11-03T13:11:35.781Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
@@ -593,10 +508,10 @@
       "autoCleanupPeriod": "off",
       "id": "e40cd51e-e5ac-4848-9558-5506ea6705ff",
       "createdAt": "2026-11-03T13:08:45.706Z",
-      "updatedAt": "2026-11-03T13:10:13.824Z",
+      "updatedAt": "2026-11-03T13:11:35.778Z",
       "completedAt": null,
-      "positionX": 2536.523407315992,
-      "positionY": 222.296862463036
+      "positionX": 1819.5234073159918,
+      "positionY": 854.296862463036
     },
     {
       "title": "Book status meeting with units",
@@ -614,23 +529,6 @@
       "completedAt": null,
       "positionX": 1144.540165070899,
       "positionY": 599.0967630940457
-    },
-    {
-      "title": "Create SODA Checks",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
-      "deadline": null,
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "ecf9d19c-ed0a-4b76-98b8-2d1b06e6106c",
-      "createdAt": "2026-11-02T13:58:49.148Z",
-      "updatedAt": "2026-11-03T13:07:45.472Z",
-      "completedAt": null,
-      "positionX": 2029.2056788599862,
-      "positionY": 470.91588642280027
     },
     {
       "title": "#97 - Check for SLS AMST agreed matched Term loan amount",
