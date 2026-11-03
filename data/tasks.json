@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:11:40.803Z",
+  "exportedAt": "2026-11-03T13:11:59.365Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -151,7 +151,7 @@
       "autoCleanupPeriod": "off",
       "id": "695f90af-268b-4caa-accb-1053ef470b0d",
       "createdAt": "2026-11-03T13:08:36.915Z",
-      "updatedAt": "2026-11-03T13:11:35.779Z",
+      "updatedAt": "2026-11-03T13:11:54.336Z",
       "completedAt": null,
       "positionX": 1547.5234073159918,
       "positionY": 859.296862463036
@@ -197,12 +197,12 @@
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "e40cd51e-e5ac-4848-9558-5506ea6705ff",
-      "deadline": null,
+      "deadline": "2026-11-10",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "7e262777-3e6b-4a43-9114-d92fa5b31040",
       "createdAt": "2026-11-03T13:09:21.706Z",
-      "updatedAt": "2026-11-03T13:11:35.777Z",
+      "updatedAt": "2026-11-03T13:11:54.333Z",
       "completedAt": null,
       "positionX": 2178.523407315992,
       "positionY": 811.296862463036
@@ -304,7 +304,7 @@
       "autoCleanupPeriod": "off",
       "id": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
       "createdAt": "2026-11-03T08:40:04.392Z",
-      "updatedAt": "2026-11-03T13:11:35.780Z",
+      "updatedAt": "2026-11-03T13:11:54.337Z",
       "completedAt": "2026-11-03T12:11:24.952Z",
       "positionX": 1716.5234073159916,
       "positionY": 433.296862463036
@@ -456,7 +456,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T13:11:35.781Z",
+      "updatedAt": "2026-11-03T13:11:54.338Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
@@ -503,15 +503,15 @@
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "695f90af-268b-4caa-accb-1053ef470b0d",
-      "deadline": null,
+      "deadline": "2026-11-04",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "e40cd51e-e5ac-4848-9558-5506ea6705ff",
       "createdAt": "2026-11-03T13:08:45.706Z",
-      "updatedAt": "2026-11-03T13:11:35.778Z",
+      "updatedAt": "2026-11-03T13:11:54.335Z",
       "completedAt": null,
       "positionX": 1819.5234073159918,
-      "positionY": 854.296862463036
+      "positionY": 850.296862463036
     },
     {
       "title": "Book status meeting with units",
