@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:12:03.032Z",
+  "exportedAt": "2026-11-03T13:16:33.968Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
       "title": "Talk to Toffe about the status - if any",
       "description": "",
-      "status": "in_progress",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
@@ -15,10 +15,10 @@
       "autoCleanupPeriod": "off",
       "id": "1274d882-6a09-420b-93d4-b2355dec2869",
       "createdAt": "2026-11-02T14:08:00.310Z",
-      "updatedAt": "2026-11-03T08:39:17.372Z",
-      "completedAt": null,
-      "positionX": -245.45687314131206,
-      "positionY": 612.3078686846575
+      "updatedAt": "2026-11-03T13:16:28.950Z",
+      "completedAt": "2026-11-03T13:16:28.950Z",
+      "positionX": -247.45687314131206,
+      "positionY": 616.3078686846575
     },
     {
       "title": "Misc",
@@ -142,7 +142,7 @@
     {
       "title": "Send email",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
@@ -151,8 +151,8 @@
       "autoCleanupPeriod": "off",
       "id": "695f90af-268b-4caa-accb-1053ef470b0d",
       "createdAt": "2026-11-03T13:08:36.915Z",
-      "updatedAt": "2026-11-03T13:11:54.336Z",
-      "completedAt": null,
+      "updatedAt": "2026-11-03T13:16:18.878Z",
+      "completedAt": "2026-11-03T13:16:18.878Z",
       "positionX": 1547.5234073159918,
       "positionY": 859.296862463036
     },
@@ -304,7 +304,7 @@
       "autoCleanupPeriod": "off",
       "id": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
       "createdAt": "2026-11-03T08:40:04.392Z",
-      "updatedAt": "2026-11-03T13:11:54.337Z",
+      "updatedAt": "2026-11-03T13:16:18.880Z",
       "completedAt": "2026-11-03T12:11:24.952Z",
       "positionX": 1716.5234073159916,
       "positionY": 433.296862463036
@@ -439,7 +439,7 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-03T13:07:29.292Z",
+      "updatedAt": "2026-11-03T13:16:28.952Z",
       "completedAt": null,
       "positionX": -360.58222185949927,
       "positionY": 296.2253984026824,
@@ -456,11 +456,11 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T13:11:54.338Z",
+      "updatedAt": "2026-11-03T13:16:23.410Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Account Hierarchy Soda Check from DEV to PROD",
