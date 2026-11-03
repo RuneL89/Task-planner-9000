@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T07:54:15.072Z",
+  "exportedAt": "2026-11-03T07:54:25.967Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -380,7 +380,7 @@
     {
       "title": "DG Confirmation",
       "description": "",
-      "status": "in_progress",
+      "status": "on_hold",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
@@ -389,7 +389,7 @@
       "autoCleanupPeriod": "off",
       "id": "c38a2218-aeeb-4df2-94e5-d6e9b60aa542",
       "createdAt": "2026-11-02T13:53:13.052Z",
-      "updatedAt": "2026-11-02T14:07:26.831Z",
+      "updatedAt": "2026-11-03T07:54:18.698Z",
       "completedAt": null,
       "positionX": 1413.4805288797795,
       "positionY": 929.3744028593369
@@ -439,11 +439,11 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-02T14:14:40.215Z",
+      "updatedAt": "2026-11-03T07:54:20.933Z",
       "completedAt": null,
       "positionX": -360.58222185949927,
       "positionY": 296.2253984026824,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "OptionCallProbability RELEASE",
@@ -456,11 +456,11 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T07:54:10.051Z",
+      "updatedAt": "2026-11-03T07:54:20.933Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Account Hierarchy Soda Check from DEV to PROD",
