@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:31:08.433Z",
+  "exportedAt": "2026-11-03T13:35:55.070Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -286,11 +286,11 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-03T12:11:11.413Z",
+      "updatedAt": "2026-11-03T13:35:44.695Z",
       "completedAt": null,
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Figure out Entity Group??",
@@ -439,11 +439,11 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-03T13:31:03.408Z",
+      "updatedAt": "2026-11-03T13:35:50.049Z",
       "completedAt": null,
-      "positionX": -360.58222185949927,
+      "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "OptionCallProbability RELEASE",
