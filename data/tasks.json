@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T07:46:02.630Z",
+  "exportedAt": "2026-11-03T07:54:15.072Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -125,7 +125,7 @@
     {
       "title": "Talk to Charles about deploy planning",
       "description": "",
-      "status": "pending",
+      "status": "in_progress",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
@@ -134,7 +134,7 @@
       "autoCleanupPeriod": "off",
       "id": "469338ea-b53d-440b-9017-b83303a81fbf",
       "createdAt": "2026-11-02T13:53:27.348Z",
-      "updatedAt": "2026-11-02T14:07:11.406Z",
+      "updatedAt": "2026-11-03T07:54:10.045Z",
       "completedAt": null,
       "positionX": 1645.618527114813,
       "positionY": 663.264990248445
@@ -456,7 +456,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T07:45:57.607Z",
+      "updatedAt": "2026-11-03T07:54:10.051Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
