@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T08:39:41.110Z",
+  "exportedAt": "2026-11-03T08:39:52.448Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -123,7 +123,7 @@
       "positionY": 663.2649902484452
     },
     {
-      "title": "Talk to Charles about deploy planning",
+      "title": "Talk to Blue Team about deploy planning",
       "description": "",
       "status": "in_progress",
       "priority": "medium",
@@ -134,7 +134,7 @@
       "autoCleanupPeriod": "off",
       "id": "469338ea-b53d-440b-9017-b83303a81fbf",
       "createdAt": "2026-11-02T13:53:27.348Z",
-      "updatedAt": "2026-11-03T08:39:36.092Z",
+      "updatedAt": "2026-11-03T08:39:47.424Z",
       "completedAt": null,
       "positionX": 1645.618527114813,
       "positionY": 663.264990248445
@@ -456,7 +456,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T08:39:36.094Z",
+      "updatedAt": "2026-11-03T08:39:47.427Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
