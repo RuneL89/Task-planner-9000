@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:19:58.257Z",
+  "exportedAt": "2026-11-03T13:20:08.860Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -31,11 +31,11 @@
       "autoCleanupPeriod": "off",
       "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
       "createdAt": "2026-11-02T11:23:19.777Z",
-      "updatedAt": "2026-11-03T13:19:53.242Z",
+      "updatedAt": "2026-11-03T13:20:03.842Z",
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Data Quality",
@@ -558,11 +558,11 @@
       "autoCleanupPeriod": "off",
       "id": "f3faff86-72db-4520-943d-8e2fb1d153dd",
       "createdAt": "2026-11-02T11:24:11.859Z",
-      "updatedAt": "2026-11-02T14:07:14.606Z",
+      "updatedAt": "2026-11-03T13:20:03.842Z",
       "completedAt": null,
       "positionX": 1019.0346619600888,
       "positionY": 286.7888944093884,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Book intro with Theresa",
