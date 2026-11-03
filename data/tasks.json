@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:07:50.494Z",
+  "exportedAt": "2026-11-03T13:08:03.703Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -134,10 +134,10 @@
       "autoCleanupPeriod": "off",
       "id": "469338ea-b53d-440b-9017-b83303a81fbf",
       "createdAt": "2026-11-02T13:53:27.348Z",
-      "updatedAt": "2026-11-03T08:39:47.424Z",
+      "updatedAt": "2026-11-03T13:07:58.685Z",
       "completedAt": null,
-      "positionX": 1645.618527114813,
-      "positionY": 663.264990248445
+      "positionX": 1576.618527114813,
+      "positionY": 677.264990248445
     },
     {
       "title": "Follow up on the last meeting - new agenda",
@@ -473,7 +473,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T13:07:45.474Z",
+      "updatedAt": "2026-11-03T13:07:58.687Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
