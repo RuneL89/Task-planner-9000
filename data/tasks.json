@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T08:40:12.155Z",
+  "exportedAt": "2026-11-03T09:06:15.435Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -580,6 +580,21 @@
       "positionX": 1019.0346619600888,
       "positionY": 286.7888944093884,
       "isCollapsed": true
+    },
+    {
+      "title": "Book intro with Theresa",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
+      "deadline": "2026-11-03",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "f7652720-78a1-4eea-ad34-c15d893e526c",
+      "createdAt": "2026-11-03T09:06:10.401Z",
+      "updatedAt": "2026-11-03T09:06:10.401Z",
+      "completedAt": null
     }
   ],
   "taskConnections": []
