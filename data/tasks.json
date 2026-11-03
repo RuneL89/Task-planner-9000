@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:08:15.546Z",
+  "exportedAt": "2026-11-03T13:08:30.560Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -338,10 +338,10 @@
       "autoCleanupPeriod": "off",
       "id": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
       "createdAt": "2026-11-03T08:40:04.392Z",
-      "updatedAt": "2026-11-03T12:11:24.952Z",
+      "updatedAt": "2026-11-03T13:08:25.544Z",
       "completedAt": "2026-11-03T12:11:24.952Z",
-      "positionX": 1901.5234073159916,
-      "positionY": 250.296862463036
+      "positionX": 1871.5234073159916,
+      "positionY": 173.296862463036
     },
     {
       "title": "talk to Arttu",
@@ -473,7 +473,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T13:08:10.527Z",
+      "updatedAt": "2026-11-03T13:08:25.546Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
