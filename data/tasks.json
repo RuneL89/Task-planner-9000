@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T09:06:15.435Z",
+  "exportedAt": "2026-11-03T11:25:33.290Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -320,11 +320,11 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-02T14:07:41.526Z",
+      "updatedAt": "2026-11-03T11:25:28.212Z",
       "completedAt": null,
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Figure out Entity Group??",
@@ -473,11 +473,11 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T08:40:07.144Z",
+      "updatedAt": "2026-11-03T11:25:28.212Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Account Hierarchy Soda Check from DEV to PROD",
