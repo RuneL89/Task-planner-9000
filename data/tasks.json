@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T12:24:28.759Z",
+  "exportedAt": "2026-11-03T12:24:38.014Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -397,7 +397,7 @@
     {
       "title": "DG Confirmation",
       "description": "",
-      "status": "on_hold",
+      "status": "in_progress",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "d89a65fc-6483-4472-9a4f-646650120a2c",
@@ -406,7 +406,7 @@
       "autoCleanupPeriod": "off",
       "id": "c38a2218-aeeb-4df2-94e5-d6e9b60aa542",
       "createdAt": "2026-11-02T13:53:13.052Z",
-      "updatedAt": "2026-11-03T12:24:23.741Z",
+      "updatedAt": "2026-11-03T12:24:32.992Z",
       "completedAt": null,
       "positionX": 1413.4805288797795,
       "positionY": 929.3744028593369
@@ -473,7 +473,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T12:24:23.743Z",
+      "updatedAt": "2026-11-03T12:24:32.993Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
