@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-03T13:36:04.813Z",
+  "exportedAt": "2026-11-04T09:45:59.609Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -456,11 +456,11 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-03T13:16:23.410Z",
+      "updatedAt": "2026-11-04T09:45:54.583Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Account Hierarchy Soda Check from DEV to PROD",
@@ -580,6 +580,22 @@
       "completedAt": "2026-11-03T13:19:53.241Z",
       "positionX": 309.08493522481206,
       "positionY": -8.323804791952853
+    },
+    {
+      "title": "LINK_FINANCIAL_CONTRACT_VALUE_DATE_RATING Release",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": true,
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
+      "createdAt": "2026-11-04T09:45:47.361Z",
+      "updatedAt": "2026-11-04T09:45:52.078Z",
+      "completedAt": null,
+      "positionX": 1742.9385237264707,
+      "positionY": 218.17685977295196
     }
   ],
   "taskConnections": []
