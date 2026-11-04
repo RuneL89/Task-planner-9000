@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-04T14:24:56.766Z",
+  "exportedAt": "2026-11-04T14:25:04.671Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -219,7 +219,7 @@
       "autoCleanupPeriod": "off",
       "id": "695f90af-268b-4caa-accb-1053ef470b0d",
       "createdAt": "2026-11-03T13:08:36.915Z",
-      "updatedAt": "2026-11-04T11:33:02.681Z",
+      "updatedAt": "2026-11-04T14:24:59.645Z",
       "completedAt": "2026-11-03T13:16:18.878Z",
       "positionX": 1528.0417072619327,
       "positionY": 1030.7358229387555
@@ -372,7 +372,7 @@
       "autoCleanupPeriod": "off",
       "id": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
       "createdAt": "2026-11-03T08:40:04.392Z",
-      "updatedAt": "2026-11-04T11:33:02.683Z",
+      "updatedAt": "2026-11-04T14:24:59.647Z",
       "completedAt": "2026-11-03T12:11:24.952Z",
       "positionX": 1390.5296264114033,
       "positionY": 633.3089830180422
@@ -592,7 +592,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-04T14:24:51.738Z",
+      "updatedAt": "2026-11-04T14:24:59.648Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
@@ -635,7 +635,7 @@
     {
       "title": "DG confirm",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "695f90af-268b-4caa-accb-1053ef470b0d",
@@ -644,8 +644,8 @@
       "autoCleanupPeriod": "off",
       "id": "e40cd51e-e5ac-4848-9558-5506ea6705ff",
       "createdAt": "2026-11-03T13:08:45.706Z",
-      "updatedAt": "2026-11-03T13:11:54.335Z",
-      "completedAt": null,
+      "updatedAt": "2026-11-04T14:24:59.643Z",
+      "completedAt": "2026-11-04T14:24:59.643Z",
       "positionX": 1819.5234073159918,
       "positionY": 850.296862463036
     },
