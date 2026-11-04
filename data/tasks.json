@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-04T10:58:57.978Z",
+  "exportedAt": "2026-11-04T10:59:13.782Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -10,12 +10,12 @@
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
-      "deadline": null,
+      "deadline": "2026-11-04",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "090989d7-b733-41ad-a8dc-0a4e07a70622",
       "createdAt": "2026-11-04T10:58:50.636Z",
-      "updatedAt": "2026-11-04T10:58:52.951Z",
+      "updatedAt": "2026-11-04T10:59:08.759Z",
       "completedAt": null,
       "positionX": 2210.4993250238876,
       "positionY": 244.79275943057797
@@ -412,6 +412,23 @@
       "positionY": 901.8371652065393
     },
     {
+      "title": "Send email",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "090989d7-b733-41ad-a8dc-0a4e07a70622",
+      "deadline": "2026-11-04",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "cb47d4a8-76e5-4b20-b83a-f53088086130",
+      "createdAt": "2026-11-04T10:58:58.802Z",
+      "updatedAt": "2026-11-04T10:59:08.757Z",
+      "completedAt": null,
+      "positionX": 2531.2979859140605,
+      "positionY": 294.78669915307484
+    },
+    {
       "title": "SODA Checks",
       "description": "",
       "status": "pending",
@@ -609,7 +626,7 @@
       "autoCleanupPeriod": "off",
       "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
       "createdAt": "2026-11-04T09:45:47.361Z",
-      "updatedAt": "2026-11-04T10:58:52.952Z",
+      "updatedAt": "2026-11-04T10:59:08.760Z",
       "completedAt": null,
       "positionX": 1805.2799638994595,
       "positionY": 188.3049196900614
