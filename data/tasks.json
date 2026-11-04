@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-04T10:59:38.202Z",
+  "exportedAt": "2026-11-04T10:59:49.907Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -15,7 +15,7 @@
       "autoCleanupPeriod": "off",
       "id": "05dfcec2-c832-4152-b861-312c13c858b3",
       "createdAt": "2026-11-04T10:59:24.100Z",
-      "updatedAt": "2026-11-04T10:59:33.175Z",
+      "updatedAt": "2026-11-04T10:59:44.872Z",
       "completedAt": null,
       "positionX": 3188.4806677376523,
       "positionY": 354.5123984863465
@@ -32,7 +32,7 @@
       "autoCleanupPeriod": "off",
       "id": "090989d7-b733-41ad-a8dc-0a4e07a70622",
       "createdAt": "2026-11-04T10:58:50.636Z",
-      "updatedAt": "2026-11-04T10:59:33.181Z",
+      "updatedAt": "2026-11-04T10:59:44.875Z",
       "completedAt": null,
       "positionX": 2210.4993250238876,
       "positionY": 244.79275943057797
@@ -172,6 +172,23 @@
       "completedAt": null,
       "positionX": -812.7347280770307,
       "positionY": 854.4835800605226
+    },
+    {
+      "title": "Draft Release Notes",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "05dfcec2-c832-4152-b861-312c13c858b3",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "63be1c33-2b4d-419b-b6cf-24ce7a81ecdd",
+      "createdAt": "2026-11-04T10:59:43.642Z",
+      "updatedAt": "2026-11-04T10:59:44.869Z",
+      "completedAt": null,
+      "positionX": 3487.2000685665575,
+      "positionY": 411.0002382268631
     },
     {
       "title": "Send email",
@@ -389,7 +406,7 @@
       "autoCleanupPeriod": "off",
       "id": "acbced8a-8292-423a-a759-13e164813723",
       "createdAt": "2026-11-04T10:59:16.133Z",
-      "updatedAt": "2026-11-04T10:59:33.179Z",
+      "updatedAt": "2026-11-04T10:59:44.873Z",
       "completedAt": null,
       "positionX": 2859.889326825856,
       "positionY": 333.09161884313625
@@ -457,7 +474,7 @@
       "autoCleanupPeriod": "off",
       "id": "cb47d4a8-76e5-4b20-b83a-f53088086130",
       "createdAt": "2026-11-04T10:58:58.802Z",
-      "updatedAt": "2026-11-04T10:59:33.180Z",
+      "updatedAt": "2026-11-04T10:59:44.874Z",
       "completedAt": null,
       "positionX": 2531.2979859140605,
       "positionY": 294.78669915307484
@@ -677,7 +694,7 @@
       "autoCleanupPeriod": "off",
       "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
       "createdAt": "2026-11-04T09:45:47.361Z",
-      "updatedAt": "2026-11-04T10:59:33.182Z",
+      "updatedAt": "2026-11-04T10:59:44.876Z",
       "completedAt": null,
       "positionX": 1805.2799638994595,
       "positionY": 188.3049196900614
