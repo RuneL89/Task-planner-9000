@@ -1,8 +1,25 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-04T10:58:46.614Z",
+  "exportedAt": "2026-11-04T10:58:57.978Z",
   "appName": "Task Planner 9000",
   "tasks": [
+    {
+      "title": "Figure out Entity Group",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "090989d7-b733-41ad-a8dc-0a4e07a70622",
+      "createdAt": "2026-11-04T10:58:50.636Z",
+      "updatedAt": "2026-11-04T10:58:52.951Z",
+      "completedAt": null,
+      "positionX": 2210.4993250238876,
+      "positionY": 244.79275943057797
+    },
     {
       "title": "Talk to Toffe about the status - if any",
       "description": "",
@@ -592,7 +609,7 @@
       "autoCleanupPeriod": "off",
       "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
       "createdAt": "2026-11-04T09:45:47.361Z",
-      "updatedAt": "2026-11-04T10:58:41.593Z",
+      "updatedAt": "2026-11-04T10:58:52.952Z",
       "completedAt": null,
       "positionX": 1805.2799638994595,
       "positionY": 188.3049196900614
