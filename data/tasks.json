@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-04T12:13:44.953Z",
+  "exportedAt": "2026-11-04T12:14:05.820Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -36,6 +36,23 @@
       "completedAt": "2026-11-04T11:30:10.397Z",
       "positionX": 2210.4993250238876,
       "positionY": 244.79275943057797
+    },
+    {
+      "title": "Review their comments",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "c4f0425a-4ea6-4007-acc3-c4594e3133cc",
+      "deadline": "2026-11-11",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "0de6aa6b-344d-4d17-895b-8b9249c7ab74",
+      "createdAt": "2026-11-04T12:13:54.874Z",
+      "updatedAt": "2026-11-04T12:14:00.800Z",
+      "completedAt": null,
+      "positionX": 89.21920333679756,
+      "positionY": 1171.8371652065393
     },
     {
       "title": "Talk to Toffe about the status - if any",
@@ -151,7 +168,7 @@
       "autoCleanupPeriod": "off",
       "id": "5370767e-911e-4c86-9e95-1d62a9ceccab",
       "createdAt": "2026-11-02T13:50:54.854Z",
-      "updatedAt": "2026-11-03T13:35:59.797Z",
+      "updatedAt": "2026-11-04T12:14:00.803Z",
       "completedAt": null,
       "positionX": 80.30413856160965,
       "positionY": 627.2189628943875
@@ -337,7 +354,7 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-03T13:35:59.798Z",
+      "updatedAt": "2026-11-04T12:14:00.804Z",
       "completedAt": null,
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657,
@@ -465,7 +482,7 @@
     {
       "title": "Talk to Antti, Tero, Arttu",
       "description": "Feedback?",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "5370767e-911e-4c86-9e95-1d62a9ceccab",
@@ -474,8 +491,8 @@
       "autoCleanupPeriod": "off",
       "id": "c4f0425a-4ea6-4007-acc3-c4594e3133cc",
       "createdAt": "2026-11-02T13:51:18.405Z",
-      "updatedAt": "2026-11-03T13:35:59.796Z",
-      "completedAt": null,
+      "updatedAt": "2026-11-04T12:14:00.802Z",
+      "completedAt": "2026-11-04T12:13:59.904Z",
       "positionX": 96.21920333679756,
       "positionY": 901.8371652065393
     },
