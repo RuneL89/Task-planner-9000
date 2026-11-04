@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-04T11:00:05.565Z",
+  "exportedAt": "2026-11-04T11:30:15.430Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -23,7 +23,7 @@
     {
       "title": "Figure out Entity Group",
       "description": "",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
@@ -32,8 +32,8 @@
       "autoCleanupPeriod": "off",
       "id": "090989d7-b733-41ad-a8dc-0a4e07a70622",
       "createdAt": "2026-11-04T10:58:50.636Z",
-      "updatedAt": "2026-11-04T10:59:55.880Z",
-      "completedAt": null,
+      "updatedAt": "2026-11-04T11:30:10.397Z",
+      "completedAt": "2026-11-04T11:30:10.397Z",
       "positionX": 2210.4993250238876,
       "positionY": 244.79275943057797
     },
@@ -711,7 +711,7 @@
       "autoCleanupPeriod": "off",
       "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
       "createdAt": "2026-11-04T09:45:47.361Z",
-      "updatedAt": "2026-11-04T10:59:55.881Z",
+      "updatedAt": "2026-11-04T11:30:10.399Z",
       "completedAt": null,
       "positionX": 1805.2799638994595,
       "positionY": 188.3049196900614
