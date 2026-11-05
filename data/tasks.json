@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-05T11:49:26.574Z",
+  "exportedAt": "2026-11-05T13:06:04.220Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -99,7 +99,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-05T11:49:21.547Z",
+      "updatedAt": "2026-11-05T13:05:59.209Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -618,16 +618,16 @@
     {
       "title": "#96 - Amend \"InvestEU guarantee fee check in SLS\"",
       "description": "https://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/513ab617-1009-4425-b4a4-0b3e0e04923d",
-      "status": "pending",
+      "status": "in_progress",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
-      "deadline": "2026-11-05",
+      "deadline": "2026-11-10",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "de6aeb18-4448-4461-980b-89a7e7d69a3a",
       "createdAt": "2026-11-02T14:50:11.984Z",
-      "updatedAt": "2026-11-02T14:53:32.959Z",
+      "updatedAt": "2026-11-05T13:05:59.206Z",
       "completedAt": null,
       "positionX": -464.7347280770307,
       "positionY": 831.4835800605226
