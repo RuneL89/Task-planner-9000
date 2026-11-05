@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-05T13:25:47.806Z",
+  "exportedAt": "2026-11-05T13:26:02.404Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -83,7 +83,7 @@
       "autoCleanupPeriod": "off",
       "id": "28d455b4-287b-410b-9571-038ff25486e4",
       "createdAt": "2026-11-05T13:25:32.370Z",
-      "updatedAt": "2026-11-05T13:25:42.785Z",
+      "updatedAt": "2026-11-05T13:25:57.385Z",
       "completedAt": null,
       "positionX": 41.41777814050073,
       "positionY": 753.2253984026825
@@ -531,6 +531,23 @@
       "positionY": 901.8371652065393
     },
     {
+      "title": "Prepare for this!!",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "28d455b4-287b-410b-9571-038ff25486e4",
+      "deadline": "2026-11-09",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "c9af36e4-ff4f-4c1e-b7c0-5ab2d83bd30b",
+      "createdAt": "2026-11-05T13:25:55.563Z",
+      "updatedAt": "2026-11-05T13:25:57.383Z",
+      "completedAt": null,
+      "positionX": 141.41777814050073,
+      "positionY": 1166.2253984026825
+    },
+    {
       "title": "Send email",
       "description": "",
       "status": "completed",
@@ -609,7 +626,7 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-05T13:25:42.786Z",
+      "updatedAt": "2026-11-05T13:25:57.386Z",
       "completedAt": null,
       "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
