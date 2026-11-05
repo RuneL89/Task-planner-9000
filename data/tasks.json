@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-05T13:06:28.773Z",
+  "exportedAt": "2026-11-05T13:06:41.916Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -257,6 +257,21 @@
       "completedAt": null,
       "positionX": 899.1910612452544,
       "positionY": 607.5896166880104
+    },
+    {
+      "title": "#94 - \"Credit bullet\" is \"yes\" in SLS Credit Additional field if only one instalment on loan.",
+      "description": "https://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/990751b7-9d39-4c9c-9276-ebba30102e8b",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
+      "deadline": "2026-11-10",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "7aaed35b-ec41-4091-96c3-a0b2bbedb44e",
+      "createdAt": "2026-11-05T13:06:36.884Z",
+      "updatedAt": "2026-11-05T13:06:36.884Z",
+      "completedAt": null
     },
     {
       "title": "Deployment",
