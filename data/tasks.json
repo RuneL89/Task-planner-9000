@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-05T13:24:56.562Z",
+  "exportedAt": "2026-11-05T13:25:39.140Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -70,6 +70,23 @@
       "completedAt": "2026-11-03T13:16:28.950Z",
       "positionX": -247.45687314131206,
       "positionY": 616.3078686846575
+    },
+    {
+      "title": "Meeting with Mikko",
+      "description": "Present Databricks visual flow\nShow that one migrated - demo how it works\n\nTalk about a migration plan and training plan for him and others?",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "28d455b4-287b-410b-9571-038ff25486e4",
+      "createdAt": "2026-11-05T13:25:32.370Z",
+      "updatedAt": "2026-11-05T13:25:34.123Z",
+      "completedAt": null,
+      "positionX": 41.41777814050073,
+      "positionY": 753.2253984026825
     },
     {
       "title": "Misc",
@@ -592,7 +609,7 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-05T13:24:51.543Z",
+      "updatedAt": "2026-11-05T13:25:34.125Z",
       "completedAt": null,
       "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
