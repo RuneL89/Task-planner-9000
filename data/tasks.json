@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-05T13:28:11.515Z",
+  "exportedAt": "2026-11-05T13:28:36.693Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -337,11 +337,11 @@
       "autoCleanupPeriod": "off",
       "id": "8cb98a4b-20c0-499a-8eb0-609885c07985",
       "createdAt": "2026-11-02T11:23:45.203Z",
-      "updatedAt": "2026-11-05T13:28:06.486Z",
+      "updatedAt": "2026-11-05T13:28:31.666Z",
       "completedAt": null,
       "positionX": 695.3625749901033,
       "positionY": 283.95794321140016,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Kela",
@@ -643,7 +643,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-04T14:25:14.314Z",
+      "updatedAt": "2026-11-05T13:28:18.978Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
@@ -779,10 +779,10 @@
       "autoCleanupPeriod": "off",
       "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
       "createdAt": "2026-11-04T09:45:47.361Z",
-      "updatedAt": "2026-11-04T12:17:50.129Z",
+      "updatedAt": "2026-11-05T13:28:29.633Z",
       "completedAt": null,
-      "positionX": 1805.2799638994595,
-      "positionY": 188.3049196900614,
+      "positionX": 1711.2799638994595,
+      "positionY": 213.3049196900614,
       "isCollapsed": true
     }
   ],
