@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-05T11:09:21.895Z",
+  "exportedAt": "2026-11-05T11:49:26.574Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -99,7 +99,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-05T11:09:16.857Z",
+      "updatedAt": "2026-11-05T11:49:21.547Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -176,7 +176,7 @@
     {
       "title": "#95 - Amend MDS Country Mismatch check",
       "description": "https://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/14645be7-94f6-4eea-bf9a-e242383f598e",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
@@ -185,8 +185,8 @@
       "autoCleanupPeriod": "off",
       "id": "547c2ded-224c-417c-97d7-4f4628a31a7e",
       "createdAt": "2026-11-02T14:49:59.137Z",
-      "updatedAt": "2026-11-02T14:53:23.873Z",
-      "completedAt": null,
+      "updatedAt": "2026-11-05T11:49:21.544Z",
+      "completedAt": "2026-11-05T11:49:21.544Z",
       "positionX": -812.7347280770307,
       "positionY": 854.4835800605226
     },
