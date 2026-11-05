@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-05T13:06:41.916Z",
+  "exportedAt": "2026-11-05T13:06:48.562Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -99,7 +99,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-05T13:06:23.752Z",
+      "updatedAt": "2026-11-05T13:06:43.538Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -270,8 +270,10 @@
       "autoCleanupPeriod": "off",
       "id": "7aaed35b-ec41-4091-96c3-a0b2bbedb44e",
       "createdAt": "2026-11-05T13:06:36.884Z",
-      "updatedAt": "2026-11-05T13:06:36.884Z",
-      "completedAt": null
+      "updatedAt": "2026-11-05T13:06:43.527Z",
+      "completedAt": null,
+      "positionX": -359.7347280770307,
+      "positionY": 1113.4835800605226
     },
     {
       "title": "Deployment",
