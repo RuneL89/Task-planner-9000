@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-05T13:06:48.562Z",
+  "exportedAt": "2026-11-05T13:24:28.132Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -99,11 +99,11 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-05T13:06:43.538Z",
+      "updatedAt": "2026-11-05T13:24:23.096Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Find Agenda",
@@ -371,11 +371,11 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-04T12:14:31.841Z",
+      "updatedAt": "2026-11-05T13:24:23.096Z",
       "completedAt": null,
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Figure out Entity Group??",
