@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-05T13:24:35.068Z",
+  "exportedAt": "2026-11-05T13:24:40.778Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -371,11 +371,11 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-05T13:24:30.042Z",
+      "updatedAt": "2026-11-05T13:24:35.752Z",
       "completedAt": null,
       "positionX": -45.75138939144858,
       "positionY": 299.53093981710657,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Figure out Entity Group??",
@@ -711,11 +711,11 @@
       "autoCleanupPeriod": "off",
       "id": "f3faff86-72db-4520-943d-8e2fb1d153dd",
       "createdAt": "2026-11-02T11:24:11.859Z",
-      "updatedAt": "2026-11-04T14:25:18.056Z",
+      "updatedAt": "2026-11-05T13:24:35.753Z",
       "completedAt": null,
       "positionX": 1019.0346619600888,
       "positionY": 286.7888944093884,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Book intro with Theresa",
