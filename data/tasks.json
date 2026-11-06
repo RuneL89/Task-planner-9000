@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-06T10:25:47.334Z",
+  "exportedAt": "2026-11-06T10:32:49.825Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,7 +116,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-06T10:25:42.312Z",
+      "updatedAt": "2026-11-06T10:32:44.804Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -287,10 +287,10 @@
       "autoCleanupPeriod": "off",
       "id": "7aaed35b-ec41-4091-96c3-a0b2bbedb44e",
       "createdAt": "2026-11-05T13:06:36.884Z",
-      "updatedAt": "2026-11-06T10:25:42.310Z",
+      "updatedAt": "2026-11-06T10:32:44.803Z",
       "completedAt": null,
-      "positionX": -622.7347280770307,
-      "positionY": 1124.4835800605226
+      "positionX": -179.7347280770307,
+      "positionY": 858.4835800605226
     },
     {
       "title": "Deployment",
@@ -372,10 +372,10 @@
       "autoCleanupPeriod": "off",
       "id": "9bcd9f7a-a094-4026-8de1-d32c783f082f",
       "createdAt": "2026-11-02T14:49:47.938Z",
-      "updatedAt": "2026-11-06T10:25:29.372Z",
+      "updatedAt": "2026-11-06T10:32:42.001Z",
       "completedAt": null,
-      "positionX": -158.7347280770307,
-      "positionY": 846.4835800605226
+      "positionX": 119.2652719229693,
+      "positionY": 851.4835800605226
     },
     {
       "title": "Data Governance",
@@ -491,10 +491,10 @@
       "autoCleanupPeriod": "off",
       "id": "ae0c2ba5-e70f-43eb-9eb9-d669ee7cad80",
       "createdAt": "2026-11-02T14:21:11.541Z",
-      "updatedAt": "2026-11-06T10:25:39.284Z",
+      "updatedAt": "2026-11-06T10:32:37.573Z",
       "completedAt": "2026-11-02T14:52:14.145Z",
-      "positionX": -960.457715992299,
-      "positionY": 1116.5031903295737
+      "positionX": -1407.457715992299,
+      "positionY": 858.5031903295737
     },
     {
       "title": "Update DG Doc and Send final email",
