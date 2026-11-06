@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-06T10:17:42.140Z",
+  "exportedAt": "2026-11-06T10:25:34.387Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,7 +116,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-06T10:17:37.119Z",
+      "updatedAt": "2026-11-06T10:25:29.375Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -372,10 +372,10 @@
       "autoCleanupPeriod": "off",
       "id": "9bcd9f7a-a094-4026-8de1-d32c783f082f",
       "createdAt": "2026-11-02T14:49:47.938Z",
-      "updatedAt": "2026-11-05T13:06:23.750Z",
+      "updatedAt": "2026-11-06T10:25:29.372Z",
       "completedAt": null,
-      "positionX": -157.7347280770307,
-      "positionY": 833.4835800605226
+      "positionX": -158.7347280770307,
+      "positionY": 846.4835800605226
     },
     {
       "title": "Data Governance",
