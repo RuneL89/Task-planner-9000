@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-06T10:25:34.387Z",
+  "exportedAt": "2026-11-06T10:25:47.334Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,7 +116,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-06T10:25:29.375Z",
+      "updatedAt": "2026-11-06T10:25:42.312Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -287,10 +287,10 @@
       "autoCleanupPeriod": "off",
       "id": "7aaed35b-ec41-4091-96c3-a0b2bbedb44e",
       "createdAt": "2026-11-05T13:06:36.884Z",
-      "updatedAt": "2026-11-06T10:17:34.395Z",
+      "updatedAt": "2026-11-06T10:25:42.310Z",
       "completedAt": null,
-      "positionX": -359.7347280770307,
-      "positionY": 1113.4835800605226
+      "positionX": -622.7347280770307,
+      "positionY": 1124.4835800605226
     },
     {
       "title": "Deployment",
@@ -491,10 +491,10 @@
       "autoCleanupPeriod": "off",
       "id": "ae0c2ba5-e70f-43eb-9eb9-d669ee7cad80",
       "createdAt": "2026-11-02T14:21:11.541Z",
-      "updatedAt": "2026-11-05T13:06:14.862Z",
+      "updatedAt": "2026-11-06T10:25:39.284Z",
       "completedAt": "2026-11-02T14:52:14.145Z",
-      "positionX": -602.457715992299,
-      "positionY": 1141.1281903295737
+      "positionX": -960.457715992299,
+      "positionY": 1116.5031903295737
     },
     {
       "title": "Update DG Doc and Send final email",
