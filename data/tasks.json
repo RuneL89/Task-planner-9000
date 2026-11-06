@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-06T08:10:41.848Z",
+  "exportedAt": "2026-11-06T08:46:29.535Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,7 +116,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-06T08:10:36.504Z",
+      "updatedAt": "2026-11-06T08:46:24.502Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -720,16 +720,16 @@
     {
       "title": "#97 - Check for SLS AMST agreed matched Term loan amount",
       "description": "https://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/30e8e53c-a4f0-4092-9ac9-5a90d7f3efbf",
-      "status": "pending",
+      "status": "in_progress",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
-      "deadline": "2026-11-06",
+      "deadline": "2026-11-10",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "f0ed94b1-94f2-456c-8e00-d88e4c5805cb",
       "createdAt": "2026-11-02T14:50:25.033Z",
-      "updatedAt": "2026-11-02T14:53:34.479Z",
+      "updatedAt": "2026-11-06T08:46:24.498Z",
       "completedAt": null,
       "positionX": -1165.7347280770307,
       "positionY": 854.4835800605226
