@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-06T10:33:00.369Z",
+  "exportedAt": "2026-11-06T10:33:15.582Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,7 +116,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-06T10:32:55.358Z",
+      "updatedAt": "2026-11-06T10:33:10.565Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -678,10 +678,10 @@
       "autoCleanupPeriod": "off",
       "id": "de6aeb18-4448-4461-980b-89a7e7d69a3a",
       "createdAt": "2026-11-02T14:50:11.984Z",
-      "updatedAt": "2026-11-06T10:17:37.118Z",
+      "updatedAt": "2026-11-06T10:33:10.563Z",
       "completedAt": null,
-      "positionX": -460.7347280770307,
-      "positionY": 845.4835800605226
+      "positionX": -456.7347280770307,
+      "positionY": 856.4835800605226
     },
     {
       "title": "DG confirm",
@@ -729,10 +729,10 @@
       "autoCleanupPeriod": "off",
       "id": "f0ed94b1-94f2-456c-8e00-d88e4c5805cb",
       "createdAt": "2026-11-02T14:50:25.033Z",
-      "updatedAt": "2026-11-06T08:46:24.498Z",
+      "updatedAt": "2026-11-06T10:33:06.620Z",
       "completedAt": null,
-      "positionX": -1165.7347280770307,
-      "positionY": 854.4835800605226
+      "positionX": -1129.7347280770307,
+      "positionY": 850.4835800605226
     },
     {
       "title": "Decommission",
