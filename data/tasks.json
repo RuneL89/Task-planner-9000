@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-09T11:53:19.409Z",
+  "exportedAt": "2026-11-09T11:53:45.842Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,7 +116,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-09T11:53:14.382Z",
+      "updatedAt": "2026-11-09T11:53:40.812Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -312,7 +312,7 @@
     {
       "title": "#94 - \"Credit bullet\" is \"yes\" in SLS Credit Additional field if only one instalment on loan.",
       "description": "https://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/990751b7-9d39-4c9c-9276-ebba30102e8b",
-      "status": "in_progress",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
@@ -321,8 +321,8 @@
       "autoCleanupPeriod": "off",
       "id": "7aaed35b-ec41-4091-96c3-a0b2bbedb44e",
       "createdAt": "2026-11-05T13:06:36.884Z",
-      "updatedAt": "2026-11-06T10:32:44.803Z",
-      "completedAt": null,
+      "updatedAt": "2026-11-09T11:53:40.811Z",
+      "completedAt": "2026-11-09T11:53:40.811Z",
       "positionX": -179.7347280770307,
       "positionY": 858.4835800605226
     },
