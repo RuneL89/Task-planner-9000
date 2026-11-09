@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-09T11:20:53.063Z",
+  "exportedAt": "2026-11-09T11:21:06.145Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -354,11 +354,11 @@
       "autoCleanupPeriod": "off",
       "id": "8cb98a4b-20c0-499a-8eb0-609885c07985",
       "createdAt": "2026-11-02T11:23:45.203Z",
-      "updatedAt": "2026-11-05T13:28:31.666Z",
+      "updatedAt": "2026-11-09T11:21:01.119Z",
       "completedAt": null,
       "positionX": 695.3625749901033,
       "positionY": 283.95794321140016,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Kela",
@@ -643,11 +643,11 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-09T11:20:42.138Z",
+      "updatedAt": "2026-11-09T11:21:01.118Z",
       "completedAt": null,
       "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "OptionCallProbability RELEASE",
