@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-09T11:22:17.374Z",
+  "exportedAt": "2026-11-09T11:24:45.785Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -99,11 +99,11 @@
       "autoCleanupPeriod": "off",
       "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
       "createdAt": "2026-11-02T11:23:19.777Z",
-      "updatedAt": "2026-11-05T10:15:09.549Z",
+      "updatedAt": "2026-11-09T11:24:40.753Z",
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Data Quality",
@@ -388,11 +388,11 @@
       "autoCleanupPeriod": "off",
       "id": "8cb98a4b-20c0-499a-8eb0-609885c07985",
       "createdAt": "2026-11-02T11:23:45.203Z",
-      "updatedAt": "2026-11-09T11:22:11.838Z",
+      "updatedAt": "2026-11-09T11:24:40.752Z",
       "completedAt": null,
       "positionX": 695.3625749901033,
       "positionY": 283.95794321140016,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Kela",
@@ -580,6 +580,21 @@
       "completedAt": null,
       "positionX": 2530.523407315992,
       "positionY": 1152.921862463036
+    },
+    {
+      "title": "Send email to embassy for Oskar passport",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
+      "deadline": "2026-11-10",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "c09868e5-e002-45d9-b3ec-f7d036a5e2bb",
+      "createdAt": "2026-11-09T11:24:35.800Z",
+      "updatedAt": "2026-11-09T11:24:35.800Z",
+      "completedAt": null
     },
     {
       "title": "Talk to Antti, Tero, Arttu",
