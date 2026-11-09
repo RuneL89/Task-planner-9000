@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-09T07:52:19.474Z",
+  "exportedAt": "2026-11-09T07:54:50.296Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,11 +116,11 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-09T07:51:26.401Z",
+      "updatedAt": "2026-11-09T07:54:45.271Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Find Agenda",
@@ -660,11 +660,11 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-09T07:52:14.455Z",
+      "updatedAt": "2026-11-09T07:54:40.262Z",
       "completedAt": null,
       "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "OptionCallProbability RELEASE",
@@ -754,7 +754,7 @@
     {
       "title": "#97 - Check for SLS AMST agreed matched Term loan amount",
       "description": "https://cloud.soda.io/o/165b52e3-56be-4b93-aca1-6638c85f0169/discussions/30e8e53c-a4f0-4092-9ac9-5a90d7f3efbf",
-      "status": "in_progress",
+      "status": "completed",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
@@ -763,8 +763,8 @@
       "autoCleanupPeriod": "off",
       "id": "f0ed94b1-94f2-456c-8e00-d88e4c5805cb",
       "createdAt": "2026-11-02T14:50:25.033Z",
-      "updatedAt": "2026-11-06T10:33:06.620Z",
-      "completedAt": null,
+      "updatedAt": "2026-11-09T07:54:45.270Z",
+      "completedAt": "2026-11-09T07:54:45.270Z",
       "positionX": -1129.7347280770307,
       "positionY": 850.4835800605226
     },
