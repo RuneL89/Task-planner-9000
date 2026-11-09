@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-09T07:51:31.443Z",
+  "exportedAt": "2026-11-09T07:51:45.418Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -327,6 +327,23 @@
       "isCollapsed": true
     },
     {
+      "title": "Figure out Server status",
+      "description": "",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "ce0cc343-4d65-4b8e-8365-7c611efaf8c5",
+      "deadline": null,
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "87dc9c3c-5b9f-474d-943b-a9f6d4c5a7b8",
+      "createdAt": "2026-11-09T07:51:39.239Z",
+      "updatedAt": "2026-11-09T07:51:40.403Z",
+      "completedAt": null,
+      "positionX": -498.36947297366294,
+      "positionY": 898.2372262719161
+    },
+    {
       "title": "BI&Data",
       "description": "",
       "status": "pending",
@@ -593,7 +610,7 @@
       "autoCleanupPeriod": "off",
       "id": "ce0cc343-4d65-4b8e-8365-7c611efaf8c5",
       "createdAt": "2026-11-02T11:44:50.981Z",
-      "updatedAt": "2026-11-05T11:08:06.123Z",
+      "updatedAt": "2026-11-09T07:51:40.404Z",
       "completedAt": null,
       "positionX": -481.36947297366294,
       "positionY": 630.2372262719161
@@ -626,7 +643,7 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-09T07:51:26.401Z",
+      "updatedAt": "2026-11-09T07:51:40.405Z",
       "completedAt": null,
       "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
