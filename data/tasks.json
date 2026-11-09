@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-09T11:20:48.034Z",
+  "exportedAt": "2026-11-09T11:20:53.063Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -563,23 +563,6 @@
       "completedAt": "2026-11-04T12:13:59.904Z",
       "positionX": 96.21920333679756,
       "positionY": 901.8371652065393
-    },
-    {
-      "title": "Prepare for this!!",
-      "description": "",
-      "status": "pending",
-      "priority": "medium",
-      "isMainTask": false,
-      "parentTaskId": "28d455b4-287b-410b-9571-038ff25486e4",
-      "deadline": "2026-11-09",
-      "autoCleanupEnabled": false,
-      "autoCleanupPeriod": "off",
-      "id": "c9af36e4-ff4f-4c1e-b7c0-5ab2d83bd30b",
-      "createdAt": "2026-11-05T13:25:55.563Z",
-      "updatedAt": "2026-11-05T13:25:57.383Z",
-      "completedAt": null,
-      "positionX": 141.41777814050073,
-      "positionY": 1166.2253984026825
     },
     {
       "title": "Send email",
