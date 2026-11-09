@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-09T11:47:27.276Z",
+  "exportedAt": "2026-11-09T11:53:19.409Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,11 +116,11 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-09T11:20:03.416Z",
+      "updatedAt": "2026-11-09T11:53:14.382Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Find Agenda",
