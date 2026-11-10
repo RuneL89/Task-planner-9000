@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-10T11:22:01.560Z",
+  "exportedAt": "2026-11-10T11:34:15.420Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -99,7 +99,7 @@
       "autoCleanupPeriod": "off",
       "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
       "createdAt": "2026-11-02T11:23:19.777Z",
-      "updatedAt": "2026-11-10T11:21:56.482Z",
+      "updatedAt": "2026-11-10T11:34:10.351Z",
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715,
@@ -593,10 +593,10 @@
       "autoCleanupPeriod": "off",
       "id": "c09868e5-e002-45d9-b3ec-f7d036a5e2bb",
       "createdAt": "2026-11-09T11:24:35.800Z",
-      "updatedAt": "2026-11-09T11:24:56.098Z",
+      "updatedAt": "2026-11-10T11:34:10.345Z",
       "completedAt": null,
-      "positionX": -150.91506477518794,
-      "positionY": 707.6761952080471
+      "positionX": 385.08493522481206,
+      "positionY": 947.6761952080471
     },
     {
       "title": "Talk to Antti, Tero, Arttu",
