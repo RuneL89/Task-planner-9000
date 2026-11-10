@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-10T11:34:15.420Z",
+  "exportedAt": "2026-11-10T11:34:24.029Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -99,7 +99,7 @@
       "autoCleanupPeriod": "off",
       "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
       "createdAt": "2026-11-02T11:23:19.777Z",
-      "updatedAt": "2026-11-10T11:34:10.351Z",
+      "updatedAt": "2026-11-10T11:34:18.997Z",
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715,
@@ -406,10 +406,10 @@
       "autoCleanupPeriod": "off",
       "id": "9bc077c0-de45-48ef-9b72-2bb7668a8b97",
       "createdAt": "2026-11-02T11:23:29.208Z",
-      "updatedAt": "2026-11-09T11:24:53.419Z",
+      "updatedAt": "2026-11-10T11:34:18.995Z",
       "completedAt": "2026-11-02T13:49:57.543Z",
-      "positionX": 187.46591126504785,
-      "positionY": 774.2229334598454
+      "positionX": 189.46591126504785,
+      "positionY": 736.2229334598454
     },
     {
       "title": "Check old requests",
