@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-10T11:08:15.463Z",
+  "exportedAt": "2026-11-10T11:11:49.389Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -83,7 +83,7 @@
       "autoCleanupPeriod": "off",
       "id": "28d455b4-287b-410b-9571-038ff25486e4",
       "createdAt": "2026-11-05T13:25:32.370Z",
-      "updatedAt": "2026-11-10T11:08:10.409Z",
+      "updatedAt": "2026-11-10T11:11:44.332Z",
       "completedAt": "2026-11-10T11:08:08.154Z",
       "positionX": -395.58222185949927,
       "positionY": 1309.2253984026825
@@ -372,7 +372,7 @@
       "autoCleanupPeriod": "off",
       "id": "87dc9c3c-5b9f-474d-943b-a9f6d4c5a7b8",
       "createdAt": "2026-11-09T07:51:39.239Z",
-      "updatedAt": "2026-11-10T11:08:10.414Z",
+      "updatedAt": "2026-11-10T11:11:44.336Z",
       "completedAt": "2026-11-09T11:20:08.154Z",
       "positionX": -557.3694729736629,
       "positionY": 957.2372262719161
@@ -661,7 +661,7 @@
       "autoCleanupPeriod": "off",
       "id": "ce0cc343-4d65-4b8e-8365-7c611efaf8c5",
       "createdAt": "2026-11-02T11:44:50.981Z",
-      "updatedAt": "2026-11-10T11:08:10.416Z",
+      "updatedAt": "2026-11-10T11:11:44.339Z",
       "completedAt": "2026-11-09T07:51:55.199Z",
       "positionX": -558.3694729736629,
       "positionY": 685.2372262719161
@@ -694,7 +694,7 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-10T11:08:10.418Z",
+      "updatedAt": "2026-11-10T11:11:44.341Z",
       "completedAt": null,
       "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
@@ -758,15 +758,15 @@
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "28d455b4-287b-410b-9571-038ff25486e4",
-      "deadline": null,
+      "deadline": "2026-11-16",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "df3ec149-9caa-4bd4-8649-45680c702e9d",
       "createdAt": "2026-11-10T11:07:59.039Z",
-      "updatedAt": "2026-11-10T11:08:00.719Z",
+      "updatedAt": "2026-11-10T11:11:44.321Z",
       "completedAt": null,
-      "positionX": -154.58222185949927,
-      "positionY": 1612.2253984026825
+      "positionX": -39.58222185949927,
+      "positionY": 1359.2253984026825
     },
     {
       "title": "DG confirm",
