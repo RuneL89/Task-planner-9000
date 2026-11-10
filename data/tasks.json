@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-10T11:34:24.029Z",
+  "exportedAt": "2026-11-10T11:34:46.381Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -99,11 +99,11 @@
       "autoCleanupPeriod": "off",
       "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
       "createdAt": "2026-11-02T11:23:19.777Z",
-      "updatedAt": "2026-11-10T11:34:18.997Z",
+      "updatedAt": "2026-11-10T11:34:41.317Z",
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Data Quality",
@@ -116,11 +116,11 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-10T11:07:35.846Z",
+      "updatedAt": "2026-11-10T11:34:41.317Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Find Agenda",
