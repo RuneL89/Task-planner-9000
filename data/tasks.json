@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-10T11:21:55.943Z",
+  "exportedAt": "2026-11-10T11:22:01.560Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -99,11 +99,11 @@
       "autoCleanupPeriod": "off",
       "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
       "createdAt": "2026-11-02T11:23:19.777Z",
-      "updatedAt": "2026-11-10T11:07:45.336Z",
+      "updatedAt": "2026-11-10T11:21:56.482Z",
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Data Quality",
@@ -388,11 +388,11 @@
       "autoCleanupPeriod": "off",
       "id": "8cb98a4b-20c0-499a-8eb0-609885c07985",
       "createdAt": "2026-11-02T11:23:45.203Z",
-      "updatedAt": "2026-11-10T11:21:50.874Z",
+      "updatedAt": "2026-11-10T11:21:56.481Z",
       "completedAt": null,
       "positionX": 695.3625749901033,
       "positionY": 283.95794321140016,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Kela",
