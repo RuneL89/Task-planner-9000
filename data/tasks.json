@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-10T11:34:46.381Z",
+  "exportedAt": "2026-11-11T11:12:08.179Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,7 +116,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-10T11:34:41.317Z",
+      "updatedAt": "2026-11-11T11:12:03.164Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -236,10 +236,10 @@
       "autoCleanupPeriod": "off",
       "id": "547c2ded-224c-417c-97d7-4f4628a31a7e",
       "createdAt": "2026-11-02T14:49:59.137Z",
-      "updatedAt": "2026-11-05T11:49:21.544Z",
+      "updatedAt": "2026-11-11T11:12:03.162Z",
       "completedAt": "2026-11-05T11:49:21.544Z",
-      "positionX": -812.7347280770307,
-      "positionY": 854.4835800605226
+      "positionX": -870.708402114029,
+      "positionY": 859.0604490634436
     },
     {
       "title": "Draft Release Notes",
@@ -814,10 +814,10 @@
       "autoCleanupPeriod": "off",
       "id": "f0ed94b1-94f2-456c-8e00-d88e4c5805cb",
       "createdAt": "2026-11-02T14:50:25.033Z",
-      "updatedAt": "2026-11-09T07:54:45.270Z",
+      "updatedAt": "2026-11-11T11:12:00.367Z",
       "completedAt": "2026-11-09T07:54:45.270Z",
-      "positionX": -1129.7347280770307,
-      "positionY": 850.4835800605226
+      "positionX": -1169.4009261023452,
+      "positionY": 859.6373180663645
     },
     {
       "title": "Decommission",
