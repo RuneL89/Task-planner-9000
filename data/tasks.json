@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-11T11:12:22.933Z",
+  "exportedAt": "2026-11-11T11:15:11.862Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -219,7 +219,7 @@
       "autoCleanupPeriod": "off",
       "id": "5370767e-911e-4c86-9e95-1d62a9ceccab",
       "createdAt": "2026-11-02T13:50:54.854Z",
-      "updatedAt": "2026-11-04T12:14:00.803Z",
+      "updatedAt": "2026-11-11T11:15:06.225Z",
       "completedAt": null,
       "positionX": 80.30413856160965,
       "positionY": 627.2189628943875
@@ -439,7 +439,7 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-11T11:12:17.888Z",
+      "updatedAt": "2026-11-11T11:15:06.226Z",
       "completedAt": null,
       "positionX": 20.248610608551417,
       "positionY": 291.53093981710657,
@@ -610,10 +610,10 @@
       "autoCleanupPeriod": "off",
       "id": "c4f0425a-4ea6-4007-acc3-c4594e3133cc",
       "createdAt": "2026-11-02T13:51:18.405Z",
-      "updatedAt": "2026-11-04T12:14:00.802Z",
+      "updatedAt": "2026-11-11T11:15:06.222Z",
       "completedAt": "2026-11-04T12:13:59.904Z",
-      "positionX": 96.21920333679756,
-      "positionY": 901.8371652065393
+      "positionX": 95.21920333679756,
+      "positionY": 884.8371652065393
     },
     {
       "title": "Send email",
