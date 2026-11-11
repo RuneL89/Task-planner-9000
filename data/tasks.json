@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-11T11:12:08.179Z",
+  "exportedAt": "2026-11-11T11:12:14.399Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,7 +116,7 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-11T11:12:03.164Z",
+      "updatedAt": "2026-11-11T11:12:09.384Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
@@ -746,10 +746,10 @@
       "autoCleanupPeriod": "off",
       "id": "de6aeb18-4448-4461-980b-89a7e7d69a3a",
       "createdAt": "2026-11-02T14:50:11.984Z",
-      "updatedAt": "2026-11-06T10:33:10.563Z",
+      "updatedAt": "2026-11-11T11:12:09.383Z",
       "completedAt": null,
-      "positionX": -456.7347280770307,
-      "positionY": 856.4835800605226
+      "positionX": -456.15662506282445,
+      "positionY": 859.9521981457602
     },
     {
       "title": "Get inventory from Mikko",
