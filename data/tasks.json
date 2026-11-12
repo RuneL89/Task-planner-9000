@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-12T10:37:07.211Z",
+  "exportedAt": "2026-11-12T10:37:12.558Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -10,12 +10,12 @@
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "acbced8a-8292-423a-a759-13e164813723",
-      "deadline": "2026-11-11",
+      "deadline": "2026-11-19",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "05dfcec2-c832-4152-b861-312c13c858b3",
       "createdAt": "2026-11-04T10:59:24.100Z",
-      "updatedAt": "2026-11-04T12:17:47.399Z",
+      "updatedAt": "2026-11-12T10:37:07.521Z",
       "completedAt": null,
       "positionX": 3188.4806677376523,
       "positionY": 354.5123984863465
@@ -32,7 +32,7 @@
       "autoCleanupPeriod": "off",
       "id": "090989d7-b733-41ad-a8dc-0a4e07a70622",
       "createdAt": "2026-11-04T10:58:50.636Z",
-      "updatedAt": "2026-11-04T12:17:47.402Z",
+      "updatedAt": "2026-11-12T10:37:07.525Z",
       "completedAt": "2026-11-04T11:30:10.397Z",
       "positionX": 2210.4993250238876,
       "positionY": 244.79275943057797
@@ -525,7 +525,7 @@
       "autoCleanupPeriod": "off",
       "id": "acbced8a-8292-423a-a759-13e164813723",
       "createdAt": "2026-11-04T10:59:16.133Z",
-      "updatedAt": "2026-11-04T12:17:47.400Z",
+      "updatedAt": "2026-11-12T10:37:07.523Z",
       "completedAt": "2026-11-04T11:30:17.254Z",
       "positionX": 2859.889326825856,
       "positionY": 333.09161884313625
@@ -627,7 +627,7 @@
       "autoCleanupPeriod": "off",
       "id": "cb47d4a8-76e5-4b20-b83a-f53088086130",
       "createdAt": "2026-11-04T10:58:58.802Z",
-      "updatedAt": "2026-11-04T12:17:47.401Z",
+      "updatedAt": "2026-11-12T10:37:07.523Z",
       "completedAt": "2026-11-04T11:54:02.965Z",
       "positionX": 2531.2979859140605,
       "positionY": 294.78669915307484
@@ -864,7 +864,7 @@
       "autoCleanupPeriod": "off",
       "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
       "createdAt": "2026-11-04T09:45:47.361Z",
-      "updatedAt": "2026-11-12T10:37:02.152Z",
+      "updatedAt": "2026-11-12T10:37:07.525Z",
       "completedAt": null,
       "positionX": 1711.2799638994595,
       "positionY": 213.3049196900614,
