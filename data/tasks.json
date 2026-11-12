@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-12T10:36:35.116Z",
+  "exportedAt": "2026-11-12T10:36:46.498Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -270,7 +270,7 @@
       "autoCleanupPeriod": "off",
       "id": "695f90af-268b-4caa-accb-1053ef470b0d",
       "createdAt": "2026-11-03T13:08:36.915Z",
-      "updatedAt": "2026-11-09T11:41:52.834Z",
+      "updatedAt": "2026-11-12T10:36:41.466Z",
       "completedAt": "2026-11-03T13:16:18.878Z",
       "positionX": 1528.0417072619327,
       "positionY": 1030.7358229387555
@@ -329,16 +329,16 @@
     {
       "title": "Deployment",
       "description": "",
-      "status": "pending",
+      "status": "in_progress",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "e40cd51e-e5ac-4848-9558-5506ea6705ff",
-      "deadline": "2026-11-11",
+      "deadline": "2026-11-12",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "7e262777-3e6b-4a43-9114-d92fa5b31040",
       "createdAt": "2026-11-03T13:09:21.706Z",
-      "updatedAt": "2026-11-09T11:41:52.832Z",
+      "updatedAt": "2026-11-12T10:36:41.463Z",
       "completedAt": null,
       "positionX": 2178.523407315992,
       "positionY": 811.296862463036
@@ -457,7 +457,7 @@
       "autoCleanupPeriod": "off",
       "id": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
       "createdAt": "2026-11-03T08:40:04.392Z",
-      "updatedAt": "2026-11-09T11:41:52.835Z",
+      "updatedAt": "2026-11-12T10:36:41.468Z",
       "completedAt": "2026-11-03T12:11:24.952Z",
       "positionX": 1390.5296264114033,
       "positionY": 633.3089830180422
@@ -711,7 +711,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-12T10:36:30.075Z",
+      "updatedAt": "2026-11-12T10:36:41.471Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
@@ -780,7 +780,7 @@
       "autoCleanupPeriod": "off",
       "id": "e40cd51e-e5ac-4848-9558-5506ea6705ff",
       "createdAt": "2026-11-03T13:08:45.706Z",
-      "updatedAt": "2026-11-09T11:41:52.833Z",
+      "updatedAt": "2026-11-12T10:36:41.465Z",
       "completedAt": "2026-11-04T14:24:59.643Z",
       "positionX": 1819.5234073159918,
       "positionY": 850.296862463036
