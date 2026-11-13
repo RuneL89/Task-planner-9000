@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-13T08:29:10.927Z",
+  "exportedAt": "2026-11-13T08:29:53.311Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -53,6 +53,23 @@
       "completedAt": null,
       "positionX": 89.21920333679756,
       "positionY": 1171.8371652065393
+    },
+    {
+      "title": "Follow up with Tero",
+      "description": "Owner Training, Inventory, MFR as Level 2",
+      "status": "pending",
+      "priority": "medium",
+      "isMainTask": false,
+      "parentTaskId": "720fd21c-88bf-4566-b59e-ae1c505ea043",
+      "deadline": "2026-11-27",
+      "autoCleanupEnabled": false,
+      "autoCleanupPeriod": "off",
+      "id": "1132de59-defa-4e5b-8efa-9b1b6d5bd943",
+      "createdAt": "2026-11-13T08:29:46.980Z",
+      "updatedAt": "2026-11-13T08:29:48.246Z",
+      "completedAt": null,
+      "positionX": -238.1156076767766,
+      "positionY": 909.4864180856697
     },
     {
       "title": "Talk to Toffe about the status - if any",
@@ -287,7 +304,7 @@
       "autoCleanupPeriod": "off",
       "id": "720fd21c-88bf-4566-b59e-ae1c505ea043",
       "createdAt": "2026-11-02T13:49:13.923Z",
-      "updatedAt": "2026-11-13T08:29:05.899Z",
+      "updatedAt": "2026-11-13T08:29:48.247Z",
       "completedAt": "2026-11-13T08:29:05.899Z",
       "positionX": -207.1156076767766,
       "positionY": 634.4864180856697
@@ -439,7 +456,7 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-13T08:29:05.902Z",
+      "updatedAt": "2026-11-13T08:29:48.248Z",
       "completedAt": null,
       "positionX": 20.248610608551417,
       "positionY": 291.53093981710657,
