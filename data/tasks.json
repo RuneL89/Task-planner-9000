@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-13T08:29:53.311Z",
+  "exportedAt": "2026-11-13T08:30:07.175Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -44,12 +44,12 @@
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "c4f0425a-4ea6-4007-acc3-c4594e3133cc",
-      "deadline": "2026-11-11",
+      "deadline": "2026-11-17",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "0de6aa6b-344d-4d17-895b-8b9249c7ab74",
       "createdAt": "2026-11-04T12:13:54.874Z",
-      "updatedAt": "2026-11-04T12:14:00.800Z",
+      "updatedAt": "2026-11-13T08:30:02.147Z",
       "completedAt": null,
       "positionX": 89.21920333679756,
       "positionY": 1171.8371652065393
@@ -236,7 +236,7 @@
       "autoCleanupPeriod": "off",
       "id": "5370767e-911e-4c86-9e95-1d62a9ceccab",
       "createdAt": "2026-11-02T13:50:54.854Z",
-      "updatedAt": "2026-11-11T11:15:06.225Z",
+      "updatedAt": "2026-11-13T08:30:02.150Z",
       "completedAt": null,
       "positionX": 80.30413856160965,
       "positionY": 627.2189628943875
@@ -456,7 +456,7 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-13T08:29:48.248Z",
+      "updatedAt": "2026-11-13T08:30:02.151Z",
       "completedAt": null,
       "positionX": 20.248610608551417,
       "positionY": 291.53093981710657,
@@ -627,7 +627,7 @@
       "autoCleanupPeriod": "off",
       "id": "c4f0425a-4ea6-4007-acc3-c4594e3133cc",
       "createdAt": "2026-11-02T13:51:18.405Z",
-      "updatedAt": "2026-11-11T11:15:06.222Z",
+      "updatedAt": "2026-11-13T08:30:02.148Z",
       "completedAt": "2026-11-04T12:13:59.904Z",
       "positionX": 95.21920333679756,
       "positionY": 884.8371652065393
