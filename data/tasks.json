@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-13T13:49:38.673Z",
+  "exportedAt": "2026-11-13T13:49:47.774Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -287,7 +287,7 @@
       "autoCleanupPeriod": "off",
       "id": "695f90af-268b-4caa-accb-1053ef470b0d",
       "createdAt": "2026-11-03T13:08:36.915Z",
-      "updatedAt": "2026-11-13T13:49:33.632Z",
+      "updatedAt": "2026-11-13T13:49:42.740Z",
       "completedAt": "2026-11-03T13:16:18.878Z",
       "positionX": 1528.0417072619327,
       "positionY": 1030.7358229387555
@@ -355,7 +355,7 @@
       "autoCleanupPeriod": "off",
       "id": "7e262777-3e6b-4a43-9114-d92fa5b31040",
       "createdAt": "2026-11-03T13:09:21.706Z",
-      "updatedAt": "2026-11-13T13:49:33.629Z",
+      "updatedAt": "2026-11-13T13:49:42.738Z",
       "completedAt": "2026-11-13T08:28:59.098Z",
       "positionX": 2178.523407315992,
       "positionY": 811.296862463036
@@ -474,7 +474,7 @@
       "autoCleanupPeriod": "off",
       "id": "9f7f8b33-450f-4f76-92b0-8c1194bef8b9",
       "createdAt": "2026-11-03T08:40:04.392Z",
-      "updatedAt": "2026-11-13T13:49:33.637Z",
+      "updatedAt": "2026-11-13T13:49:42.745Z",
       "completedAt": "2026-11-03T12:11:24.952Z",
       "positionX": 1390.5296264114033,
       "positionY": 633.3089830180422
@@ -525,7 +525,7 @@
       "autoCleanupPeriod": "off",
       "id": "abfbb0bc-1cab-477b-aa94-655fc69229d7",
       "createdAt": "2026-11-03T13:09:39.043Z",
-      "updatedAt": "2026-11-13T13:49:33.628Z",
+      "updatedAt": "2026-11-13T13:49:42.737Z",
       "completedAt": "2026-11-13T13:49:33.628Z",
       "positionX": 2513.523407315992,
       "positionY": 785.296862463036
@@ -584,16 +584,16 @@
     {
       "title": "Update DG Doc and Send final email",
       "description": "",
-      "status": "pending",
+      "status": "in_progress",
       "priority": "medium",
       "isMainTask": false,
       "parentTaskId": "abfbb0bc-1cab-477b-aa94-655fc69229d7",
-      "deadline": null,
+      "deadline": "2026-11-16",
       "autoCleanupEnabled": false,
       "autoCleanupPeriod": "off",
       "id": "be2df528-bb6b-4bbb-a75a-ca6e39bd6de7",
       "createdAt": "2026-11-03T13:11:01.364Z",
-      "updatedAt": "2026-11-03T13:11:35.774Z",
+      "updatedAt": "2026-11-13T13:49:42.735Z",
       "completedAt": null,
       "positionX": 2530.523407315992,
       "positionY": 1152.921862463036
@@ -728,7 +728,7 @@
       "autoCleanupPeriod": "off",
       "id": "d89a65fc-6483-4472-9a4f-646650120a2c",
       "createdAt": "2026-11-02T13:48:46.284Z",
-      "updatedAt": "2026-11-13T13:49:33.639Z",
+      "updatedAt": "2026-11-13T13:49:42.748Z",
       "completedAt": null,
       "positionX": 1362.5234073159916,
       "positionY": 211.296862463036,
@@ -797,7 +797,7 @@
       "autoCleanupPeriod": "off",
       "id": "e40cd51e-e5ac-4848-9558-5506ea6705ff",
       "createdAt": "2026-11-03T13:08:45.706Z",
-      "updatedAt": "2026-11-13T13:49:33.631Z",
+      "updatedAt": "2026-11-13T13:49:42.739Z",
       "completedAt": "2026-11-04T14:24:59.643Z",
       "positionX": 1819.5234073159918,
       "positionY": 850.296862463036
