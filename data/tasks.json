@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-16T13:12:12.065Z",
+  "exportedAt": "2026-11-16T13:12:24.163Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -32,7 +32,7 @@
       "autoCleanupPeriod": "off",
       "id": "090989d7-b733-41ad-a8dc-0a4e07a70622",
       "createdAt": "2026-11-04T10:58:50.636Z",
-      "updatedAt": "2026-11-16T13:12:07.055Z",
+      "updatedAt": "2026-11-16T13:12:19.136Z",
       "completedAt": "2026-11-04T11:30:10.397Z",
       "positionX": 1823.4993250238876,
       "positionY": 320.792759430578
@@ -474,10 +474,10 @@
       "autoCleanupPeriod": "off",
       "id": "acbced8a-8292-423a-a759-13e164813723",
       "createdAt": "2026-11-04T10:59:16.133Z",
-      "updatedAt": "2026-11-16T13:11:45.525Z",
+      "updatedAt": "2026-11-16T13:12:19.134Z",
       "completedAt": "2026-11-04T11:30:17.254Z",
-      "positionX": 2859.889326825856,
-      "positionY": 333.09161884313625
+      "positionX": 2500.889326825856,
+      "positionY": 336.09161884313625
     },
     {
       "title": "Go over SODA Discussions",
@@ -559,7 +559,7 @@
       "autoCleanupPeriod": "off",
       "id": "cb47d4a8-76e5-4b20-b83a-f53088086130",
       "createdAt": "2026-11-04T10:58:58.802Z",
-      "updatedAt": "2026-11-16T13:12:07.052Z",
+      "updatedAt": "2026-11-16T13:12:19.135Z",
       "completedAt": "2026-11-04T11:54:02.965Z",
       "positionX": 2182.2979859140605,
       "positionY": 328.78669915307484
@@ -745,7 +745,7 @@
       "autoCleanupPeriod": "off",
       "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
       "createdAt": "2026-11-04T09:45:47.361Z",
-      "updatedAt": "2026-11-16T13:12:07.056Z",
+      "updatedAt": "2026-11-16T13:12:19.137Z",
       "completedAt": null,
       "positionX": 1372.2799638994595,
       "positionY": 275.3049196900614,
