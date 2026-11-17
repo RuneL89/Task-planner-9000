@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-16T13:12:47.654Z",
+  "exportedAt": "2026-11-17T08:30:45.359Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -133,11 +133,11 @@
       "autoCleanupPeriod": "off",
       "id": "2c7367c5-df77-4ae3-81f9-e331a2168a51",
       "createdAt": "2026-11-02T14:20:55.749Z",
-      "updatedAt": "2026-11-11T11:12:17.887Z",
+      "updatedAt": "2026-11-17T08:30:40.323Z",
       "completedAt": null,
       "positionX": -686.7347280770307,
       "positionY": 294.4835800605227,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Find Agenda",
@@ -745,11 +745,11 @@
       "autoCleanupPeriod": "off",
       "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
       "createdAt": "2026-11-04T09:45:47.361Z",
-      "updatedAt": "2026-11-16T13:12:42.631Z",
+      "updatedAt": "2026-11-17T08:30:40.322Z",
       "completedAt": null,
       "positionX": 1372.2799638994595,
       "positionY": 275.3049196900614,
-      "isCollapsed": false
+      "isCollapsed": true
     }
   ],
   "taskConnections": []
