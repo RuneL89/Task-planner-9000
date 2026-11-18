@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-18T11:15:20.750Z",
+  "exportedAt": "2026-11-18T11:15:27.865Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -116,11 +116,11 @@
       "autoCleanupPeriod": "off",
       "id": "29fa2a3b-d892-4f72-a15d-5ad8a98a76f2",
       "createdAt": "2026-11-02T11:23:19.777Z",
-      "updatedAt": "2026-11-18T11:15:15.733Z",
+      "updatedAt": "2026-11-18T11:15:22.825Z",
       "completedAt": null,
       "positionX": 365.08493522481206,
       "positionY": 288.67619520804715,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Data Quality",
@@ -541,11 +541,11 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-16T09:56:18.831Z",
+      "updatedAt": "2026-11-18T11:15:22.825Z",
       "completedAt": null,
       "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Account Hierarchy Soda Check from DEV to PROD",
