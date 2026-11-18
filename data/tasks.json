@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-18T11:16:25.019Z",
+  "exportedAt": "2026-11-18T14:35:11.274Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -337,11 +337,11 @@
       "autoCleanupPeriod": "off",
       "id": "8cb98a4b-20c0-499a-8eb0-609885c07985",
       "createdAt": "2026-11-02T11:23:45.203Z",
-      "updatedAt": "2026-11-18T11:15:11.538Z",
+      "updatedAt": "2026-11-18T14:35:06.233Z",
       "completedAt": null,
       "positionX": 695.3625749901033,
       "positionY": 283.95794321140016,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Kela",
@@ -558,11 +558,11 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-18T11:15:39.122Z",
+      "updatedAt": "2026-11-18T14:35:06.233Z",
       "completedAt": null,
       "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Account Hierarchy Soda Check from DEV to PROD",
@@ -694,11 +694,11 @@
       "autoCleanupPeriod": "off",
       "id": "fca07642-55c1-4bcd-85c8-e6eb84cca0b9",
       "createdAt": "2026-11-04T09:45:47.361Z",
-      "updatedAt": "2026-11-18T11:16:19.983Z",
+      "updatedAt": "2026-11-18T14:35:06.232Z",
       "completedAt": null,
       "positionX": 1372.2799638994595,
       "positionY": 275.3049196900614,
-      "isCollapsed": false
+      "isCollapsed": true
     }
   ],
   "taskConnections": []
