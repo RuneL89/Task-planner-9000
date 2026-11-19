@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-19T07:55:09.270Z",
+  "exportedAt": "2026-11-19T10:02:17.117Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -388,11 +388,11 @@
       "autoCleanupPeriod": "off",
       "id": "9cd20584-8196-41b6-abe4-0d1e7631bf96",
       "createdAt": "2026-11-02T11:22:29.280Z",
-      "updatedAt": "2026-11-18T14:57:57.558Z",
+      "updatedAt": "2026-11-19T10:02:12.076Z",
       "completedAt": null,
       "positionX": 20.248610608551417,
       "positionY": 291.53093981710657,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "title": "Update DF Doc and Send final",
@@ -558,7 +558,7 @@
       "autoCleanupPeriod": "off",
       "id": "d714de58-cebb-4cba-bbaf-c8c3d4d6eb1c",
       "createdAt": "2026-11-02T11:22:36.914Z",
-      "updatedAt": "2026-11-19T07:54:54.105Z",
+      "updatedAt": "2026-11-19T10:02:12.075Z",
       "completedAt": null,
       "positionX": -358.58222185949927,
       "positionY": 296.2253984026824,
