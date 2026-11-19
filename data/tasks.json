@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-19T07:54:59.144Z",
+  "exportedAt": "2026-11-19T07:55:09.270Z",
   "appName": "Task Planner 9000",
   "tasks": [
     {
@@ -337,11 +337,11 @@
       "autoCleanupPeriod": "off",
       "id": "8cb98a4b-20c0-499a-8eb0-609885c07985",
       "createdAt": "2026-11-02T11:23:45.203Z",
-      "updatedAt": "2026-11-19T07:54:54.105Z",
+      "updatedAt": "2026-11-19T07:55:04.237Z",
       "completedAt": "2026-11-18T14:35:16.938Z",
       "positionX": 695.3625749901033,
       "positionY": 283.95794321140016,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "title": "Kela",
